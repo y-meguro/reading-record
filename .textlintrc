@@ -1,0 +1,33 @@
+{
+  "rules": {
+    // 日本語周りにおけるスペースの有無を決定するルールプリセット
+    "preset-ja-spacing": {
+      // カタカナ語間は中黒または半角スペースを用いてカタカナ語を区切る
+      "ja-nakaguro-or-halfwidth-space-between-katakana": true,
+      // カッコの外側・内側ともにスペースを入れない
+      "ja-no-space-around-parentheses": true,
+      // 全角文字同士の間にスペースを入れない
+      "ja-no-space-between-full-width": true,
+      // 半角文字と全角文字の間にスペースを入れる (句読点の前後には適用しない)
+      "ja-space-between-half-and-full-width": {
+        space: "always",
+        exceptPunctuation: true
+      },
+      // 文末の感嘆符の後ろに全角スペースを強制しない
+      "ja-space-after-exclamation": false,
+      // 文末の疑問符の後ろに全角スペースを強制しない
+      "ja-space-after-question": false
+    },
+    // 技術文書向けのルールプリセット
+    "preset-ja-technical-writing": {
+      // 連続できる最大の漢字長
+      "max-kanji-continuous-len": {
+        // 許容する文言
+        allow: ['大規模集積回路', '条件分岐命令']
+      },
+      // 感嘆符「!！?？」を使用を許容する
+      "no-exclamation-question-mark": false,
+    },
+    "spellcheck-tech-word": true
+  }
+}
