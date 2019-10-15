@@ -20,10 +20,14 @@
     },
     // 技術文書向けのルールプリセット
     "preset-ja-technical-writing": {
+      // 1文の長さ指定
+      "sentence-length": {
+        max: 140
+      },
       // 連続できる最大の漢字長
       "max-kanji-continuous-len": {
         // 許容する文言
-        allow: ['大規模集積回路', '条件分岐命令']
+        allow: ['大規模集積回路', '条件分岐命令', '特権違反例外']
       },
       // 感嘆符「!！?？」を使用を許容する
       "no-exclamation-question-mark": false,
