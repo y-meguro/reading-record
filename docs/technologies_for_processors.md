@@ -4,6 +4,10 @@
 
 - [プロセッサを支える技術　－－果てしなくスピードを追求する世界 (WEB+DB PRESS plus) | Hisa Ando](https://amzn.to/2VHhcgf)
 
+## かかった時間
+
+- 28.6 時間
+
 ## 読む前の状態
 
 - [CPUの創りかた | 渡波 郁](https://amzn.to/2psdOcR) を読んで、CPU の基本的な仕組みを学んだ
