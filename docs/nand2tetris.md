@@ -3,6 +3,7 @@
 ## 本
 
 - [コンピュータシステムの理論と実装 ―モダンなコンピュータの作り方 | Noam Nisan, Shimon Schocken, 斎藤 康毅](https://amzn.to/2B73AS5)
+- hoge
 
 ## 読書メモ
 
