@@ -6,21 +6,17 @@
 
 ## かかった時間
 
-- xx 時間
+- 98.5 時間（退職前に使っていた時間はカウントできていない、たぶんプラス 6 時間くらい）
 
-## 読む前の状態
+## 作成メモ
 
-- 低レイヤの 1 冊目として読んだ
+- [「CPUの創りかた」の4bitCPUをブレッドボードで作りました - Qiita](https://qiita.com/y-meguro/items/9ed2a1b772eba4395ea6)
 
-## 読む前後の変化
+## コード
 
-- xx
+- [Arduino/td4_rom at master · y-meguro/Arduino](https://github.com/y-meguro/Arduino/tree/master/td4_rom)
 
-## まだわからないこと
-
-- xx
-
-# 詳細メモ
+# 読書メモ
 
 ## 1章: はじめの一歩のその前に
 
