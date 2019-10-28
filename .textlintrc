@@ -1,4 +1,11 @@
 {
+  "filters": {
+    "whitelist": {
+      "allow": [
+          "0x12"
+        ]
+      }
+  },
   "rules": {
     // 日本語周りにおけるスペースの有無を決定するルールプリセット
     "preset-ja-spacing": {
