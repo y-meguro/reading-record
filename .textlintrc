@@ -2,7 +2,7 @@
   "filters": {
     "whitelist": {
       "allow": [
-          "0x12"
+          "0x"
         ]
       }
   },
