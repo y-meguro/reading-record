@@ -11,7 +11,7 @@
 
 ## 読む前の状態
 
-- [コンピュータシステムの理論と実装](../docs/nand2tetris.md) と [プロセッサを支える技術](../docs/technologies_for_processors.md) と [CPUの創りかた](../docs/how_to_create_cpu.md) を読んでいた
+- [コンピュータシステムの理論と実装](../computer_systems/nand2tetris.md) と [プロセッサを支える技術](../docs/technologies_for_processors.md) と [CPUの創りかた](../computer_systems/how_to_create_cpu.md) を読んでいた
 - 「プロセッサを支える技術」である程度、CPU でどのような技術が使われているか学習していたが、もう少し深い内容がありそうだったのと、演習があったので理解を確認するためにこの本をやることにした
 
 # 読書メモ
