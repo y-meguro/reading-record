@@ -21,6 +21,10 @@
 
 - xxx
 
+## コード
+
+- [y-meguro/testOS](https://github.com/y-meguro/testOS)
+
 # 読書メモ
 
 ## イントロダクション
@@ -434,3 +438,29 @@
   - 複数行マクロ（％macro）
     - 複数行に渡ってマクロを定義する時に使う
   - 他にもマクロ内ローカルラベル（％％）/ 可変引数 / 引数の回転（％rotate）/ リスト出力の抑止（.nolist）/ ファイルの取り込み（％include ディレクティブ）/ 構造体（struc）を使用できる
+
+## 10章: 周辺機器の制御方法
+
+## 12章: 開発環境を構築する
+
+- アセンブラの使用環境を整える
+  - [NASM](https://www.nasm.us/) の 2.14.02 を使用する
+- 挙動確認は [QEMU](https://www.qemu.org/) または [Bochs](http://bochs.sourceforge.net/) を利用する
+
+# 作成メモ
+
+## 12章: 開発環境を構築する
+
+- [Bochs](http://bochs.sourceforge.net/) を利用することにした
+  - バージョンは 2.6.9
+  - `brew install bochs`
+  - Windows ではなく、本に書かれているようなメニュー画面がないので、config file を設定する必要がある
+    - 参考: [The configuration file bochsrc](http://bochs.sourceforge.net/doc/docbook/user/bochsrc.html)
+  - env 配下に .bochsrc ファイルを作成。12 章で設定されていそうな内容を記載した
+
+```
+ata0-master: type=disk, path=../src/00_boot_only/boot.img, mode=flat, cylinders=20, heads=2, spt=16, translation=auto
+boot: disk
+```
+
+- 本に記載がある通り、`ata0-0: specified geometry doesn't fit on disk image` の警告は無視して、`Booting from Hard Disk...` のメッセージが出ることを確認した
