@@ -3,6 +3,7 @@
 ## 本
 
 - [作って理解するOS x86系コンピュータを動かす理論と実装 | 林 高勲, 川合 秀実](https://amzn.to/36I8Ry7)
+  - [サポートページ：作って理解するOS x86系コンピュータを動かす理論と実装：｜技術評論社](https://gihyo.jp/book/2019/978-4-297-10847-2/support)
 
 ## かかった時間
 
@@ -517,6 +518,25 @@
 
 ## 14章: リアルモードでの基本動作を実装する
 
+- 「何もしない」ブートプログラムを作成する
+- BIOS パラメータブロックの領域を確保する
+- ブートプログラム内にデータを保存する
+- 文字を表示する
+- 文字列を表示する
+  - すでに文字列の表示関数を作成しているので、数値を文字列に変換する関数 itoa を作成する
+- 数値を表示する
+- コンピュータを再起動する
+- セクタを読み出す
+- セクタ読み出し関数を作成する
+- ドライブパラメータを取得する
+- BIOS のフォントデータを取得する
+- メモリの実装状況を確認する
+- KBC（キーボードコントローラ）を制御する
+- A20 ゲートを有効化する
+- キーボード LED を制御する
+- カーネルをロードする
+- ビデオモードを変更する
+
 # 作成メモ
 
 ## 12章: 開発環境を構築する
@@ -529,11 +549,21 @@
   - env 配下に .bochsrc ファイルを作成。12 章で設定されていそうな内容を記載した
 
 ```
-ata0-master: type=disk, path=../src/00_boot_only/boot.img, mode=flat, cylinders=20, heads=2, spt=16, translation=auto
+ata0-master: type=disk, path=boot.img, mode=flat, cylinders=20, heads=2, spt=16, translation=auto
 boot: disk
 ```
 
 - 本に記載がある通り、`ata0-0: specified geometry doesn't fit on disk image` の警告は無視して、`Booting from Hard Disk...` のメッセージが出ることを確認した
+- 起動オプションは本の指定通りとした
+  - 参考: [Using Bochs](http://bochs.sourceforge.net/doc/docbook/user/using-bochs.html#COMMANDLINE)
+
+```
+bochs -q -f ../../env/.bochsrc -rc ../../env/cmd.init
+```
+
+- bat ファイルではなく sh ファイルとした
+- env.bat と dev.bat は作らず、.zshrc で PATH を指定した。また Bochs を使う（QEMUを使わない）ため、boot.bat も作っていない
+- 本と同様に、00_boot_only や 01_bpb などから box.sh 等を呼び出す想定で記載
 
 ## 13章: アセンブラによる制御構文と関数の記述例
 
@@ -541,3 +571,12 @@ boot: disk
   - 特に挙動確認はないので、追加しただけ
 
 ## 14章: リアルモードでの基本動作を実装する
+
+- 各ステップごとに実装し、挙動確認をした
+- 14.9 で macro.s にある .cyln が .syln とタイポされてたので、.cyln にする。また、resw が reww とタイポされているので、resw にする
+  - [サポートページ](https://gihyo.jp/book/2019/978-4-297-10847-2/support) に記載あり
+- 14.12 で get_mem_info.s にメモリを確保する記述を追加する
+  - [サポートページ](https://gihyo.jp/book/2019/978-4-297-10847-2/support) に記載あり
+- 14.13 で kbc.s の KBC_Data_Read の loopnz を loopz に修正する
+  - [サポートページ](https://gihyo.jp/book/2019/978-4-297-10847-2/support) に記載あり
+- 14.16 で lba_chs は lba_chs.s という名前で保存する
