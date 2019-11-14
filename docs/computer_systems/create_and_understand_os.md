@@ -574,6 +574,19 @@
 - 現在時刻を表示する
 - RTC へのアクセスタイミングを制御する
 
+## 18章: プロテクトモードでの割り込みを実現する
+
+- デフォルトの割り込み処理を作成する
+  - 80386 では割り込み終了後、中断していた処理を再開できるように EFLAGS / CS / EIP レジスタの順でスタックに保存し、割り込み処理を開始する
+- 割り込みゲートディスクリプタを作成する
+- ゼロ除算割り込みを実装する
+- 割り込みと例外の違いを確認する
+- 割り込みコントローラを再設定する
+- RTC割り込みを実装する
+- デフォルトの割り込み処理を修正する
+- キーボード割り込みを実装する
+- タイマー割り込みを実装する
+
 # 作成メモ
 
 ## 12章: 開発環境を構築する
@@ -616,7 +629,7 @@ bochs -q -f ../../env/.bochsrc -rc ../../env/cmd.init
   - [サポートページ](https://gihyo.jp/book/2019/978-4-297-10847-2/support) に記載あり
 - 14.13 で kbc.s の KBC_Data_Read の loopnz を loopz に修正する
   - [サポートページ](https://gihyo.jp/book/2019/978-4-297-10847-2/support) に記載あり
-- 14.16 で lba_chs は lba_chs.s という名前で保存する
+- 14.16 で lba_chs は （read_lba.s ではなく）lba_chs.s という名前で保存する
 
 ## 15章: プロテクトモードへの移行を実現する
 
@@ -633,3 +646,10 @@ bochs -q -f ../../env/.bochsrc -rc ../../env/cmd.init
 
 - 時刻の変化を確認する時、本に記載の通り、.bochsrc に cpu の設定を追加する
   - `cpu: ips=60000000` の記載を追加して、確認した
+  - 参考: [Using Bochs](http://bochs.sourceforge.net/doc/docbook/user/using-bochs.html#COMMANDLINE)
+
+## 18章: プロテクトモードでの割り込みを実現する
+
+- 18.2 の VECT_BASE は define.s に登録する
+- 18.3 の macro.s の set_vect に if 文を追加する
+  - [サポートページ](https://gihyo.jp/book/2019/978-4-297-10847-2/support) に記載あり
