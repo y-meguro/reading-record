@@ -3,6 +3,7 @@
 ## 本
 
 - [Operating System Concepts | Abraham Silberschatz, Peter B. Galvin, Greg Gagne](https://amzn.to/2CN0bst)
+  - 参考: [Operating System Concepts - 9th edition](https://www.os-book.com/OS9/index.html)
 
 ## かかった時間
 
@@ -17,6 +18,18 @@
 - xxx
 
 # 読書メモ
+
+## Preface
+
+- Level
+  - at the junior or senior undergraduate level or at the first-year graduate level
+- Content of This Book
+  - Overview: Chapter 1 - 2
+  - Process management: Chapter 3 - 7
+  - Memory management: Chapter 8 - 9
+  - Storage management: Chapter 10 - 13
+  - Protection and security: Chapter 14 - 15
+  - Case studies: Chapter 16 - 18
 
 ## 3: Process Concept
 
