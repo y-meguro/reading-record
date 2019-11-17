@@ -77,7 +77,7 @@
 
 ### 3.3: Operations on Processes
 
-- In this section, we explore the mechanisms involved in creating processes and illustrate process creation on UNIX and Windowws systems.
+- In this section, we explore the mechanisms involved in creating processes and illustrate process creation on UNIX and Windows systems.
 - Process Creation
   - Most operating systems identify processes according to a unique process identifier (or pid), which is typically an integer number.
   - UNIX の場合、fork() の system call で新しい process が作成される。fork() が実行された後、親プロセスも子プロセスも実行状態にあり、1 つのコードから 2 つのプロセスが作成される。親プロセスは wait() を実行して、子プロセスの完了を待ち、子プロセスは exec() した後 exit() して親プロセスに処理を戻す
@@ -105,3 +105,53 @@
   - Both of the models just mentioned are common in operating systems, and many systems implement both.
   - Message passing is also easier to implement in a distributed system than shared memory.
   - Shared memory can be faster than message passing, since message-passing systems are typically implemented using system calls and thus require the more time-consuming task of kernel intervention.
+- Shared-Memory Systems
+  - producer-consumer problem
+    - サイズが有限の 1 個のバッファーと 2 種類のスレッドが存在するとする。一方のスレッドを生産者、もう一方のスレッドを消費者と呼ぶ。生産者はバッファーに空きができるまでデータを入れることができない。消費者は生産者がバッファーに何か書き込むまで、このバッファーからデータを取り出すことができない
+    - One solution to the producer-consumer problem uses shared memory. To allow producer and consumer processes to run concurrently, we must have available a buffer of items that can be filled by the producer and emptied by the consumer.
+    - Two types of buffers can be used.
+      - The unbounded buffer places no practical limit on the size of the buffer.
+      - The bounded buffer assumes a fixed buffer size. In this case, the consumer must wait if the buffer is empty, and the producer must wait if the buffer is full.
+- Message-Passing Systems
+  - It is particularly useful in a distributed environment, where the communicating processes may reside on different computers connected by a network.
+  - Naming
+    - Processes that want to communicate must have a way to refer to each other. They can use either direct or indirect communication.
+      - Under direct communication, each process that want to communicate must explicitly name the recipient or sender of the communication.
+      - With indirect communication, the messages are sent to and received from mailboxes, or ports.
+  - Synchronization
+    - Massage passing may be either blocking or nonblocking - also known as synchronous and asynchronous.
+    - Blocking send
+      - The sending process is blocked until the message is received by the receiving process or by the mailbox.
+    - Nonblocking send
+      - The sending process sends the message and resumes operation.
+    - Blocking receive
+      - The receiver blocks until a message is available.
+    - Nonblocking receive
+      - The receiver retrieves either a valid message or a null.
+    - Different combinations of send() and receive() are possible.
+  - Buffering
+    - Whether communication is direct or indirect, messages exchanged by communicating processes reside in a temporary queue. Basically, such queues can be implemented in three ways:
+      - Zero capacity / Bounded capacity / Unbounded capacity
+
+### 3.5: Examples of IPC Systems
+
+- In this section, we explore three different IPC systems.
+  - POSIX Shared Memory / Mach / Windows
+- An Example: POSIX Shared Memory
+  - POSIX shared memory is organized using memory-mapped files, which associate the region of shared memory with a file.
+  - A process must first create a shared-memory object using the shm_open() system call.
+  - Once the object is established, the ftruncate() function is used to configure the size of the object in bytes.
+  - Finally, the mmap() function establishes a memory-mapped file containing the shared-memory object.
+- An Example: Mach
+  - The Mach kernel supports the creation and destruction of multiple tasks, which are similar to processes but have multiple threads of control and fewer associated resources.
+  - Most communication in Mach - including all intertask information - is carried out by messages. Messages are sent to and received from mailboxes, called ports in Mach.
+- An Example: Windows
+  - The message-passing facility in Windows is called the advanced local procedure call (ALPC) facility. It is used for communication between two processes on the same machine.
+  - Windows uses two types of ports:
+    - connection ports and communication ports
+  - When an ALPC channel is created, one of three message-passing techniques is chosen:
+    - For small messages (up to 256 bytes), the port's message queue is used as intermediate storage, and the messages are copied from one process to the other.
+    - Larger messages must be passed through a section object, which is a region of shared memory associated with the channel.
+    - When the amount of data is too large to fit into a section object, an API is available that allows server processes to read and write directly into the address space of a client.
+  - It is important to note that the ALPC facility in Windows is not part of the Windows API and hence is not visible to the application programmer.
+    - アプリケーションは Windows API を経由して、間接的に ALPC を利用する
