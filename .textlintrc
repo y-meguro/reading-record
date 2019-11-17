@@ -29,7 +29,7 @@
     "preset-ja-technical-writing": {
       // 1文の長さ指定
       "sentence-length": {
-        max: 140
+        max: 300
       },
       // 連続できる最大の漢字長
       "max-kanji-continuous-len": false,
@@ -38,6 +38,6 @@
       // 感嘆符「!！?？」を使用を許容する
       "no-exclamation-question-mark": false,
     },
-    "spellcheck-tech-word": true
+    "spellcheck-tech-word": false
   }
 }
