@@ -155,3 +155,46 @@
     - When the amount of data is too large to fit into a section object, an API is available that allows server processes to read and write directly into the address space of a client.
   - It is important to note that the ALPC facility in Windows is not part of the Windows API and hence is not visible to the application programmer.
     - アプリケーションは Windows API を経由して、間接的に ALPC を利用する
+
+### 3.6: Communication in Client-Server Systems
+
+- 3.4 で述べたような shared memory や message passing の方法は client-server systems の communication でも利用できる。ここではそれ以外のやり方 sockets / remote procedure calls (RPCs) / pipes について述べる
+- Sockets
+  - A socket is defined as an endpoint for communication. A pair of processes communicating over a network employs a pair of sockets - one for each process.
+  - A socket is identified by an IP address concatenated with a port number. In general, sockets use a client-server architecture.
+    - The server waits for incoming client requests by listening to a specified port.
+    - Once a request is received, the server accepts a connection from the client socket to complete the connection.
+    - Servers implementing specific services listen to well-known ports (a telnet server listens to port 23; an FTP server listens to port 21; and a web, or HTTP, server listens to port 80).
+    - All ports below 1024 are considered well known; we can use them to implement standard services.
+  - loopback
+    - The IP address 127.0.0.1 is a special IP address known as the loopback. When a computer refers to IP address 127.0.0.1, it is referring to itself.
+- Remote Procedure Calls
+  - The RPC was designed as a way to abstract the procedure-call mechanism for use between systems with network connections. It is similar in many respects to the IPC mechanism. Here, however, because we are dealing with an environment in which the processes are executing on separate systems, we must use a message-based communication scheme to provide remote service.
+  - The RPC system hides the details that allow communication to take place by providing a stub on the client side.
+    - On Windows systems, stub code is compiled from a specification written in the Microsoft Interface Definition Language (MIDL), which is used for defining the interfaces between client and server programs.
+  - One issue that must be dealt with concerns differences in data representation on the client and server machines.
+  - 他にも call が失敗することもあるので、"exactly once"や"at most once"の保証を考える必要がある
+  - client が server の port を知るためのやり方は主に 2 つ
+    - First, the binding information may be predetermined, in the form of fixed port addresses.
+    - Second, binding can be done dynamically by a rendezvous (also called a matchmaker) daemon on a fixed RPC port.
+      - randezvous daemon に request して（こっちは fixed）、該当の port の情報を得る
+- Pipes
+  - A pipe acts as a conduit allowing two processes to communicate.
+  - In implementing a pipe, four issues must be considered:
+    - Does the pipe allow bidirectional communication, or is communication unidirectional?
+    - If two-way communication is allowed, is it half duplex (data can travel only one way at a time) or full duplex (data can travel in both directions at the same time)?
+    - Must a relationship (such as parent-child) exist between the communicating processes?
+    - Can the pipes communicate over a network, or must the communicating processes reside on the same machine?
+  - Ordinary Pipes
+    - Ordinary pipes allow two processes to communicate in standard producer-consumer fashion: the producer writes to one end of the pipe (the write-end) and the consumer reads from the other end (the read-end).
+    - As a result, ordinary pipes are unidirectional, allowing only one-way communication. If two-way communication is required, two pipes must be used, with each pipe sending data in different direction.
+    - Note that ordinary pipes require a parent-child relationship between the communicating processes on both UNIX and Windows systems. This means that these pipes can be used only for communication between processes on the same machine.
+  - Named Pipes
+    - Ordinary pipes exist only while the processes are communicatingwith one another. On both UNIX and Windows systems, once the processes have finished communicating and have terminated, the ordinary pipes ceases to exist.
+    - Named pipes provide a much more powerful communication tool. Communication can be bidirectional, and no parent-child relationship is required. Once a named pipe is established, several processes can use it for communication.
+    - Additionally, named pipes continue to exist after communicating processes have finished.
+    - UNIX では half-duplex で processes must reside on the same machine、Windows systems では full-duplex で processes may reside on either the same machine or different machines。
+
+### 3.7: Summary
+
+- これまでに書いている内容なので省略
