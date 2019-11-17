@@ -31,6 +31,37 @@
   - Protection and security: Chapter 14 - 15
   - Case studies: Chapter 16 - 18
 
+## 1: Introduction
+
+- An operating is a program that manages a computer's hardware. It also provides a basis for application programs and acts as an intermediary between the computer user and the computer hardware.
+- Some operating systems are designed to be convenient, others to be efficient, and others to be some combination of the two.
+- Chapter Objectives
+  - To describe the basic organization of computer systems.
+  - To provide a grand tour of the major components of operating systems.
+  - To give an overview of the many types of computing environments.
+  - To explore several open-source operating systems.
+
+### 1.1: What Operating Systems Do
+
+- A computer system can be divided roughly into four components:
+  - the hardware, the operating system, the application programs, and the users
+- User View
+  - Most computer users sit in front of a PC.
+    - In this case, the operating system is designed mostly for ease of use, with some attention paid to performance and none paid to resource utilization - how various hardware and software resources are shared.
+  - In other cases, a user sits at a terminal connected to a mainframe or a minicomputer.
+    - The operating system in such cases is designed to maximize resource utilization.
+  - In still other cases, users sit at workstations connected to networks of other workstations and servers.
+    - Theire operating system is designed to compromise between individual usability and resource utilization.
+- System View
+  - In this context, we can view an operating system as a resource allocator.
+- Defining Operating Systems
+  - In general, we have no completely adequate definition of an operating system.
+  - Operating systems exist because they offer a reasonable way to solve the problem of creating a usable computing system.
+  - In addition, we have no universally accepted definition of what is part of the operating system.
+    - A more common definition, and the one that we usually follow, is that the operating system is the one program running at all the times on the computer - usually called the kernel.
+      - Along with the kernel, there are two other types of programs: system programs / application programs
+  - Mobile operating systems often include not only a core kernel but also middleware.
+
 ## 3: Process Concept
 
 - Chapter Objectives
