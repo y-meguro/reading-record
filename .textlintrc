@@ -37,6 +37,9 @@
       "no-doubled-joshi": false,
       // 感嘆符「!！?？」を使用を許容する
       "no-exclamation-question-mark": false,
+      "max-comma": {
+        "max": 4
+      }
     },
     "spellcheck-tech-word": false
   }

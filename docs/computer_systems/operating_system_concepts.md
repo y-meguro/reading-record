@@ -230,6 +230,24 @@
   - Embeded systems almost always run real-time operating systems.
   - A real-time system has well-defined, fixed time constraints. Processing must be done within the defined constraints, or the system will fail.
 
+### 1.12: Open-Source Operating Systems
+
+- Open-source operating systems are those available in source-code format rather than as compiled binary code.
+- To counter the move to limit software use and redistribution, Richard Stallman in 1983 started the GNU project to create a free, open-source, UNIX-compatible operating system.
+- Linux
+  - The GNU project produced many UNIX-compatible tools, including compilers, editors, and utilities, but never released a kernel.
+  - In 1991, a student in Finland, Linus Torvalds, released a rudimentary UNIX-like kernel using the GNU compiiers and tools and invited contributions worldwide.
+- BSD
+  - It started in 1978 as a derivative of AT&T's UNIX.
+  - BSD UNIX's development was slowed by a lawsuit by AT&T', but eventually a fully functional, open-source version, 4.4BSD-lite, was released in 1994.
+  - Darwin, the core kernel component of Mac OS X, is based on BSD UNIX and is open-sourced as well.
+- Solaris
+  - Solaris is the commercial UNIX-based operating system of Sun Microsystems.
+
+### 1.13: Summary
+
+- これまでに書いている内容なので省略
+
 ## 3: Process Concept
 
 - Chapter Objectives
