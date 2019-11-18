@@ -146,6 +146,40 @@
   - Deciding which processes (or parts of processes) and data to move into and out of memory
   - Allocating and deallocating memory space as needed
 
+### 1.8: Storage Management
+
+- The operating system abstracts from the physical properties of its storage devices to define a logical storage unit, the file.
+- File-System Management
+  - The operating system is responsible for the following activities in connection with file management:
+    - Creating and deleting files
+    - Creating and deleting directories to organaize files
+    - Supporting primitives for manipulating files and directories
+    - Mapping files onto secondary storage
+    - Backing up files on stable (nonvolatile) storage media
+- Mass-Storage Management
+  - The operating system is responsible for the following activities in connection with disk management:
+    - Free-space management
+    - Storage allocation
+    - Disk scheduling
+  - The entire speed of operation of a computer may hinge on the speeds of the disk subsystem and the algorithms that manipulate that subsystem.
+- Caching
+  - Because caches have limited size, cache management is an important design problem.
+  - Data transfer from cache to CPU and registers is usually a hardware function, with no operating-system intervention. In contrast, transfer of data from disk to memory is usually controlled by the operating system.
+  - Since the various CPUs can all execute in parallel, we must make sure that an update to the value of A in one cache is immediately reflected in all other caches where A resides. This situation is called cache coherency, and it is usually a hardware issue.
+- I/O Systems
+  - One of the purposes of an operating system is to hide the peculiarities of specific hardware devices from the user.
+  - The I/O subsystem consists of several components:
+    - A memory-management component that includes buffering, caching, and spooling
+    - A general device-driver interface
+    - Drivers for specific hardware devices
+
+### 1.9: Protection and Security
+
+- If a computer system has multiple users and allows the concurrent execution of multiple processes, then access to data must be regulated.
+- Protection, then, is any mechanism for controlling the access of processes or users to the resources defined by a computer system.
+- Consider a user whose authentication information is stolen. Her data could be copied or deleted, even though file and memory protection are working. It is the job of security to defend a system from external and internal attacks.
+- Protection and security require the system to be able to distinguish among all its users. Most operating systems maintain a list of user names and associated user identifiers (user IDs).
+
 ## 3: Process Concept
 
 - Chapter Objectives
