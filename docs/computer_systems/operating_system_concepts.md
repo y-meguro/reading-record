@@ -180,6 +180,26 @@
 - Consider a user whose authentication information is stolen. Her data could be copied or deleted, even though file and memory protection are working. It is the job of security to defend a system from external and internal attacks.
 - Protection and security require the system to be able to distinguish among all its users. Most operating systems maintain a list of user names and associated user identifiers (user IDs).
 
+### 1.10: Kernel Data Structures
+
+- In this section, we briefly describe several fundamental data structures used extensively in operating systems.
+- Lists, Stacks, and Queues
+  - An array is a simple data structure in which each element can be accessed directly.
+  - Whereas each item in an array can be accessed directly, the items in a list must be accessed in a particular order.
+    - The most common method for implementing this structure is a linked list, in which items are linked to one another.
+  - A stack is a sequentially ordered data structure that uses the last in, first out (LIFO) principle for adding and removing items, meaning that the last item placed onto a stack is the first item removed.
+  - A queue, in contrast, is a sequentially ordered data structure that uses the first in, first out (FIFO) principle.
+- Trees
+  - A tree is a data structure that can be used to represent data hierarchically. Data values in a tree structure are linked through parent-child relationships.
+  - In a general tree, a parent may have an unilimited number of children.
+  - In a binary tree, a parent may have at most two children, which we term the left child and the right child.
+- Hash Functions and Maps
+  - A hash function takes data as its input, performs a numeric operation on this data, and returns a numeric value. This numeric value can then be used as an index into a table (typically an array) to quickly retrieve the data.
+  - One use of a hash function is to implement a hash map, which associates (or maps) [key:value] pairs using a hash function.
+- Bitmaps
+  - A bitmap is a string of n binary digits that can be used to represent the status of n items.
+  - Thus, bitmaps are commonly used when there is a need to represent the availability of a large number of resources.
+
 ## 3: Process Concept
 
 - Chapter Objectives
