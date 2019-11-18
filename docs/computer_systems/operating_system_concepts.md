@@ -273,6 +273,20 @@
     - We want to keep track of which users use how much and what kinds of computer resources. This record keeping may be used for accounting (so that users can be billed) or simply for accumulating usage satistics.
   - Protection and security.
 
+### 2.2: User and Operating-System Interface
+
+- Command Interpreters
+  - On systems with multiple command interpreters to choose from, the interpreters are known as shells. For example, on UNIX and Linux systems, a user may choose among several different shells, including the Bourne shell, C shell, Bourne-Again shell, Korn shell, and others.
+  - The main function of the command interpreters is to get and execute the next user-specified command. Many of the commands given at this level manipulate files: create, delete, list, print, copy, execute, and so on.
+  - These commands can be implemented in two general ways.
+    - In one approach, the command interpreter itself contains the code to execute the command.
+    - As alternative approach implements most commands through system programs. In this way, programmers can add new commands to the system easily by creating new files with the proper names.
+- Graphical User Interfaces
+  - A second strategy for interfacing with the operating system is through a user-friendly graphical interface, or GUI.
+- Choice of Interface
+  - The choice of whether to use a command-line or GUI interface is mostly one of personal preference. System administrators who manage computers and power users who have deep knowledge of a system frequently use the command-line interface.
+  - In contrast, most Windows users are happy to use Windows GUI environment and almost never use the MS-DOS shell interface.
+
 ## 3: Process Concept
 
 - Chapter Objectives
