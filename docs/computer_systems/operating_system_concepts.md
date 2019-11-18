@@ -113,6 +113,20 @@
 - A program loaded into memory and executing is called process.
 - A more common method for ensuring reasonable response time is virtual memory, a technique that allows the execution of a process that is not completely in memory.
 
+### 1.5: Operating-System Operation
+
+- A properly designed operating system must ensure that an incorrect program cannot cause other programs to execute incorrectly.
+- Dual-Mode and Multimode Operation
+  - In order to ensure the proper execution of the operating system, we must be able to distinguish between the execution of operating-system code and user-defined code.
+  - At the very least, we need two separate modes of operation: user mode and kernel mode (also called supervisor mode, system mode, or privileged mode).
+    - mode bit が 0 であれば kernel mode、1 であれば user mode。
+  - The dual mode of operation provides us with the means for protecting the operating system from errant users - and errant users from one another.
+  - 2 つの mode だけでなく、VMM を入れて 3 つにするものや、4 つの privilege level を持つものもある
+  - System calls provide the means for a user program to ask the operating system to perform tasks reserved for the operating system on the user program's behalf.
+- Timer
+  - A timer can be set to interrupt the computer after a specified period.
+  - We can use the timer to prevent a user program from running too long.
+
 ## 3: Process Concept
 
 - Chapter Objectives
