@@ -287,6 +287,20 @@
   - The choice of whether to use a command-line or GUI interface is mostly one of personal preference. System administrators who manage computers and power users who have deep knowledge of a system frequently use the command-line interface.
   - In contrast, most Windows users are happy to use Windows GUI environment and almost never use the MS-DOS shell interface.
 
+### 2.3: System Calls
+
+- System calls provide an interface to the services made available by an operating system. These calls are generally available as routines written in C and C++, although certain low-level tasks may have to be written using assembly-language instructions.
+- Typically, application developers design programs according to an application programming interface (API).
+  - Three of the most common APIs available to application programmers are the Windows API for Windows systems, the POSIX API for POSIX-based systems (which include virtually all versions of UNIX, Linux, and Mac OS X), and the Java API for programs that run on the Java virtual machine. A programmer accesses an API via a library of code provided by the operating system.
+- Why would an application programmer prefer programming according to an API rather than invoking actual system calls? There are several reasons for doing so.
+  - One benefit concerns program portability. An application programmer designing a program using an API can expect her program to compile and run on any system that supports the same API.
+  - Furthermore, actual system calls can often be more detailed and difficult to work with than the API available to an application programmer.
+- For most programming languages, the run-time support system provides a system-call interface that serves as the link to system calls made available by the operating system.
+- Three general methods are used to pass parameters to the operating system.
+  - The simplest approach is to pass the parameters in registers. だがレジスタの数よりパラメータの数が多い場合がある
+  - The parameters are generally stored in block, or table, in memory, and the address of the block is passed as a parameter in a register. This is the approach taken by Linux and Solaris.
+  - Parameters also can be placed, or pushed, onto the stack by the program and popped off the stack by the operating system.
+
 ## 3: Process Concept
 
 - Chapter Objectives
