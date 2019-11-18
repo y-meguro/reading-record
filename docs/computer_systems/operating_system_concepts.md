@@ -79,6 +79,31 @@
   - A large portion of operating system code is dedicated to managing I/O, both because of its importance to the reliability and performance of a system and because of the varying nature of the devices.
   - This form of interrupt-driven I/O is fine for moving small amounts of data but can produce high overhead when used for bulk data movement such as disk I/O. To solve this problem, direct memory access (DMA) is used.
 
+### 1.3: Computer-System Architecture
+
+- A computer system can be organaized in a number of different ways, which we can categorize roughly according to the number of general-purpose processors used.
+- Single-Processor Systems
+  - Until recently, most computer systems used a single processor. On a single processor system, there is one main CPU capable of executing a general-purpose instruction set, including instructions from user processes. Almost all single-processor systems have other special-purpose processors as well.
+- Multiprocessor Systems
+  - Within the past several years, multiprocessor systems (also known as parallel systems or multicore systems) have begun to dominate the landscape of computing.
+  - Multiprocessor systems have three main advantages:
+    - Increased throughput
+    - Economy of scale
+    - Increased reliability
+  - A recent trend in CPU design is to include multiple computing cores on a single chip. Such multiprocessor systems are termed multicore.
+  - Finally, blade servers are a relatively recent development in which multiple processor boards, I/O boards, and networking boards are placed in the same chassis. The difference between these and traditional multiprocessor systems is that each blade-processor board boots independently and runs its own operating system.
+- Clustered Systems
+  - Another type of multiprocessor system is a clustered system, which gathers together multiple CPUs.
+  - Clustered systems differ from the multiprocessor systems in that they are composed of two or more individual systems - or nodes - joined together. Each node may be a single processor system or a multicore system.
+  - the generally accepted definition is that clustered computers share storage and are closely linked via a local-area network LAN or a faster interconnect, such as InfiniBand.
+  - Clustering is usually used to provide high-availability service.
+  - Clustering can be structured asymmetrically or symmetrically.
+    - In asymmetric clustering, one machine is in hot-standby mode while the other is running the applications.
+      - The hot-standby host machine does nothing but monitor the active server. If that server fails, the hot-standby host becomes the active server.
+    - In symmetric clustering, two or more hosts are running applications and are monitoring each other.
+      - This structure is obviously more efficient, as it uses all of the available hardware. However it does require that more than one application be available to run.
+  - If the applications and their data are stored on the SAN (Storage-area network), then the cluster software can assign the application to run on any host that is attached to the SAN.
+
 ## 3: Process Concept
 
 - Chapter Objectives
