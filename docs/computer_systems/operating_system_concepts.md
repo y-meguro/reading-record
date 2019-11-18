@@ -104,6 +104,15 @@
       - This structure is obviously more efficient, as it uses all of the available hardware. However it does require that more than one application be available to run.
   - If the applications and their data are stored on the SAN (Storage-area network), then the cluster software can assign the application to run on any host that is attached to the SAN.
 
+### 1.4: Operating-System Structure
+
+- One of the most important aspects of operating systems is the ability to multiprogram.
+  - Multiprogramming increases CPU utilization by organizing jobs so that the CPU always has one to execute.
+- Multiprogrammed systems provide an environment in which the various system resources are utilized effectively, but they do not provide for user interaction with the computer system. Time sharing (or multitasking) is a logical extension of multiprogramming.
+  - In time-sharing systems, the CPU executes multiple jobs by switching among them, but the switches occur so frequently that the users can interact with each program while it is running.
+- A program loaded into memory and executing is called process.
+- A more common method for ensuring reasonable response time is virtual memory, a technique that allows the execution of a process that is not completely in memory.
+
 ## 3: Process Concept
 
 - Chapter Objectives
