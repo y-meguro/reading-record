@@ -301,6 +301,42 @@
   - The parameters are generally stored in block, or table, in memory, and the address of the block is passed as a parameter in a register. This is the approach taken by Linux and Solaris.
   - Parameters also can be placed, or pushed, onto the stack by the program and popped off the stack by the operating system.
 
+### 2.4: Types of System Calls
+
+- System calls can be grouped roughly into six major categories:
+  - process control / file manipulation / device manipulation / information maintenance / communications / protection
+- Process Control
+  - end, abort
+  - load, execute
+  - create process, terminate process
+  - get process attributes, set process attributes
+  - wait for time
+  - wait event, signal event
+  - allocate and free memory
+- File Management
+  - create file, delete file
+  - open, close
+  - read, write, reposition
+  - get file attributes, set file attributes
+- Device Management
+  - request device, release device
+  - read, write, reposition
+  - get device attributes, set device attributes
+  - logically attach or detach devices
+- Information Maintenance
+  - get time or date, set time or date
+  - get system data, set system data
+  - get process, file, or device attributes
+  - set process, file, or device attributes
+- Communication
+  - create, delete communication connection
+  - send, receive messages
+  - transfer status information
+  - attach or detach remote devices
+- Protection
+  - get permission, set permission
+  - allow user, deny user
+
 ## 3: Process Concept
 
 - Chapter Objectives
