@@ -337,6 +337,42 @@
   - get permission, set permission
   - allow user, deny user
 
+### 2.5: System Programs
+
+- At the lowest level is hardware. Next is the operating system, then the system programs, and finally the application programs.
+- System programs, also known as system utilities, provide a convenient environment for program development and execution.
+- They can be divided into these categories:
+  - File management.
+  - Status information.
+    - Some programs simply ask the system for the date, time, amount of available memory or disk space, number of users, or similar status information.
+  - File modification.
+  - Programming-language support.
+    - Compilers, assemblers, debuggers, and interpreters for common programming languages are often provided with the operating system or available as a separate download.
+  - Program loading and execution
+  - Communications.
+    - These programs provide the mechanism for creating virtual connections among processes, users, and computer systems.
+  - Background services.
+    - Constantly running system-program processes are known as services, subsystems, or daemons.
+    - Along with system programs, most operating system are supplied with programs that are useful in solving common problems include Web browsers, word processors and text formatters, spreadsheets, database systems, compilers, plotting and statical-analysis packages, and games.
+
+### 2.6: Operating-System Design and Implementation
+
+- Design Goals
+  - The first problem in designing a system is to define goals and specifications.
+  - The requirements can, however, be divided into two basic groups: user goals and system goals.
+    - Users want certain obvious properties in a system. The system should convenient to use, easy to learn and to use, reliable, safe, and fast. There is no general agreement on how to achieve them.
+    - A similar set of requirements can be defined by those people who must design, create, maintain, and operate the system. The system should be easy to design, implement, and maintain; and it should be flexible, reliable, error free, and efficient. でこれらもあいまいなもの。
+  - Although no text book can tell you how to do it, general principles have been developed in the field of software engineering, and we turn now to a discussion of some of these principles.
+- Mechanisms and Policies
+  - One important principle is the separation of policy from mechanism. Mechanisms determine how to do something; policies determine what will be done.
+  - The separation of policy and mechanism is important for flexibility. Policies are likely to change across places or over time. A general mechanism insensitive to changes in policy would be more desirable.
+- Implementation
+  - Although some operating systems are still written in assembly language, most are written in a higher-level language such as C or an even higher-level language such as C++. Actually, an operating system can be written in more than one language.
+  - The advantages of using a high-level language, or at least a systems-implementation language, for implementing operating systems are the same as those gained when the language is used for application programs:
+    - The code can be written faster, is more compact, and is easier to understand and debug.
+    - In addition, improvements in compiler technology will improve the generated code for the entire operating system by simple recompilation.
+    - Finally, an operating system is far easier to port - to move to some other hardware - if it is written in a higher-level language.
+
 ## 3: Process Concept
 
 - Chapter Objectives
