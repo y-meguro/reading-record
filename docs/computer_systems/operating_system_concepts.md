@@ -62,6 +62,23 @@
       - Along with the kernel, there are two other types of programs: system programs / application programs
   - Mobile operating systems often include not only a core kernel but also middleware.
 
+### 1.2: Computer-System Organization
+
+- Computer-System Operation
+  - A modern general-purpose computer system consists of one or more CPUs and a number of device controllers connected through a common bus that provides access to shared memory.
+  - For a computer to start runnning it needs to have an initial program to run. This initial program, or bootstrap program, tends to be simple. The bootstrap program must know how to load the operating system and how to start executing that system.
+    - To accomplish this goal, the bootstrap program must locate the operating-system kernel and load it into memory.
+  - THe occurrence of an event is usually signaled by an interrupt from either the hardware or the software.
+- Storage Structure
+  - The CPU can load instructions only from memory, so any programs to run must be stored there. General-purpose computers run most of theire programs from rewritable memory, called main memory.
+  - A typical instruction - execution cycle, as executed on a system with a von Neumann architecture, first fetches an instruction from memory and stores that instruction in the instruction register. The instruction is then decoded and may cause operands to be fetched from memory and stored in some internal register. After the instruction on the operands has been executed, the result may be stored back in memory.
+  - The most common secandary-storage device is a magnetic disk, which provides storage for both programs and data.
+  - The main differences among the various storage systems lie in speed, cost, size, and volatility.
+  - Solid-state disks は SSD のこと。非揮発性。
+- I/O Structure
+  - A large portion of operating system code is dedicated to managing I/O, both because of its importance to the reliability and performance of a system and because of the varying nature of the devices.
+  - This form of interrupt-driven I/O is fine for moving small amounts of data but can produce high overhead when used for bulk data movement such as disk I/O. To solve this problem, direct memory access (DMA) is used.
+
 ## 3: Process Concept
 
 - Chapter Objectives
