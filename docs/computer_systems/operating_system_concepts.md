@@ -248,6 +248,31 @@
 
 - これまでに書いている内容なので省略
 
+## 2: System Structures
+
+- Chapter Objectives
+  - To describe the services an operating system provides to users, processes, and other systems.
+  - To discuss the various ways of structuring an operating system.
+  - To explain how operating systems are installed and customized and how they boot.
+
+### 2.1: Operating-System Services
+
+- An operating system provides an environment for the execution of programs.
+- One set of operating system services provides functions that are helpful to the user.
+  - User interface.
+    - command-line interface (CLI) / batch interface / graphical user interface (GUI)
+  - Program execution.
+  - I/O operations.
+  - File-system manipulation.
+  - Communications.
+    - There are many circumstances in which one process needs to exchange information with another process.
+    - Communications may be implemented via shared memory, in which two or more processes read and write to a shared section of memory, or message passing, in which packets of information in predefined formats are moved between processes by the operating system.
+  - Error detection.
+  - Resource allocation.
+  - Accounting.
+    - We want to keep track of which users use how much and what kinds of computer resources. This record keeping may be used for accounting (so that users can be billed) or simply for accumulating usage satistics.
+  - Protection and security.
+
 ## 3: Process Concept
 
 - Chapter Objectives
