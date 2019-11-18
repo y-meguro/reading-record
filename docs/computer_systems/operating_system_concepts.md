@@ -127,6 +127,25 @@
   - A timer can be set to interrupt the computer after a specified period.
   - We can use the timer to prevent a user program from running too long.
 
+### 1.6: Process Management
+
+- A program does nothing unless its instructions are executed by a CPU. A program in execution is a process.
+- We emphasize that a program by itself is not a process. A program is a passive entity, like the contents of a file stored on disk, whereas a process is an active entity.
+- The operating system is responsible for the following activities in connection with process management:
+  - Scheduling processes and threads on the CPUs
+  - Creating and deleting both user and system processes
+  - Suspending and resuming processes
+  - Providing mechanisms for process synchronization
+  - Providing mechanisms for process communication
+
+### 1.7: Memory Management
+
+- The main memory is generally the only large storage device that the CPU is able to address and access directly.
+- The operating system is responsible for the following activities in connection with memory management:
+  - Keeping track of which parts of memory are currently being used and who is using them
+  - Deciding which processes (or parts of processes) and data to move into and out of memory
+  - Allocating and deallocating memory space as needed
+
 ## 3: Process Concept
 
 - Chapter Objectives
