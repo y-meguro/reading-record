@@ -410,7 +410,7 @@
   - iOS is a mobile operating system designed by Apple to run its smartphone, the iPhone, as well as its tablet computer, the iPad.
 - Android
   - The Android operating system was designed by the Open Handset Alliance(led rapid primarily by Google) and was developed for Android smartphones and tablet computers.
-  - Whereas iOS is designed to run on Apple mobile devices and is close-sourced, Android runs on a vriety of mobile platforms and is open-sourced, partly explaining its rapid rise in popularity.
+  - Whereas iOS is designed to run on Apple mobile devices and is close-sourced, Android runs on a variety of mobile platforms and is open-sourced, partly explaining its rapid rise in popularity.
 
 ### 2.8: Operating-System Debugging
 
@@ -426,6 +426,30 @@
 - DTrace
   - DTrace is a facility that dynamically adds probes to a running system, both in user processes and in the kernel.
   - DTrace is composed of a compiler, a framework, providers of probes written within that framework, and consumers of those probes.
+
+### 2.9: Operating-System Generation
+
+- More commonly, however, operating systems are designed to run on any of a class of machines at a variety of sites with a variety of peripheral configurations. The system must then be configured or generated for each specific computer site, a process sometimes known as system generation (SYSGEN).
+- The following kinds of information must be determined.
+  - What CPU is to be used?
+  - How will the boot disk be formatted?
+  - How much memory is available?
+  - What devices are available?
+- Once this information is determined, it can be used in several ways.
+  - At one extreme, a system administrator can use it to modify a copy of the source code of the operating system.
+  - At a slightly less tailored level, the system description can lead to the creation of tables and the selection of modules from a precompiled library.
+  - At the other extreme, it is possible to construct a system that is completely table driven.
+- The major differences among these approaches are the size and generality of the generated system and the ease of modifying it as the hardware configuration changes.
+
+### 2.10: System Boot
+
+- The procedure of starting a computer by loading the kernel is known as booting the system. On most computer systems, a small piece of code known as the bootstrap program or bootstrap loader locates the kernel, loads it into main memory, and starts its execution.
+- The bootstrap program can perform a variety of tasks. Usually, one task is to run diagnostics to determine the state of the machine. If the diagnostics pass, the program can continue with the booting steps. It can also initialize all aspects of the system, from CPU registers to device controllers and the contents of main memory. Sooner or later, it starts the operating system.
+- The program stored in the boot block may be sophisticated enough to load the entire operating system into memory and begin its execution.
+
+### 2.11: Summary
+
+- これまでに書いている内容なので省略
 
 ## 3: Process Concept
 
