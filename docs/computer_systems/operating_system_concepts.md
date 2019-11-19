@@ -790,3 +790,24 @@
     - two-level model は、 many-to-many model だけじゃなく 1:1 対応も認める model。
   - Many systems implementing either the many-to-many or the two-level model place an intermediate data structure between the user and kernel threads. This data structure is typically known as a lightweight process, or LWP.
   - One scheme for communication between the user-thread library and the kernel is known as scheduler activation.
+
+### 4.7: Operating-System Examples
+
+- Windows Threads
+  - A Windows application runs as a seperate process, and each process may contain one or more threads.
+  - Windows uses the one-to-one mapping, where each uesr-level thread maps to an associated kernel thread.
+  - The general components of a thread include:
+    - A thread ID uniquely identifying of the thread
+    - A register set representing the status of the processor
+    - A user stack, employed when the thread is running in user mode, and a kernel stack, employed when the thread is running in kernel mode
+    - A private storage area used by various run-time libraries and dynamic link libraries (DLLs)
+  - The register set, stacks, and private storage area are known as the context of the thread.
+- Linux Threads
+  - Linux also provides the ability to create threads using the clone() system call.
+  - Linux does not distinguish between processes and threads. In fact, Linux uses the term task - rather than process or thread - when referring to a flow of control within a program.
+  - When clone() is invoked, it is passed a set of flags that determine how much sharing is to take place between the parent and child tasks.
+  - When folk() is invoked, a new task is created, along with a copy of all the associated data structures of the parent process.
+
+### 4.8: Summary
+
+- これまでに書いている内容なので省略
