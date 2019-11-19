@@ -688,3 +688,21 @@
   - Data parallelism focuses on distributing subsets of the same data across multiple computing cores and performing the same operation on each core.
   - Task parallelism involves distributing not data but tasks (threads) across multiple computing cores.
   - In most instances, applications use a hybrid of these two strategies.
+
+### 4.3: Multithreading Models
+
+- Support for threads may be provided either at the user level, for user threads, or by the kernel, for kernel threads.
+- User threads are supported above the kernel and are managed without kernel support, whereas kernel threads are supported and managed directly by the operating system.
+- Ultimately, a relatioship must exist between user threads and kernel threads. In this section, we look at three common ways of establishing such a relationship: the many-to-one model, the one-to-one-model, and the many-to-many model.
+- Many-to-One Model
+  - The many-to-one model maps many user-level threads to one kernel threads.
+  - Because only one thread can access the kernel at the time, multiple threads are unable to run in parallel on multicore systems.
+  - Very few systems continue to use the model because of its inability to take advantage of multiple processing cores.
+- One-to-One Model
+  - The one-to-one model maps each user thread to a kernel thread.
+  - It provides more concurrency than the many-to-one model by allowing another thread to run when a thread makes a blocking system call.
+  - The only drawback to this model is that creating a user thread requires creating the corresponding kernel thread.
+  - Linux, along with the family of Windows operating systems, implement the one-to-one model.
+- Many-to-Many Model
+  - The many-to-many model multiplexes many user-level threads to a smaller or equal number of kernel threads.
+  - これは複数の threads を同時に実行できるし、たくさんの kernel threads を作らなければならないわけでもない。
