@@ -811,3 +811,38 @@
 ### 4.8: Summary
 
 - これまでに書いている内容なので省略
+
+## 5: Process Scheduling
+
+- CPU scheduling is the basis of multiprogrammed operating systems. By switching the CPU among processes, the operating system can make the computer more productive.
+- Chapter Objectives
+  - To introduce CPU-scheduling, which is the basis for multiprogrammed operating systems.
+  - To describe various CPU-scheduling algorithms.
+  - To discuss evaluation criteria for selecting a CPU-scheduling algorithm for a particular system.
+  - To examine the scheduling algorithms of several operating systems.
+
+### 5.1: Basic Concepts
+
+- CPU-I/O Burst Cycle
+  - The success of CPU scheduling depends on an observed property of processes: process execution consists of a cycle of CPU execution and I/O wait. Processes alternate between these two states.
+  - Process execution begins with a CPU burst. That is followed by an I/O burst, which is followed by another CPU burst, then another I/O burst, and so on.
+- CPU Scheduler
+  - Whenever the CPU becomes idle, the operating system must select one of the processes in the ready queue to be executed. The selection process is carried out by the short-term scheduler, or CPU scheduler.
+  - Note that the ready queue is not necessarily a first-in, first-out queue.
+- Preemptive Scheduling
+  - CPU-scheduling decisions may take place under the following four circumstances:
+    1. When a process switches from the running state to the waiting state
+    2. When a process switches from the running state to the ready state
+    3. When a process switches from the waiting state to the ready state
+    4. When a process terminates
+  - When scheduling takes place only under circumstances 1 and 4, we say that the scheduling scheme is nonpreemptive or cooperative. Otehrwise, it is preemptive.
+  - Under nonpreemptive scheduling, once the CPU has been allocated to a process, the process keeps the CPU until it releases the CPU either by terminating or by switching to the waiting state.
+  - Cooperative scheduling is the only method that can be used on certain hardware platforms, because it does not require the special hardware needed for preemptive scheduling.
+  - Unfortunately, preemptive scheduling can result in race conditions when data are shared among several processes.
+  - Because interrupts can, by definition, occur at any time, and because they cannot always be ignored by the kernel, the sections of code affected by interrupts must be guarded from simultaneous use.
+- Dispatcher
+  - This function involves the following:
+    - Switching context
+    - Switching to user mode
+    - Jumping to the proper location in the user program to restart that program
+  - The time it takes for the dispatcher to stop one process and start another running is known as the dispatch latency.
