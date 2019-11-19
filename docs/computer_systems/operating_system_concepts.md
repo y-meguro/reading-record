@@ -725,3 +725,31 @@
   - The technique for creating threads using the Windows thread library is similar to the Pthreads technique in several ways.
 - Java Threads
   - Threads are the fundamental model of program execution in a Java program, and the Java language and its API provide a rich set of features for the creation and management of threads.
+
+### 4.5: Implicit Threading
+
+- 4.2 であげたような challenges 以外にも、multicore threading が進化する中で、いくつか困難がある。One way to address these difficulties and better support the design of multithreaded applications is to transfer the creation and management of threading from application developers to compilers and run-time libraries.
+- This strategy, termed implicit threading, is a popular trend today. In this section, we explore three alternative approaches for designing multithreaded programs that can take advantage of multicore processors through implicit threading.
+- Thread Pools
+  - Whereas creating a seperate thread is certainly superior to creating the separate process, a multithreaded server nonetheless has potential problems.
+    - The first issue concerns the amount of time required to create the thread, together with the fact that the thread will be discarded once it has completed its work.
+    - The second issue is more troublesome. If we allow all concurrent requests to be serviced in a new thread, we have not placed a bound on the number of threads concurrently active in the system.
+      - One solution to this problem is to use a thread pool.
+  - The general idea behind a thread pool is to create a number of threads at process startup and place them into a pool, where they sit and wait for work.
+  - When a server receives a request, it awakens a thread from this pool - if one is available - and passes it the request for service. Once the thread completes its service, it returns to the pool and awaits more work. If the pool contains no available thread, the server waits until one becomes free.
+  - Thread pool offer these benefit:
+    - Servicing a request with an existing thread is faster than waiting to create a thread.
+    - A thread pool limits the number of threads that exist at any one point. This is particularly important on systems that cannot support a large number of concurrent threads.
+    - Separating the task to be performed from the mechanics of creating the task allows us to use different strategies for running the task. For example, the task could be scheduled to execute after a time delay or to execute periodically.
+- OpenMP
+  - OpenMP is a set of compiler directives as well as an API for programs written in C, C++, or FORTRAN that provides support for parallel programming in shared-memory environments.
+  - OpenMP identifies parallel regions as blocks of code that may run in parallel.
+  - In addition to providing directives for parallelization, OpenMP allows developers to choose among several levels of parallelism.
+    - データを share するか、private にするかなど
+- Grand Central Dispatch
+  - Grand Central Dispatch (GCD) - a terminology for Apple's Mac OS X and iOS operating systems - is a combination of extensions to the C language, an API, and a run-time library that allows application developers to identify sections of code to run in parallel.
+  - GCD schedules blocks for run-time execution by placing them on a dispatch queue. When it removes a block from a queue, it assigns the block to an available thread from the thread pool it manages.
+  - GCD identifies two types of dispatch queue: serial and concurrent.
+    - Blocks placed on a serial queue are removed in FIFO order. Once a block has been removed from the queue, it must complete execution before another block is removed.
+    - Blocks placed on a concurrent queue are also removed in FIFO order, but several blocks may be removed at a time, thus allowing multiple blocks to execute in parallel.
+      - There are three system-wide concurrent dispatch queues, and they are distinguished according to priority: low, default, and high.
