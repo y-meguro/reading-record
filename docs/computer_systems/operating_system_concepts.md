@@ -631,3 +631,33 @@
 ### 3.7: Summary
 
 - これまでに書いている内容なので省略
+
+## 4: Multithreaded Programming
+
+- Chapter Objectives
+  - To introduce the notion of a thread - a fundamental unit of CPU utilization that forms the basis of multithreaded computer systems.
+  - To discuss the APIs for the Pthreads, Windows, and Java thread libraries.
+  - To explore several strategies that provide implicit threading.
+  - To examine issues related to multithreaded programming.
+  - To cover operating system support for threads in Windows and Linux.
+
+### 4.1: Overview
+
+- A thread is a basic unit of CPU utilization; it comprise a thread ID, a program counter, a register set, and a stack.
+- It shares with other threads belonging to the same process its code section, data section, and other operating-system resources, such as open files and signals.
+- A traditional process has a single thread of control. If a process has multiple threads of control, it can perform more than one task at a time.
+- Motivation
+  - Most software applications that run on modern computers are multithreaded. An application typically is implemented as a seperate process with several threads of control.
+  - A web browser might have one thread display images or text while another thread retrieves data from the network, for example.
+  - 似たような task を実行するなら、新しく process を作るより、thread を新しく作ったほうが効率がいい。
+  - Typically, RPC servers are multithreaded. When a server receives a message, it services the message using a separate thread.
+- Benefits
+  - The benefits of multithreaded programming can be broken down into four major categories:
+    - Responsiveness.
+      - Multithreading an interactive application may allow a program to continue running even if part of it is blocked or is performing lengthy operation, thereby increasing responsiveness to the user.
+    - Resource sharing
+      - Processes can only share resources through techniques such as shared memory and message passing. Such techniques must be explicitly arranged by the programmer. However, threads share the memory and the resources of the process to which they belong by default.
+    - Economy.
+      - Allocating memory and resources for process creation is costly. Because threads share the resources of the process to which they belong, it is more economical to create and context-switch threads.
+    - Scalability.
+      - The benefits of multithreading can be even greater in a multiprocessor architecture, where threads may be running in parallel on different processing core. A single-threaded process can run on only one processor, regardless how many are available.
