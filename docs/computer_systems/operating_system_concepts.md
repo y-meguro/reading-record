@@ -706,3 +706,22 @@
 - Many-to-Many Model
   - The many-to-many model multiplexes many user-level threads to a smaller or equal number of kernel threads.
   - これは複数の threads を同時に実行できるし、たくさんの kernel threads を作らなければならないわけでもない。
+
+### 4.4: Thread Libraries
+
+- A thread library provides the programmer with an API for creating and managing threads.
+- There are two primary ways of implementing a thread library.
+  - The first approach is to provide a library entirely in user space with no kernel support.
+  - The second approach is to implement a kernel-level library supported directly by the operaging system.
+- Two general strategies for creating multiple threads:
+  - asynchronous threading
+    - With asynchronous threading, once the parent creates a child thread, the parent resumes its execution, so that the parent and child execute concurrently.
+  - synchronous threading
+    - Synchronous threading occurs when the parent thread creates one or more children and then must wait for all of its children to terminate before it resumes - the so-called fork-join strategy.
+    - Typically, synchronous threading involves significant data sharing among threads.
+- Pthreads
+  - Pthreads refers to the POSIX standard defining an API for thread creation and synchronization. This is a specification for thread behavior, not an implementation. Operating-system designers may implement the specification in any way they wish.
+- Windows Threads
+  - The technique for creating threads using the Windows thread library is similar to the Pthreads technique in several ways.
+- Java Threads
+  - Threads are the fundamental model of program execution in a Java program, and the Java language and its API provide a rich set of features for the creation and management of threads.
