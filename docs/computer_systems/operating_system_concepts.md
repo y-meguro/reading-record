@@ -373,6 +373,45 @@
     - In addition, improvements in compiler technology will improve the generated code for the entire operating system by simple recompilation.
     - Finally, an operating system is far easier to port - to move to some other hardware - if it is written in a higher-level language.
 
+### 2.7: Operating-System Structure
+
+- A system as large and complex as a modern operating system must be engineered carefully if it is to function properly and be modified easily. A common approach is to partition the task into small components, or modules, rather than have one monolithic system.
+- In this section, we discuss how these components are interconnected and melded into a kernel.
+- Simple Structure
+  - Frequently, such systems started as small, simple, and limited systems and then grow beyond theire original scope.
+  - This monolithic structure was difficult to implement and maintain. It had a distinct advantage, however; there is very little overhead in the system call interface or in communication within the kernel.
+  - We still see evidence of this simple, monolithic structure in the UNIX, Linux, and Windows operating systems.
+- Layered Approach
+  - With proper hardware support, operating systems can be broken into pieces that are smaller and more appropriate than those allowed by the original MS-DOS and UNIX systems.
+  - A system an be made modular in many ways. One method is the layered approach, in which the operating system is broken into a number of layers (levels). The bottom layer (layer 0) is the hardware; the highest (leyer N) is the user interface.
+  - A typical operating-system layer - say, layer M - consists of data structures and a set of routines that can be invoked by higher-level layers. Layer M, in turn, can invoke operations on lower-level layers.
+  - The main advantage of the layered approach is simplicity of construction and debugging.
+  - Each layer is implemented only with operations provided by lower-level layers. A layer does not need to know how to these operations are implemented; it needs to know only what these operations do. Hence, each layer hides the existence of certain data structures, operations, and hardware from higher-level layers.
+  - The major difficulty with the layered approach involves appropriately defining the various layers.
+  - A final problem with layered implementation is that they tend to be less efficient than other types.
+- Microkernels
+  - In the mid-1980s, researchers at Carnegie Mellon University developed an operating system called Mach that modularized the kernel using the microkernel approach.
+  - This method structures the operating system by removing all nonessencial components from the kernel and implementing them as system and user-level programs.
+  - The main function of the microkernel is to provide communication between the client program and the various services that are also running in user space.
+  - One benefit of the microkernel approach is that it makes extending the operating system easier. All new services are added to user space and consequently do not require modification of the kernel.
+  - The microkernel also provides more security and reliability, since most services are running as user - rather than kernel - processes.
+  - Unfortunately, the performance of microkernel can suffer due to increased system-function overhead.
+- Modules
+  - Perhaps the best current methodology for operating-system design involves using loadable kernel modules. Here, the kernel has a set of core components and links in additional services via modules, either at boot time or during run time. This type of design is common in modern implementation of UNIX, such as Solaris, Linux, and Mac OX X, as well as Windows.
+  - The idea of the design is for the kernel to provide core services while other services are implemented dynamically, as the kernel is running. Linking service dynamically is preferable to adding new features directly to the kernel, which would require recompiling the kernel every time a change was made.
+  - layered system と似ているが、どのモジュールも他のモジュールを呼べるので、より flexible。microkernel とも似ているが、message passing を使わなくても communicate できるので、より efficient。
+- Hybrid Systems
+  - In practice, very few operating systems adopt a single, strictly defined structure. Instead, they combine different structures, resulting in hybrid systems that address performance, security, and usability issues.
+- Mac OS X
+  - It is a layered system.
+  - The top layers include the Aqua user interface and a set of application environments and services. Notably, the Cocoa environment specifies an API for the Objective-C programming language, which is used for writing Mac OS X applications.
+  - Below these layers is the kernel environment, which consists primarily of the Mach microkernel and the BSD UNIX kernel.
+- iOS
+  - iOS is a mobile operating system designed by Apple to run its smartphone, the iPhone, as well as its tablet computer, the iPad.
+- Android
+  - The Android operating system was designed by the Open Handset Alliance(led rapid primarily by Google) and was developed for Android smartphones and tablet computers.
+  - Whereas iOS is designed to run on Apple mobile devices and is close-sourced, Android runs on a vriety of mobile platforms and is open-sourced, partly explaining its rapid rise in popularity.
+
 ## 3: Process Concept
 
 - Chapter Objectives
@@ -399,7 +438,7 @@
     - state の名前は任意で OS による
   - 各 processor で、Running 状態にある process は、どの瞬間でも 1 つだけ
 - Process Control Block (PCB)
-  - Each process is represented in the operating systems by a process control block - also caled a task control block.
+  - Each process is represented in the operating systems by a process control block - also called a task control block.
     - PCB は以下の情報を含む
       - Process state / Program counter / CPU registers / CPU-scheduling information / Memory-management information / Accounting information / I/Ostatus information
   - In brief, the PCB simply serves as the repository for any information that may vary from process to process.
