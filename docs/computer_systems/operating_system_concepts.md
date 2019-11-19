@@ -412,6 +412,21 @@
   - The Android operating system was designed by the Open Handset Alliance(led rapid primarily by Google) and was developed for Android smartphones and tablet computers.
   - Whereas iOS is designed to run on Apple mobile devices and is close-sourced, Android runs on a vriety of mobile platforms and is open-sourced, partly explaining its rapid rise in popularity.
 
+### 2.8: Operating-System Debugging
+
+- Broadly, debugging is the activity of finding and fixing errors in a system, both in hardware and in software.
+- Failure Analysis
+  - If a process fails, most operating systems write the error information to a log file to alert system operators or users that the problem occured.
+  - The operating system can also take a core dump - a capture of the memory of the process - and store it in a file for later analysis. (Memory was referred to as the "core" in the early days of computing.)
+  - A failure in the kernel is called a crash. When a crash occurs, error information is saved to a log file, and the memory state is saved to a crush dump.
+  - Operating-system debugging and process debugging frequently use different tools and techniques due to the very different nature of these two tasks.
+- Performance Tuning
+  - We mentioned earlier that performance tuning seeks to improve performance by removing processing bottlenecks. To identify bottlenecks, we must be able to monitor system performance.
+  - In a number of systems, the operating system does this by producing trace listings of system behavior. All interesting events are logged with their time and important parameters and are written to a file.
+- DTrace
+  - DTrace is a facility that dynamically adds probes to a running system, both in user processes and in the kernel.
+  - DTrace is composed of a compiler, a framework, providers of probes written within that framework, and consumers of those probes.
+
 ## 3: Process Concept
 
 - Chapter Objectives
