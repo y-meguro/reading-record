@@ -846,3 +846,16 @@
     - Switching to user mode
     - Jumping to the proper location in the user program to restart that program
   - The time it takes for the dispatcher to stop one process and start another running is known as the dispatch latency.
+
+### 5.2: Scheduling Criteria
+
+- Which characteristics are used for comparison can make a substantial difference in which algorithm is judged to be best.
+- The criteria include the following:
+  - CPU utilization.
+  - Throughput.
+  - Turnaround time.
+    - The interval from the time of submission of a process to the time of completion is the turnaround time. Turnaround time is the sum of the periods spent waiting to get into memory, waiting in the ready queue, executing on the CPU, and doing I/O.
+  - Waiting time.
+    - Waiting time is the sum of the periods spent waiting in the ready queue.
+  - Response time.
+    - Time from the submission of a request until the first response is produced. response の output までの時間ではなく、responding を始めるまでの時間なので注意。
