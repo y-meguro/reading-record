@@ -753,3 +753,40 @@
     - Blocks placed on a serial queue are removed in FIFO order. Once a block has been removed from the queue, it must complete execution before another block is removed.
     - Blocks placed on a concurrent queue are also removed in FIFO order, but several blocks may be removed at a time, thus allowing multiple blocks to execute in parallel.
       - There are three system-wide concurrent dispatch queues, and they are distinguished according to priority: low, default, and high.
+
+### 4.6: Threading Issues
+
+- The fork() and exec() System Calls
+  - Chapter 3 で fork() の system call をした時は、a separate, duplicate process を作成すると書いた。
+  - multithreaded program の場合、fork() を call したら、すべての threads をコピーするか、fork() を call した thread だけをコピーするべきだろうか？
+  - いくつかの UNIX systems では、両方のバージョンを持っている。
+- Signal Handling
+  - A signal is used in UNIX systems to notify a process that a particular event has occured.
+  - synchronous なものと asynchronous なものがある
+  - A signal may be handled by one of two possible handlers:
+    - A default signal handler
+    - A user-defined signal handler
+  - Every signal has a default signal handler that the kernel runs when handling that signal. This default actin can be overridden by a user-defined signal handler that is called to handle the signal.
+  - Delivering signals is more complicated in multithreaded programs. Where should a signal be delivered? In general, the following options exist:
+    - Deliver the signal to the thread to which the signal applies.
+    - Deliver the signal to every thread in the process.
+    - Deliver the signal to certain threads in the process.
+    - Assign a specific thread to receive all signals for the process.
+  - The standard UNIX function for delivering a signal is `kill(pid_t pid, int signal)`. This function specifies the process (pid) to which a particular signal (signal) is to be delivered.
+  - Although Windows does not explicitly provide support for signals, it allows us to emulate them using asynchronous procedure calls (APCs).
+- Thread Cancellation
+  - Thread cancellation involves terminating a thread before it has completed.
+  - A thread that is to be canceled is often referred to as the target thread.
+  - Cancellation of a target thread may occur in two different scenarios.
+    - Asynchronous cancellation. One thread immediately terminates the target thread.
+    - Deferred cancellation. The target thread periodically checks whether it should terminate, allowing it an opportunity to terminate itself in an orderly fashion.
+  - The difficulty with cancellation occurs in situations where resources have been allocated to a canceled thread or where a thread is canceled while in the midst of updating data it is sharing with other threads.
+- Thread-Local Storage
+  - Threads belonging to a process share the data of the process. However, in some circumstances, each thread might need its own copy of certain data.
+    - We will call such data thread-local storage (or TLS).
+  - Most thread libraries - including Windows and Pthreads - provide some form of support for thread-local storage; Java provides support as well.
+- Scheduler Activations
+  - A final issue to be considered with multithreaded programs concerns communication between the kernel and the thread library, which required by the many-to-many and two-level models discussed in Section 4.3.3.
+    - two-level model は、 many-to-many model だけじゃなく 1:1 対応も認める model。
+  - Many systems implementing either the many-to-many or the two-level model place an intermediate data structure between the user and kernel threads. This data structure is typically known as a lightweight process, or LWP.
+  - One scheme for communication between the user-thread library and the kernel is known as scheduler activation.
