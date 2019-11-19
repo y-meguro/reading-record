@@ -661,3 +661,30 @@
       - Allocating memory and resources for process creation is costly. Because threads share the resources of the process to which they belong, it is more economical to create and context-switch threads.
     - Scalability.
       - The benefits of multithreading can be even greater in a multiprocessor architecture, where threads may be running in parallel on different processing core. A single-threaded process can run on only one processor, regardless how many are available.
+
+### 4.2: Multicore Programming
+
+- Multithreaded programming provides a mechanism for more efficient use of these multiple computing cores and improved concurrency.
+- Notice the distinction between parallelism and concurrency in this discussion.
+  - A system is parallel if it can perform more than one task simultaneously.
+  - In contrast, a concurrent system supports more than one task by allowing all the tasks to make progress.
+    - 高速にスイッチすることですべてのタスクを進めることは running concurrently だが、parallel ではない
+- Programming Challenges
+  - In general, five areas present challenges in programming for multicore systems:
+    - Identifying tasks.
+      - This involves examining applications to find areas that can be divided into separate, concurrent tasks.
+    - Balance.
+      - When identifying tasks that can run in parallel, programmers must also ensure that the tasks perform equal work of equal value.
+    - Data splitting.
+      - Just as applications are divided into separate tasks, the data accessed and manipulated by the tasks must be divided to run on separate cores.
+    - Data dependency.
+      - When one task depends on data from another, programmers must ensure that the execution of the tasks is synchronized to accommodate the data dependency.
+    - Testing and debugging.
+      - When a program is running in parallel on multiple cores, many different execution paths are possible. Testing and debugging such concurrent programs is inherently more difficult than testing and debugging single-threaded applications.
+- Types of Parallelism
+  - In general, there are two types of parallelism:
+    - data parallelism
+    - task parallelism
+  - Data parallelism focuses on distributing subsets of the same data across multiple computing cores and performing the same operation on each core.
+  - Task parallelism involves distributing not data but tasks (threads) across multiple computing cores.
+  - In most instances, applications use a hybrid of these two strategies.
