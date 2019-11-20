@@ -1006,7 +1006,7 @@
     - SCHED_OTHER
       - 実装は定義されていない、各 system による
 
-## 5.7: Operating-System Examples
+### 5.7: Operating-System Examples
 
 - Example: Linux Scheduling
   - Scheduling in the Linux system is based on scheduling classes. Each class is assigned a specific priority.
@@ -1023,7 +1023,7 @@
   - Solaris uses priority-based thread scheduling.
   - By default, there is an inverse relationship between priorities and time slices.
 
-## 5.8: Algorithm Evaluation
+### 5.8: Algorithm Evaluation
 
 - Criteria are often defined in terms of CPU utilization, response time, or throughput.
 - Deterministic Modeling
@@ -1097,5 +1097,6 @@ do {
   flag[i] = false;
 
   // remainder section
+  
 } while (true);
 ```
