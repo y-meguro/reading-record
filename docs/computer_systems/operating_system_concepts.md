@@ -1184,3 +1184,37 @@ do {
 - Busy waiting wastes CPU cycles that some other process might be able to use productively.
 - Spinlocks do have an advantage, however, in that no context switch is required when a process must wait on a lock, and a context switch may take considerable time.
   - Thus, when locks are expected to be held for short times, spinlocks are useful.
+
+### 6.6: Semaphores
+
+- In this section, we examine a more robust tool that can behave similarly to a mutex lock but can also provide more sophisticated ways for processes to synchronize their activities.
+- A semaphore S is an integer variable that, apart from initialization, is accessed only through two standard atomic operations: wait() and signal().
+- Semaphore Usage
+  - Operating systems often distinguish between counting and binary semaphore.
+    - The value of a counting semaphore can range over an unrestricted domain.
+    - The value of a binary semaphore can range only between 0 and 1.
+- Semaphore Implementation
+  - To overcome the need for busy waiting, we can modify the definition of the wait() and signal() operations as follows:
+    - When a process executes the wait() operation and finds that the semaphore value is not positive, it must wait. However, rather than engaging in busy waiting, the process can block itself. The state of the process is switched to the waiting state.
+- We define a semaphore as follows:
+
+```
+typedef struct {
+  int value;
+  struct process *list;
+} semaphore
+```
+
+- Deadlocks and Starvation
+  - The implementation of a semaphore with a waiting queue may result in a situation where two or more processes are waiting indefinitely for an event that can be caused only by one of the waiting process. When such a state is reached, these processes are said to be deadlocked.
+  - Another problem related to deadlocks is indefinite blocking or starvation, a situation in which processes wait indefinitely within the semaphore.
+- Priority Inversion
+  - higher-priority process が lower-priority process に掴まれている data にアクセスしたい、という問題が起こる場合がある
+    - L, M, H の 3 つの processes があって、L < M < H の優先度とする
+    - H が resource R にアクセスしたい時、L がその前に R を握っているとする
+    - 通常は H が L の処理が終わるのを待つが、この時、M が実行可能になったとすると、L は M に実行を譲ってしまう
+    - そうすると、H は L が R を離すまで待たなければならない
+  - This problem is known as priority inversion. It occurs only in systems with more than two priorities, so one solution is to have only two priorities.
+  - Typically, these systems solve the problem by implementing a priority-inheritance protocol.
+    - According to this protocol, all processes that are accessing resources needed by a higher-priority process inherit the higher priority until they are finished with the resources in question.
+    - When they are finished, theire priorities revert to their original values.
