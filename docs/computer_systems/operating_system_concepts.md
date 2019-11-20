@@ -1097,6 +1097,59 @@ do {
   flag[i] = false;
 
   // remainder section
-  
+
 } while (true);
+```
+
+### 6.4: Synchronization Hardware
+
+- Software-based solutions such as Peterson's are not guaranteed to work on modern computer architectures.
+- In the following discussions, we explore several more solutions to the critical-section problem using techniques ranging from hardware to software-based APIs available to both kernel developers and application programmers.
+- All these solutions are based on the premise of locking - that is, protecting critical regions through the use of locks.
+- test_and_set と compare_and_swap のやり方を以下に記載する。
+
+```test_and_set
+// 定義
+boolean test_and_set(boolean *target) {
+  boolean rv = *target;
+  *target = true;
+
+  return rv;
+}
+
+// 実行
+do {
+  while (test_and_set(&lock)); // do nothing
+
+  // critical section
+
+  lock = false;
+
+  // remainder section
+
+} while (true)
+```
+
+```compare_and_swap
+// 定義
+boolean compare_and_swap(int *value, int expected, int new_value) {
+  int temp = *value;
+  if (*value == expected) {
+    *value = new_value;
+  }
+
+  return temp;
+}
+
+// 実行
+do {
+  while (compare_and_swap(&lock, 0, 1) != 0); // do nothing
+
+  // critical section
+
+  lock = 0;
+
+  // remainder section
+
+} while (true)
 ```
