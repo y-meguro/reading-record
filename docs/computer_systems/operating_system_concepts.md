@@ -1108,7 +1108,7 @@ do {
 - All these solutions are based on the premise of locking - that is, protecting critical regions through the use of locks.
 - test_and_set と compare_and_swap のやり方を以下に記載する。
 
-```test_and_set
+```
 // 定義
 boolean test_and_set(boolean *target) {
   boolean rv = *target;
@@ -1130,7 +1130,7 @@ do {
 } while (true)
 ```
 
-```compare_and_swap
+```
 // 定義
 boolean compare_and_swap(int *value, int expected, int new_value) {
   int temp = *value;
@@ -1153,3 +1153,34 @@ do {
 
 } while (true)
 ```
+
+### 6.5: Mutex Locks
+
+- The term mutex is short for mutual exclusion.
+- A mutex lpock has a boolean variable available whose value indicates if the lock is available or not.
+- The acquire() function acquires the lock, and the release() function releases the lock.
+
+```
+acquire() {
+  while (!available); // busy wait
+  available = false;
+}
+
+do {
+  // acquire lock
+
+  // critical section
+
+  // release lock
+
+  // remainder section
+
+} while (true)
+```
+
+- The main disadvantage of the implementation given here is that it requires busy waiting.
+  - While a process is in its critical section, any other process that tries to enter its critical section must loop continuously in the call to acquire().
+- In fact, this type of mutex lock is also called a spinlock because the process "spins" while waiting for the lock to become available.
+- Busy waiting wastes CPU cycles that some other process might be able to use productively.
+- Spinlocks do have an advantage, however, in that no context switch is required when a process must wait on a lock, and a context switch may take considerable time.
+  - Thus, when locks are expected to be held for short times, spinlocks are useful.
