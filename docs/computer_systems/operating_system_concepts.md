@@ -915,3 +915,54 @@
     - The method used to determine when to upgrade a process to a higher-priority queue
     - The method used to determine when to demote a process to a lower-priority queue
     - The method used to determine which queue a process will enter when that process needs service
+
+### 5.4: Thread Scheduling
+
+- In this section, we explore scheduling issues involving user-level and kernel-level threads and offer specific examples of scheduling for Pthreads.
+- Contention Scope
+  - On systems implementing the many-to-one and many-to-many models, the thread library schedules user-level threads to run on an available LWP. This scheme is known as process-contention scope (PCS), since competition for the CPU takes place among threads belonging to the same process.
+  - To decide which kernel-level thread to schedule onto a CPU, the kernel uses system-contention scope (SCS). Competition for the CPU with SCS scheduling takes place among al threads in the system.
+  - Typically, PCS is done according to priority - the scheduler selects the runnable thread with the highest priority to run. User-level thread priorities are set by the programmer and are not adjusted by the thread library.
+- Pthread Scheduling
+  - Pthreads identifies the following contention scope values:
+    - PTHREAD_SCOPE_PROCESS schedules threads using PCS scheduling
+    - PTHREAD_SCOPE_SYSTEMS schedules threads using SCS scheduling
+  - Note that on some systems, only certain contention scope values are allowed. For example, Linux and Mac OS X systems allow only PTHREAD_SCOPE_SYSTEMS
+
+### 5.5: Multiple-Processor Scheduling
+
+- If multiple CPUs are available, load sharing becomes possible - but scheduling problems become correspondingly more complex.
+- Here, we discuss several concerns in multiprocessor scheduling.
+- Approaches to Multiple-Processor Scheduling
+  - One approach to CPU scheduling in a multiprocessor system has all scheduling decisions, I/O processing, and other system activities handled by a single processor - the master server.
+    - This asymmetric multiprocessing is simple because only one processor accesses the system data structures, reducing the need for data sharing.
+  - A second approach uses symmetric multiprocessing (SMP), where each processor is self-scheduling.
+    - All processes may be in a common ready queue, or each processor may have its own private queue of ready processes.
+    - Regardless, scheduling proceeds by having the scheduler for each processor examine the ready queue and select a process to execute.
+    - Virtually all modern operating systems support SMP, including Windows, Linux, and Mac OS X. In the remainder of this section, we discuss issues concerning SMP systems.
+- Processor Affinity
+  - Because of the high cost of invalidating and repopulating caches, most SMP systems try to avoid migraion of processes from one processor to another and instead attempt to keep a process running on the same processor.
+    - This is known as processor affinity - that is, a process has an affinity for the processor on which it is currently running.
+    - ある processor でキャッシュされていた process を別の processor で実行しようとすると、キャッシュを破棄し、再度作り直す必要があるのでコストが高い。
+  - Processor affinity takes several forms.
+    - When an operating system has a policy of attempting to keep a process running on the same processor - but not guaranteeing that it will do so - we have a situation known as soft affinity.
+    - In contrast, some system provide system calls that support hard affinity, thereby allowing a process to specify a subset of processors on which it may run.
+  - Maany systems provide both soft and hard affinity.
+- Load Balancing
+  - Load balancing attempts to keep the workload evenly distributed across all processors in an SMP system.
+  - It is important to note that load balancing is typically necessary only on systemss where each processor has its own private queue of eligible processes to execute.
+    - common queue しかない場合は必要ない。
+  - There are two general approaches to load balancing: push migration and pull migration.
+    - With push migration, a specific task periodically checks the load on each processor and - if it finds an imbalance - evenly distributes the load by moving (or pushing) processes from overloaded to idle or less-busy processors.
+    - Pull migration occurs when an idle processor pulls a waiting task from a busy processor.
+  - Push and pull migration need not be mutually exclusive and are in fact often implemented in parallel on load-balancing systems.
+- Multicore Processors
+  - SMP systems that use multicore processors are faster and consume less power than systems in which each processor has its own physical chip.
+  - Researchers have discovered that when a processor accesses memory, it spends a significant amount of time waiting for the data to become available. This situation, known as a memory stall, may occur for various reasons, such as a cache miss.
+    - To remedy this situation, many recent hardware designs have implemented multithreaded processor cores in which two (or more) hardware threads are assigned to each core.
+  - In general, there are two ways to multithread a processing core: coarse-grained and fine-grained multithreading.
+    - With coarse-grained multithreading, a thread executes on a processor until a long-latency event such as a memory stall occurs.
+    - Fine-grained (or interleaved) multithreading switches between threads at a much finer level of granularity - typically at the boundary of an instruction cycle.
+  - Notice that a multithreaded multicore processor actually requires two different levels of scheduling.
+    - 1 つはどの software thread をどの hardware thread (logical processor) で実行するかということ
+    - もう 1 つは各 core でどの thread を実行するか決めること
