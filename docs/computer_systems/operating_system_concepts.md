@@ -1047,3 +1047,33 @@
 ### 5.9: Summary
 
 - これまでに書いている内容なので省略
+
+## 6: Synchronization
+
+- A cooperating process is one that can affect or be affected by other processes executing in the system. Cooperating processes can either directly share a logical address space (that is, both code and data) or be allowed to share data only through files or messages.
+- In this chapter, we discuss various mechanisms to ensure the orderly execution of cooperating processes that share a logical address space, so that data consistency is maintained.
+- Chapter Objectives
+  - To introduce the critical-section problem, whose solutions can be used to ensure the consistency of shared data.
+  - To present both software and hardware solutions of the critical-section problem.
+  - To examine several classical process-synchronization problems.
+  - To explore several tools that are used to solve process synchronization problems.
+
+### 6.1: Background
+
+- A situation, where several processes access and manipulate the same data concurrently and the outcome of the execution depends on the particular order in which the access takes place, is called a race condition.
+- To guard against the race condition above, we need to ensure that only one process at a time can be manipulating the variable counter. To make such a guarantee, we require that the processes be synchronized in some way.
+- We devote a major portion of this chapter to process synchronization and coordination among cooperating processes.
+
+### 6.2: The Critical-Section Problem
+
+- Consider a system of consisting of n processes {P0, P1, ..., Pn-1}. Each process has a segment of code, called a critical section, in which the process may be changing common variables, updating a table, writing a file, and so on.
+- The important feature of the system is that, when one process is executing in its critical section, no other process is allowed to execute in its critical section.
+- The critical-section problem is to design a protocol that the processes can use to cooperate.
+- Each process must request permission to enter its critical section. The section of code implementing this request is the entry section. The remaining code is the remainder section.
+- A solution to the critical-section problem must satisfy the following three requirements:
+  - Mutual exclusion.
+  - Progress.
+  - Bounded waiting.
+    - There exists a bound, or limit, on the number of times that other processes are allowed to enter their critical sections after a process has made a request to enter its critical section and before that request is granted.
+- Two general approaches are used to handle critical sections in operating systems: preemptive kernels and nonpreemptive kernels.
+  - nonpreemptive の場合は、race conditions の問題は起きない。だが、preemptive kernel のほうが real-time programming に適している。
