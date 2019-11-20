@@ -859,3 +859,59 @@
     - Waiting time is the sum of the periods spent waiting in the ready queue.
   - Response time.
     - Time from the submission of a request until the first response is produced. response の output までの時間ではなく、responding を始めるまでの時間なので注意。
+
+### 5.3: Scheduling Algorithms
+
+- First-Come, First-Served (FCFS) Scheduling
+  - With this scheme, the process that requests the CPU first is allocated the CPU first.
+  - The code for FCFS scheduling is simple to write and understand.
+  - On the negative side, the average waiting time under the FCFS policy is often quite long.
+  - There is a convoy effect as all the other processes wait for the one big process to get off the CPU.
+    - This effect results in lower CPU and device utilization than might be possible if the shorter processes were allowed to go first.
+  - Note also that the FCFS scheduling algorithm is nonpreemptive. Once the CPU has been allocated to a process, that process keeps the CPU until it releases the CPU, either by terminating or by requesting I/O.
+- Shortest-Job-First (SJF) Scheduling
+  - When the CPU is available, it is assigned to the process that has the smallest next CPU burst. トータルの job の長さではなく、CPU burst の長さで判定しているので注意。
+  - The SJF scheduling algorithm is provably optimal, in that it gives the minimum average waiting time for a given set of processes.
+  - The real difficulty with the SJF algorithm is knowing the length of the next CPU request.
+  - SJF scheduling is used frequently in long-term scheduling.
+  - Although the SJF algorithm is optimal, it cannot be implemented at the level of short-term CPU scheduling.
+    - With short-term scheduling, there is no way to know the length of the next CPU burst.
+  - The next CPU burst is generally predicted as an exponential average of the measured lengths of previous CPU bursts.
+  - The SJF algorithm can be either preemptive or nonpreemptive.
+    - The choice arises when a new process arrives at the ready queue while a previous process is still executing.
+  - Preemptive SJF scheduling is sometimes called shortest-remainig-time-first scheduling.
+- Priority Scheduling
+  - The SJF algorithm is a special case of the general priority-scheduling algorithm. A priority is associated with each process, and the CPU is allocated to the process with the highest priority.
+  - Priority can be defined either internally or externally.
+  - Priority scheduling can be either preemptive or nonpreemptive.
+  - A major problem with priority scheduling algorithms is indefinite blocking, or starvation.
+    - 優先度の低い process が waiting 状態でブロックされているのに、無限に実行されない問題
+    - A solution to the problem of indefinite blockage of low-priority processes is aging. Aging involves gradually increasing the priority of processes that wait in the system for long time.
+- Round-Robin Scheduling
+  - THe round-robin (RR) scheduling algorithm is designed especially for time-sharing systems. It is similar to FCFS scheduling, but preemption is added to enable the system to switch between processes.
+  - A small unit of time, called time quantum or time slice, is defined. A time quantum is generally from 10 to 100 milliseconds in length.
+  - The CPU scheduler goes around the ready queue, allocating the CPU to each process for a time interval of up to 1 time quantum.
+  - The average waiting time under the RR policy is often long.
+  - The performance of the RR algorithm depends heavily on the size of the time quantum.
+    - Although the time quantum should be large compared with the context-switch time, it should not be too large. too large だと FCFS と同じになってしまう。
+    - A rule of thumb is that 80 percent of the CPU bursts should be shorter than the time quantum.
+- Multilevel Queue Scheduling
+  - A multilevel queue scheduling algorithm partitions the ready queue into several seperate queues. The processes are permanently assigned to one queue, generally based on some property of the process, such as memory size, process priority, or process type.
+  - Let's look at an example of a multilevel queue scheduling algorithm with five queues, listed below in order of priority:
+    - System processes
+    - Interactive processes
+    - Interactive editing processes
+    - Batch processes
+    - Student processes
+  - batch queue を実行するには上位の 3 つがすべてない状態でないといけないし、もし実行中により優先順位の高いものが来たら batch queue は中断されて、そちらを先に実行する
+  - Another possibility is to time-slice among the queues. Here, each queue gets a certain portion of the CPU time, which it can then schedule among its various processes.
+    - こちらだと、ある queue に 80% / ある queue に 20% という感じで、優先度の低い queue にもある割合の時間が割かれる
+- Multilevel Feedback Queue Scheduling
+  - The multilevel feedback queue scheduling algorithm, in contrast, allows a process to move between queues.
+  - If a process uses too much CPU time, it will be moved to a lower-priority queue. In addition, a process that waits too long in a lower-priority queue may be moved to a high-priority queue.
+  - In general, a multilevel feedback queue scheduler is defined by the following parameters:
+    - The number of queues
+    - The scheduling algorithm for each queue
+    - The method used to determine when to upgrade a process to a higher-priority queue
+    - The method used to determine when to demote a process to a lower-priority queue
+    - The method used to determine which queue a process will enter when that process needs service
