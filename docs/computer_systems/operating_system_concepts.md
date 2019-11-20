@@ -1005,3 +1005,20 @@
     - SCHED_RR
     - SCHED_OTHER
       - 実装は定義されていない、各 system による
+
+## 5.7: Operating-System Examples
+
+- Example: Linux Scheduling
+  - Scheduling in the Linux system is based on scheduling classes. Each class is assigned a specific priority.
+  - Standard Linux kernels implement two scheduling classes:
+    - a default scheduling class using the CFS (Completely Fair Scheduler) scheduling algorithm
+    - a real-time scheduling class
+- Example: Windows Scheduling
+  - Windows schedules threads using a priority-based, preemptive scheduling algorithm.
+  - The portion of the Windows kernel that handles scheduling is called the dispatcher.
+  - Priorities are divided into two classes.
+    - The variable class contains threads having priorities from 1 to 15, and the real-time class contains threads which priorities ranging from 16 to 31.
+  - Windows7 introduced user-mode scheduling (UMS), which allows applications to create and manage threads independently of the kernel.
+- Example: Solaris Scheduling
+  - Solaris uses priority-based thread scheduling.
+  - By default, there is an inverse relationship between priorities and time slices.
