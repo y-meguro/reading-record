@@ -1228,3 +1228,33 @@ typedef struct {
   - If a writer and some other process (either a reader or writer) access the database simultaneously, chaos may ensue.
 - The Dining-Philosophers Problem
   - 5 人の哲学者が円形に座っていて、各自の両側にお箸が 1 本ずつある。両方の箸を取れたら料理を食べることができるが、片方しか取れなかった場合は食べられない、というやつ
+
+### 6.8: Monitors
+
+- Although semaphores provide a convenient and effective mechanism for process synchronization, using them incorrectly can result in timing errors that are difficult to detect, since these errors happen only if particular execution sequences take place and these sequences do not always occur.
+- programmer が以下のようなミスをすると、相互排他が壊されたり、deadlock が起きたりする
+  - wait() と signal() の順番を逆にする
+  - signal() を wait() にしてしまう
+  - wait() を抜かす / signal() を抜かす
+- To deal with such errors, researchers have developed high-level language constructs. In this section, we describe one fundamental high-level synchronization construct - the monitor type.
+- Monitor Usage
+  - An abstract data type - or ADT - encapsulates data with a set of functions to operate on that data that are independent of any specific implementation of the ADT.
+  - A monitor type is an ADT that includes a set of programmer-defined operations that are provided with mutual exclusion within the monitor.
+  - The monitor construct ensures that only one process at a time is active within the monitor.
+    - Consequently, the programmer does not need to code this synchronization constraint explicitly.
+  - monitor construct だけでは synchronization scheme を作るのに不十分なので、condition construct を追加する。
+    - The only operations that can be invoked on a condition variable are wait() and signal().
+  - Many programming languages have incorporated the idea of the monitor as described in this section, including Java and C#.
+- Dining-Philosophers Solution Using Monitors
+  - `enum {THINKING, HUNGRY, EATING} state[5]` を定義して解く。5 人のうち、i 番目の哲学者の state = EATING の時、state[(i + 4) % 5] != EATING かつ state[(i + 1) % 5] != EATING となる
+  - また `condition self[5]` も定義する
+- Implementing a Monitor Using Semaphores
+  - semaphore mutex と next を定義して解く
+- Resuming Processes within a Monitor
+  - 複数の process が待機状態である時、どれから resume していくか。FCFS (first-come, first-serve) でも良いが、たいていの場合は適していない。
+  - For this purpose, the conditional-wait construct can be used.
+  - wait を実行する時に、x.wait(c) のような形で実行する。c は priority number と呼ばれ、待機状態の process の中で、最もこの値が小さいものを次の実行対象とする。
+  - We must check two conditions to establish the correctness of this system.
+    - First, user processes must always make their calls on the monitor in a correct sequence.
+    - Second, we must be sure that an that uncooperative process does not simply ignore the mutual-exclusion gateway provided by the monitor and try to access the shared resource directly, without using the access protocols.
+  - Only if these two conditions can be ensured can we guarantee that no time-dependent errors will occur and that the scheduling algorithm will not be defeated.
