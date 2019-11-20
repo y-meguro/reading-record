@@ -1077,3 +1077,25 @@
     - There exists a bound, or limit, on the number of times that other processes are allowed to enter their critical sections after a process has made a request to enter its critical section and before that request is granted.
 - Two general approaches are used to handle critical sections in operating systems: preemptive kernels and nonpreemptive kernels.
   - nonpreemptive の場合は、race conditions の問題は起きない。だが、preemptive kernel のほうが real-time programming に適している。
+
+### 6.3: Peterson's solution
+
+- Next, we illustrate a classic software-based solution to the critical-section problem known as Peterson's solution.
+- Peterson's solution では turn と flag の 2 つの変数を使う。
+  - The variable turn indicates whose turn it is to enter its critical section. turn == i なら Pi が実行可能。
+  - The flag array is used to indicate if a process is ready to enter its critical section. もし flag[i] が true なら Pi is ready to enter its critical section.
+- 以下のようになる。Pi が critical section に入ろうとしている。turn = j に設定して、j が critical section に入ろうとしていないか確認する。もし j が入ろうとしていたら、入っている間は何もしない。j が終わったあとで、critical section に入り、出る時に自身の flag を false にする。
+
+```
+do {
+  flag[i] = true;
+  turn = j;
+  while (flag[j] && turn ==j); // do nothing
+
+  // critical section
+
+  flag[i] = false;
+
+  // remainder section
+} while (true);
+```
