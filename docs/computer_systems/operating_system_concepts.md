@@ -966,3 +966,42 @@
   - Notice that a multithreaded multicore processor actually requires two different levels of scheduling.
     - 1 つはどの software thread をどの hardware thread (logical processor) で実行するかということ
     - もう 1 つは各 core でどの thread を実行するか決めること
+
+### 5.6: Real-Time CPU Scheduling
+
+- In general, we can distinguish between soft real-time systems and hard real-time systems.
+  - Soft real-time systems provide no guarantee as to when a critical real-time process will be scheduled.
+  - Hard real-time systems have stricter requirements. A task must be serviced by its deadline; service after deadline has expired is the same as no service at all.
+- Minimizing Latency
+  - We refer to event latency as the amount of time that elapses from when an event occurs to when it is serviced.
+  - Two types of latencies affect the performance of real-time systems:
+    - Interrupt latency
+      - Interrupt latency refers to the period of time from the arrival of an interrupt at the CPU to the start of the routine that services the interrupt.
+    - Dispatch latency
+      - The amount of time required for the scheduling dispatcher to stop one process and start another is known as dispatch latency.
+      - The most effective technique for keeping dispatch latency low is to provide preemptive kernels.
+      - The conflict phase of dispatch latency has two components:
+        - Preemption of any process running in the kernel
+        - Release by low-priority processes of resources needed by a high-priority process
+- Priority-Based Scheduling
+  - If the scheduler also supports preemption, a process currently running on the CPU will be preempted if a higher-priority process becomes available to run.
+- Rate-Monotonic Scheduler
+  - The rate-monotonic scheduling algorithm schedules periodic tasks using a static priority policy with preemption.
+  - The shorter the period, the higher the priority; the longer the period, the lower the priority.
+    - period は CPU burst の期間ではなく、deadline までの期間
+  - Despite being optimal, then, rate-monotonic scheduling has a limitation:
+    - CPU utilization is bounded, and it is not always possible fully to maximize CPU resources.
+- Earliest-Deadline-First Scheduling
+  - Earliest-deadline-first (EDF) scheduling dynamically assigns priorities according to deadline.
+  - Unlike the rate-monotonic algorithm, EDF scheduling does not require that processes be periodic, nor must a process require a constant amount of CPU time per burst.
+  - 理論的には CPU 使用率 100% を実現できるが、context switching のコストがあるため、現実的には 100% とはならない
+- Proportional Share Scheduling
+  - 各 application の重みに比例して、リソースを配分するやり方
+  - Proportional share schedulers must work in conjunction with an admission-control policy to guarantee that an application receives its allocated shares of time.
+  - An admission-control policy will admit a client requesting a particular number of shares only if sufficient shares are available.
+- POSIX Real-Time Scheduling
+  - POSIX defines two scheduling classes for real-time threads:
+    - SCHED_FIFO
+    - SCHED_RR
+    - SCHED_OTHER
+      - 実装は定義されていない、各 system による
