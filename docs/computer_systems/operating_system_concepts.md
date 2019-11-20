@@ -1218,3 +1218,13 @@ typedef struct {
   - Typically, these systems solve the problem by implementing a priority-inheritance protocol.
     - According to this protocol, all processes that are accessing resources needed by a higher-priority process inherit the higher priority until they are finished with the resources in question.
     - When they are finished, theire priorities revert to their original values.
+
+### 6.7: Classic Problems of Synchronization
+
+- The Bounded-Buffer Problem
+  - 6.1 で紹介されたやつ
+- The Readers-Writers Problem
+  - database の値を only to read したい process が readers、to update したい process が writer。
+  - If a writer and some other process (either a reader or writer) access the database simultaneously, chaos may ensue.
+- The Dining-Philosophers Problem
+  - 5 人の哲学者が円形に座っていて、各自の両側にお箸が 1 本ずつある。両方の箸を取れたら料理を食べることができるが、片方しか取れなかった場合は食べられない、というやつ
