@@ -1022,3 +1022,28 @@
 - Example: Solaris Scheduling
   - Solaris uses priority-based thread scheduling.
   - By default, there is an inverse relationship between priorities and time slices.
+
+## 5.8: Algorithm Evaluation
+
+- Criteria are often defined in terms of CPU utilization, response time, or throughput.
+- Deterministic Modeling
+  - One major class of evaluation methods is analytic evaluation. Analytic evaluation uses the given algorithm and the system workload to produce a formula or number to evaluate the performance of the algorithm for that workload.
+  - Deterministic modeling is one type of analytic evaluation. This method takes a particular predetermined workload and defines the performance of each algorithm for that workload.
+  - Deterministic modeling is simple and fast. It gives us exact numbers, allowing us to compare the algorithms. However, it requires exact numbers for input, and its answers apply only to those cases.
+  - The main use of deterministic modeling are in describing scheduling algorithms and providing examples.
+- Queueing Models
+  - On many systems, the processes that are run vary from day to day, so there is no static set of processes (or times) to use for deterministic modeling. What can be determined, however, is the distribution of CPU and I/O bursts.
+  - Similarly, we can describe the distribution of times when processes arrive in the system (the arrival-time distribution).
+  - From these two distribution, it is possible to compute the average throughput, utilization, waiting time, and so on for most algorithms.
+  - 予測の数字は正確なものではないので、Queing models are often only approximations of real systems, and the accuracy of the computed results may be questionable.
+- Simulations
+  - To get a more accurate evaluation of scheduling algorithms, we can use simulations. Running simulations invoves programming a model of the computer system.
+  - The data to drive the simulation can be generated in several ways. The most common method uses a random-number generator that is programmed to generate processes, CPU burst times, arrivals, departures, and so on, according to probability distribution.
+- Implementation
+  - Even a simulation is of limited accuracy. The only completely accurate way to evaluate a scheduling algorithms is to code it up, put it in the operating system, and see how it works.
+  - The major difficulty with this approach is the high cost.
+  - Another difficulty is that the environment in which the algorithm is used will change.
+
+### 5.9: Summary
+
+- これまでに書いている内容なので省略
