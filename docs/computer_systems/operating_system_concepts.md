@@ -835,7 +835,7 @@
     2. When a process switches from the running state to the ready state
     3. When a process switches from the waiting state to the ready state
     4. When a process terminates
-  - When scheduling takes place only under circumstances 1 and 4, we say that the scheduling scheme is nonpreemptive or cooperative. Otehrwise, it is preemptive.
+  - When scheduling takes place only under circumstances 1 and 4, we say that the scheduling scheme is nonpreemptive or cooperative. Otherwise, it is preemptive.
   - Under nonpreemptive scheduling, once the CPU has been allocated to a process, the process keeps the CPU until it releases the CPU either by terminating or by switching to the waiting state.
   - Cooperative scheduling is the only method that can be used on certain hardware platforms, because it does not require the special hardware needed for preemptive scheduling.
   - Unfortunately, preemptive scheduling can result in race conditions when data are shared among several processes.
@@ -1278,3 +1278,27 @@ typedef struct {
 - Pthreads Synchronization
   - The Pthreads API is available for programmers at the user level and is not part of any particular kernel.
   - There are other extensions to the Pthreads API - including spinlocks - but it is important to note that not all extensions are considered portable from one implementation to another.
+
+### 6.10: Alternative Approaches
+
+- Transactional Memory
+  - Quite often in computer science, ideas from one area of study can be used to solve problems in other areas. The concept of transactional memory originated in database theory, for example, yet it prvides a strategy for process synchronization.
+  - A memory transaction is a sequence of memory read-write operations that are atomic.
+  - If all operations in a transaction are completed, the memory transaction is committed. Otherwise, the operations must be aborted and rolled back.
+  - The advantage of using such a mechanism rather than lock is that the transactional memory system - not the developer - is responsible for guaranteeing atomicity.
+  - Transactional memory can be implemented in either software or hardware.
+    - Software transactional memory (STM), as the name suggests, implements transactional memory exclusively in software - no special hardware is needed.
+    - Hardware transactional memory (HTM) uses hardware cache hierarchies and cache coherency protocols to manage and resolve conflicts involving shared data residing in separate processor's caches.
+- OpenMP
+  - The advantage of OpenMP is that thread creation and management are handled by the OpenMP library and are not the responsibility of application developers.
+  - The critical-section compiler directive behaves much like a binary semaphore or mutex lock, ensuring that only one thread at a time is active in the critical section.
+  - An advantage of using the critical-section compiler directive in OpenMP is that it is generally considered easier to use than standard mutex locks.
+  - However, a disadvantage is that application developers must still identify possible race conditions and adequately protect shared data using the compiler directive.
+- Functional Programming Language
+  - Most well-known programming languages - such as C, C++, Java, and C# - are known as imperative (or procedual) languages. Imperative languages are used for implementing algorithms that are state-based.
+  - With the current emphasis on concurrent and parallel programming for muticore systems, there has been greater focus on functional programming languages, which follow a programming paradigm much different from that offered by imperative languages.
+    - The fundamental difference from between imperative and functional languages is that functional languages do not maintain state.
+
+### 6.11: Summary
+
+- これまでに書いている内容なので省略
