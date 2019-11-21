@@ -1330,3 +1330,37 @@ typedef struct {
 - Resource-Allocation Graph
   - Deadlocks can be described more precisely in terms of a directed graph called a system resource-allocation graph.
   - resource-allocation graph で循環があれば deadlock が存在する可能性があり（存在しない場合もある）、なければどの process も deadlock になっていない。こちらは必ず存在しない。
+
+### 7.3: Methods for Handling Deadlocks
+
+- Generally speaking, we can deal with the deadlock problem in one of three ways:
+  - We can use a protocol to prevent or avoid deadlocks, ensuring that the system will never enter a deadlocked state.
+    - Deadlock Prevention
+  - We can allow the system to enter a deadlocked state, detect it, and recover.
+  - We can ignore the problem altogether and pretend that deadlocks never occur in the system.
+
+### 7.4: Deadlock Prevention
+
+- By ensuring that at least one of these conditions cannot hold, we can prevent the occurrence of a deadlock. We elaborate on this approach by examining each of the four necessary conditions seperately.
+- Mutual Exclusion
+  - Sharable resources, in contrast, do not require mutually exclusive access and thus cannot be involved in a deadlock.
+  - In general, however, we cannot prevent deadlocks by denying the mutual-exclusion condition, because some resources are intrinsically nonsharable.
+- Hold and Wait
+  - To ensure that the hold-and-wait condition never occurs in the systems, we must guarantee that, whenever a process requests a resource, it does not hold any other resources.
+  - One protocol that we can use requires each process to request and be allocated all its resources before it begins execution.
+  - An alternative protocol allows a process to request resources only when it has none.
+  - Both these protocols have two main disadvantages.
+    - First, resource utilization may be low, since resources may be allocated but unused for a long period.
+    - Second, starvation is possible.
+- No Preemption
+  - To ensure that this condition does not hold, we can use the following protocol.
+    - If a process is holding some resources and requests another resource that cannot be immediately allocated to it (that is, the process must wait), then all resources the process is currently holding are preempted.
+    - Alternatively, if a process requests some resources, we first check whether they are available.
+  - This protocol is often applied to resources whose state can be easily saved and restored later, such as CPU registers and memory space. It cannot be applied to such resources as mutex locks and semaphores.
+- Circular Wait
+  - One way to ensure that this condition never holds is to impose a total ordering of all resource types and to require that each process requests resources in an increasing order of enumeration.
+    - リソースに数字を割り振り、あるプロセスが最初にアクセスしたリソースの数字が i だとすると、その次にアクセスできるリソースは i より大きい数字に対応したリソースのみ
+  - Alternatively, we can require that a process requesting an instance of resource type Rj must have released any resources Ri such that F(Ri) >= F(Rj).
+  - If these two protocols are used, then the circular-wait condition cannot hold.
+  - Keep in mind that developing an ordering, or hierarchy, does not in itself prevent deadlock.
+  - It is also important to note that imposing a lock ordering does not guarantee deadlock prevention if locks can be acquired dynamically.
