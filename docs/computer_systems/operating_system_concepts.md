@@ -1258,3 +1258,23 @@ typedef struct {
     - First, user processes must always make their calls on the monitor in a correct sequence.
     - Second, we must be sure that an that uncooperative process does not simply ignore the mutual-exclusion gateway provided by the monitor and try to access the shared resource directly, without using the access protocols.
   - Only if these two conditions can be ensured can we guarantee that no time-dependent errors will occur and that the scheduling algorithm will not be defeated.
+
+### 6.9: Synchronization Examples
+
+- Synchronization in Windows
+  - The Windows operating system is a multithreaded kernel that provides support for real-time applications and multiple processors.
+  - For thread synchronization outside the kernel, Windows provides dispatcher objects.
+  - Dispatcher objects may be in either a signaled state or a nonsignaled state.
+    - An object in a signaled state is available, and a thread will not block when acquiring the object.
+    - An object in a nonsignaled state is not available, and a thread will block when attempting to acquire the object.
+  - A critical-section object is a user-mode mutex that can often be acquired and released without kernel intervention.
+- Synchronization in Linux
+  - Linux provides several different mechanisms for synchronization in the kernel.
+  - All math operation using atomic integers are performed without interruption.
+- Synchronization in Solaris
+  - To control access to critical sections, Solaris provides adaptive mutex locks, condition variables, semaphores, reader-writer locks, and turnstiles.
+  - An adaptive mutex protects access to every critical data item.
+  - To optimize Solaris performance, developers have refined and fine-tuned the locking methods. Because locks are used frequently and typically are used for crucial kernel functions, tuning their implemention and use can produce great performance gains.
+- Pthreads Synchronization
+  - The Pthreads API is available for programmers at the user level and is not part of any particular kernel.
+  - There are other extensions to the Pthreads API - including spinlocks - but it is important to note that not all extensions are considered portable from one implementation to another.
