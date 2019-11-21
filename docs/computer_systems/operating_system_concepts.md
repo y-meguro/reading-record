@@ -1364,3 +1364,23 @@ typedef struct {
   - If these two protocols are used, then the circular-wait condition cannot hold.
   - Keep in mind that developing an ordering, or hierarchy, does not in itself prevent deadlock.
   - It is also important to note that imposing a lock ordering does not guarantee deadlock prevention if locks can be acquired dynamically.
+
+### 7.5: Deadlock Avoidance
+
+- Possible side effects of preventing deadlocks by this method, however, are low device utilization and reduced system throughput.
+- An alternative method for avoiding deadlocks is to require additional information about how resources are to be requested.
+- The simplest and most useful model requires that each process declare the maximum number of resources of each type that it may need.
+- Safe State
+  - A state is safe if the system can allocate resources to each process in some order and still avoid a deadlock.
+  - Most formally, a system is in a safe state only if there exists a safe sequence.
+  - Given the concept of a safe state, we can define avoidance algorithms that ensure that the system will never deadlock.
+  - The idea is simply to ensure that the system will always remain in a safe state.
+- Resource-Allocation Graph Algorithm
+  - 7.2.2 で resource-allocation graph を扱った
+  - In addition to the request and assignment edges already described, we introduce a new type of edge, called a claim edge.
+    - A claim edge Pi → Rj indicates that process Pi may request resource Rj at some time in the future.
+    - If no cycle exists, then the allocation of the resource will leave the system in a safe state.
+- Banker's Algorithm
+  - The resource-allocation-graph algorithm is not applicable to a resource-allocation system with multiple instances of each resource type.
+  - banker's algorithm は各 resource type に複数のインスタンスがあっても適用できる。しかし、resource-allocation graph と比べて少し効率が悪い。
+  - When a new process enters the system, it must declare the maximum number of instances of each resource type that it may need. When a user requests a set of resources, the system must determine whether the allocation of these resources will leave the system in a safe state. If it will, the resources are allocated; otherwise, the process must wait until some other process releases enough resources.
