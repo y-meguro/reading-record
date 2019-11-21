@@ -1384,3 +1384,53 @@ typedef struct {
   - The resource-allocation-graph algorithm is not applicable to a resource-allocation system with multiple instances of each resource type.
   - banker's algorithm は各 resource type に複数のインスタンスがあっても適用できる。しかし、resource-allocation graph と比べて少し効率が悪い。
   - When a new process enters the system, it must declare the maximum number of instances of each resource type that it may need. When a user requests a set of resources, the system must determine whether the allocation of these resources will leave the system in a safe state. If it will, the resources are allocated; otherwise, the process must wait until some other process releases enough resources.
+
+### 7.6: Deadlock Detection
+
+- If a system does not employ either a deadlock-prevention or deadlock-avoidance algorithm, then a deadlock situation may occur. In this environment, the system may provide:
+  - An algorithm that examines the state of the system to determine whether a dead lock has occured
+  - An algorithm to recover from the deadlock
+- Single Instance of Each Resource Type
+  - If all resources have only a single instance, then we can define a deadlock-detection algorithm that uses a variant of the resource-allocation graph, called a wait-for graph.
+  - We obtain this graph from resource-allocation graph by removing the resource nodes and collapsing the appropriate edge.
+  - To detect deadlocks, the system needs to maintain the wait-for graph and periodically invoke an algorithm that searches for a cycle in the graph.
+- Several Instances of a Resource Type
+  - wait-for graph では複数インスタンスのタイプに適用できないので、ここでは複数インスタンスに適用できるアルゴリズムを考える。
+- Detection-Algorithm Usage
+  - When should we invoke the detection algorithm? The answer depends on two factors:
+    - How often is a deadlock likely to occur?
+    - How many processes will be affected by deadlock when it happens?
+  - If deadlocks occur frequently, then the detection algorithm should be invoked frequently.
+
+### 7.7: Recovery from Deadlock
+
+- When a detection algorithm determines that a deadlock exists, several alternatives are available.
+  - One possibility is to inform the operator that a deadlock has occurred and to let the operator deal with the deadlock manually.
+  - Another possibility is to let the system recover from the deadlock automatically.
+- There are two options for breaking a deadlock.
+  - One is simply to abort one or more processes to break the circular wait.
+  - The other is to preempt some resources from one or more of the deadlocked processes.
+- Process Termination
+  - To eliminate deadlocks by aborting a process, we use one of two methods.
+    - Abort all deadlocked processes.
+      - This method cleary will break the deadlocke cycle, but at great expense.
+    - Abort one process at a time until the deadlock cycle is eliminated.
+      - This method incurs considerable overhead, since after each process is aborted, a deadlock-detection algorithm must be invoked to determine whether any processes are stil deadlocked.
+  - pertial termination method を実行する場合は、どのプロセスから終了させていくか考えなければいけない。minimum cost を考えるとしても、以下のようなことを考える必要がある
+    - What the priority of the process is
+    - How long the process has computed and how much longer the process will compute before completing its designated task
+    - How many and what types of resources the process has used
+    - など
+- Resource Preemption
+  - 3 つ考えることがある
+    - Selecting a victim.
+    - Rollback.
+      - 途中で処理をやめたら We must roll back the process to some safe state and restart it from that state.
+      - Since, in general, it is difficult to determine what a safe state is, the simplest solution is a total rollback: abort the process and then restart it.
+    - Starvation.
+      - How can we guarantee that resources will not always be preempted from the same process?
+      - The most common solution is to include the number of rollbacks in the cost factor.
+
+### 7.8: Summary
+
+- これまでに書いている内容なので省略
