@@ -1302,3 +1302,31 @@ typedef struct {
 ### 6.11: Summary
 
 - これまでに書いている内容なので省略
+
+## 7: Deadlocks
+
+- Sometimes, a waiting process is never again able to change state, because the resources it has requested are held by other waiting processesl. This situation is called a deadlock.
+- Chapter Objectives
+  - To develop a description of deadlocks, which prevent sets of concurrent processes from completing their tasks.
+  - To present a number of different methods for preventing or avoiding deadlocks in a coputer system.
+
+### 7.1: System Model
+
+- Under the normal mode of operation, a process may utilize a resource in only the following resource:
+  - Request.
+  - Use.
+  - Release.
+- A set of processes is in a deadloked state when every process in the set is waiting for an event that can be caused only by another process in the set. The events with which we are mainly concerned here are resource acquisition and release.
+
+### 7.2: Deadlock Characterization
+
+- Before we discuss the various methods for dealing with the deadlock problem, we look more closely at features that characterize deadlocks.
+- Necessary Conditions
+  - A deadlock situation can arise if the following four conditions hold simultaneously in a system:
+    - Mutual exclusion.
+    - Hold and wait.
+    - No preemption.
+    - Circular wait.
+- Resource-Allocation Graph
+  - Deadlocks can be described more precisely in terms of a directed graph called a system resource-allocation graph.
+  - resource-allocation graph で循環があれば deadlock が存在する可能性があり（存在しない場合もある）、なければどの process も deadlock になっていない。こちらは必ず存在しない。
