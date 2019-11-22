@@ -647,7 +647,7 @@
 - It shares with other threads belonging to the same process its code section, data section, and other operating-system resources, such as open files and signals.
 - A traditional process has a single thread of control. If a process has multiple threads of control, it can perform more than one task at a time.
 - Motivation
-  - Most software applications that run on modern computers are multithreaded. An application typically is implemented as a seperate process with several threads of control.
+  - Most software applications that run on modern computers are multithreaded. An application typically is implemented as a separate process with several threads of control.
   - A web browser might have one thread display images or text while another thread retrieves data from the network, for example.
   - 似たような task を実行するなら、新しく process を作るより、thread を新しく作ったほうが効率がいい。
   - Typically, RPC servers are multithreaded. When a server receives a message, it services the message using a separate thread.
@@ -731,7 +731,7 @@
 - 4.2 であげたような challenges 以外にも、multicore threading が進化する中で、いくつか困難がある。One way to address these difficulties and better support the design of multithreaded applications is to transfer the creation and management of threading from application developers to compilers and run-time libraries.
 - This strategy, termed implicit threading, is a popular trend today. In this section, we explore three alternative approaches for designing multithreaded programs that can take advantage of multicore processors through implicit threading.
 - Thread Pools
-  - Whereas creating a seperate thread is certainly superior to creating the separate process, a multithreaded server nonetheless has potential problems.
+  - Whereas creating a separate thread is certainly superior to creating the separate process, a multithreaded server nonetheless has potential problems.
     - The first issue concerns the amount of time required to create the thread, together with the fact that the thread will be discarded once it has completed its work.
     - The second issue is more troublesome. If we allow all concurrent requests to be serviced in a new thread, we have not placed a bound on the number of threads concurrently active in the system.
       - One solution to this problem is to use a thread pool.
@@ -794,7 +794,7 @@
 ### 4.7: Operating-System Examples
 
 - Windows Threads
-  - A Windows application runs as a seperate process, and each process may contain one or more threads.
+  - A Windows application runs as a separate process, and each process may contain one or more threads.
   - Windows uses the one-to-one mapping, where each uesr-level thread maps to an associated kernel thread.
   - The general components of a thread include:
     - A thread ID uniquely identifying of the thread
@@ -896,7 +896,7 @@
     - Although the time quantum should be large compared with the context-switch time, it should not be too large. too large だと FCFS と同じになってしまう。
     - A rule of thumb is that 80 percent of the CPU bursts should be shorter than the time quantum.
 - Multilevel Queue Scheduling
-  - A multilevel queue scheduling algorithm partitions the ready queue into several seperate queues. The processes are permanently assigned to one queue, generally based on some property of the process, such as memory size, process priority, or process type.
+  - A multilevel queue scheduling algorithm partitions the ready queue into several separate queues. The processes are permanently assigned to one queue, generally based on some property of the process, such as memory size, process priority, or process type.
   - Let's look at an example of a multilevel queue scheduling algorithm with five queues, listed below in order of priority:
     - System processes
     - Interactive processes
@@ -1341,7 +1341,7 @@ typedef struct {
 
 ### 7.4: Deadlock Prevention
 
-- By ensuring that at least one of these conditions cannot hold, we can prevent the occurrence of a deadlock. We elaborate on this approach by examining each of the four necessary conditions seperately.
+- By ensuring that at least one of these conditions cannot hold, we can prevent the occurrence of a deadlock. We elaborate on this approach by examining each of the four necessary conditions separately.
 - Mutual Exclusion
   - Sharable resources, in contrast, do not require mutually exclusive access and thus cannot be involved in a deadlock.
   - In general, however, we cannot prevent deadlocks by denying the mutual-exclusion condition, because some resources are intrinsically nonsharable.
@@ -1434,3 +1434,51 @@ typedef struct {
 ### 7.8: Summary
 
 - これまでに書いている内容なので省略
+
+## 8: Memory-Management Strategies
+
+- The memory-management algorithms vary from a primitive bare-machine approach to paging and segmentation strategies.
+- Chapter Objectives
+  - To provide a detailed description of various ways of organizing memory hardware.
+  - To explore various techniques of allocating memory to processes.
+  - To discuss in detail how paging works in contemporary computer systems.
+
+### 8.1: Background
+
+- Basic Hardware
+  - Main memory and the registers built into the processor itself are the only general-purpose storage that the CPU can access directly.
+  - Therefore, any instructions in execution, and any data being used by the instructions, must be in one of these direct-access storage devices.
+  - We first need to make sure that each process has a separate memory space.
+  - To separate memory spaces, we need the ability to determine the range of legal addresses that the process may access and to ensure that the process can access only these legal addresses.
+    - base register と limit register の 2 つで実現する
+    - The base register holds the smallest legal physical memory address; the limit register specifies the size of the range.
+      - base register が 300040、limit register が 120900 を持っていたら、300040 から 420939 までアクセス可能
+  - Protection of memory space is accomplished by having the CPU hardware compare every address generated in user mode with the registers.
+  - The operating system, executing in kernel mode, is given unrestricted access to both operating-system memory and use's memory.
+- Address Binding
+  - Usually, a program resides on a disk as a binary executable file. To be executed, the program must be brought into memory and placed within a process.
+  - The processes on the disk that are waiting to be brought into memory for execution form the input queue.
+  - Classically, the binding of instructions and data to memory addresses can be done at any step along the way:
+    - Compile time.
+      - source program がコンパイルされて object module になる
+    - Load time.
+      - 上の object modules と other object modules をあわせて linkage editor が load module に変換する
+      - system library と load module が loader に渡される
+    - Execution time.
+      - dynamically loaded system library とあわせて in-memory binary memory image に渡される
+- Logical Versus Physical Address Space
+  - An address generated by the CPU is commonly referred to as a logical address, whereas an address seen by the memory unit - that is, the one loaded into the memory-address register of the memory - is commonly referred to as physical address.
+  - logical address と virtual address は同じ意味で使う
+  - The run-time mapping from virtual to physical addresses is done by a hardware device called the memory-management unit (MMU).
+    - The base register is now called a relocation register.
+  - The user program never sees the real physical addresses.
+- Dynamic Loading
+  - To obtain better memory-space utilization, we can use dynamic loading. With dynamic loading, a routine is not loaded until it is called.
+  - The advantage of dynamic loading is that a routine is loaded only when it is needed.
+  - Dynamic loading does not require special support from the operating system. It is the responsibility of the users to design their programs to take advantage of such a method.
+- Dynamic Linking and Shared Libraries
+  - Dynamically linked libraries are system libraries that are linked to user programs when the programs are run.
+  - Some operating systems support only static linking, in which system libraries are treated like any other object module and are combined by the loader into the binary program image.
+  - dynamic linking は実行時に動的にリンクされる。
+  - With dynamic linking, a stub is included in the image for each library-routine reference. The stub is a small piece of code that indicates how to locate the appropriate memory-resident library routine or how to load the library if the routine is not already present.
+  - Unlike dynamic loading, dynamic linking and shared libraries generally require help from the operating system.
