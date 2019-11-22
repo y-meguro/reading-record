@@ -1482,3 +1482,20 @@ typedef struct {
   - dynamic linking は実行時に動的にリンクされる。
   - With dynamic linking, a stub is included in the image for each library-routine reference. The stub is a small piece of code that indicates how to locate the appropriate memory-resident library routine or how to load the library if the routine is not already present.
   - Unlike dynamic loading, dynamic linking and shared libraries generally require help from the operating system.
+
+### 8.2: Swapping
+
+- A process swapped temporarily out of memory to a backing store and then brought back into memory for continued execution.
+- Standard Swapping
+  - Standard swapping involves moving processes between main memory and a backing store.
+  - The system maintains a ready queue consisting of all processes whose memory images are on the backing store or in memory and are ready to run.
+  - Notice that the major part of the swap time is transfer time.
+  - Standard swapping is not used in modern operating systems.
+    - It requires too much swapping time and provides too little execution time to be a reasonable memory-management solution.
+  - 以下のような対応が取られている。
+    - In one common variation, swapping is normally disabled but will start if the amount of free memory falls below a threshold amount.
+    - Another variation involves swapping portions of processes - rather than entire processes - to decrease swap time.
+- Swapping on Mobile Systems
+  - Although most operating systems for PCs and servers support some modified version of swapping, mobile systems typically do not support swapping in any form.
+  - mobile device は hard disk ではなく flash memory を使っていて、書き込みの回数に制限があるため
+  - Instead of using swapping, when free memory falls below a certain threashold, Apple's iOS asks applications to voluntarily relinquish allocated memory.
