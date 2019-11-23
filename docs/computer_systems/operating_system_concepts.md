@@ -1531,3 +1531,16 @@ typedef struct {
     - The goal is to shuffle the memory contents so as to place all free memory together in one large block. Compaction is not always possible, however.
   - Another possible solution to the external-fragmentation problem is to permit the logical address space of the processes to be noncontiguous, thus allowing a process to be allocated physical memory wherever such memory is available.
     - Two complementary techniques achieve this solution: segmentation and paging.
+
+### 8.4: Segmentation
+
+- Basic Method
+  - Each segment has a name and a length. The addresses specify both the segment name and the offset within the segment.
+  - A C compiler might create separate segments for the following:
+    - The code
+    - Global variables
+    - The heap, from which memory is allocated
+    - The stacks used by each thread
+    - The standard C library
+- Segmentation Hardware
+  - This mapping is effected by a segment table. Each entry in the segment table has a segmenta base and a segment limit.
