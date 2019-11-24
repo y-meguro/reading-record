@@ -1630,3 +1630,26 @@ typedef struct {
 ### 8.9: Summary
 
 - これまでに書いている内容なので省略
+
+## 9: Virtual-Memory Management
+
+- Virtual memory is a technique that allows the execution of processes that are not completely in memory.
+  - One major advantage of this scheme is that programs can be larger than physical memory.
+  - Further, virtual memory abstracts main memory into an extremely large, uniform array of storage, separating logical memory as viewed by the user from physical memory.
+- Chapter Objectives
+  - To describe the benefits of a virtual memory system.
+  - To explain the concepts of demand paging, page-replacement algorithms, and allocation of page frames.
+  - To discuss the principles of the working-set model.
+  - To examine the relationship between shared memory and memory-mapped files.
+  - To explore how kernel memory is managed.
+
+### 9.1: Background
+
+- The instructions being executed must be in physical memory.
+  - The requirement that instructions must be in physical memory to be executed seems both necessary and reasonable; but it is also unfortunate, since it limits the size of a program to the size of physical memory.
+- The ability to execute a program that is only partially in memory would confer many benefits:
+  - A program would no longer be constrained by the amount of physical memory that is available. Users would be able to write programs for an extremely large virtual address space, simplifying the programming task.
+  - Because each user program could take less physical memory, more programs could be run at the same time, with a corresponding increase in CPU utilization and throughput but with no increase in response time or turnaround time.
+  - Less I/O would be needed to load or swap user programs into memory, so each user program would run faster.
+- Virtual memory makes the task of programming much easier, because the programmer no longer needs to worry about the amount of physical memory available.
+- In addition to separating logical memory from physical memory, virtual memory allows files and memory to be shared by two or more processes through page sharing.
