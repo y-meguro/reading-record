@@ -1581,3 +1581,20 @@ typedef struct {
 - Shared Pages
   - An advantage of paging is the possibility of sharing common code.
   - Figure 8.16 が paging environment でコードをシェアしている例
+
+### 8.6: Structure of the Page Table
+
+- Hierarchical Paging
+  - 今日では large logical address がサポートされていて、page table 自体もとても大きくなっている。
+  - One simple solution to this problem is to divide the page table into smaller pieces. We can accomplish this division in several ways.
+  - One way is to use a two-level paging algorithm, in which the page table itself is also paged.
+- Hashed Page Table
+  - A common approach for handling address spaces larger than 32 bits is to use a hashed page table, with the hash value being the virtual page number.
+- Inverted Page Tables
+  - An inverted page table has one entry for each real page (or frame) of memory.
+  - Although this scheme decreases the amount of memory needed to store each page table, it increases the amount of time needed to search the table when a page reference occurs.
+  - Systems that use inverted page tables have difficulty implementing shared memory.
+    - 通常は複数の virtual addresses が 1 つの physical address を指すが、inverted page table ではこのやり方が使えないため。
+- Oracle SPARC Solaris
+  - Consider as a final example of a modern 64-bit CPU and operating system that are tightly integrated to provide low-overhead virtual memory.
+  - Solaris running on the SPARC CPU is a fully 64-bit operating system and as such has to solve the problem of virtual memory without using up all of its physical memory by keeping multiple levels of page tables.
