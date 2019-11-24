@@ -1619,3 +1619,14 @@ typedef struct {
     - It is important to note that operating systems support is required to use PAE. Both Linux and Mac OS X support PAE.
 - x86-64
   - linear address の最上位の 16 桁は unused、次の 9 桁が page map level 4、次の 9 桁が page directory pointer table、次の 9 桁が page directory、その次の 9 桁が page table を指し、最後の 12 桁が offset を表す。
+
+### 8.8: Example: ARM Architecture
+
+- Although Intel chips have dominated the personal computer market for over 30 years, chips for mobile devices such as smartphones and tablet computers often instead run on 32-bit ARM processors.
+- Interestingly, whereas Intel both designs and manufactures chips, ARM only designs them. It then licenses its designs to chip manufactures.
+- one-level paging では 1MB or 16MB の section をサポート、two-level paging では 4KB or 16KB の page をサポート。
+- また ARM architecture では 2 段階の TLB をサポートしていて、outer level が micro TLB、inner level が main TLB となっている。
+
+### 8.9: Summary
+
+- これまでに書いている内容なので省略
