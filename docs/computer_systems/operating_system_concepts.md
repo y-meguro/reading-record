@@ -1598,3 +1598,24 @@ typedef struct {
 - Oracle SPARC Solaris
   - Consider as a final example of a modern 64-bit CPU and operating system that are tightly integrated to provide low-overhead virtual memory.
   - Solaris running on the SPARC CPU is a fully 64-bit operating system and as such has to solve the problem of virtual memory without using up all of its physical memory by keeping multiple levels of page tables.
+
+### 8.7: Example: Intel 32 and 64-bit Architectures
+
+- In this section, we examine address translation for both IA-32 and x86-64 architectures.
+- IA-32 Architecture
+  - Memory management in IA-32 systems is divided into two components - segmentation and paging - and works as follows: The CPU generates logical addresses, which are given to the segmentation unit.
+  - The segmentation unit produces a linear address for each logical address. The linear address is then given to the paging unit, which in turn generates the physical address in main memory.
+  - Thus, the segmentation and paging units form the equivalent of the memory-management unit (MMU).
+  - IA-32 Segmentation
+    - 16 bit のうち、最初の 13 bit が selector と offset のペア。次の 1 bit が LDT (local descriptor table) / GDT (global descriptor table) のどちらに入っているか示し、最後の 2 bit が protection を表す。
+    - ここから 32 bit の linear address が決定する。
+  - IA-32 Paging
+    - The IA-32 architecture allows a page size of either 4KB or 4MB.
+    - 4KB の場合は、最上位の 10 桁が page directory を指し、真ん中の 10 桁が page table を指し、最後の 12 桁が offset を表す。
+    - 4MB の場合は、最上位の 10 桁が page directory を指し、下位の 22 桁が offset を表す。
+    - As software developers began to discover the 4-GB memory limitations of 32-bit architectures, Intel adopted a page address extension (PAE), which allows 32-bit processors to access a physical address space larger than 4GB.
+      - 従来の 2 level の構造から 3 level に拡張する。
+      - 4KB の場合、最上位の 2 桁が page directory pointer table を指し、次の 9 桁が page directory、その次の 9 桁が page table を指し、最後の 12 桁が offset を表す。
+    - It is important to note that operating systems support is required to use PAE. Both Linux and Mac OS X support PAE.
+- x86-64
+  - linear address の最上位の 16 桁は unused、次の 9 桁が page map level 4、次の 9 桁が page directory pointer table、次の 9 桁が page directory、その次の 9 桁が page table を指し、最後の 12 桁が offset を表す。
