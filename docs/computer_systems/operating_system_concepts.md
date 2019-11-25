@@ -1940,3 +1940,19 @@ typedef struct {
   - Some operating systems impose a minimal number of file structures. This approach has been adopted in UNIX, Windows, and others.
 - Internal File Structure
   - Disk systems typically have a well-defined block size determined by the size of a sector. All disk I/O is performed in units of one block, and all blocks are the same size.
+
+### 10.2: Access Methods
+
+- File store information. When it is used, this information must be accessed and read into computer memory.
+- Sequential Access
+  - The simplest access method is sequential access. Information in the file is processed in order, one record after the other.
+- Direct Access
+  - Another method is direct access (or relative access).
+  - Here, a file is made up of fixed-length logical records that allow programs to read and write records rapidly in no particular order.
+  - For direct access, the file is viewed as a numbered sequence of blocks or records.
+  - Direct-access files are of great use for immediate access to large amounts of information.
+  - The block number provided by the user to the operating system is normally a relative block number.
+  - Not all operating systems support both sequential and direct access for files.
+- Other Access Methods
+  - Other access methods can be built on top of a direct-access method.
+  - These methods generally involve the construction of an index for the file. The index like an index in the back of a book, contains pointers to the various blocks.
