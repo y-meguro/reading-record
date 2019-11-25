@@ -1827,3 +1827,32 @@ typedef struct {
   - The slab allocator provides two main benefits:
     - No memory is wasted due to fragmentation.
     - Memory requests can be satisfied quickly.
+
+### 9.9: Other Considerations
+
+- Prepaging
+  - The strategy is to bring into memory at one time all the pages that will be needed.
+- Page size
+  - The designers of an operating system for an existing machine seldom have a choice concerning the page size.
+  - However, when new machines are being designed, a decision regarding the best page size must be made.
+  - memory の使用率を高めるには page size が小さい方がいい。
+  - I/O time は seek / latency / transfer times があり、page size を小さくすると transfer time が小さくなる。しかし transfer time は他の 2 つに比べると影響が小さく、page size を大きくしても seek time と latency time には影響しないため、I/O time を最小化するには page size を大きくしたほうが望ましい。
+- TLB Reach
+  - Related to the hit ratio is a similar metric: the TLB reach. The TLB reach refers to the amount of memory accessible from the TLB and is simply the number of entries multiplied by the page size.
+  - If we double the number of entries in the TLB, we double the TLB reach.
+  - Another approach for increasing the TLB reach is to either increase the size of the page or provide multiple page sizes.
+- Inverted Page Tables
+  - The inverted page table no longer contains complete information about the logical address space of a process, and that information is required if a referenced page is not currently in memory.
+  - For the information to be available, an external page table must be kept.
+- Program Structure
+  - System performance can be improved if the user (or compiler) has an awareness of the underlying demand paging.
+  - Careful selection of data structures and programming structures can increase locality and hence lower the page-fault rate and the number of pages in the working set.
+  - At a later stage, the compiler and loader can have a significant effect on paging.
+- I/O Interlock and Page Locking
+  - When demand paging is used, we sometimes need to allow some of the pages to be locked in memory.
+  - One such situation occurs when I/O is done to or from user (virtual) memory.
+    - CPU が interrupt されて、再び処理が実行できるようになった時には、すでに利用していた page は他の process に利用されている。
+  - There are two common solutions to this problem.
+    - One solution is never to execute I/O to user memory.
+    - Another solution is to allow pages to be locked into memory. Locked pages cannot be replaced. When the I/O is complete, the pages are unlocked.
+  - Using a lock bit can be dangerous: the lock bit may get turned on but never turned off. Should this situation occur, the locked frame becomes unusable.
