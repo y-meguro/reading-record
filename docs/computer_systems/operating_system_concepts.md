@@ -1741,3 +1741,26 @@ typedef struct {
   - Applications and Page Replacement
     - In certain cases, applications accessing data through the operating system's virtual memory perform worse than if the operating system provided no buffering at all.
     - Because of such problems, some operating systems give special programs the ability to use a disk partition as a large sequential array of logical blocks, without any file-system data structures.
+
+### 9.5: Allocation of Frames
+
+- How do we allocate fixed amount of free memory among the various processes?
+- The simplest case is the simple-user system.
+- Minimum Number of Frames
+  - We must allocate at least a minimum number of frames.
+  - The minimum number of frames is defined by the computer architecture.
+  - Whereas the minimum number of frames per process is defined by the architecture, the maximum number is defined by the amount of available physical memory.
+- Allocation Algorithms
+  - The easiest way to split m frames among n processes is to give everyone an equal share, m/n frames.
+    - This scheme is called equal allocation.
+  - An alternative is to recognize that various processes will need differing amounts of memory.
+    - We can use proportional allocation, in which we allocate available memory to each process according to its size.
+  - both equal and proportional allocation どちらにとっても multiprogramming level が変われば allocation は変わる
+  - If the multiprogramming level is increased, each process will lose some frames to provide the memory needed for the new process.
+  - 他にも process の優先度によって allocation を変えることもできる。
+- Global versus Local Allocation
+  - We can classify page-replacement algorithms into two broad categories: global replacement and local replacement.
+    - global replacement はすべての frame の中から選ぶが、local replacement は own set of allocated frames から選ぶ。
+    - これを使うと、high-priority processes の数と low-priority processes の数を常に一定に保てたりする。
+  - Non-Uniform Memory Access
+    - Systems in which memory access times vary significantly are known collectively as non-uniform memory access (NUMA) systems, and without exception, they are slower than systems in which memory and CPUs are located on the same motherboard.
