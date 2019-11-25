@@ -1856,3 +1856,16 @@ typedef struct {
     - One solution is never to execute I/O to user memory.
     - Another solution is to allow pages to be locked into memory. Locked pages cannot be replaced. When the I/O is complete, the pages are unlocked.
   - Using a lock bit can be dangerous: the lock bit may get turned on but never turned off. Should this situation occur, the locked frame becomes unusable.
+
+### 9.10: Operating-System Example
+
+- In this section, we describe how Windows and Solaris implement virtual memory.
+- Windows
+  - Windows implements virtual memory using demand paging with clustering.
+  - Clustering handles page faults by bringing in not only the faulting page but also several pages following the faulting page.
+- Solaris
+  - In Solaris, when a thread incurs a page fault, the kernel assigns a page to the faulting thread from the list of free pages it maintains.
+
+### 9.11: Summary
+
+- これまでに書いている内容なので省略
