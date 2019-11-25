@@ -1956,3 +1956,72 @@ typedef struct {
 - Other Access Methods
   - Other access methods can be built on top of a direct-access method.
   - These methods generally involve the construction of an index for the file. The index like an index in the back of a book, contains pointers to the various blocks.
+
+### 10.3: Directory and Disk Structure
+
+- Next, we consider how to store files.
+- There are typically thousands, millions, even millions of files within a computer.
+- Files are stored on random-access storage devices, including hard disks, optical disks, and solid-state disks.
+- A storage device can be used in its entirety for a file system. It can also be subdivided for finer-grained control.
+- Partitioning is useful for limiting the sizes of individual file systems, putting multiple file-system types on the same device, or leaving part of the device available for other uses, such as swap space or unformatted (raw) disk space.
+- Any entity containing a file system is generally known as a volume. Each volume can be thought of as a virtual disk. Volumes can also store multiple operating systems, allowing a system to boot and run more than one operating system.
+- Each volume that contains a file system must also contain information about the files in the system.
+  - directory 情報と files 情報を持つ
+- Storage Structure
+  - Solaris の file systems
+    - tmpfs
+      - a "temporary" file system that is created in volatile main memory and has its contents erased if the system reboots or crashes
+    - objfs
+      - a "virtual" file system that gives debuggers access to kernel symbols
+    - など
+- Directory Overview
+  - The directory can be viewed as a symbol table that translates file names into their directory entries.
+  - When considering a particular directory structure, we need to keep in mind the operations that are to be performed on a directory:
+    - Search for a file.
+    - Create a file.
+    - Delete a file.
+    - List a directory.
+    - Rename a file.
+    - Traverse the file system.
+- Single-Level Directory
+  - The simplest directory structure is the single-level directory.
+  - All files are contained in the same directory, which is easy to support and understand.
+  - A single-level directory has significant limitations, however, when the number of files increases or when the system has more than one user.
+    - Since all files are in the same directory, they must have unique names.
+- Two-Level Directory
+  - master file directory (MFD) があって、その下に user file directory (UFD) がある。
+  - When a user job starts or a user logs in, the system's master file directory is searched.
+  - When a user refers to a particular file, only his own UFD is searched. To delete a file, the operating system confines its search to the local UFD; thus, it cannot accidentally delete another user's file that has the same name.
+  - Although the two-level directory structure solves the name-collision problem, it still has disadvantages.
+    - This structure effectively isolates one user from another. Isolation is an advantage when the users are completely independent but is a disadvantage when the users want to cooperate on some task and to access one another's file.
+  - Every file in the system has a path name.
+  - Additional syntax is needed to specify the volume of a file.
+    - 例えば Windows だと A volume is specified by a letter follewed by a colon. `C:\userb\test` のような感じ。
+    - VMS だと `u:[sst.jdeck]login.com;1` で u が volume 名、1 が version 名。
+    - UNIX・Linux だと `u/pbg/test` となり、u が volume 名。
+  - loaders や assemblers、compilers なども file の形式で定義されるが、file の検索は current UFD で実行されてしまう。standard solution はそれらの system files を含んだ special user directory を定義して、operating system がその local UFD も検索するようにする。
+- Tree-Structured Directories
+  - 任意の高さの tree 構造。
+  - A directory (or subdirectory) contains a set of files or subdirectories. One bit in each directory entry defines the entry as a file (0) or as a subdirectory (1).
+  - In normal use, each process has a current directory.
+  - Path name can be two of types: absolute and relative.
+    - An absolute path name begins at the root and follows a path down to the specified file, giving the directory names on the path.
+    - A relative path name defines a path from the current directory.
+  - An interesting policy decision in a tree-structured directory concerns how to handle the decision of a directory.
+    - directory が空の時はいいが、files や subdirectories がある時にどうするか。One of two approaches can be taken.
+      - Some systems will not delete a directory unless it is empty.
+      - An alternative approach, such as that taken by the UNIX rm command, is to provide an option: when a request is made to delete a directory, all that directory's files and subdirectories are also to be deleted.
+- Acyclic-Graph Directories
+  - A shared directory or file exist in the file system in two (or more) places at once.
+  - A tree structure prohibits the sharing of files or directories.
+  - An acyclic graph - that is, a graph with no cycles - allows directories to share subdirectories and files.
+  - It is important to note that a shared file (or directory) is not the same as two copies of the file.
+  - Shared files and subdirectories can be implemented in several ways.
+    - A common way, exemplified by many of the UNIX systems, is to create a new directory entry called a link. We resolve the link by using that path name to locate the real file.
+    - Another common approach to implementing shared files is simply to duplicate all information about them in both sharing directories.
+      - A major problem with duplicate directory entries is maintaining consistency when a file is modified.
+- General Graph Directory
+  - A serious problem with using an acyclic-graph structure is ensuring that there are no cycles.
+  - If cycles are allowed to exist in the directory, we likewise want to avoid searching any component twice, for reasons of correctness as well as performance.
+  - In this case, we generally need to use a garbage collection scheme to determine when the last reference has been deleted and the disk space can be reallocated.
+    - Garbage collection involves traversing the entire file system, marking everything that can be accessed. Then a second pass collects everything that is not marked onto a list of free space.
