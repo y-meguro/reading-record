@@ -1764,3 +1764,29 @@ typedef struct {
     - これを使うと、high-priority processes の数と low-priority processes の数を常に一定に保てたりする。
   - Non-Uniform Memory Access
     - Systems in which memory access times vary significantly are known collectively as non-uniform memory access (NUMA) systems, and without exception, they are slower than systems in which memory and CPUs are located on the same motherboard.
+
+### 9.6: Thrashing
+
+- The high paging activity is called thrashing. A process is thrashing if it is spending more time paging than executing.
+- Cause of Thrashing
+  - Thrashing results in severe performance problems.
+  - As the degree of multiprogramming increases, CPU utilization also increases, although more slowly, until a maximum is reached. If the degree of multiprogramming is increased even futher, thrashing sets in, and CPU utilization drops sharply. At this point, to increase CPU utilization and stop thrashing, we must decrease the degree of multiprogramming.
+  - We can limit the effects of thrashing by using a local replacement algorithm (or priority replacement algorithm).
+  - To prevent thrashing, we must provide a process with as many frames as it needs.
+    - これを調べるにはいくつか方法があるが working-set strategy ではその process が実際にどのくらい frames を使うか見ている。これを locality model of process execution と定義する。
+    - We see that localities are defined by the program structure and its data structures.
+- Working-Set Model
+  - The model uses a parameter, ⊿, to define the working-set window. The idea is to examine the most recent ⊿ page reference.
+  - The set of pages in the most recent ⊿ page references is the working set.
+  - The working set is an approximation of the program's locality.
+  - working set の property で最も大事なのは size。
+  - This working-set strategy prevents thrashing while keeping the degree of multiprogramming as high as possible.
+- Page-Fault Frequency
+  - The working-set model is successful, and knowledge of the working set can be useful for prepaging, but it seems a clumsy way to control thrashing.
+  - page-fault frequency (PFF) のほうがより直接的なアプローチ。
+  - Thrashing has a high page-fault rate. Thus, we want to control the page-fault rate.
+  - We can establish upper and lower bounds on the disired page-fault rate.
+    - もし上回ったら process に別の frame を提供し、下回ったらその process に割り当てている frame を減らす。
+- Concluding Remarks
+  - thrashing がパフォーマンスに与える影響は大きい
+  - The current best practice in implementing a computer facility is to include enough physical memory, whenever possible, to avoid thrashing and swapping.
