@@ -712,7 +712,7 @@
 - A thread library provides the programmer with an API for creating and managing threads.
 - There are two primary ways of implementing a thread library.
   - The first approach is to provide a library entirely in user space with no kernel support.
-  - The second approach is to implement a kernel-level library supported directly by the operaging system.
+  - The second approach is to implement a kernel-level library supported directly by the operating system.
 - Two general strategies for creating multiple threads:
   - asynchronous threading
     - With asynchronous threading, once the parent creates a child thread, the parent resumes its execution, so that the parent and child execute concurrently.
@@ -1869,3 +1869,74 @@ typedef struct {
 ### 9.11: Summary
 
 - これまでに書いている内容なので省略
+
+## 10: File System
+
+- The file system consists of two distinct parts: a collection of files, each storing related data, and a directory structure, which organizes and provides information about all the files in the system.
+- Chapter Objectives
+  - To explain the function of file systems.
+  - To describe the interfaces to file systems.
+  - To discuss file-system design tradeoffs, including access methods, file sharing, file locking, and directory structures.
+  - To explore file-system protection.
+
+### 10.1: File Concept
+
+- The operating system provides a uniform logical view of its storage devices to define a logical storage unit, the file.
+- A file is a named collection of related information that is recorded on secondary storage.
+- Files may be free form, such as text files, or may be formatted rigidly. In general, a file is a sequence of bits, bytes, lines, or records, the meaning of which is defined by the file's creator and user. The concept of a file is thus extremely general.
+- File Attributes
+  - A file is named, for the convenience of its human users, and is referred to by its name.
+  - A file's attributes vary from one operating system to another but typically consist of these:
+    - Name.
+    - Identifier.
+    - Type.
+    - Location.
+    - Size.
+    - Protection.
+      - Access-control information determines who can do reading, writing, executing, and so on.
+    - Time, date, and user identification.
+  - The information about all files is kept in the directory structure, which also resides on secondary storage.
+- File Operations
+  - A file is an abstract data type.
+  - The operating system can provide system calls to create, write, read, reposition, delete, and truncate files.
+  - Six basic file operations.
+    - Creating a file.
+      - First, space in the file system must be found for the file. Second, an entry for the new file must be made in the directory.
+    - Writing a file.
+      - To write a file, we make a system call specifying both the name of the file and the information to be written to the file. The system must keep a write pointer to the location in the file where the next write is to take place.
+    - Reading a file.
+      - The system needs to keep a read pointer to the location in the file where the next read is to take place.
+    - Repositioning within a file.
+    - Deleting a file.
+      - Having found the associated directory entry, we release all file space, so that it can be reused by other files, and erase the directory entry.
+    - Truncating a file.
+      - The user may want to erase the contents of a file but keep its attributes.
+  - The operating system keeps a table, called the open-file table, containing information about all open files.
+  - In summary, several pieces of information are associated with an open file.
+    - File pointer.
+      - On systems that do not include a file offset as part of the read() and write() system calls, the system must track the last read-write location as a current-file-position pointer. この pointer は process ごとに別々。
+    - File-open count.
+    - Disk location of the file.
+    - Access rights.
+      - This information is stored on the per-process table so the operating system can allow or deny subsequent I/O requests.
+  - Some operating systems provide facilities for locking an open file (or sections of a file).
+    - A shared lock is akin to a reader lock in that several processes can acquire the lock concurrently.
+    - A exclusive lock behaves like a writer lock; only one process at a time can acquire such a lock.
+  - It is important to note that not all operating systems provide both types of locks: some systems only provide exclusive file locking.
+  - Futhermore, operating systems may provide either mandatory or advisory file-locking mechanisms.
+    - If the locking scheme is mandatory, the operating system ensures locking integrity. For advisory locking, it is up to software developers to ensure that locks are appropriately acquired and released.
+    - As a general rule, Windows operating systems adopt mandatory locking, and UNIX systems employ advisory locks.
+    - mandatory locking を使う場合は、synchronization の時と同じように deadlock を発生させないように注意する。
+- File Types
+  - When we design a file system we always consider whether the operating system should recognize and support file types.
+  - A common technique for implementing file types is to include the type as part of the file name.
+    - The name is split into two parts - a name and an extension, usually separated by a period.
+  - The system uses the extension to indicate the type of the file and the type of operations that can be done on that file.
+  - The UNIX system uses a crude magic number stored at the beginning of some files to indicate roughly the type of the file - executable program, shell script, PDF file, and so on.
+- File Structure
+  - File types also can be used to indicate the internal structure of the file.
+  - 複数の file types に対応するためには、それぞれの file structures をサポートするコードを持つ必要がある。
+  - operating system がサポートしていないタイプのファイルを定義した場合、severe problems may result.
+  - Some operating systems impose a minimal number of file structures. This approach has been adopted in UNIX, Windows, and others.
+- Internal File Structure
+  - Disk systems typically have a well-defined block size determined by the size of a sector. All disk I/O is performed in units of one block, and all blocks are the same size.
