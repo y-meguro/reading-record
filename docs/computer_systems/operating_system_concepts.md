@@ -1790,3 +1790,21 @@ typedef struct {
 - Concluding Remarks
   - thrashing がパフォーマンスに与える影響は大きい
   - The current best practice in implementing a computer facility is to include enough physical memory, whenever possible, to avoid thrashing and swapping.
+
+### 9.7: Memory-Mapped Files
+
+- We can use the virtual memory techniques discussed so far to treat file I/O as routine memory access. This approach, known as memory mapping a file, allows a part of the virtual address space to be logically associated with the file.
+- Basic Mechanism
+  - Memory mapping a file is accomplished by mapping a disk block to a page (or pages) in memory.
+  - Note that writes to the file mapped in memory are not necessarily immediate (synchronous) writes to the file on disk.
+  - Some operating systems provide memory mapping only through a specific system call and use the standard system calls to perform all other file I/O.
+  - Multiple processes may be allowed to map the same file concurrently, to allow sharing of data.
+- Shared Memory in the Windows API
+  - The general outline for creating a region of shared memory using memory-mapped files in the Windows API involves first creating a file mapping for the file to be mapped and then establishing a view of the mapped file in a process's virtual address space.
+  - A second process can then open and create a view of the mapped file in its virtual address space.
+  - The mapped file represents the shared-memory object that will enable communication to take place between the processes.
+  - Finally, both processes remove the view of the mapped file with a call to UnmapViewOfFile().
+- Memory-Mapped I/O
+  - Each I/O controller includes registers to hold commands and the data being transferred. Usually, special I/O instructions allow data transfers between these registers and system memory.
+  - To allow more convenient access to I/O devices, many computer architectures provide memory-mapped I/O.
+  - Memory-mapped I/O is also convenient for other devices, such as the serial and parallel ports used to connect modems and printers to a computer.
