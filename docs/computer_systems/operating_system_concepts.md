@@ -705,7 +705,7 @@
   - Linux, along with the family of Windows operating systems, implement the one-to-one model.
 - Many-to-Many Model
   - The many-to-many model multiplexes many user-level threads to a smaller or equal number of kernel threads.
-  - これは複数の threads を同時に実行できるし、たくさんの kernel threads を作らなければならないわけでもない。
+  - これは複数の threads を同時に実行できるし、たくさんの kernel threads を作る必要もない。
 
 ### 4.4: Thread Libraries
 
@@ -1084,7 +1084,7 @@
 - Peterson's solution では turn と flag の 2 つの変数を使う。
   - The variable turn indicates whose turn it is to enter its critical section. turn == i なら Pi が実行可能。
   - The flag array is used to indicate if a process is ready to enter its critical section. もし flag[i] が true なら Pi is ready to enter its critical section.
-- 以下のようになる。Pi が critical section に入ろうとしている。turn = j に設定して、j が critical section に入ろうとしていないか確認する。もし j が入ろうとしていたら、入っている間は何もしない。j が終わったあとで、critical section に入り、出る時に自身の flag を false にする。
+- 以下のようになる。Pi が critical section に入ろうとしている。turn = j に設定して、j が critical section に入ろうとしていないか確認する。もし入ろうとしていたら、入っている間は何もしない。j が終わったあとで、critical section に入り、出る時に自身の flag を false にする。
 
 ```
 do {
@@ -1607,7 +1607,7 @@ typedef struct {
   - The segmentation unit produces a linear address for each logical address. The linear address is then given to the paging unit, which in turn generates the physical address in main memory.
   - Thus, the segmentation and paging units form the equivalent of the memory-management unit (MMU).
   - IA-32 Segmentation
-    - 16 bit のうち、最初の 13 bit が selector と offset のペア。次の 1 bit が LDT (local descriptor table) / GDT (global descriptor table) のどちらに入っているか示し、最後の 2 bit が protection を表す。
+    - 16 bit のうち、最初の 13 bit は selector と offset のペア。次の 1 bit が LDT (local descriptor table) / GDT (global descriptor table) のどちらに入っているか示し、最後の 2 bit が protection を表す。
     - ここから 32 bit の linear address が決定する。
   - IA-32 Paging
     - The IA-32 architecture allows a page size of either 4KB or 4MB.
@@ -1653,3 +1653,31 @@ typedef struct {
   - Less I/O would be needed to load or swap user programs into memory, so each user program would run faster.
 - Virtual memory makes the task of programming much easier, because the programmer no longer needs to worry about the amount of physical memory available.
 - In addition to separating logical memory from physical memory, virtual memory allows files and memory to be shared by two or more processes through page sharing.
+
+### 9.2: Demand Page
+
+- Suppose a program starts with a list of available options from which the user is to select. Loading the entire program into memory results in loading the executable code for all options, regardless of whether or not an option is ultimately selected by the user.
+- An alternative strategy is to load pages only as they are needed. This technique is known as demand paging and is commonly used in virtual memory systems.
+- Basic Concept
+  - When a process is to be swapped in, the pager guess which pages will be used before the process is swapped out again.
+  - Instead of swapping in a whole process, the pager brings only those pages into memory.
+  - Thus, it avoids reading into memory pages that will not be used anyway, decreasing the swap time and the amount of physical memory needed.
+  - 8.5.3 で述べた valid-invalid bit scheme がここでも使え、valid の場合は the aassociated page is both legal and in memory. invalid の場合は the page either is not valid or is valid but is currently on the disk.
+  - もし memory に存在しないページにアクセスしたら（invalid な page にアクセスしたら）page fault が引き起こされる。
+  - The procedure for handling this page fault is straightforward:
+    - We check an internal table for this process to determine whether the reference was a valid or an invalid memory access.
+    - If the reference was invalid, we terminate the process. If it was valid but we have not yet brought in that page, we now page it in.
+    - We find a free frame.
+    - We schedule a disk operation to read the desired page into the newly allocated frame.
+    - When the disk read is complete, we modify the internal table kept with the process and the page table to indicate that the page is now in memory.
+    - We restart the instruction that was interrupted by the trap. The process can now access the page as through it had always been in memory.
+  - A crucial requirement for demand paging is the ability to restart any instruction after a page fault.
+- Performance of Demand Paging
+  - Demand paging can significantly affect the performance of a computer system.
+  - `evvective access time = (1 - p) * ma + p * page fault time`
+    - p は page fault が起きる確率。ma は memory access time。
+  - In any case, we are faced with three major components of the page-fault service time:
+    - Service the page-fault interrupt.
+    - Read in the page.
+    - Restart the process.
+  - Mobile operating systems typically do not support swapping. Instead, these systems demand-page from the file system and reclaim read-only pages from applications if memory becomes constrained.

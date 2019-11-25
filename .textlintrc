@@ -33,11 +33,13 @@
       },
       // 連続できる最大の漢字長
       "max-kanji-continuous-len": false,
+      "no-doubled-conjunction": false,
       // 同じ助詞を連続して使用しない
       "no-doubled-joshi": false,
       // 感嘆符「!！?？」を使用を許容する
       "no-exclamation-question-mark": false,
-      "max-comma": false
+      "max-comma": false,
+      "max-ten": false
     },
     "spellcheck-tech-word": false
   }
