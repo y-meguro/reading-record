@@ -1808,3 +1808,22 @@ typedef struct {
   - Each I/O controller includes registers to hold commands and the data being transferred. Usually, special I/O instructions allow data transfers between these registers and system memory.
   - To allow more convenient access to I/O devices, many computer architectures provide memory-mapped I/O.
   - Memory-mapped I/O is also convenient for other devices, such as the serial and parallel ports used to connect modems and printers to a computer.
+
+### 9.8: Allocating Kernel Memory
+
+- When a process running in user mode requests additional memory, pages are allocated from the list of free page frames maintained by the kernel.
+- Kernel memory is often allocated from a free-memory pool different from the list used to satisfy ordinary user-mode processes.
+- In the following sections, we examine two strategies for managing free memory that is assigned to kernel processes: the "buddy system" and slab allocation.
+- Buddy System
+  - The buddy system allocates memory from a fixed-size segment consisting of physically contiguous pages.
+  - 例えば memory segment が 256 KB あって、kernel が 21KB のリクエストを出した場合、256 → 128 → 64 → 32 と分割して、32KB の buddy（2 つにわけた片方を buddy という）を与える。
+  - An advantage of the buddy system is how quickly adjacent buddies can be combined to form larger segments using a technique known as coalescing.
+  - The obvious drawback to the buddy system is that rounding up to the next highest power of 2 is very likely to cause fragmentation within allocated segments.
+    - 例えば 33KB の要求でも 64KB 提供しないといけない。
+- Slab Allocation
+  - A slab is made up of one or more physically contiguous pages.
+  - A cache consists of one or more slabs.
+  - The slab-allocation algorithm uses caches to store kernel objects.
+  - The slab allocator provides two main benefits:
+    - No memory is wasted due to fragmentation.
+    - Memory requests can be satisfied quickly.
