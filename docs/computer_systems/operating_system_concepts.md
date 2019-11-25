@@ -66,7 +66,7 @@
 
 - Computer-System Operation
   - A modern general-purpose computer system consists of one or more CPUs and a number of device controllers connected through a common bus that provides access to shared memory.
-  - For a computer to start runnning it needs to have an initial program to run. This initial program, or bootstrap program, tends to be simple. The bootstrap program must know how to load the operating system and how to start executing that system.
+  - For a computer to start running it needs to have an initial program to run. This initial program, or bootstrap program, tends to be simple. The bootstrap program must know how to load the operating system and how to start executing that system.
     - To accomplish this goal, the bootstrap program must locate the operating-system kernel and load it into memory.
   - THe occurrence of an event is usually signaled by an interrupt from either the hardware or the software.
 - Storage Structure
@@ -871,7 +871,7 @@
   - Note also that the FCFS scheduling algorithm is nonpreemptive. Once the CPU has been allocated to a process, that process keeps the CPU until it releases the CPU, either by terminating or by requesting I/O.
 - Shortest-Job-First (SJF) Scheduling
   - When the CPU is available, it is assigned to the process that has the smallest next CPU burst. トータルの job の長さではなく、CPU burst の長さで判定しているので注意。
-  - The SJF scheduling algorithm is provably optimal, in that it gives the minimum average waiting time for a given set of processes.
+  - The SJF scheduling algorithm is probably optimal, in that it gives the minimum average waiting time for a given set of processes.
   - The real difficulty with the SJF algorithm is knowing the length of the next CPU request.
   - SJF scheduling is used frequently in long-term scheduling.
   - Although the SJF algorithm is optimal, it cannot be implemented at the level of short-term CPU scheduling.
@@ -1681,3 +1681,63 @@ typedef struct {
     - Read in the page.
     - Restart the process.
   - Mobile operating systems typically do not support swapping. Instead, these systems demand-page from the file system and reclaim read-only pages from applications if memory becomes constrained.
+
+### 9.3: Copy-on-Write
+
+- We can use a technique known as copy-on-write, which works by allowing the parent and child processes initialy to share the same pages. These shared pages are marked as copy-on-write pages, meaning that if either process writes to a shared page, a copy of the shared page is created.
+
+### 9.4: Page Replacement
+
+- If we increase our degree of multiprogramming, we are over-allocating memory.
+- Over-allocation of memory manifests itself as follows. While a user process is executing, a page fault occurs. The operating system determines where the desired page is residing on the disk but then finds that there are no free frames on the free-frame list; all memory is in use.
+- Basic Page Replacement
+  - Page replacement takes teh following approach.
+    - If no frame is free, we find one that is not currently being used and free it.
+    - We can free a frame by writing its contents to swap space and changing the page table to indicate that the page is no longer in memory.
+    - We can now use the freed frame to hold the page for which the process faulted.
+  - We must solve two major problems to implement demand paging: we must develop a frame-allocation algorithm and a page-replacement algorithm.
+    - 各 process にどれだけの frame を与えるか、また replace が必要な場合はどのように選ぶかを決める必要がある。
+  - There are many different page-replacement algorithms. Every operating system probably has its own replacement scheme. In general, we want the one with the lowest page-fault rate.
+  - We evaluate an algorithm by running it on a paticular string of memory references and computing the number of page faults.
+    - The string of memory references is called a reference string.
+  - To determine the number of page faults for a particular reference string and page-replacement algorithm, we also need to know the number of page frames available.
+- FIFO Page Replacement
+  - The simplest page-replacement algorithm is a first-in, first-out (FIFO) algorithm.
+  - The FIFO page-replacement algorithm is easy to understand and program. However, its performance is not always good.
+- Optimal Page Replacement
+  - It is simply this: Replace the page that will not be used for the longest period of time.
+  - Unfortunately, the optimal page-replacement algorithm is difficult to implement, because it requires future knowledge of the reference string.
+- LRU Page Replacement
+  - If the optimal algorithm is not feasible, perhaps an approximation of the optimal algorithm is possible.
+    - If we use the recent past as an approximation of the near future, then we can replace the page that has not been used for the longest period of time.
+    - This approach is the least recently used (LRU) algorithm.
+    - 実装方法は counter を使うものと stack を使うものがある。
+- LRU-Approximation Page Replacement
+  - Few computer systems provide sufficient hardware support for true LRU page replacement.
+    - In fact, some systems provide no hardware support, and other page-replacement algorithms must be used.
+    - Many systems provide some help, however, in the form of a reference bit.
+  - reference bit を見ることで、その page が利用されたかどうかがわかる。ただし、利用されたことはわかっても、どの順で利用されたかはわからない。
+  - Additional-Reference-Bits Algorithm
+    - We can gain additional ordering information by recording the reference bits at regular intervals.
+    - We can keep an 8-bit byte for each page in a table in memory.
+    - 1 bit ずつ右にずらし、low-order bit を捨てていく。直近 8 回 1 度も利用されなければ 00000000、毎回利用されていれば 11111111。2 回目、3 回目、5 回目に利用されていたら 01101000
+  - Second-Chance Algorithm
+    - The basic algorithm of second-chance replacement is a FIFO replacement algorithm.
+    - When a page has been selected, however, we inspect its reference bit. If the value is 0, we proceed to replace this page; but if the reference bit is set to 1, we give the page a second chance and move on to select the next FIFO page.
+    - One way to implement the second-chance algorithm (sometimes referred to as the clock algorithm) is as a circular queue.
+      - reference bit が 0 のものが見つかるまで順々に進んでいき、見つかったら置き換える。1 のものは 0 に置き換える。
+  - Enhanced Second-Chance Algorithm
+    - reference bit と modify bit のペアを考えて、second-chance algorithm を拡張する。
+      - (0, 0): neither recently used nor modified - best page to replace
+      - (0, 1): not recently used but modified - not quite as good, because the page will need to be written out before replacement
+      - (1, 0): recently used but clean - probably will be used again soon
+      - (1, 1): recently used be and modified - probably will be used again soon, and the page will be need to written out on disk before it can be replaced.
+  - Counting-Based Page Replacement
+    - The least frequently used (LFU) page-replacement algorithm requires that the page with the smallest count be replaced.
+    - The most frequently used (MFU) page-replacement algorithm is based on the argument that the page with the smallest count was probably just brought in and has yet to be used.
+  - Page-Buffering Algorithm
+    - Other procedures are often used in addition to a specific page-replacement algorithm.
+      - 例えば、systems commonly keep a pool of free frames.
+  - Applications and Page Replacement
+    - In certain cases, applications accessing data through the operating system's virtual memory perform worse than if the operating system provided no buffering at all.
+    - Because of such problems, some operating systems give special programs the ability to use a disk partition as a large sequential array of logical blocks, without any file-system data structures.
