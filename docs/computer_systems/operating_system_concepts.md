@@ -2123,7 +2123,7 @@ typedef struct {
 - Disks provide most of the secondary storage on which file systems are maintained. Two characteristics make them convenient for this purpose:
   - A disk can be rewritten in place; it is possible to read a block from the disk, modify the block, and write it back into the same place.
   - A disk can access directly any block of information it contains.
-- To improve I/O effeciency, I/O transfers between memory and disk are performed in units of blocks. Each block has one or more sectors.
+- To improve I/O efficiency, I/O transfers between memory and disk are performed in units of blocks. Each block has one or more sectors.
 - A file system poses two quite different design problems.
   - The first problem is defining how the file system should look to the user.
   - The second problem is creating algorithms and data structures to map the logical file system onto the physical secondary-storage devices.
@@ -2167,3 +2167,62 @@ typedef struct {
     - It provides a mechanism for uniquely representing a file throughout a network.
   - The VFS activates file-system-specific operations to handle local requests according to their file-system types and calls the NFS protocol procedures for remote requests.
   - 参考: [VFSとファイルシステムの基礎技術 (2/2)：Linuxファイルシステム技術解説（1）](https://www.atmarkit.co.jp/ait/articles/0305/20/news002_2.html)
+
+### 11.3: Derectory Implementation
+
+- The selection of directory-allocation and directory-management algorithms significantly affects the efficiency, performance, and reliability of the file system.
+- Linear List
+  - The simplest method of implementing a directory is to use a linear list of file names with pointers to the data blocks.
+  - The real disadvantage of a linear list of directory entries is that finding a file requires a linear search.
+- Hash Table
+  - The hash table takes a value computed from the file name and returns a pointer to the file name in the linear list. Therefore, it can greatly decrease the directory search time.
+  - The major difficulties with a hash table are its generally fixed size and the dependence of the hash function on that size.
+
+### 11.4: Allocation methods
+
+- The main problem is how to allocate space to these files so that disk space is utilized effectively and files can be accessed quickly.
+- Contiguous Allocation
+  - Contiguous allocation requires that each file occupy a set of contiguous blocks on the disk.
+  - Accessing a file that has been allocated contiguously is easy. For sequential access, the file system remembers the disk address of the last block referenced and, when necessary, reads the next block.
+  - Both sequential and direct access can be supported by contiguous allocation.
+  - Contiguous allocation has some problems, however.
+    - One difficulty is finding space for a new file.
+    - The contiguous-allocation problem can be seen as a particular application of the general dynamic storage-allocation problem, which involves how to satisfy a request of size n from a list of free holes.
+      - first hit または best fit で解くのが一般的。
+  - All these algorithms suffer from the problem of external fragmentation.
+    - One strategy for preventing loss of significant amounts of disk space to external fragmentation is to copy an entire file system onto another disk. We then copy the files back onto the original disk by allocating contiguous space from this one large hole.
+      - The cost of this compaction is time, however, and the cost can be particularly high for large hard disks.
+  - Another problem with contiguous allocation is determining how much space is needed for file.
+    - When the file is created, the total amount of space it will need must be found and allocated.
+    - また事前にわかったとしても、そこまでに長い時間使わないのであれば効率が悪い。
+  - To minimize these drawbacks, some operating systems use a modified contiguous-allocation scheme.
+- Linked Allocation
+  - Linked allocation solves all problems of contiguous allocation.
+  - The directory contains a pointer to the first and last blocks of the file.
+  - There is no external fragmentation with linked allocation, and any free block on the free-space list can be used to satisfy a request. It is never necessary to compact disk space.
+  - Linked allocation does have disadvantages, however.
+    - The major problem is that it can be used effectively only for sequential-access files. It is inefficient to support a direct-access capability for linked-allocation files.
+    - Another disadvantage is the space required for the pointers.
+      - The usual solution to this problem is to collect blocks into multiples, called clusters, and to allocate clusters rather than blocks. Pointers then use a much smaller percentage of the file's disk space.
+    - Yet another problem of linked allocation is reliability.
+      - Recall that the files are linked together by pointers scattered all over the disk, and consider what would hapen if a pointer were lost or damaged.
+      - One partial solution is to use doubly linked lists, and another is to store the file name and relative block number in each block.
+  - An important variation on linked allocation is the use of a file-allocation table (FAT).
+    - The table entry contains the block naumber of the next block in the file.
+    - つなげていくと last block に到達する。
+- Indexed Allocation
+  - Linked allocation solves the external-fragmentation and size-declaration problems of contiguous allocation. However, in the absence of a FAT, linked allocation cannot support efficient direct access.
+  - Indexed allocation solves this problem by bringing all the pointers together into one location: the index block.
+  - Indexed allocation supports direct access, without suffering from external fragmentation, because any free block on the disk can satisfy a request for more space.
+  - Indexed allocation does suffer from wasted space, however. The pointer overhead of the index block is generally greater than the pointer overhead of linked allocation.
+  - pointer が多くなると、index block が小さくて足りなくなる。それを解決するために以下のような方法がある。
+    - Linked scheme.
+      - To allow for large files, we can link together several index blocks.
+    - Multilevel index.
+      - first-level index block と second-level index block を作って、first-level index から second-level index block を見つける。
+    - Combined scheme.
+      - direct blocks と indirect blocks を持つ。
+- Performance
+  - linked allocation は sequential access には強いが、direct access に弱い。
+  - いくつかのシステムは contiguous allocation で direct-access をサポートし、いくつかのシステムは linked allocation で sequential-access をサポートする。
+  - The performance of indexed allocation depends on the index structure, on the size of the file, and on the position of the block desired.
