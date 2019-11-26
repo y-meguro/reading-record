@@ -2139,3 +2139,31 @@ typedef struct {
 - The file-organization module knows knows about files and their logical blocks, as well as physical blocks.
 - Finally, the logical file system manages metadata information. Metadata includes all of the file-system structure except the actual data (or contents of the files).
 - A file-control block (FCB) contains information about the file, including ownership, permissions, and location of the file contents.
+
+### 11.2: File-System Implementation
+
+- Overview
+  - On disk, the file system may contain information about how to boot an operating system stored there, the total number of blocks, the number and location of free blocks, the directory structure, and individual files.
+    - A boot control block (per volume) can contain information needed by the system to boot an operating system from that volume.
+    - A volume control block (per volume) contains volume (or partition) details, such as the number of blocks in the partition, the size of the blocks, a free-block count and free-block pointers, and a free-FCB count and FCB pointers.
+    - A directory structure (per file system) is used to organize the files.
+    - A per-file FCB contains many details about the file.
+  - The in-memory information is used for both file-system management and performance improvement via caching.
+    - An in-memory mount table contains information about each mounted volume.
+    - An in-memory directory-structure cache holds the directory information of recently accessed directories.
+    - The system-wide open-file table contains a copy of the FCB of each open file, as well as other information.
+    - The per-process open-file table contains a pointer to the appropriate entry in the system-wide open-file table, as well as other information.
+    - Buffers hold file-system blocks when they are being read from disk or written to disk.
+- Partitions and Mounting
+  - Each partition can be either "raw", containing no file system, or "cooked", containing a file system.
+  - Boot information can be stored in separate partition. It has its own format, because at boot time the system does not have the file-system code loaded and therefore cannot interpret the file-system format.
+  - This boot loader in turn knows enough about the file-system structure to be able to find and load the kernel and start it executing.
+  - The root partition, which contains the operating-system kernel and sometimes other system files, is mounted at boot time.
+- Virtual File Systems
+  - An obvious but suboptimal method of implementing multiple types of file systems is to write directory and file routines for each type.
+  - Instead, however, most operating systes, including UNIX, use object-oriented techniques to simplify, organize, and modularize the implementation.
+  - The VFS (virtual file system) layer serves two important functions:
+    - It separates file-system-generic operations from their implementation by defining a clean VFS interface. Several implementations for the VFS interface may coexist on the same machine, allowing transparent access to different types of file systems mounted locally.
+    - It provides a mechanism for uniquely representing a file throughout a network.
+  - The VFS activates file-system-specific operations to handle local requests according to their file-system types and calls the NFS protocol procedures for remote requests.
+  - 参考: [VFSとファイルシステムの基礎技術 (2/2)：Linuxファイルシステム技術解説（1）](https://www.atmarkit.co.jp/ait/articles/0305/20/news002_2.html)
