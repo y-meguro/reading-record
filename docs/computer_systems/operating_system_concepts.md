@@ -51,7 +51,7 @@
   - In other cases, a user sits at a terminal connected to a mainframe or a minicomputer.
     - The operating system in such cases is designed to maximize resource utilization.
   - In still other cases, users sit at workstations connected to networks of other workstations and servers.
-    - Theire operating system is designed to compromise between individual usability and resource utilization.
+    - Their operating system is designed to compromise between individual usability and resource utilization.
 - System View
   - In this context, we can view an operating system as a resource allocator.
 - Defining Operating Systems
@@ -70,7 +70,7 @@
     - To accomplish this goal, the bootstrap program must locate the operating-system kernel and load it into memory.
   - THe occurrence of an event is usually signaled by an interrupt from either the hardware or the software.
 - Storage Structure
-  - The CPU can load instructions only from memory, so any programs to run must be stored there. General-purpose computers run most of theire programs from rewritable memory, called main memory.
+  - The CPU can load instructions only from memory, so any programs to run must be stored there. General-purpose computers run most of their programs from rewritable memory, called main memory.
   - A typical instruction - execution cycle, as executed on a system with a von Neumann architecture, first fetches an instruction from memory and stores that instruction in the instruction register. The instruction is then decoded and may cause operands to be fetched from memory and stored in some internal register. After the instruction on the operands has been executed, the result may be stored back in memory.
   - The most common secandary-storage device is a magnetic disk, which provides storage for both programs and data.
   - The main differences among the various storage systems lie in speed, cost, size, and volatility.
@@ -378,7 +378,7 @@
 - A system as large and complex as a modern operating system must be engineered carefully if it is to function properly and be modified easily. A common approach is to partition the task into small components, or modules, rather than have one monolithic system.
 - In this section, we discuss how these components are interconnected and melded into a kernel.
 - Simple Structure
-  - Frequently, such systems started as small, simple, and limited systems and then grow beyond theire original scope.
+  - Frequently, such systems started as small, simple, and limited systems and then grow beyond their original scope.
   - This monolithic structure was difficult to implement and maintain. It had a distinct advantage, however; there is very little overhead in the system call interface or in communication within the kernel.
   - We still see evidence of this simple, monolithic structure in the UNIX, Linux, and Windows operating systems.
 - Layered Approach
@@ -1217,7 +1217,7 @@ typedef struct {
   - This problem is known as priority inversion. It occurs only in systems with more than two priorities, so one solution is to have only two priorities.
   - Typically, these systems solve the problem by implementing a priority-inheritance protocol.
     - According to this protocol, all processes that are accessing resources needed by a higher-priority process inherit the higher priority until they are finished with the resources in question.
-    - When they are finished, theire priorities revert to their original values.
+    - When they are finished, their priorities revert to their original values.
 
 ### 6.7: Classic Problems of Synchronization
 
@@ -2252,3 +2252,22 @@ typedef struct {
   - The space map is a log of all block activity, in time order, in counting format.
   - The in-memory space map is then an accurate representation of the allocated and free space in the metaslab.
   - Finally, the free-space list is updated on disk as part of the transaction-oriented operations of ZFS.
+
+### 11.6: Efficiency and Performance
+
+- Efficiency
+  - The efficient use of disk space depends heavily on the disk-allocation and directory algorithms in use.
+  - Generally, every data item associated with a file needs to be considered for its effect on efficiency and performance.
+  - efficiency は pointers の size にも影響する。
+    - Using 32-bit pointers limits the size of a file to 2^32, or 4GB.
+- Performance
+  - Some systems maintain a separate section of main memory for a buffer cache, where blocks are kept under the assumption that they will be used again shortly.
+  - Other systems cache file data using a page cache.
+  - Several systems - including Solaris, Linux, and Windows - use page caching to cache both process pages and file data. This is known as unified virtual memory.
+    - Some versions of UNIX and Linux provide a unified buffer cache.
+  - Regardless of whether we are caching disk blocks or pages (or both), LRU seems a reasonable general-purpose algorithm for block or page replacement.
+    - However, the evolution of the Solaris page-caching algorithms reveals the difficulty in choosing an algorithm.
+  - Another issue that can affect the performance of I/O is whether writes to the file system occur synchronously or asynchronously.
+    - Most writes are asynchronous. However, metadata writes, among others, can be synchronous.
+  - Some systems optimize their page cache by using different replacement algorithms, depending on the access type of the file.
+    - free-behind や read-ahead を使う場合がある。
