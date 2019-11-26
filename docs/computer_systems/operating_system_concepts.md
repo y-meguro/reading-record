@@ -2110,3 +2110,32 @@ typedef struct {
 ### 10.7: Summary
 
 - これまでに書いている内容なので省略
+
+## 11: Implementing File-System
+
+- Chapter Objectives
+  - To describe the details of implementing local file systems and directory structures.
+  - To describe the implementation of remote file systems.
+  - To discuss block allocation and free-block algorithms and trade-offs.
+
+### 11.1: File-System Structure
+
+- Disks provide most of the secondary storage on which file systems are maintained. Two characteristics make them convenient for this purpose:
+  - A disk can be rewritten in place; it is possible to read a block from the disk, modify the block, and write it back into the same place.
+  - A disk can access directly any block of information it contains.
+- To improve I/O effeciency, I/O transfers between memory and disk are performed in units of blocks. Each block has one or more sectors.
+- A file system poses two quite different design problems.
+  - The first problem is defining how the file system should look to the user.
+  - The second problem is creating algorithms and data structures to map the logical file system onto the physical secondary-storage devices.
+- Layered file system.
+  - application programs
+  - logical file system
+  - file-organization module
+  - basic file system
+  - I/O control
+  - devices
+- The I/O control level consists of device drivers and interrupt handlers to transfer information between the main memory and the disk system.
+- The basic file system needs only to issue generic commands to the appropriate device driver to read and write physical blocks on the disk.
+- The file-organization module knows knows about files and their logical blocks, as well as physical blocks.
+- Finally, the logical file system manages metadata information. Metadata includes all of the file-system structure except the actual data (or contents of the files).
+- A file-control block (FCB) contains information about the file, including ownership, permissions, and location of the file contents.
