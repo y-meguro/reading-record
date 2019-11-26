@@ -2271,3 +2271,28 @@ typedef struct {
     - Most writes are asynchronous. However, metadata writes, among others, can be synchronous.
   - Some systems optimize their page cache by using different replacement algorithms, depending on the access type of the file.
     - free-behind や read-ahead を使う場合がある。
+
+### 11.7: Recovery
+
+- Files and directories are kept both in main memory and disk, and care must be taken to ensure that a system failure does not result in loss of data or in inconsistency.
+  - We also consider how a system can recover from such a failure.
+- Some changes may go directly to disk, while others may be cached. If the cached changes do not reach disk before a crash occurs, more corruption is possible.
+- In addition to crashes, bugs in file-system implementation, disk controllers, and even user applications can corrupt a file system.
+- Consistency Checking
+  - For detection, a scan of all the metadata on each file system can confirm or deny the consistency of the system.
+  - Unfortunately, this scan can take minutes or hours and should occur every time the system boots.
+  - 代わりに status bit を用意し、file system の状態をそこに記憶している。metadata の変更が始まったら status bit を set し、変更が完了したら clear する。もし set されたままだったら、consistency checker を走らせる。
+  - The consistency checker - a systems program such as fsck in UNIX - compares the data in the directory structure with the data blocks on disk and tries to fix any inconsistencies it finds.
+  - 例えば linked allocation で link が壊れた場合は、data block から再構築するなど。
+- Log-Structured File Systems
+  - database の log-based recovery algorithms を consistency checking でも適用する。
+  - The resulting implementations are known as log-based transaction-oriented (or journaling) file systems.
+  - Fundamentally, all metadata changes are written sequentially to a log.
+    - Each set of operations for performing a specific task is a transaction.
+  - A side benefit of using logging on disk metadata updates is that those updates proceed much faster than when they are applied directory to the on-disk data structures.
+- Other Solutions
+  - These systems never overwrite blocks with new data.
+  - Rather, a transaction writes all data and metadata changes to new blocks.
+- Backup and Restore
+  - Magnetic disk sometimes fail, and care must be taken to ensure that the data lost in such a failure are not lost forever.
+  - 典型的な backup は incremental backup で差分だけバックアップする。
