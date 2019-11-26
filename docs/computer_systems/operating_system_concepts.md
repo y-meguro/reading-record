@@ -2226,3 +2226,29 @@ typedef struct {
   - linked allocation は sequential access には強いが、direct access に弱い。
   - いくつかのシステムは contiguous allocation で direct-access をサポートし、いくつかのシステムは linked allocation で sequential-access をサポートする。
   - The performance of indexed allocation depends on the index structure, on the size of the file, and on the position of the block desired.
+
+### 11.5: Free-Space Management
+
+- Since disk space is limited, we need to reuse the space from deleted files for new files, if possible.
+- To keep track of free disk space, the system maintains a free-space list. The free-space list records all free disk blocks - those not allocated to some file or directory.
+- Bit Vector
+  - Frequently, the free-space list is implemented as a bit map or bit vector.
+  - 1 だと free、0 だと allocated を表す。001001011100... みたいな感じ。
+  - Unfortunately, bit vectors are inefficient unless the entire vector is kept in main memory.
+    - disk size が大きくなって、bit vector も大きくなると問題になる。
+- Linked List
+  - Another approach to free-space management is to link together all the free disk blocks, keeping a pointer to the first free block in a special location on the disk and caching it in memory.
+  - This first block contains a pointer to the next free disk block, and so on.
+  - list を横断して探す場合は効率が悪い。だが、大抵の場合は初めの block を割り当ててれば問題ない。
+- Grouping
+  - linked list のやり方を改善して、最後の block に他の free blocks のアドレス情報を持たせる。これですぐに探せるようにする。
+- Counting
+  - contiguous allocation を行う。
+  - free space list には、first free block のアドレスと the number of free contiguous blocks の情報を持たせる。
+- Space Maps
+  - Oracle's ZFS file system の話。大量の files や directories、file systems を扱う。この状況で free space をうまく管理するために、いくつかのテクニックを組み合わせて利用している。
+  - First, ZFS creates metaslabs to divide the space on the device into chunks of manageable size.
+  - Each metaslabs has an associated space map.
+  - The space map is a log of all block activity, in time order, in counting format.
+  - The in-memory space map is then an accurate representation of the allocated and free space in the metaslab.
+  - Finally, the free-space list is updated on disk as part of the transaction-oriented operations of ZFS.
