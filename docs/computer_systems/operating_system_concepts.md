@@ -2074,3 +2074,39 @@ typedef struct {
     - Once a file is closed, the changes made to it are visible only in sessions starting later. Already open instances of the file do not reflect these changes.
   - Immutable-Shared-Files Semantics
     - Once a file is declared as shared by its creator, it cannot be modified.
+
+### 10.6: Protection
+
+- When information is stored in a computer system, we want to keep it safe from physical damage (the issue of reliability) and improper access (the issue of protection).
+  - Reliability is generally provided by duplicate copies of files.
+  - Protection can be provided in many ways. For a single-user laptop system, we might protection by locking the computer in a desk drawer or file cabinet.
+    - In a larger multiuser system, however, other mechanisms are needed.
+- Types of Access
+  - Protection mechanisms provide controlled access by limiting the types of file access that can be made.
+  - Several different types of operatios may be controlled:
+    - Read.
+    - Write.
+    - Execute.
+    - Append.
+      - Write new information at the end of the file.
+    - Delete.
+    - List.
+      - List the name and attributes of the file.
+  - Other operations, such as renaming, copying, and editing the file, may also be controlled.
+- Access Control
+  - The most common approach to the protection problem is to make access dependent on the identity of the user.
+  - The most general scheme to implement identity-dependent access is to associate with each file and directory an access-control list (ACL) specifying user names and the types of access allowed for each user.
+  - These problems can be resolved by use of a condensed version of the access list. To condense the length of the access-control list, many systems recognize three classifications of users in connection with each file:
+    - Owner.
+    - Group.
+    - Universe.
+- Other Protection Approaches
+  - Another approach to the protection problem is to associate a password with each file.
+  - Disadvantage
+    - First, the number of passwords that a user needs to rememer may become large, making the scheme impractical.
+    - Second, if only one password is used for all the files, then once it is discovered, all files are accessible; protection is on an all-or-none basis.
+  - In a multilevel structure, we need to protect not only individual files but also collections of files in subdirectories; that is, we need to provide a mechanism for directory protection.
+
+### 10.7: Summary
+
+- これまでに書いている内容なので省略
