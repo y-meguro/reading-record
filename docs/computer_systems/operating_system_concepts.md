@@ -2570,3 +2570,66 @@ typedef struct {
   - On the one hand, we see increasing standardization of software and hardware interfaces.
   - On the other hand, we see increasingly broad variety of I/O devices.
 - The device drivers present a uniform device-access interface to the I/O subsystem, much as system calls provide a standard interface between the application and the operating system.
+
+### 13.2: Hardware
+
+- Most fit into the general categories of storage devices (disks, tapes), transmission devices (network connections, Bluetooth), and human-interface devices (screen, keyboard, mouse, audio in and out).
+- Despite the incredible variety of I/O devices, though, we need only a few concepts to understand how the devices are attached and how the software can control the hardware.
+- A device communicates with a computer system by sending signals over a cable or even through the air.
+- A bus is a set of wires and a rigidly defined protocol that specifies a set of messages that can be sent on the wires.
+- Buses are used widely in computer architecture and vary in their signaling methods, speed, throughput, and connection methods.
+- PCI bus (the common PC system bus) / expansion bus (keyboard や USB ports など比較的遅い devices をつなぐ) / Small Computer System Interface (SCSI) bus / PCI Express (PCIe) / HyperTransport などがある。
+- A controller is a collection of electronics that can operate a port, a bus, or a device.
+  - A serial-port controller is a simple device controller. It is a single chip (or portion of a chip) in the computer that controls the signals on the wires of a serial port.
+- How can the processor give commands and data to a controller to accomplish an I/O transfer?
+  - The short answer is that the controller has one or more registers for data and control signals. The processor communicates with the controller by reading and writing bit patterns in these registers.
+- Alternatively, the device controller can support memory-mapped I/O.
+  - In this case, the device-control registers are mapped into the address space of the processor.
+  - The CPU executes I/O requests using the standard data-transfer instructions to read and write the device-control registers at their mapped locations in physical memory.
+- Some systems use both techniques.
+- An I/O port typically consists of four registers, called the status, control, data-in, and data-out registers.
+  - The data-in register is read by the host to get input.
+  - The data-out register is written by the host to send output.
+  - The status register contains bits that can be read by the host. current command の実行が完了したかなどの情報を持つ。
+  - The control register can be written by the host to start a command or to change the mode of a device.
+- Polling
+  - controller と host の間で producer-consumer relationship を作っていく例をもとに考える。
+  - The host writes output through a port, coordinating with the controller by handshaking as follows:
+    - The host repeatedly reads the busy bit until that bit becomes clear. (busy の間、controller は status register の busy bit を 1 に set する)
+    - The host sets the write bit in the command register and writes a byte into the data-out register.
+    - The host sets the command-ready bit.
+    - When the controller notices that the command-ready bit is set, it sets the busy bit.
+    - The controller reads the command register and sees the write command. It reads the data-out register to get the byte and does the I/O to the device.
+    - The controller clears the command-ready bit, clears the error bit in the status register to indicate that the device I/O succeeded, and clears the busy bit to indicate that it is finished.
+- Interrupts
+  - The basic interrupt mechanism works as follows.
+    - The CPU hardware has a wire called the interrupt-request line that the CPU senses after executing every instruction.
+    - When the CPU detects that a contrller has asserted a signal on the interrupt-request line, the CPU performs a state save and jumps to the interrupt-handler routine at a fixed address in memory.
+    - The interrupt handler determines the cause of the interrupt, performs the necessary processing, performs a state restore, and executes a return from interrupt instruction to return the CPU to the execution state prior to the interrupt.
+  - In a modern operating system, however, we need more sophisticated interrupt-handling features.
+    - We need the ability to defer interrupt handling during critical processing.
+    - We need an efficient way to dispatch to the proper interrupt handler for a device without first polling all the devices to see which one raised the interrupt.
+    - We need multilevel interrupts, so that the operating system can distinguish between high- and low-priority interrupts and can respond with the appropriate degree of urgency.
+    - 上記 3 つの機能は CPU と interrupt-controller hardware によって提供される。
+  - Most CPUs have two interrupt request lines.
+    - One is the nonmaskable interrupt, which is reserved for events such as unrecoverable memory errors.
+    - The second interrupt line is maskable: it can be turned off by the CPU before the execution of critical instruction sequences that must not be interrupted.
+  - The interrupt mechanism accepts an address - a number that selects a specific interrupt-handling routine from a small set.
+    - In most architectures, this address is an offset in a table called the interrupt vector.
+  - The interrupt mechanism also implements a system of interrupt priority levels.
+    - These levels enable the CPU to defer the handling of lower-priority interrupts without masking all interrupts and makes it possible for a high-priority interrupt to preempt the execution of a lower-priority interrupt.
+  - ハードウェア割り込みは CPU の外部からの要求であるのに対して、ソフトウェア割り込み (trap) は CPU 内部の要因で発生するもの。
+  - In summary, interrupts are used throughout modern operating systems to handle asynchronous events and to trap to supervisor-mode routines in the kernel.
+- Direct Memory Access
+  - programmed I/O (PIO): CPU を介して周辺機器とメインメモリの間のデータ転送を行う方式のこと。
+  - Many computers avoid burdening the main CPU with PIO by offloading some of this work to a a special-purpose processor called a direct-memory-access (DMA) controller.
+  - Handshaking between the DMA controller and the device controller is performed via a pair of wires called DMA-request and DMA-acknowledge.
+  - Some computer architectures use physical memory address for DMA, but others perform direct virtual memory access (DVMA), using virtual addresses that undergo translation to physical addresses.
+- I/O Hardware Summary
+  - Main concepts
+    - A bus
+    - A controller
+    - An I/O port and its registers
+    - The handshaking relationship between the host and a device controller
+    - The execution of this handshaking in a polling loop or via interrupts
+    - The offloading of this work to a DMA controller for large transfer
