@@ -2709,3 +2709,20 @@ typedef struct {
 - It consists of a stream head that interfaces with the user process, a driver end that controls the device, and zero or more stream modules between the stream head and the driver end.
   - Each of these components conttains a pair of queues - a read queue and a write queue.
 - The benefit of using STREAMS is that it provides a framework for a modular and incremental approach to writing device drivers and network protocols.
+
+### 13.7: Performance
+
+- I/O is a major factor in system performance. It places heavy demands on the CPU to execute device-driver code and to schedule processes fairly and efficiently as they block and unblock.
+- Although modern computers can handle many thousands of interrupts per second, interrupt handling is a relatively expensive task.
+- Network traffic can also cause a high context-switch.
+- We can employ several principles to improve the efficiency of I/O:
+  - Reduce the number of context switches.
+  - Reduce the number of times that data must be copied in memory while passing between device and application.
+  - Reduce the frequency of interrupts by using large transfers, smart controllers, and polling.
+  - Increase concurrency by using DMA-knowledgeable controllers or channels to offload simple data copying from the CPU.
+  - Move processing primitives into hardware, to allow their operation in device controllers to be concurrent with CPU and bus operation.
+  - Balance CPU, memory subsystem, bus, and I/O performance, because an overload in any one area will cause idleness in others.
+
+### 13.8: Summary
+
+- これまでに書いている内容なので省略
