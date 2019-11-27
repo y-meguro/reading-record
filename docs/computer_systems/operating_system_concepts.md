@@ -2537,3 +2537,21 @@ typedef struct {
     - If there is a problem with the data, the checksum will be incorrect, and the file system will know about it.
     - If the data are mirrored, and thre is a block with a correct checksum and one with an incorrect checksum, ZFS will automatically update the bad block with the good one.
   - Another issue with most RAID implementations is lack of flexibility.
+  - Disks, or partitions of disks, are gathered together via RAID sets into pools of storage. A pool can hold one or more ZFS file systems.
+
+### 12.8: Stable-Storage Implementations
+
+- A disk write results in one of three outcomes:
+  - Successful completion.
+  - Partial failure.
+  - Total failure.
+- An output operation is executed as follows:
+  - Write the information onto the first physical block.
+  - When the first write completes successfully, write the same information onto the second physical block.
+  - Declare the operation complete only after the second write completes successfully.
+- During recovery from a failure, each pair of physical block is examined.
+- We can extend this procedure easily to allow the use of an arbitrarily large number of copies of each block of stable storage.
+
+### 12.9: Summary
+
+- これまでに書いている内容なので省略
