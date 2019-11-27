@@ -2424,3 +2424,30 @@ typedef struct {
   - 他にも file-allocation method や location of directories and index blocks に影響される。
   - Because of these complexities, the disk-scheduling algorithm should be written as a separate module of the operating syste, so that it can be replaced with a different algorithm if necessary.
   - It is difficult for the operating system to schedule for improved rotational latency, though, because modern disks do not disclose the physical location of logical blocks.
+
+### 12.5: Disk Management
+
+- Disk Formatting
+  - A new magnetic disk is a blank slate: it is just a platter of a magnetic recording material. Before a disk can store data, it must be divided into sectors that the disk controller can read and write.
+    - This process is called low-level formatting or physical formatting.
+  - The data structure for a sector typically consists of a header, a data area, and a trailer.
+  - Before it can use a disk to hold files, the operating system still needs to record its own data structures on the disk. It does so in two steps.
+    - The first step is to partition the disk into one or more groups of cylinders.
+    - The second step is logical formatting, or creation of a file system. In this step, the operating system stores the initial file-system data structures onto the disk.
+  - To increase efficiency, most file systems group blocks together into larger chunks, frequently called clusters.
+- Boot Block
+  - Bootstrap program initializes all aspects of the system, from CPU registers to device controllers and the contents of main memory, and then starts the operating system.
+  - To do its job, the bootstrap program finds the operating-system kernel on disk, loads that kernel into memory, and jumps to an initial address to begin the operating -system execution.
+  - For most computers, the bootstrap is stored in read-only memory (ROM).
+  - bootstrap code を変更するには ROM hardware chips を変更しなければならないが、それはコストが高い。なのでほとんどのシステムでは、boot ROM に bootstrap loader program を格納し、それは disk から bootstrap program を取得することだけを行う。これにより、bootstrap code 変更のコストが下がる。
+  - The full bootstrap program is stored in the "boot blocks" at a fixed location on the disk. A disk that has a boot partition is called a boot disk or system disk.
+  - THe code in the boot ROM instructs the disk controller to read the boot blocks into memory and then starts executing that code.
+- Bad Blocks
+  - Most disks even come from the factory with bad blocks.
+  - One strategy is to scan the disk to find bad blocks while the disk is being formatted. Any bad blocks that are discovered are flagged as unusable so that the file system does not allocate them.
+  - More sophisticated disks are smarter about bad-block recovery.
+    - The controller maintains a list of bad blocks on the disk.
+    - spare sectors を用意しておいて、The controller can be told to replace each bad sector logically with one of the spare sectors.
+    - This scheme is known as sector sparing or forwarding.
+  - As an alternative by sector sparing, some controllers can be instructed to replace a bad block by sector slipping.
+  - The replacement of a bad block generally is not totally automatic, because the data in the bad block are usually lost.
