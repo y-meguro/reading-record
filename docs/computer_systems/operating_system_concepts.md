@@ -2340,3 +2340,30 @@ typedef struct {
 ### 11.10: Summary
 
 - これまでに書いている内容なので省略
+
+## 12: Mass-Storage Structure
+
+- Chapter Objectives
+  - To describe the physical structure of secondary storage devices and its effects on the uses of the devices.
+  - To explain the performance characteristics of mass-storage devices.
+  - To evaluate disk scheduling algorithms.
+  - To discuss operating-system services provided for mass storage, including RAID.
+
+### 12.1: Overview of Mass-Storage Structure
+
+- In this section, we present a general overview of the physical structure of secondary and tertiary storage devices.
+- Magnetics Disks
+  - Magnetic disks provide the bulk of secondary storage for modern computer systems.
+  - Each disk platter has a flat circular shape, like a CD.
+  - We store information by recording it magnetically on the platters.
+  - platter は tracks に分割できて、track は sectors に分割できる。The set of tracks that are at one arm position makes up a cylinder.
+- Solid-State Disks (SSDs)
+  - Simply described, an SSD is nonvolatile memory that is used like a hard drive.
+  - traditional hard disk より省エネで信頼性が高いが、コストも高い。
+  - Because SSDs can be much faster than magnetic disk drives, standard bus interfaces can cause a major limit on throughput.
+  - disk head がないので、このあと出る disk-scheduling algorithm は当てはまらない。ただし、throughput と formatting は当てはまる。
+- Magnetic Tapes
+  - Magnetic tape was used as an early secondary-storage medium.
+  - Although it is relatively permanent and can hold large quantities of data, its access time is slow compared with that of main memory and magnetic disk.
+    - さらに random access になると magnetic disk の 1000 倍程度遅い。
+  - Tapes are used mainly for backup, for storage of infrequently used information, and as a medium for transferring information from one system to another.
