@@ -2555,3 +2555,18 @@ typedef struct {
 ### 12.9: Summary
 
 - これまでに書いている内容なので省略
+
+## 13: I/O Systems
+
+- Chapter Objectives
+  - To explore the structure of an operating system's I/O subsystem.
+  - To discuss the principles and complexities of I/O hardware.
+  - To explain the performance aspects of I/O hardware and software.
+
+### 13.1: Overview
+
+- The control of devices connected to the computer is a major concern of operating-system designers.
+- I/O-device technology exhibits two conflicting trends.
+  - On the one hand, we see increasing standardization of software and hardware interfaces.
+  - On the other hand, we see increasingly broad variety of I/O devices.
+- The device drivers present a uniform device-access interface to the I/O subsystem, much as system calls provide a standard interface between the application and the operating system.
