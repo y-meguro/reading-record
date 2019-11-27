@@ -2367,3 +2367,11 @@ typedef struct {
   - Although it is relatively permanent and can hold large quantities of data, its access time is slow compared with that of main memory and magnetic disk.
     - さらに random access になると magnetic disk の 1000 倍程度遅い。
   - Tapes are used mainly for backup, for storage of infrequently used information, and as a medium for transferring information from one system to another.
+
+### 12.2: Disk Structure
+
+- Modern magnetic disk drives are addressed as large one-dimensional arrays of logical blocks. where the logical block is the smallest unit of transfer.
+  - size は大抵 512 bytes。
+- The one-dimensional array of logical blocks is mapped onto the sectors of the disk sequentially.
+- By using this mapping, we can - at least in theory - convert a logical block number into an old-style disk address that consists of a cylinder number, a track number within that cylinder, and a sector number within that track.
+  - しかし実際にはこの translation は難しい。
