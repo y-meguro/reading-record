@@ -2422,7 +2422,7 @@ typedef struct {
 - Selection of a Disk-Scheduling Algorithm
   - With any scheduling algorithm, however, performance depends heavily on the number and types of requests.
   - 他にも file-allocation method や location of directories and index blocks に影響される。
-  - Because of these complexities, the disk-scheduling algorithm should be written as a separate module of the operating syste, so that it can be replaced with a different algorithm if necessary.
+  - Because of these complexities, the disk-scheduling algorithm should be written as a separate module of the operating system, so that it can be replaced with a different algorithm if necessary.
   - It is difficult for the operating system to schedule for improved rotational latency, though, because modern disks do not disclose the physical location of logical blocks.
 
 ### 12.5: Disk Management
@@ -2451,3 +2451,20 @@ typedef struct {
     - This scheme is known as sector sparing or forwarding.
   - As an alternative by sector sparing, some controllers can be instructed to replace a bad block by sector slipping.
   - The replacement of a bad block generally is not totally automatic, because the data in the bad block are usually lost.
+
+### 12.6: Swap-Space Management
+
+- In fact, some systems now use the terms "swapping" ad "paging" interchangeably, reflecting the merging of these two concepts.
+- Swap-space management is another low-level task of main memory.
+  - The main goal for the design and implementation of swap space is to provide the best throughput for the virtual memory system.
+- Swap-Space Use
+  - swap space の量は多く見積もっておいたほうが安全。
+- Swap-Space Location
+  - A swap space can reside in one of two places: it can be carved out of the normal file system, or it can be in a separate disk partition.
+  - If the swap space is simply a large file within the file system, normal file-system routines can be used to create it, name it, and allocate its space.
+    - だがこのやり方は効率が悪い。
+  - Alternatively, swap space can be created in a separate raw partition. No file system or directory structure is placed in this space.
+    - This manager uses algorithms optimized for speed rather than for storage efficiency, because swap space is accessed much more frequently than file systems.
+  - 両方を使えるような operating system もある。
+- Swap-Space Management: An Example
+  - The traditional UNIX kernel started with an implementation of swapping that copied entire processes between contiguous disk regions and memory.
