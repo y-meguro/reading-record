@@ -2330,3 +2330,13 @@ typedef struct {
   - With the exception of opening and closing files, there is an almost one-to-one correspondence between the regular UNIX system calls for file operations and the NFS protocol RPCs. Thus, a remote file operation can be translated directly to the corresponding RPC.
   - There are two caches: the file-attribute (inode-information) cache and the file-blocks cache.
     - The cached file blocks are used only if the corresponding cached attributes are up to date.
+
+### 11.9: Example: The WAFL File System
+
+- The write-anywhere file layout (WAFL) from Network Appliance is an example of this sort of optimization. WAFL is a powerful, elegant file system optimized for random writes.
+- WAFL は distributed file system として使われ、It can provide files to clients via the NFS, CIFS, ftp, and http protocols, although it was designed just for NFS and CIFS.
+- snapshots, clones, replications などの特徴がある。
+
+### 11.10: Summary
+
+- これまでに書いている内容なので省略
