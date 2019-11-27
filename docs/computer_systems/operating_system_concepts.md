@@ -2296,3 +2296,37 @@ typedef struct {
 - Backup and Restore
   - Magnetic disk sometimes fail, and care must be taken to ensure that the data lost in such a failure are not lost forever.
   - 典型的な backup は incremental backup で差分だけバックアップする。
+
+### 11.8: NFS (Network File System)
+
+- They are typically integrated with the overall directory structure and interface of the client system.
+- Overview
+  - Subject to access-rights accreditation, any file system, or any directory within a file system, can be mounted remotely on top of any local directory.
+  - FIgure 11.14 に mounts の図と cascading mounts の図あり。
+  - One of the design goals of NFS was to operate in a heterogeneous environment of different machines, operating systems, and network architectures.
+  - The NFS specification distinguish between the services provided by a mount mechanism and the actual remote-file-access services.
+    - 前者を提供するのが mount protocol、後者を提供するのが NFS protocol。The protocols are specified as sets of RPCs.
+- The Mount Protocol
+  - The mount protocol establishes the initial logical connection between a server and a client.
+  - The server maintains an export list that specifies local file systems that it exports for mounting, along with names of machines that are permitted to mount them.
+  - The server also maintains a list of the client machines and the corresponding currently mounted directories.
+- The NFS Protocol
+  - The NFS protocol provides a set of RPCs for remote file operations. The procedures support the following operations:
+    - Searching for a file within a directory
+    - Reading a set of directory entries
+    - Manipulating links and directories
+    - Accessing file attributes
+    - Reading and writing files
+  - These procedures can be invoked only after a file handle for the remotely mounted directory has been established.
+  - The omission of open and close operations is intentional.
+  - A prominent feature of NFS servers is that they are stateless.
+  - A further implication of the stateless-server philosophy and a result of the synchrony of an RPC is that modified data must be committed to the server's disk before results are returned to the client.
+  - NFS is integrated into the operating system via a VFS.
+    - Figure 11.15 がわかりやすい
+- Path-Name Translation
+  - Path-name translation in NFS involves the parsing of a path name such as `/usr/local/dir1/file.txt` into separate directory, or components: (1) usr, (2) local, and (3) dir1.
+  - So that lookup is fast, a directory-name-lookup cache on the client side holds the vnodes for remote directory names.
+- Remote Operations
+  - With the exception of opening and closing files, there is an almost one-to-one correspondence between the regular UNIX system calls for file operations and the NFS protocol RPCs. Thus, a remote file operation can be translated directly to the corresponding RPC.
+  - There are two caches: the file-attribute (inode-information) cache and the file-blocks cache.
+    - The cached file blocks are used only if the corresponding cached attributes are up to date.
