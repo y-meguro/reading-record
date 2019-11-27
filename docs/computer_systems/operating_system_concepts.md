@@ -2468,3 +2468,72 @@ typedef struct {
   - 両方を使えるような operating system もある。
 - Swap-Space Management: An Example
   - The traditional UNIX kernel started with an implementation of swapping that copied entire processes between contiguous disk regions and memory.
+
+### 12.7: RAID Structure
+
+- Disk drives have continued to get smaller and cheaper, so it is now economically feasible to attach many disks to a computer system.
+- A variety of disk-organization techniques, collectively called redundant arrays of independent disks (RAID), are commonly used to address the performance and reliability issues.
+- Today, RAIDs are used for their higher reliability and higher data-transfer rate, rather than for economic reasons.
+- Improvement of Reliability via Redundancy
+  - We store extra information that is not normally needed but that can be used in the event of failure of a disk to rebuild the lost information.
+  - The simplest (but most expensive) approach to introducing redundancy is to duplicate every disk. This technique is called mirroring.
+- Improvement in Performance via Parallelism
+  - With multiple disks, we can improve the transfer rate as well (or instead) by striping data across the disks.
+  - In its simplest form, data striping consists of splitting the bits of each byte across multiple disks; such striping is called bit-level striping.
+  - Parallelism in a disk system, as achieved through striping, has two main goals:
+    - Increase the throughput of multiple small accesses by load balancing.
+    - Reduce the response time of large access.
+- RAID Levels
+  - Mirroring provides high reliability, but it is expensive. Striping provides high data-transfer rates, but it does not improve reliability.
+  - These schemes have different cost-performance trade-offs and are classified according to levels called RAID levels.
+  - RAID level 0
+    - non-redundant striping.
+  - RAID level 1
+    - mirrored disks.
+  - RAID level 2
+    - RAID level 2 is also known as memory-style error-correcting-code (ECC) organization.
+    - 3 台の ECC 用のディスクが必要になる。
+  - RAID level 3
+    - bit-interleaved parity.
+    - parity disk を 1 つ用意すれば良い。RAID 2 の 3 台と比べるとコストが低い。
+    - Since reads and writes of a byte are spread out over multiple disks with N-way striping of data, the transfer rate for reading or writing a single block is N times as fast as with RAID level 1.
+  - RAID level 4
+    - block-interlieved parity.
+    - The data-transfer rate for each access is slower, but multiple read accesses can proceed in parallel, leading to higher overall I/O rate.
+    - large writes や large reads は速い。
+  - RAID level 5
+    - block-interleaved distributed parity.
+    - RAID level 5 differs from level 4 in that it spreads data and parity among all N+1 disks, rather than storing data in N disks and parity in one disk.
+    - RAID system の中で最も一般的。
+  - RAID level 6
+    - P + Q redundancy.
+    - RAID level 6 is much like RAID level 5 but stores extra redundant information to guard against multiple disk failures.
+    - Instead of parity, error-correcting codes such as the Read-Solomon codes are used.
+  - RAID levels 0 + 1 and 1 + 0
+    - RAID 0 provides the performance, while RAID 1 provides the reliability.
+    - Generally, this level provides better performance than RAID 5.
+    - In RAID 0 + 1, a set of disks are striped, and then the stripe is mirrored to another, equivalent stripe.
+    - Another RAID option that is becoming available commercially is RAID level 1 + 0, in which disks are mirrored in pairs and then the resulting mirrored pairs are striped.
+      - こちらはグループをまたがった障害が起きても大丈夫。0 + 1 だとグループをまたがった障害が起きると動作不能になる。
+  - The implementation of RAID is another area of variation.
+    - Volume-management software / host bus-adapter (HBA) / hardware of the storage array / SAN interconnect layer
+  - Other features, such as snapshots and replication, can be implemented at each of these levels as well.
+    - A snapshot is a view of the file system before the last update took place.
+    - Replication involves the automatic duplication of writes between separate sites for redundancy and disaster recovery.
+  - One other aspect of most RAID implementation is a hot spare disk or disks.
+    - A hot spare is not used for data but is configured to be used as a replacement in case of disk failure.
+- Selecting a RAID Level
+  - One consideration is rebuild performance.
+  - Rebuilding is easiest for RAID level 1, since data can be copied from another disk.
+  - RAID level 0 is used in high-performance applications where data loss is not critical.
+  - RAID level 1 is popular for applications that require high reliability.
+  - RAID 0 + 1 and 1 + 0 are used where both performance and reliability are important.
+  - Level 6 is not supported currently by many RAID implementations, but it should offer better reliability than level 5.
+- Extensions
+  - The concepts of RAID have been generalized to other storage devices, including arrays of tapes, and even to the broadcast of data over wireless systems.
+- Problems with RAID
+  - Unfortunately, RAID does not always assure that data are available for the operating system and its users.
+  - The Solaris ZFS file system takes an innovative approach to solving these problems through the use of checksums - a technique used to verify the integrity of data.
+    - If there is a problem with the data, the checksum will be incorrect, and the file system will know about it.
+    - If the data are mirrored, and thre is a block with a correct checksum and one with an incorrect checksum, ZFS will automatically update the bad block with the good one.
+  - Another issue with most RAID implementations is lack of flexibility.
