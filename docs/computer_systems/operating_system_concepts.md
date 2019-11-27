@@ -2633,3 +2633,37 @@ typedef struct {
     - The handshaking relationship between the host and a device controller
     - The execution of this handshaking in a polling loop or via interrupts
     - The offloading of this work to a DMA controller for large transfer
+
+### 13.3: Application I/O Interface
+
+- In this section, we discuss structuring techniques and interfaces for the operating system that enable I/O devices to be treated in a standard, uniform way.
+- A kernel I/O structure
+  - software では kernel -> kernel I/O subsystem -> 各 device driver で、hardware では 各 device controller -> 各 device となっている。
+  - The purpose of the device-driver layer is to hide the difference among device controllers from the I/O subsystem of the kernel, much as the I/O system calls encapsulate the behavior of devices in a few generic classes that hide hardware differences from applications.
+- Most operating systems also have an escape (or back door) that transparently passes arbitrary commands from an application to a device driver.
+- Block and Character Devices
+  - The block-device interface captures all the aspects necessary for accessing disk drives and other block-oriented devices.
+  - Memory-mapped file access can be layered on top of block-device drivers.
+  - A keyboard is an example of a device that is accessed through a character-stream interface.
+    - input devices や output devices ではこの形式が便利。
+- Network Devices
+  - network I/O は disk I/O と異なる部分が多いので、disk で利用している interface とは別の interface を用意している operating systems が多い。
+  - One interface available in many operating systems, including UNIX and Windows, is the network socket interface.
+  - By analogy, the system calles in the socket interface enable an application to create a socket, to connect a local socket to a remote address, to listen for any remote application to plug into a socket created by another application, and to send and receive packets over the connection.
+- Clocks and Timers
+  - Most computers have hardware clocks and timers that provide three basic functions:
+    - Give the current time.
+    - Give the elapsed time.
+    - Set a timer to trigger operation X at time T.
+- Nonblocking and Asynchronous I/O
+  - Another aspect of the system-call interface relates to the choice between blocking I/O and nonblocking I/O.
+    - When an application issues a blocking system call, the execution of the application is suspended.
+    - nonblocking I/O の場合は同時に実行できる。
+  - An alternative to a nonblocking system cal is an asynchronous system call.
+    - An asynchronous call returns immediately, without waiting for the I/O to complete.
+    - The difference between nonblocking nad asynchronous system calls is that a nonblocking read() returns immediately with whatever data are available - the full number of bytes requested, fewer, or none at all. An asynchronous read() call requests a transfer that will be performed in its entirety but will complete at some future time.
+      - 参考: [ノンブロッキングI/Oと非同期I/Oの違いを理解する](https://blog.takanabe.tokyo/2015/03/%E3%83%8E%E3%83%B3%E3%83%96%E3%83%AD%E3%83%83%E3%82%AD%E3%83%B3%E3%82%B0i/o%E3%81%A8%E9%9D%9E%E5%90%8C%E6%9C%9Fi/o%E3%81%AE%E9%81%95%E3%81%84%E3%82%92%E7%90%86%E8%A7%A3%E3%81%99%E3%82%8B/)
+- Vectored I/O
+  - Vectored I/O allows one system call to perform multiple I/O operations involving multiple locations.
+  - Programmers make use of scatter-gather I/O features to increase throughput and decrease system overhead.
+  - 参考: [Linux におけるファイル I/O の基礎](https://itkq.jp/blog/2017/05/10/linux-file-and-io/)
