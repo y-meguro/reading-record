@@ -2375,3 +2375,19 @@ typedef struct {
 - The one-dimensional array of logical blocks is mapped onto the sectors of the disk sequentially.
 - By using this mapping, we can - at least in theory - convert a logical block number into an old-style disk address that consists of a cylinder number, a track number within that cylinder, and a sector number within that track.
   - しかし実際にはこの translation は難しい。
+
+### 12.3: Disk Attachment
+
+- Computers access disk storage in two ways.
+  - One way is via I/O ports (or host-attached storage); this is common on small systems.
+  - The other way is via a remote host is a distributed file system; this is referred to as network-attached storage.
+- Host-Attached Storage
+  - Host-attached storage is storage accessed through local I/O ports.
+  - A wide variety of storage devices are suitable for use as host-attached storage.
+- Network-Attached Storage (NAS)
+  - A network-attached storage device is a special-purpose storage system that is accessed remotely over a data network.
+  - Network-attached storage provides a convenient way for all the computers on a LAN to share a pool of storage with the same ease of naming and access enjoyed with local host-attached storage.
+- Storage-Area Network
+  - One drawback of network-attached storage systems is that the storage I/O operations consume bandwidth on the data network, thereby increasing the latency of network communicaion.
+  - A storage-area network (SAN) is a private network (using storage protocols rather than networking protocols) connecting servers and storage units.
+  - The power of SAN lies in its flexibility. Multiple hosts and multiple storage arrays can attach to the same SAN, and storage can be dynamically alocated to hosts.
