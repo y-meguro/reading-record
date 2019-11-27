@@ -2391,3 +2391,36 @@ typedef struct {
   - One drawback of network-attached storage systems is that the storage I/O operations consume bandwidth on the data network, thereby increasing the latency of network communicaion.
   - A storage-area network (SAN) is a private network (using storage protocols rather than networking protocols) connecting servers and storage units.
   - The power of SAN lies in its flexibility. Multiple hosts and multiple storage arrays can attach to the same SAN, and storage can be dynamically alocated to hosts.
+
+### 12.4: Disk Scheduling
+
+- 効率的に disk drive を使うには fast access time と large disk bandwidth が必要。
+- For magnetic disks, the access time has two major components.
+  - The seek time is the time for the disk arm to move the hands to the cylinder containing the desired sector.
+  - The rotational latency is the additional time for the disk to rotate the desired sector to the disk head.
+- The disk bandwidth is the total number of bytes transferred, divided by the total time between the first request for service and the completion of the last transfer.
+- If the drive or controller is busy, any new requests for service will be placed in the queue of pending requests for that drive.
+  - pending request の中からどのように次に実行するものを決めるかが disk-scheduling algorithm。
+- FCFS Scheduling
+  - The simplest form of disk scheduling is, of course, the first-come, first-served (FCFS) algorithm.
+  - しかしこれだと disk head の移動が多くなり、一般的には fastest service を提供できない。
+- SSTF Scheduling
+  - It seems reasonable to service all the requests close to the current head position before moving the head far away to service other requests.
+  - This assumption is the basis for the shortest-seek-time-first (SSTF) algorithm.
+  - The SSTF algorithm selects the request with the least seek time from the current head position.
+  - It may cause starvation of some requests.
+  - Although the SSTF algorithm is a substantial improvement over the FCFS algorithm, it is not optimal.
+- SCAN Scheduling
+  - In the SCAN algorithm, the disk arm starts at one end of the disk and moves toward the other end, servicing requests as it reaches each cylinder, until it gets to the other end of the disk. At the other end, the direction of head movement is reversed, and servicing continues.
+  - The SCAN algorithm is sometimes called the elevator algorithm.
+- C-SCAN Scheduling
+  - Circular SCAN (C-SCAN) scheduling is a variant of SCAN designed to provide a more uniform wait time.
+  - C-SCAN は SCAN と同様、まず端まで head を動かす。When the head reaches the other end, however, it immediately returns to the beginning of the disk without servicing any requests on the return trip.
+- LOOK Scheduling
+  - More commonly, the arm goes only as far as the final request in each direction.
+  - LOOK scheduling と C-LOOK scheduling がある。
+- Selection of a Disk-Scheduling Algorithm
+  - With any scheduling algorithm, however, performance depends heavily on the number and types of requests.
+  - 他にも file-allocation method や location of directories and index blocks に影響される。
+  - Because of these complexities, the disk-scheduling algorithm should be written as a separate module of the operating syste, so that it can be replaced with a different algorithm if necessary.
+  - It is difficult for the operating system to schedule for improved rotational latency, though, because modern disks do not disclose the physical location of logical blocks.
