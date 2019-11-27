@@ -2697,3 +2697,15 @@ typedef struct {
   - The kernel needs to keep state information about the use of I/O components.
   - UNIX provides file-system access to a variety of entities, such as user files, raw devices, and the address spaces of processes. Although each of these entities supports a read() operation, the semantics differ.
 - Kernel I/O Subsystem Summary
+
+### 13.5: Transforming I/O Requests to Hardware Operations
+
+- The application refers to the data by a file name.
+- The lifecycle of an I/O request (Figure 13.13)
+
+### 13.6: STREAMS
+
+- UNIX System V has an interesting mechanism, called STREAMS, that enables an application to assemble pipelines of driver code dynamically.
+- It consists of a stream head that interfaces with the user process, a driver end that controls the device, and zero or more stream modules between the stream head and the driver end.
+  - Each of these components conttains a pair of queues - a read queue and a write queue.
+- The benefit of using STREAMS is that it provides a framework for a modular and incremental approach to writing device drivers and network protocols.
