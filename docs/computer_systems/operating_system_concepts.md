@@ -2667,3 +2667,33 @@ typedef struct {
   - Vectored I/O allows one system call to perform multiple I/O operations involving multiple locations.
   - Programmers make use of scatter-gather I/O features to increase throughput and decrease system overhead.
   - 参考: [Linux におけるファイル I/O の基礎](https://itkq.jp/blog/2017/05/10/linux-file-and-io/)
+
+### 13.4: Kernel I/O Subsystem
+
+- Kernel provide many services related to I/O. Several services - scheduling, buffering, caching, spooling, device reservation, and error handling - are provided by the kernel's I/O subsystem and build on the hardware and device-driver infrastructure.
+- I/O scheduling
+  - To schedule a set of I/O requests means to determine a good order in which to execute them.
+  - When a kernel supports asynchronous I/O, it must be able to keep track of many I/O requests at the same time. For this purpose, the operating system might attach the wait queue to a device-status table.
+- Buffering
+  - A buffer, of course, is a memory area that stores data being transferred between two devices or between a device and an application.
+  - Buffering is done for three reasons.
+    - One reason is to cope with a speed mismatch between the producer and consumer of a data stream.
+    - A second use of buffering is to provide adaptations for devices that have different data-transfer sizes.
+    - A third use of buffering is to support copy semantics for application I/O.
+- Caching
+  - A cache is a region of fast memory that holds copies of data. Access to the cached copy is more efficient than access to the original.
+  - The difference between a buffer and a cache is that a bufffer may hold the only existing copy of a data item, whereas a cache, by definition, holds a copy on faster storage of an item that resides elseware.
+- Spooling and Device Reservation
+  - A spool is a buffer that holds output for a device, such as a printer, that cannot accept interleaved data streams.
+  - 他にも Some operating systems provide support for exclusive device access by enabling a process to allocate an idle device and to deallocate that device when it is no longer needed.
+- Error Handling
+  - As a general rule, an I/O system call will return one bit of information about the status of the call, signifying either success or failure.
+  - In the UNIX operating system, an additional integer variable named errno is used to return an error code - one of about a hundred values - indicating the general nature of the failure.
+- I/O Protection
+  - To prevent users from performing illegal I/O, we define all I/O instructions to be privileged instructions.
+  - In addition, any memory-mapped and I/O port memory locations must be protected from user access by the memory-protection system.
+    - user の direct access が必要な場合もあるので、そういう時のために例えば graphics memory へのアクセスを認めるなら The kernel might provide a locking mechanism to allow a section of graphics memory to be allocated to one process at a time.
+- Kernel Data Structures
+  - The kernel needs to keep state information about the use of I/O components.
+  - UNIX provides file-system access to a variety of entities, such as user files, raw devices, and the address spaces of processes. Although each of these entities supports a read() operation, the semantics differ.
+- Kernel I/O Subsystem Summary
