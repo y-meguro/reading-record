@@ -2726,3 +2726,19 @@ typedef struct {
 ### 13.8: Summary
 
 - これまでに書いている内容なので省略
+
+## 14: System Protection
+
+- Chapter Objectives
+  - To discuss the goals and principles of protection in a modern computer system.
+  - To explain how protection domains, combined with an access matrix, are used to specify the resources a process may access.
+  - To examine capability- and language-based protection systems.
+
+### 14.1: Goals of Protection
+
+- Modern protection concepts have evolved to increase the reliability of any complex system that makes use of shared resources.
+- We need to protection for several reasons.
+  - The most obvious is the need to prevent the mischievous, intentional violation of an access restriction by a user.
+  - Of more general importance, however, is the need to ensure that each program component active in a system uses system resources only in ways consistent with stated policies.
+- Protection can improve reliability by detecting latent errors at the interfaces between component subsystems.
+- The role of protection in a computer system is to provide a mechanism for the enforcement of the policies governing resource use.
