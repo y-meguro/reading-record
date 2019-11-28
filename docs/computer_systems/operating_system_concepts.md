@@ -2855,3 +2855,39 @@ typedef struct {
 ### 14.10: Summary
 
 - これまでに書いている内容なので省略
+
+## 15: System Security
+
+- Protection is strictly an internal problem. Security, on the other hand, requires not only an adequate protection system but also consideration of the external environment within which system operates.
+- Chapter Objectives
+  - To discuss security threats and attacks.
+  - To explain the fundamentals of encryption, authentication, and hashing.
+  - To examine the use of cryptography in computing.
+  - To describe various countermeasures to security attacks.
+
+### 15.1: The Security Problem
+
+- intruder と cracker はセキュリティを破ろうとする人を指す言葉として使う。
+- 様々な violation
+  - Breach of confidentiality.
+    - This violation involves unauthorized reading of data.
+  - Breach of integrity.
+    - This violation involves unauthorized modification of data.
+  - Breach of availability.
+    - This violation involves unauthorized destruction of data.
+  - Theft of service.
+    - This violation involves unauthorized use of resources.
+  - Denial of service.
+    - This violation involves preventing legitimate use of the system.
+- The most common attempt is masquerading, in which one participant in a communication pretends to be someone else (another host or another person).
+  - By masquerading, attackers breach authentication, the correctness of identification.
+- Another common attack is to replay a captured exchange of data.
+  - データのやり取りを盗聴して、それを再現することでなりすます。
+- 他にも man-in-the-middle attack (中間者攻撃)などがある
+- To protect a system, we must take security measures at four levels:
+  - Physical.
+  - Human.
+    - 人が情報を渡すのに加えて social engineering によるものも含まれる。phishing や dumpster diving。
+  - Operating system.
+  - Network.
+- In the remainder of this chapter, we address security at the network and operating-system levels.
