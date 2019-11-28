@@ -2891,3 +2891,42 @@ typedef struct {
   - Operating system.
   - Network.
 - In the remainder of this chapter, we address security at the network and operating-system levels.
+
+### 15.2: Program Threats
+
+- Processes, along with the kernel, are the only means of accomplishing work on a computer. Therefore, writing a program that creates a breach of security, or causing a normal process to change its behavior and create a breach, is a common goal of crackers.
+- In this section, we describe common methods by which programs cause security breaches.
+- Trojan Horse
+  - A code segment that misuses its environment is called a Trojan horse.
+  - A variation of the Trojan horse is a program that emulates a login program.
+  - Another variation on the Trojan horse is spyware.
+  - 参考: [トロイの木馬とは? | ウイルスとの違いや感染被害例について](https://japan.norton.com/trojan-virus-3868)
+- Trap Door
+  - The designer of a program or system might leave a hole in the software that only she is capable of using. This type of security breach (or trap door) was shown in the movie War Games.
+  - Trap doors pose a difficult problem because, to detect them, we have to analyze all the source code for all components of a system.
+- Logic Bomb
+  - ある特定の状況下で security incident が発生するようにされたものを logic bomb という。
+- Stack and Buffer Overflow
+  - By using trial and error, or by examining the source code of the attacked program if it is available, the attacker determines the vulnerability and writes a program to do the following:
+    - Overflow an input field, command-line argument, or input buffer - for example, on a network daemon - until it writes into the stack.
+    - Overwrite the current return address on the stack with the address of the exploit code loaded in next step.
+    - Write a simple set of code for the next space in the stack that includes the commands that the attacker wishes to execute - for instance, spawn a shell.
+  - The result of this attack program's execution will be a root shell or other privileged command execution.
+  - Given the standard memory layout, a cracker could execute a buffer-overflow attack. Her goal is to replace the return address in the stack frame so that it now points to the code segment containing the attacking program.
+  - One solution of this problem is for the CPU to have a feature that disallows execution of code in a stack section of memory.
+- Viruses
+  - A virus is a fragment of code embeded in a legitimate program.
+  - Viruses are self-replicating and are designed to "infect" other programs.
+  - Viruses are usually borne via e-mail, with spam the most common vector.
+  - Another common form of virus transmission uses Microsoft Office files, such as Microsoft Word documents.
+  - Note that many viruses belong to more than one category.
+    - File.
+    - Boot.
+    - Macro.
+    - Source code.
+    - Polymorphic.
+    - Encrypted.
+    - Stealth.
+    - Tunneling.
+    - Multipartite.
+    - Armored.
