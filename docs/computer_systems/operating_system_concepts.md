@@ -2742,3 +2742,35 @@ typedef struct {
   - Of more general importance, however, is the need to ensure that each program component active in a system uses system resources only in ways consistent with stated policies.
 - Protection can improve reliability by detecting latent errors at the interfaces between component subsystems.
 - The role of protection in a computer system is to provide a mechanism for the enforcement of the policies governing resource use.
+- Note that mechanisms are distinct from policies.
+  - Mechanisms determine how something will be done; policies decide what will be done.
+
+### 14.2: Principles of Protection
+
+- A key, time-tested guiding principle for protection is the principle of least privilege.
+- An operating system following the principle of least privilege implements its features, programs, system cals, and data structures so that failure or compromise of a component does the minimum damage and allows the minimum damage to be done.
+- Managing users with the principle of least privilege entails creating a separate account for each user, with just the privileges that the user needs.
+
+### 14.3: Domain of Protection
+
+- A computer system is a collection of processes and objects.
+  - objects には hardware objects (such as the CPU, memory segments, printers, disks, and tape drives) と software objects (such as files, programs, and semaphores).
+- A process should be allowed to access only those resources for which it has authorization.
+- Futhermore, at any time, a process should be able to access only those resources that it currently requires to complete its task.
+  - This second requirement, commonly referred to as the need-to-know principle, is useful in limiting the amount of damage a faulty process can cause in the system.
+- Domain Structure
+  - To facilitate the scheme just described, a process operates within a protection domain, which specifies the resources that the process may access.
+  - Each domain defines a set of objects and the types of operations that may be invoked on each object. The ability to execute an operation on an object is an access right.
+    - A domain is a collection of access rights, each of which is an ordered pair `<object-name, rights-set>`. 例えば `<file F, {read, write}>` など。
+  - Domain may share access rights.
+  - The association between a process and a domain may be either static, or dynamic.
+  - A domain can be realized in a variety of ways:
+    - Each user may be a domain.
+    - Each process may be a domain.
+    - Each procedure may be a domain.
+- An Example: UNIX
+  - In the UNIX operating system, a domain is associated with the user.
+- An Example: MULTICS
+  - In the MULTICS system, the protection domains are organaized hierarchically into a ring structure.
+  - Each ring corresponds to a single domain.
+  - The main disadvantage of the ring (or hierarchical) structure is that it does not allow us to enforce the need-to-know principle.
