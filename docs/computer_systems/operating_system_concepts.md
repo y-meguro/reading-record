@@ -2947,3 +2947,56 @@ typedef struct {
     - Attacks in the first category use so many facility resources that, in essence, no useful work can be done.
     - The second category involves disrupting the network of the facility. These atacks result from abuse of some of the fundamental functionality of TCP/IP.
   - Generally, it is impossible to prevent denial-of-service attacks. The attacks use the same mechanism as normal operation.
+
+### 15.4: Cryptography as a Security Tool
+
+- Abstractly, cryptography is used to constrain the potential senders and / or receivers of a message.
+- Encryption
+  - In this section, we describe important modern encryption principles and algorithms.
+  - An encryption algorithm consists of the following components:
+    - A set K of keys.
+    - A set M of messages.
+    - A set C of ciphertexts.
+    - An encrypting function E: K → (M → C).
+    - A decrypting function D: K  → (C → M).
+  - There are two main types of encryption algorithms: symmetric and asymmetric.
+  - Symmetric Encryption
+    - In a symmetric encryption algorithm, the same key is used to encrypt and to decrypt. Therefore, the secrecy of k must be protected.
+    - この symmetric encryption を使った data-encryption standard (DES) がかつてアメリカで最も一般的だった。
+    - 2001 年に DES を置き換えるものとして登場したのが advanced encryption standard (AES)。
+  - Asymmetric Encryption
+    - In an asymmetric encryption algorithm, there are different encryption and decryption keys.
+    - An entity preparing to receive encrypted communicaion creates two keys and makes one of them (called the public key).
+      - これにより、key を秘密にしなくて良くなった。
+      - この public-key encryption を使ったアルゴリズムを RSA という (開発者 3 人の頭文字から名付けられてる)。
+    - Asymmetric cryptography is much more computationally expensive to execute.
+      - In truth, asymmetric cryptography algorithms are not used for general-purpose encryption of large amounts of data.
+      - However, they are used not only for encryption of small amounts of data but also for authentication, confidentiality, and key distribution, as we show in the following sections.
+  - Authentication
+    - Constraining the set of potential senders of a message is called authentication.
+    - An authentication algorithm using symmetric keys consists of the following components:
+      - A set K of keys.
+      - A set M of messages.
+      - A set A of authenticators.
+      - A function S: K → (M → A).
+      - A function V: K → (M × A → {true, false}).
+    - Just as there are two types of encryption algorithms, there are two main varieties of authentication algorithms.
+      - The first main type of authentication algorithm uses symmetric encryption.
+        - In a message-authentication code (MAC), a cryptographic checksum is generated from the message using a secret key.
+      - The second main type of authentication algorithm is a digital-signature algorithm, and the authenticators thus produced are called digital signatures.
+        - Digital signatures are very useful in that they enable anyone to verify the authenticity of the message.
+        - In a digital-signature algorithm, `kv` is the public key, and `ks` is the private key.
+  - Key Distribution
+    - The delivery of the symmetric key is a huge challenge.
+    - public keys の送付についても注意する必要がある。man-in-the-middle attack の可能性があるため。
+    - A digital certificate is a public key digitally signed by a trusted party.
+- Implementation of Cryptography
+  - Cryptography can be inserted at almost any layer in the OSI model.
+    - トランスポート層の SSL や、ネットワーク層の IPSec。
+  - Where is cryptographic protection best placed in a protocol stack?
+    - In general, there is no devinitive answer.
+    - On the one hand, more protocols benefit from protections placed lower in the stack.
+    - On the other hand, protection at lower layers in the protocol stack may give insufficient protection to higher-layer protocols.
+- An Example: SSL
+  - SSL3.0 is a cryptographic protocol that enables two computers to communicate securely - that is, so that each can limit the sender and receiver of messages to the other.
+  - 参考: [SSLって何？意味や仕組みをわかりやすく解説！ | さくらのSSL](https://ssl.sakura.ad.jp/column/ssl/)
