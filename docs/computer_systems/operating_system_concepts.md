@@ -2810,3 +2810,25 @@ typedef struct {
     - The lock-key mechanism is a compromise between access lists and capability lists.
   - Most systems use a combination of access lists and capabilities.
   - The right to access must still be checked on each access, and the file-table entry has a capability only for the allowed operations.
+
+### 14.6: Access Control
+
+- Solaris 10 advances the protection available in the operating system by explicitly adding the principle of least privilege via role-based access control (RBAC).
+- Privileges and programs can also be assigned to roles.
+- Users are assigned roles or can take roles based on passwords to the roles.
+
+### 14.7: Revocation of Access Rights
+
+- In a dynamic protection system, we may sometimes need to revoke access rights to objects shared by different users. Various questions about revocation may arise:
+  - Immediate versus delayed.
+  - Selective versus general.
+    - 全 user か一部の user か。
+  - Partial versus total.
+  - Temporary versus permanent.
+- With an access-list scheme, revocation is easy. 削除対象となるものを見つけて消せば良い。
+  - Revocation is immediate and can be general or selective, total or partial, and permanent or temporary.
+- Schemes that implement revocation for capabilities include the following:
+  - Reacquisition.
+  - Back-pointers.
+  - Indirection.
+  - Keys.
