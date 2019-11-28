@@ -2774,3 +2774,39 @@ typedef struct {
   - In the MULTICS system, the protection domains are organaized hierarchically into a ring structure.
   - Each ring corresponds to a single domain.
   - The main disadvantage of the ring (or hierarchical) structure is that it does not allow us to enforce the need-to-know principle.
+
+### 14.4: Access Matrix
+
+- One general model of protection can be viewed abstractly as a matrix, called an access matrix.
+  - The rows of the access matrix represent domains, and the columns represent objects.
+- The user normally decide the contents of the access-matrix entries.
+- Processes should be able to switch from one domain to another.
+- Allowing controlled change in the contents of the access-matrix entries requires three additional operations: copy, owner, and control.
+
+### 14.5: Implementation of the Access Matrix
+
+- Global Table
+  - The simplest implementation of the access matrix is a global table consisting of a set of ordered triples `<domain, object, rights-set>`.
+  - 弱点もある。
+    - The table is usually large and thus cannot be kept in main memory, so additional I/O is needed.
+    - Virtual memory techniques are often used for managing this table.
+    - In addition, it is difficult to take advantage of special grouping of objects or domains.
+- Access Lists for Objects
+  - The resulting list for each object consists of ordered pairs `<domain, rights-set>`, which define all domains with a nonempty set of access rights for that object.
+  - This approach can be extended easily to define a list plus a default set of access rights.
+- Capability Lists for Domains
+  - A capability list for a domain is a list of objects together with the operations allowed on those objects.
+  - The capability list is associated with a domain, but it is never directly accessible to a process executing in that domain.
+- A Lock-Key Mechanism
+  - The lock-key scheme is a compromise between access lists and capability lists.
+  - Each object has a list of unique bit patterns, called locks. Similarly, each domain has a list of unique bit patterns, called keys.
+  - A process executing in a domain can access an object only if that domain has a key that matches one of the locks of the object.
+- Comparison
+  - どの実装にするか選ぶには様々な trade-off がある。
+    - Using a global table is simple; however, the table can be quite large and often cannot take advantage of special groupings of objects or domains.
+    - Access lists correspond directly to the needs of users.
+      - However, because access-right information for a particular domain is not localized, determining the set of access rights for each domain is difficult.
+    - Capability lists do not correspond directly to the needs of users, but they are useful for localizing information for a given process.
+    - The lock-key mechanism is a compromise between access lists and capability lists.
+  - Most systems use a combination of access lists and capabilities.
+  - The right to access must still be checked on each access, and the file-table entry has a capability only for the allowed operations.
