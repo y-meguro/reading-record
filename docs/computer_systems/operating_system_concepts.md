@@ -2832,3 +2832,26 @@ typedef struct {
   - Back-pointers.
   - Indirection.
   - Keys.
+
+### 14.8: Capability-Based System
+
+- An Example: Hydra
+  - Hydra is a capability-based protection system that provides considerable flexibility.
+- An Example: Cambridge CAP System
+  - CAP's capability system is simpler and superficially less power than that of Hydra.
+  - CAP has two kinds of capabilities.
+    - data capability と software capability。
+
+### 14.9: Language-Based Protection
+
+- Compiler-Based Enforcement
+  - What, then, are the relative merits of enforcement based solely on a kernel, as opposed to enforcement provided largely by a compiler?
+    - Security.
+    - Flexibility.
+    - Efficiency.
+- Protection in Java
+  - Because Java was designed to run in a distributed environment, the Java virtual machine - or JVM - has many built in protection mechanisms.
+
+### 14.10: Summary
+
+- これまでに書いている内容なので省略
