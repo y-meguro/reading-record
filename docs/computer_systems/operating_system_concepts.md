@@ -2930,3 +2930,20 @@ typedef struct {
     - Tunneling.
     - Multipartite.
     - Armored.
+
+### 15.3: System and Network Threats
+
+- In remainder of this section, we discuss some examples of system and network threats, including worms, port scanning, and denial-of-service attacks.
+- Worms
+  - A worm is a process that uses the spawn mechanism to duplicate itself.
+  - worm は grappling hook (also called a bootstrap or vector) program と main program から成る。まず target system に grappling hook をしかけ、そこから infected system に request を送らせる。request に対して、worm を送ると target system が感染する。
+  - The other two methods involved operating-system bugs in the UNIX finger and sendmail programs.
+- Port Scanning
+  - Port scanning is not an attack but rather a means for a cracker to detect a system's vulnerabilities to attack.
+  - Port scanning typically is automated, involving a tool that attempts to create a TCP/IP connection to a specific port or a range of ports.
+- Denial of Service
+  - As mentioned earlier, denial-of-service attacks are aimed not at gaining information or stealing resources but rather at disrupting legitimate use of a system or facility.
+  - Denial-of-service attacks are generally network based. They fall into two categories.
+    - Attacks in the first category use so many facility resources that, in essence, no useful work can be done.
+    - The second category involves disrupting the network of the facility. These atacks result from abuse of some of the fundamental functionality of TCP/IP.
+  - Generally, it is impossible to prevent denial-of-service attacks. The attacks use the same mechanism as normal operation.
