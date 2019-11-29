@@ -3139,3 +3139,33 @@ typedef struct {
     - Unlike kernel mode, user mode has access only to a controlled subset of the system's resources.
   - One of the most important user utilities is the shell, the standard command-line interface on UNIX systems.
     - Linux supports many shells; the most common is the bourne-Again shell (bash).
+
+### 16.3: Kernel Modules
+
+- Kernel modules are convenient for several reasons.
+  - 例えば kernel になにか修正を加えた時、kernel 全体を recompile して relinking して reloading してというのはとても大変。
+  - If you use kernel modules, you do not have to make a new kernel to test a new driver - the driver can be compiled on its own and loaded into the already running kernel.
+  - Kernel modules allow a Linux system to be set up with a standard minimal kernel, without any extra device drivers built in. Any device drivers that the user needs can be either loaded explicitly by the system at startup or loaded automatically by the system on demand and unloaded when not in use.
+  - The module support under Linux has four components:
+    - The module-management system allows modules to be loaded into memory and to communicate with the rest of the kernel.
+    - The module loader and unloader, which are user-mode utilities, work with the module-management system to load a module into memory.
+    - The driver-registration system allows modules to tell the rest of the kernel that a new driver has become available.
+    - A conflict-resolution mechanism allows different device drivers to reserve hardware resources and to protect those resources from accidental use by another driver.
+  - Module Management
+    - Loading a module requires more than just loading its binary contents into kernel memory.
+      - The system must also make sure that any references the module makes to kernel symbols or entry points are updated to point to the correct locations in the kernel's address space.
+    - The loading of the module is performed in two stages.
+      - First, the module-loader utility asks the kernel to reserve a continuous area of virtual kernel memory for the module.
+      - A second system call then passes the module, plus any symbol table that the new module wants to export, to the kernel.
+    - The final module-management component si the module requester.
+  - Driver Registration
+    - A module may register many types of functionality. Registration tables include, among others, the following items:
+      - Device drivers.
+      - File systems.
+      - Network protocols.
+      - Binary format.
+  - Conflict Resolution
+    - Linux provides a central conflict-resolution mechanism to help arbitrate access to certain hardware resources.
+      - To prevent modules from clashing over access to hardware resources
+      - To prevent autoprobes - device-driver probes that auto-detect device configuration - from interfering with existing device drivers.
+      - To resolve conflicts among multiple drivers typing to access the same hardware
