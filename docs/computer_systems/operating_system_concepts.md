@@ -3066,3 +3066,22 @@ typedef struct {
   - Rather than limiting communicaion between security domains, it limits communicaion to (and possibly from) a given host.
 - An application proxy firewall understands the protocols that application speak across the network.
 - 他にも XML firewall や system-call firewall がある。
+
+### 15.8 Computer-Security Classifications
+
+- The U.S. Department of Defense Trusted Computer System Evaluation Criteria specify four security classifications in systems: A, B, C, and D.
+  - TCSEC でググると関連記事が出てくる。
+  - D が最も低くて、A が最も高い。C は C1 と C2、B は B1 - B3 まである。A は A1 がある。
+  - 参考: [TCSEC.pdf](http://www.jssm.net/jssm/secure-os/TCSEC.pdf)
+
+### 15.9: An Example: Windows7
+
+- The Windows 7 security model is based on the notion of user accounts.
+- Windows7 uses the idea of a subject to ensure that programs run by a user do not get greater access to the system than the user is authorized to have.
+- Windows7 classifies objects as either container objects or noncontainer objects.
+  - Container objects, such as directories, can logically contain the new object inherits permission from the parent object.
+  - Noncontiner objects inherit no other permissions.
+
+### 15.10: Summary
+
+- これまでに書いている内容なので省略
