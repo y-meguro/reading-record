@@ -3030,3 +3030,27 @@ typedef struct {
   - One-time password system is one of only a few ways to prevent improper authentication due to password exposure.
 - Biometrics
   - Palm- or hand-readers are commonly used to secure physical access - for example, access to a data center.
+
+### 15.6: Implementing Security Defenses
+
+- Most security professionals subscribe to the theory of defense in depth, which states that more layers of defense are better than fewer layers.
+- Security Policy
+  - まずポリシーから決める。
+  - Once the security policy is in place, the people it affects should know it well.
+  - The policy should also be a living document that is reviewed and updated periodically to ensure that it is still pertinent and still forward.
+- Vulnerability Assessment
+  - Such assessments can cover broad ground, from social engineering through risk assessment to port scans.
+  - Risk assessment, for example, attempts to value the assets of the entity in question (a program, a management team, a system, or a facility) and determine the odds that a security incident will affect the entity and decrease its value.
+  - Networked computers are much more susceptible to security attacks than are standalone systems.
+- Intrusion Detection
+  - Intrusion detection, as its name suggests, strives to detect attempted or successful intrusions into computer systems and to initiate appropriate responses to the intrusions.
+  - These degrees of freedom in the design space for detecting intrusionshave yielded a wide range of solutions, known as intrusion-detection systems (IDSs) and intrusion-prevention systems (IDPs).
+  - In the first, called signature-based detection, system input or network traffic is examined for specific behavior patterns (or signatures) known to indicate attacks.
+  - The second approach, typically called anomaly detection, attempts through various techniques to detect anomalous behavior within computer systems.
+  - anomaly detection は未知の攻撃も特定できるが、signature-based detection は既知のものしか対応できない。ただし、anomaly detection が常に signature-based detection より優れているわけではない。
+  - false-alarm rate (間違ったアラームが起きてしまう確率) を下げることは usability を考えるととても大事。
+- Virus Protection
+  - The best protection against computer viruses is prevention, or the practice of safe computing.
+  - Another defense is to avoid opening any e-mail attachments from unknown uers.
+- Auditing, Accounting, and Logging
+  - Auditing, accounting, and logging can decrease system performance, but they are useful in several areas, including security.
