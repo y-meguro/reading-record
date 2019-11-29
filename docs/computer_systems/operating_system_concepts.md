@@ -3085,3 +3085,38 @@ typedef struct {
 ### 15.10: Summary
 
 - これまでに書いている内容なので省略
+
+## 16: The Linux System
+
+- Chapter Objectives
+  - To explore the history of the UNIX operating system from which Linux is derived and the principles upon which Linux's design is based.
+  - To examine the Linux process model and illustrate how Linux schedules processes and provides interprocess communication.
+  - To look at memory management in Linux.
+  - To explore how Linux implements file systems and manages I/O devices.
+
+### 16.1: Linux History
+
+- Its development began 1991, when a Finnish university student, Linus Torvalds, began developing a small but self-contained kernel for the 80386 processor, the first true 32-bit processor in Intel's range of PC-compatible CPUs.
+- As Linux has matured, a need has arisen for another layer of functionality on top of the Linux system. This need has been met by various Linux distributions.
+- The Linux Kernel
+  - The first Linux kernel released to the public was version 0.01, dated May 14, 1991.
+  - The next milestone, Linux 1.0, was released on March 14, 1994.
+    - Perhaps the biggest new feature was networking: 1.0 included support for UNIX's standard TCP/IP networking protocols, as well as a BSD-compatible socket interface for networking programming.
+  - In March 1995, the 1.2 kernel was released. This release did not offer nearly the same improvement in functionality as the 1.0 release, but it did support a much wider variety of hardware, including the new PCI hardware bus architecture.
+  - 1996 年の 6 月に 2.0 がリリース。
+    - This release was given a major version-number increment because of two major new capabilities: support for multiple architectures, including a 64-bit native Alpha port, and symmetric multiprocessing (SMP) support.
+  - Linux kernel version 3.0 was released in July 2011. 20周年を記念してメジャーバージョンが 3 になった。
+- The Linux System
+  - As we noted earlier, the Linux kernel forms the core of the Linux project, but other components make up a complete Linux operating system.
+  - Whereas the Linux kernel is composed entirely of code written from scratch specifically for the Linux project, much of the supporting software that make up the Linux system is not exclusive to Linux but is common to a number of UNIX-like operating systems.
+  - The File System Hierarchy Standard document is also maintained by the Linux community as a means of ensuring compatibility across the various system components.
+- Linux Distributions
+  - These collections, or distributions, include much more than just the basic Linux system.
+  - The first distributions managed these packages by simply providing a means of unpacking all the files into the appropriate places.
+    - Today's Linux distributions include a package-tracking database that allows packages to be installed, upgraded, or removed painlessly.
+  - The SLS distribution, dating back to the early days of Linux, was the first collection of Linux packages that was recognizable as a complete distribution.
+  - The Slackware distribution represented a great improvement in overall quality, even though it also had poor package management.
+- Linux Licensing
+  - Linux is not public-domain software. Public domain implies that the authors have waived copyright rights in the software, but copyright rights in Linux code are still held by the code's various authors.
+  - Linux is free software, however, in the sense that people can copy it, modify it, use it in any manner they want, and give away (or sell) their own copies.
+  - If you release software that includes any components covered by the GPL (GNU General Public License), you must make source code available alongside any binary distributions.
