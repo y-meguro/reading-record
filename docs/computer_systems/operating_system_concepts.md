@@ -3210,3 +3210,38 @@ typedef struct {
     - Linux では process を複製する fork() の他に thread を作成する clone() を提供している。
     - The clone() system call behaves identically to fork(), except that it accepts as arguments a set of flags that dictate what resources are shared between the parent and child.
     - The arguments to the clone() system call tell it which subcontexts to copy and which to share.
+
+### 16.5: Scheduling
+
+- Scheduling is the job of allocating CPU time to different tasks within an operating system.
+- Linux, like all UNIX systems, supports preemptive multitasking.
+- Kernel tasks encompass both tasks that are requested by a running process and tasks that execute internally on behalf of the kernel itself, such as tasks spawned by Linux's I/O subsystem.
+- Process Scheduling
+  - Linux has two separate process-scheduling algorithms.
+    - One is a time-sharing algorithm for fair, preemptive scheduling among multiple processes.
+    - The other is designed for real-time tasks, where absolute priorities are more important than fairness.
+  - The Linux scheduler is a preemptive, priority-based algorithm with two separate priority ranges: a real-time from 0 to 99 and a nice value ranging from -20 to 19.
+    - Smaller nice values indicate higher priorities.
+  - CFS (Completely Fair Scheduler) is a significant departure from the traditional UNIX process scheduler.
+    - In the latter, the core variables in the scheduling algorithm are priority and time slice.
+      - The time slice is the length of time - the slice of the processor - that a process is afforded.
+      - CFS introduced a new scheduling algorithm caled fair scheduling that eliminates time slices in the traditional sense.
+      - In stead of time slices, all processes are allotted a proportion of the processor's time.
+    - To calculate the actual length of time a process runs, CFS relies on a configurable variable called target latency, which is the interval of time during which every runnable task should run at least once.
+    - CFS consequently relies on a second configurable variable, the minimum granularity, which is a minimum length of time any process is allotted the processor.
+- Real-Time Scheduling
+  - Linux implements the two real-time scheduling classes required by POSIX.1b: first-come, first-served (FCFS) and round-robin.
+  - Linux's real-time scheduling is soft - rather than hard - real time.
+- Kernel Synchronization
+  - The way the kernel schedules its own operations is fundamentally different from the way it schedules processes.
+  - A request for kernel-mode execution can occur in two ways.
+    - A running program may request an operating-system service, either explicitly via a system call or implicitly.
+    - Alternatively, a device controller may deliver a hardware interrupt that causes the CPU to start executing a kernel-defined handler for that interrupt.
+  - The Linux kernel provides spinlocks and semaphores for locking in the kernel.
+  - Linux uses an interesting approach to disable and enable kernel preemption. It provides two simple kernel interfaces - preempt_disable() and preempt_enable().
+  - However, there is a penalty for disabling interrupts.
+    - More importantly, as long as interrupts remain disabled, all I/O is suspended, and any device waiting for servicing will have to wait until interrupts are reenabled.
+  - Linux implements this architecture by separating interrupt service routines into two sections: the top half and the bottom half.
+  - This separation means that the kernel can complete any complex processing being interrupted itself.
+- Symmetric Multiprogramming
+  - The Linux 2.0 was the first stable Linux kernel to support symmetric multiprocessor (SMP) hardware, allowing separate processes to execute in parallel on separate processors.
