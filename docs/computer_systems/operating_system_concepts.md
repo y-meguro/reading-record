@@ -3167,5 +3167,46 @@ typedef struct {
   - Conflict Resolution
     - Linux provides a central conflict-resolution mechanism to help arbitrate access to certain hardware resources.
       - To prevent modules from clashing over access to hardware resources
-      - To prevent autoprobes - device-driver probes that auto-detect device configuration - from interfering with existing device drivers.
+      - To prevent autoprobes - device-driver probes that auto-detect device configuration - from interfering with existing device drivers
       - To resolve conflicts among multiple drivers typing to access the same hardware
+
+### 16.4: Process Management
+
+- In this section, we review the traditional UNIX process model and introduce Linux's threading model.
+- The fork() and exec() Process Model
+  - The basic principle of UNIX process management is to separate into two steps two operations that are usually combined into one: the creation of a new process and the running of a new program.
+    - A new process is created by the fork() system call, and a new program is run after a call to exec().
+  - This model has the advantage of great simplicity.
+  - Process identity
+    - A process identity consists mainly of the following items:
+      - Process ID (PID).
+      - Credentials.
+      - Personality.
+        - Personalities are primarily used by emulation libraries to request that system calls be compatible with certain varieties of UNIX.
+      - Namespace.
+        - Each process is associated with a specific view of the file-system hierarchy, called its namespace.
+  - Process Environment
+    - A process's environment is inherited from its parent and is composed of two null-terminated vectors: the argument vector and the environment vector.
+      - The argument vector simply lists the command-line arguments used to invoke the running program; it conventionaly starts with the name of the program itself.
+      - The environment vector is a list of "NAME=VALUE" pairs that associates named environment variables with arbitrary textual values.
+        - The environment is not held in kernel memory but is stored in the process's own user-mode address space as the first datum at the top of the process's stack.
+    - The argument and environment vectors are not altered when a new process is created. The new child process will inherit the environment of its parent.
+  - Process Context
+    - The process identity and environment properties are usually set up when a process is created and not changed until that process exits.
+    - In contrast, process context is the state of the running program at any one time; it changes constantly.
+    - Process context includes the following parts:
+      - Scheduling context.
+        - The most important part of the process context is its scheduling context - the information that the scheduler needs to suspend and restart the process.
+        - This information includes saved copies of all the process's registers.
+      - Accounting.
+      - File table.
+        - The file table is an array of pointers to kernel file structures representing open files.
+      - File-system context.
+      - Signal-handler table.
+        - The signal-handler table defines the action to take in response to a specific signal.
+      - Virtual memory context.
+        - The virtual memory context describes the full contents of a process's private address space.
+  - Processes and Threads
+    - Linux では process を複製する fork() の他に thread を作成する clone() を提供している。
+    - The clone() system call behaves identically to fork(), except that it accepts as arguments a set of flags that dictate what resources are shared between the parent and child.
+    - The arguments to the clone() system call tell it which subcontexts to copy and which to share.
