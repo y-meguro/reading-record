@@ -3120,3 +3120,22 @@ typedef struct {
   - Linux is not public-domain software. Public domain implies that the authors have waived copyright rights in the software, but copyright rights in Linux code are still held by the code's various authors.
   - Linux is free software, however, in the sense that people can copy it, modify it, use it in any manner they want, and give away (or sell) their own copies.
   - If you release software that includes any components covered by the GPL (GNU General Public License), you must make source code available alongside any binary distributions.
+
+### 16.2: Design Principles
+
+- In its overall design, Linux resembles other traditional, nonmicrokernel UNIX implementations.
+- Although Linux runs on a wide variety of platforms, it was originally developed exclusively on PC architecture.
+- Speed and efficiency are still important design goals, but much recent and current work on Linux has concentrated on a third major design goal: standardization.
+- Components of a Linux System
+  - The Linux system is composed of three main bodies of code, in line with most traditional UNIX implementations:
+    - Kernel.
+      - The kernel is responsible for maintaining all the important abstractions of the operating system, including such thing as virtual memory and processes.
+    - System libraries.
+      - The system libraries define a standard set of functions through which applications can interact with the kernel.
+    - System utilities.
+      - The system utilities are programs that perform individual, specialized management tasks.
+      - system utilities と user utilities がある。
+  - kernel mode と user mode がある。
+    - Unlike kernel mode, user mode has access only to a controlled subset of the system's resources.
+  - One of the most important user utilities is the shell, the standard command-line interface on UNIX systems.
+    - Linux supports many shells; the most common is the bourne-Again shell (bash).
