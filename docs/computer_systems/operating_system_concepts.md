@@ -3054,3 +3054,15 @@ typedef struct {
   - Another defense is to avoid opening any e-mail attachments from unknown uers.
 - Auditing, Accounting, and Logging
   - Auditing, accounting, and logging can decrease system performance, but they are useful in several areas, including security.
+
+### 15.7: Firewalling to Protect Systems and Networks
+
+- We turn next to the question of how a trusted computer can be conneted safely to an untrustworthy network.
+- One solution is the use of a firewall to separate trusted and untrusted network.
+  - A firewall is a computer, appliance, or router that sits between the trusted and the untrusted.
+  - A network firewall limits network access between the two security domains and monitors and logs all connections.
+  - It can also limit connections based on source or destination address, source or destination port, or direction of the connection.
+- A personal firewall is a software layer either included with the operating system or added as an application.
+  - Rather than limiting communicaion between security domains, it limits communicaion to (and possibly from) a given host.
+- An application proxy firewall understands the protocols that application speak across the network.
+- 他にも XML firewall や system-call firewall がある。
