@@ -3000,3 +3000,33 @@ typedef struct {
 - An Example: SSL
   - SSL3.0 is a cryptographic protocol that enables two computers to communicate securely - that is, so that each can limit the sender and receiver of messages to the other.
   - 参考: [SSLって何？意味や仕組みをわかりやすく解説！ | さくらのSSL](https://ssl.sakura.ad.jp/column/ssl/)
+
+### 15.5: User Authentication
+
+- Generally, user authentication is based on one or more of three things:
+  - the user's possession of something (a key or card)
+  - the user's knowledge of something (a user identifier and password)
+  - an attribute of the user (fingerprint, retina pattern, or signature)
+- Passwords
+  - The most common approach to authenticating a user identity is the use of passwords.
+  - In practice, most systems require only one password for a user to gain full rights.
+- Password Vulnerabilities
+  - Passwords are extremely common because they are easy to understand and use. Unfortunately, passwords can often be guessed, accidentally exposed, sniffed, or illegally transferred from an authorized user to an unauthorized one, as we show next.
+  - There are two common ways to guess a password.
+    - One way is for the intruder (either human or program) to know the user or to have information about the user.
+    - The other way is to use brute force, trying enumeration - or all possible combinations of valid password characters - until the password is found.
+  - In addition to being guessed, passwords can be exposed as a result of visual or electronic monitoring.
+  - The final type of password compromise, illegal transfer, is the result of human nature.
+- Securing Passwords
+  - One problem with all these approaches is the difficulty of keeping the password secret within the computer.
+  - The UNIX system uses secure hashing to avoid the necessity of keeping its password list secret.
+    - Because the list is hashed rather than encrypted, it is impossible for the system to decrypt the stored value and determine the original password.
+  - The flaw in this method is that the system no longer has control over the passwords.
+    - "salt" を password に加えて計算することで、同じ plaintext でも異なる hash values になるようにしている。
+  - Another weakness in the UNIX password methods in that many UNIX systems treat only the first eight characters as significant.
+- One-Time Passwords
+  - To avoid the problems of password sniffing and shoulder surfing, a system can use a set of paired passwords.
+    - system がランダムに 1 つを選び、それに答える。
+  - One-time password system is one of only a few ways to prevent improper authentication due to password exposure.
+- Biometrics
+  - Palm- or hand-readers are commonly used to secure physical access - for example, access to a data center.
