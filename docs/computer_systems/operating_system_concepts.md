@@ -3322,3 +3322,15 @@ typedef struct {
   - The flexibility of the Linux VFS enables us to implement a file system that does not store data persistently at all but rather provides an interface to some other functionality. The Linux process file system, known as the /proc file system, is an example of a file system whose contents are not actually stored anywhere but are computed on demand according to user file I/O requests.
   - The /proc file system must implement two things: a directory structure and the file contents within.
     - The /proc file system must define a unique and persistent inode number for each directory and the associated files.
+
+### 16.8: Input and Output
+
+- To the user, the I/O system in Linux looks much like that ina any UNIX system. That is, to the extent possible, all device drivers appear as normal files.
+- Linux splits all devices into three classes: block devices, character devices, and network devices.
+  - Block devices include all devices that allow random access to completely independent, fixed-sized blocks of data, including hard disks and flopy disks, CD-ROMs and Blu-ray disks, and flash memory.
+    - Block devices are typically used to store file systems, but direct access to a block device is also allowed so that programs can create and repair the file system that the device contains.
+  - Character devices include most other devices, such as mice and keyboards.
+    - The fundamental difference between block and character devices is random access - block devices are accessed randomly, while character devices are accessed serially.
+  - Network devices are dealt with differently from block and character devices.
+    - Users cannot directly transfer data to network devices.
+    - Instead, they must communicate indirectly by opening a connection to the kernel's networking subsystem.
