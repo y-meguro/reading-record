@@ -3296,3 +3296,29 @@ typedef struct {
     - However, most programs also need to run functions from the system libraries, and these library functions must also be loaded.
     - Such a program is statically linked to its libraries, and statically linked executable can commence running as soon as they are loaded.
     - Linux implements dynamic linking in user mode through a special linker library.
+
+### 16.7: File Systems
+
+- The Virtual File System
+  - The Linux VFS designed around object-oriented principles. It has two components: a set of definitions that specify what file-system objects are allowed to look like and a layer of software to manipulate the objects.
+  - The VFS defines four main object types:
+    - An inode object represents an individual file.
+    - A file object represents an open file.
+    - A superblock object represents an entire file system.
+    - A dentry object represents an individual directory entry.
+- The Linux ext3 File System
+  - The standard on-disk file system used by Linux is called ext3, for historical reasons.
+    - もともと Linux は MINIX と互換性があるように作られていて、その時の file system が extended file system (extfs)。それが改良されて third extended file system で ext3。
+  - The ext3 allocation policy works as follows:
+    - As in FES, an ext3 file system is partitioned into multiple segments. In ext3, these are called block groups.
+    - FES uses the similar concept of cylinder groups, where each group corresponds to a single cylinder of a physical disk.
+- Journaling
+  - The ext3 file system supports a popular feature called journaling, whereby modifications to the file system are written sequentially to a journal.
+    - A set of operations that performs a specific task is a transaction.
+    - Once a transaction is written to the journal, it is considered to be committed.
+  - If the system crashes, some transaction may remain in the journal. Those transactions were never completed to the file system even though they were committed by the operating system, so they must be completed once the system recovers.
+  - Journaling file systems may perform some operations faster than nonjournaling systems, as updates proceed much faster when they are applied to the in-memory journal rather than directory to the on-disk data structures.
+- The Linux Process File System
+  - The flexibility of the Linux VFS enables us to implement a file system that does not store data persistently at all but rather provides an interface to some other functionality. The Linux process file system, known as the /proc file system, is an example of a file system whose contents are not actually stored anywhere but are computed on demand according to user file I/O requests.
+  - The /proc file system must implement two things: a directory structure and the file contents within.
+    - The /proc file system must define a unique and persistent inode number for each directory and the associated files.
