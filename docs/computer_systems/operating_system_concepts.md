@@ -3132,8 +3132,8 @@ typedef struct {
       - The kernel is responsible for maintaining all the important abstractions of the operating system, including such thing as virtual memory and processes.
     - System libraries.
       - The system libraries define a standard set of functions through which applications can interact with the kernel.
-    - System utilities.
       - The system utilities are programs that perform individual, specialized management tasks.
+    - System utilities.
       - system utilities と user utilities がある。
   - kernel mode と user mode がある。
     - Unlike kernel mode, user mode has access only to a controlled subset of the system's resources.
@@ -3245,3 +3245,54 @@ typedef struct {
   - This separation means that the kernel can complete any complex processing being interrupted itself.
 - Symmetric Multiprogramming
   - The Linux 2.0 was the first stable Linux kernel to support symmetric multiprocessor (SMP) hardware, allowing separate processes to execute in parallel on separate processors.
+
+### 16.6: Memory Management
+
+- Memory management under Linux has two components.
+  - The first deals with allocating and freeing physical memory - pages, groups of pages, and small blocks of RAM.
+  - The second handles virtual memory, which is memory-mapped into the address space of running processes.
+- Management of Physical Memory
+  - Due to specific hardware constraints, Linux separates physical memory into four different zones, or regions:
+    - ZONE_DMA
+    - ZONE_DMA32
+    - ZONE_NORMAL
+    - ZONE_HIGHMEM
+  - The primary physical-memory manager in the Linux kernel is the page allocator.
+    - 各 zone はそれぞれ allocator を持つ。
+  - Ultimately、all memory allocations in the Linux kernel are made either statically, by drivers that reserve a contiguous area of memory during system boot time, or dynamically, by the page allocator.
+  - The slab-allocation algorithm uses caches to store kernel objects.
+  - In Linux, a slab may be in one of three possible states:
+    - Full.
+    - Empty.
+    - Partial.
+  - The slab allocator first attempts to satisfy the request with a free object in a partial slab. If none exists, a free object is assigned from an empty slab. If no empty slabs are available, a new slab is allocated from contiguous physical pages and assigned to a cache.
+- Virtual Memory
+  - The Linux virtual memory system is responsible for maintaining the address space accessible to each process. It creates pages of virtual memory on demand and manages loading those pages from disk and swapping them back out to disk as required.
+  - Under Linux, the virtual memory manager maintains two separate views of a process's address space: as a set of separate regions and as a set of pages.
+  - Virtual Memory Regions
+    - Linux implements several types of virtual memory regions.
+      - backed by nothing のものと backed by file のものがある。
+    - The mapping of a region into the process's address space can be either private or shared.
+- Lifetime of a Virtual Address Space
+  - The kernel creates a new virtual address space in two situations: when a process runs a new program with the exec() system call and when a new process is created by the fork() system call.
+- Swapping and Paging
+  - The paging system can be divided into two sections.
+    - First, the policy algorithm decides which pages to write out to disk and when to wirte them.
+    - Second, the paging mechanism carries out the transfer and pages data back into physical memory when they are needed again.
+- Kernel Virtual Memory
+  - Linux reserves for its own internal use a constant, architecture-dependent region of the virtual address space of every process.
+    - The page-table entries that map to these kernel pages are marked as protected, so that the pages are not visible or modifiable when the processor is running in user mode.
+  - This kernel virtual memory area contains two regions.
+    - The first is a static area that contains page-table references to every available physical page of memory in the system, so that a simple translation from physical to virtual addresses occurs when kernel code is run.
+    - The remainder of the kernel's reserved section of address space is not reserved for any specific purpose.
+- Execution and Loading of User Programs
+  - The Linux kernel's execution of user programs is triggered by a call to the exec() system call.
+  - This exec() call commands the kernel to run a new program within the current process, completely overwriting the current execution context with the initial context of the new program.
+  - Mapping of Programs into Memory
+    - Under Linux, the binary loader does not load a binary file into physical memory. Rather, the pages of the binary file are mapped into regions of virtual memory.
+    - Once these mappings have been set up, the loader initializes the process's program-counter register with the starting point recorded in the ELF header, and the process can be scheduled.
+  - Static and Dynamic Linking
+    - Once the program has been loaded and has started running, all the necessary contents of the binary file have been loaded into the process's virtual address space.
+    - However, most programs also need to run functions from the system libraries, and these library functions must also be loaded.
+    - Such a program is statically linked to its libraries, and statically linked executable can commence running as soon as they are loaded.
+    - Linux implements dynamic linking in user mode through a special linker library.
