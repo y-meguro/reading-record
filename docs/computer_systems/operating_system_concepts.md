@@ -3348,3 +3348,15 @@ typedef struct {
   - The standard UNIX pipe mechanism allows a child process to inherit a communication channel from its parent; data written to one end of the pipe can be read at the other.
   - Another process communication method, shared memory, offers an extremely fast way to communicate large or small amounts of data.
   - A shared-memory region in Linux is persistent object that can be created or deleted by processes.
+
+### 16.10: Network Structure
+
+- Not only does Linux support the standard Internet protocols used for most UNIX-to-UNIX communications, but it also implements a number of protocols native to other, non-UNIX operating systems.
+- Internally, networking in the Linux kernel is implemented by three layers of software:
+  - The socket interface
+  - Protocol drivers
+  - Network-device drivers
+- User applications perform all networking requests through the socket interface.
+- Whenever any networking data arrive at this layer, either from an application's socket or from a network-device driver, the data are expected to have been tagged with an identifier specifying which network protocol they contain.
+- All communication between the layers of the networking stack is performed by passing single skbuff (socket buffer) structures.
+- The most important set of protocols in the Linux networking system is the TCP/IP protocol suite.
