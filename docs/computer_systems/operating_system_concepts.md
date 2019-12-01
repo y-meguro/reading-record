@@ -3334,3 +3334,17 @@ typedef struct {
   - Network devices are dealt with differently from block and character devices.
     - Users cannot directly transfer data to network devices.
     - Instead, they must communicate indirectly by opening a connection to the kernel's networking subsystem.
+
+### 16.9: Interprocess Communication
+
+- Synchronization and Signals
+  - The standard Linux mechanism for informing a process that an event has occured is the signal.
+    - Signals can be sent from any process to any other process, with restrictions on signals sent to processes owned by another user.
+    - However, a limited number of signals are available, and they cannot carry information.
+  - Internally, the Linux kernel does not use signals to communicate with processes running in kernel mode.
+    - Rather, communication about incoming asynchronous events within the kernel takes place through the use of scheduling states and wait_queue structures.
+  - Although signals have always been the main mechanism for communicating asynchronous events among processes, Linux also implements the semaphore mechanism of System V UNIX.
+- Passing of Data among Processes
+  - The standard UNIX pipe mechanism allows a child process to inherit a communication channel from its parent; data written to one end of the pipe can be read at the other.
+  - Another process communication method, shared memory, offers an extremely fast way to communicate large or small amounts of data.
+  - A shared-memory region in Linux is persistent object that can be created or deleted by processes.
