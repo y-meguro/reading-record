@@ -3679,3 +3679,54 @@ typedef struct {
     - Specifically, a Windows domain is a group of Windows workstations and servers that share a common security policy and user database.
   - Active Directory
     - Active Directory is the Windows implementation of lightweight directory-access protocol (LDAP) services.
+
+### 17.7: Programmer Interface
+
+- The Win32 API is th fundamental interface to the capabilities of Windows.This section describes five main aspects of the Win32 API.
+- Access to Kernel Objects
+  - The Windows kernel provides many services that application programs can use.
+- Sharing Objects between Processe
+  - Windows provides three ways to share objects between processes.
+    - The first way is for a child process to inherit a handle of the object.
+    - The second way to share objects is for one process to give the object a name when the object is created and for the second process to open the name.
+    - The third way to share objects is via the DuplicateHandle() function.
+- Process Management
+  - In Windows, a process is a loaded instance of an application and a thread is an executable unit of code that can be scheduled by the kernel dispatcher.
+  - Scheduling Rule
+    - Priorities in the Win32 environment are based on the native kernel (KT) scheduling model, but not all priority values may be chosen. The Win32 API uses four priority classes.
+      - IDLE_PRIORITY_CLASS (NT priority level 4)
+      - NORMAL_PRIORITY_CLASS (NT priority level 8)
+      - HIGH_PRIORITY_CLASS (NT priority level 13)
+      - REAL_TIME_PRIORITY_CLASS (NT priority level 24)
+  - Thread Priorities
+    - A thread starts with an initial priority determined by its class. The priority can be altered by the SetThreadPriority() function.
+      - -2〜+2 の範囲で base priority に加算
+  - Thread Suspend and Resume
+    - A thread can be created in a suspended state or can be placed in a suspended state later by use of the SuspendThread() function.
+  - Thread Synchronization
+    - To synchronize concurrent access to shared objects by threads, the kernel provides synchronization objects, such as semaphores and mutexes.
+  - Thread Pools
+    - Repeatedly creating and deleting threads can be expensive for applications and services that perform small amounts of work in each instantiation.
+    - The Win32 thread pool provides user-mode programs with three services.
+    - The goal of using a thread pool is to increase performance and reduce memory footprint.
+  - Fibers
+    - A fiber is user-mode code that is scheduled according to a user-defined scheduling algorithm.
+    - fiber は協調的マルチタスク
+  - User-Mode Scheduling (UMS) and ConcRT
+    - A new mechanism in Windows7, user-mode scheduling (UMS), addresses several limitations of fibers.
+    - Unlike fibers, UMS is not intended to be used directly by the programmer. The details of writing user-mode schedulers can be very challenging, and UMS does not include such a scheduler.
+    - Microsoft Visual Studio 2010 shipped with Concurrency Runtime (ConcRT), a concurrent programming framework for C++. ConcRT provides a user-mode scheduler together with facilities for decomposing programs into tasks, which can then be scheduled on the available CPUs.
+  - Winsock
+    - Winsock is the Windows socket API.
+    - Winsock is a session-layer interface that is largely compatible with UNIX sockets but has some added Windows extensions.
+    - Winsock follows the Windows Open System Architecture (WOSA) model, which provides a standard service provider interface (SPI) between applications and networking protocol layers.
+- Interprocess Communication Using Windows Messaging
+  - Win32 applications handle interprocess communication in several ways.
+    - One way is by using shared kernel objects.
+    - Another is by using the Windows messaging facility, an approach that is particularly popular for Win32 GUI applications.
+- Memory Management
+  - The Win32 API provides several ways for an application to use memory: virtual memory, memory-mapped files, heaps, and thread-local storage (TLS).
+
+### 17.8: Summary
+
+- これまでに書いている内容なので省略
