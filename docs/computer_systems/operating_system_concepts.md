@@ -3581,3 +3581,49 @@ typedef struct {
   - Each user that is logged on using the GUI has a session created to represent the GUI environment he well be using and to contain all the processes created to run his applications.
 - The terminal server (TS) connects one of the GUI windows in a user's local session to the new or existing session, called a remote desktop, on the remote computer.
   - The most common use of remote desktops is for users to connect to a session on their work PC from their home PC.
+
+### 17.5: File System
+
+- The native file system in Windows is NTFS (NT File System). It is used for all local volumes.
+- NTFS Internal Layout
+  - The fundamental entity in NTFS is a volume. A volume is created by the Windows logical disk management utility and is based on a logical disk partition.
+  - NTFS does not deal with individual sectors of a disk but instead uses clusters as the units of disk allocation.
+    - A cluster is a number of disk sectors that is a power of 2.
+  - NTFS uses logical cluster numbers (LCNs) as disk addresses.
+  - A file in NTFS is not a simple byte stream as it is in UNIX; rather, it is a structured object consisting of typed attributes.
+  - Each file in an NTFS volume has a unique ID called a file reference.
+  - NTFS B+ Tree
+    - As in UNIX, the NTFS namespace is organaized as a hierarchy of directories. Each directory uses a data structure caled a B+ tree to store an index of the file names in that directory.
+  - NTFS Metadata
+    - The NTFS volume's metadata are all stored in files. The first file is the MFT (master file table). The second file, which is used during recovery if the MFT is damaged, contains a copy of the first 16 entries of the MFT.
+    - The next few files are also special in purpose.
+      - log file
+      - volume file
+      - attribute-definition table
+      - root directory
+      - bitmap file
+      - boot file
+      - bad-cluster file
+- Recovery
+  - In many simple file systems, a power failure at the wrong time can damage the file-system data structures so severely that the entire volume is scrambled.
+  - In NTFS, all file-system data-structure updates are performed inside transactions.
+  - After a crash, the system can restore the file-system data structures to a consistent state by processing the log records, first redoing the operations for committed transactions and then undoing the operations for transactions that did not commit successfully before the crash.
+  - The logging functionality is provided by the log-file service.
+- Security
+  - Each NTFS file references a security descriptor, which specifies the owner of the file, and an access-control list, which contains the access permissions granted or denied to each user or group listed.
+- Volume Management and Fault Tolerance
+  - Volume Sets and RAID Sets
+  - Sector Sparing and Cluster Remapping
+    - Sector sparing is a hardware capability provided by many disk drives.
+    - Cluster remapping is a software technique performed by the file system.
+- Compression
+  - To compress a file, NTFS divides the file's data into compression units, which are blocks of 16 contiguous clusters.
+  - For sparse files or files that contain mostly zeros, NTFS uses another technique to save space.
+- Mount Points, Symbolic Links, and Hard Links
+  - Mount points are a form of symbolic link specific to directories on NTFS that were introduced in Windows 2000.
+  - They provide a mechanism for organizing disk volumes that is more flexible than the use of global names.
+- Change Journal
+  - NTFS keeps a journal describing all changes that have been made to the file system.
+- Volume Shadow Copies
+  - Windows implements the capability of bringing a volume to a known state and then creating a shadow copy that can be used to back up a consistent view of the volume.
+    - The technique is known as snapshots in some other file systems.
