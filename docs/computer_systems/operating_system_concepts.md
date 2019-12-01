@@ -3741,3 +3741,40 @@ typedef struct {
 
 - One reason to study early architectures and operating systems is that a feature that once ran only on huge systems may eventually make its way into very small systems.
   - Figure 18.1 がわかりやすい。
+
+### 18.2: Early Systems
+
+- Before the 1940s, computing devices were designed and implemented to perform specific, fixed tasks.
+- All that changed in the 1940s when Alan Turing and John von Neumann, both separately and together, worked on the idea of a more general-purpose stored program computer.
+- It is likely that the first working stored-program general-purpose computer was the Manchester Mark 1, which run successfully in 1949.
+- Early computers were physically enormous machines run from consoles.
+- Dedicated Computer Systems
+  - Libraries of common functions were crated. Common functions could then be copied into a new program without having to be written again, providing software reusability.
+  - A significant amount of setup time could be involved in the running of a job.
+- Shared Computer Systems
+  - The solution was twofold.
+    - First, a professional computer operator wa hired.
+      - operator は setup できるが debug はできない、programmer はその逆のイメージ。
+    - Second, jobs with similar needs were batched together and run through the computer as a group to reduce setup time.
+  - To overcome this idle time, people developed automatic job sequencing.
+  - The problem is the speed of the mechanical I/O devices, which are intrinsically slower than electronic devices.
+- Overlapped I/O
+  - One common solution to the I/O problem was to replace slow card readers (input devices) and line printers (output devices) with magnetic-tape units.
+  - Although off-line preparation of jobs continued for some time, it was quickly replaced in most systems.
+  - In a disk system, cards are read directly from the card reader onto the disk.
+  - spooling は Simultaneous Peripheral Operation On-Line の頭文字から来ている。
+  - Spooling overlaps the I/O of one job with the computation of other jobs.
+
+### 18.3:Atlas
+
+- The Atlas operating system was designed at the University of Manchester in England in the late 1950s and early 1960s.
+- The most remarkable feature of Atlas, however, was its memory management.
+  - Core memory was new and expensive at the time.
+- The Atlas system used a drum for its main memory, but it had a small amount of core memory that was used as a cache for the drum.
+
+### 18.4: XDS-940
+
+- The XDS-940 operating system was designed at the University of California at Berkeley in the early 1960's.
+  - Like the Atlas system, it was used paging for memory management.
+  - Unlike the Atlas system, it was a time-shared system.
+- A system-call instruction was added to the user-mode instruction set.
