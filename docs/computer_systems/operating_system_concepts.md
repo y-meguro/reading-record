@@ -3400,3 +3400,48 @@ typedef struct {
   - Windows XP was the first version of Windows to ship a 64-bit version.
 - Windows Vista への批判を受けて改善させたのが Windows7。2009 年 10 月に server editions と共にリリース。
   - Windows7 is a multiuser operating system, supporting simultaneous access through distributed services or through multiple instances of the GUI via the Windows terminal services.
+
+### 17.2: Design Principles
+
+- Microsoft's design goals for Windows included security, reliability, Windows and POSIX application compatibility, high performance, extensibility, portability, and international support.
+- Windows7 を例に見ていく。
+- Security
+  - Windows7 security goals required more than just adherence to the design standards that had enabled Windows NT 4.0 to receive a C2 security classification from the U.S. government.
+  - Windows bases security on discretionary access controls. System objects, including files, registry settings, and kernel objects, are protected by access-control lists (ACLs).
+  - Other security measures include address-space layout randomization (ASLR), nonexecutable stacks and heaps, and encryption and digital signature facilities.
+- Reliability
+  - Its reliability increased due to such factors as maturity in the source code, extensive stress testing of thy system, improved CPU architectures, and automatic detection of many serious errors in drivers from both Microsoft and third parties.
+  - One of the most significant improvements in the Windows experience came from adding memory diagnostics as an option at boot time.
+  - Windows7 introduced a fault-tolerant memory heap.
+  - Achieving high reliability in Windows is particularly challenging because almost one billion computers run Windows.
+  - To cope with these challenges, Microsoft is increasingly relying on communications from customer machines to collect large amounts of data from the ecosystem.
+- Windows and POSIX Application Compatibility
+  - Application compatibility is difficult to achieve because many applications check for a particular version of Windows, may depend to some extent on the quirks of the implementation of APIs, may have latent application bugs that were masked in the previous system, and so forth.
+  - Like Windows XP, Windows7 has a compatibility layer that sits between applications and the Win32 APIs.
+  - As a final compatibility measure, several editions of Windows7 provide a virtual machine that runs Windows XP inside Windows7.
+- High Performance
+  - To satisfy performance requirements, NT used a variety of techniques, such as asynchronous I/O, optimized protocols for networks, kernel-based graphics rendering, and sophisticated caching of file-system data.
+  - Windows XP further improved performance by reducing the code-path length in critical functions, using better algorithms and per-processor data structures, using memory coloring for non-uniform memory access (NUMA) machines, and implementing more scalable locking protocols, such as queued spinlocks.
+  - By the time Windows7 was developed, several major changes had come to computing.
+    - client/server computing や advanced local procedure call (ALPC)、CPU 数の増加など。
+  - Other changes are due to the increasing importance of support for parallel computing.
+    - To support task-based parallelism, Windows7 provides a new form of user-mode scheduling (UMS).
+- Extensibility
+  - Extensibility refers to the capacity of an operating system to keep up with advances in computing technology.
+- Portability
+  - An operating system is portable if it can be moved from one CPU architecture to another with relatively few changes.
+    - Windows was designed to be portable.
+  - Like the UNIX operating system, Windows is written primarily in C and C++.
+  - The architecture-specific source code is relatively small, and there is very little use of assembly code.
+  - Operating systems are sensitive not only to CPU architecture but also to CPU support chips and hardware boot programs.
+    - The CPU and support chips are known as a chipset.
+- International Support
+  - Windows was designed for international and multinational use.
+  - It provides support for different locales via the national-language-support (NLS) API.
+- Energy Efficiency
+  - Increasing energy efficiency for computers causes batteries to last longer for laptops and netbooks, saves significant operating costs for power and cooling of data centers, and contributions to green initiatives aimed at lowering energy comsumption by businesses and consumers.
+  - Windows7 added some new strategies for saving energy.
+    - The longer a CPU can stay unused, the more energy can be saved.
+- Dynamic Device Support
+  - Early in the history of the PC industry, computer configurations were fairly static.
+  - In a contemporary PC, the situation has completely changed. PCs are designed to enable users to plug and unplug a huge host of peripherals all the time; external disks, thumb drivers, cameras, and the like are constantly coming and going.
