@@ -3730,3 +3730,14 @@ typedef struct {
 ### 17.8: Summary
 
 - これまでに書いている内容なので省略
+
+## 18: Influential Operating Systems
+
+- Chapter Objectives
+  - To explain how operating-system features migrate over time from large computer systems to smaller ones.
+  - To discuss the features of several historical important operating systems.
+
+### 18.1: Feature Migration
+
+- One reason to study early architectures and operating systems is that a feature that once ran only on huge systems may eventually make its way into very small systems.
+  - Figure 18.1 がわかりやすい。
