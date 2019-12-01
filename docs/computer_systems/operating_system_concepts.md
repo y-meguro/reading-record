@@ -3572,3 +3572,12 @@ typedef struct {
     - The kernel initializes itself and creates two processes.
       - The system process contains all the internal kernel worker threads and never executes in user mode.
       - The first user-mode process created is SMSS, for session manager subsystem, which is similar to the INIT process in UNIX.
+
+### 17.4: Terminal Services and Fast User Switching
+
+- Windows supports a GUI-based console that interfaces with the user via keyboard, mouse, and display. Most systems also support audio and video.
+- Windows7 added support for multi-touch hardware, allowing users to input data by touching the screen and making gestures with one or more fingers.
+- Modern Windows, however, supports the sharing of a PC among multiple users.
+  - Each user that is logged on using the GUI has a session created to represent the GUI environment he well be using and to contain all the processes created to run his applications.
+- The terminal server (TS) connects one of the GUI windows in a user's local session to the new or existing session, called a remote desktop, on the remote computer.
+  - The most common use of remote desktops is for users to connect to a session on their work PC from their home PC.
