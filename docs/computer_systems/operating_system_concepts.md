@@ -3627,3 +3627,55 @@ typedef struct {
 - Volume Shadow Copies
   - Windows implements the capability of bringing a volume to a known state and then creating a shadow copy that can be used to back up a consistent view of the volume.
     - The technique is known as snapshots in some other file systems.
+
+### 17.6: Networking
+
+- Windows supports both peer-to-peer and client-server networking.
+- The networking components in Windows provide data transport, interprocess communication, file sharing across a network, and the ability to send print jobs to remote printers.
+- Network Interfaces
+  - To describe networking in Windows, we must first mention two of the internal networking interfaces: the network device interface specification (NDIS) and the transport driver interface (TDI).
+    - NDIS resides at the interface between data-link and network layers in the ISO model and enables many protocols to operate over many different network adapters.
+    - The TDI is the interface between the transport layer (layer 4) and the session layer (layer 5). This interface enables any session-layer component to use any available transport mechanism.
+- Protocols
+  - Windows implements transport protocols as drivers. These drivers can be loaded and unloaded from the system dynamically, although in practice the system typically has to be rebooted after a change.
+  - Windows come with several networking protocols. Next, we discuss a number of these protocols.
+  - Server-Message Block
+    - The server-message-block (SMB) protocol was first introduced in MS-DOS 3.1.
+    - The SMB protocol has four message types.
+      - Session control messages.
+      - File messages.
+      - Printer messages.
+      - Message messages.
+    - A version of the SMB control was published as the common Internet file system (CIFS) and is supported on a number of operating systems.
+  - Transmisson Control Protocol/Internet Protocol (TCP/IP)
+    - The TCP/IP suite that is used on the Internet has become the de fact standard networking infrastructure.
+    - Windows provides a software firewall that limits the TCP ports that can be used by programs for network communication.
+  - Point-to-Point Tunneling Protocol (PPTP)
+    - The PPTP is a protocol provided by Windows to communicate between remote-access server modules running on Windows server machines and other client systems that are connected over the Internet.
+    - The remote-access servers can encrypt data sent over the connection, and they support multiprotocol virtual private networks (VPNs) over the Internet.
+  - HTTP Protocol
+    - The HTTP protocol is used to get/put information using the World Wide Web.
+  - Web-Distributed Authoring and Versioning Protocol (WebDAV)
+    - WebDAV is an HTTP-based protocol for collaborative authoring across a network.
+  - Named Pipes
+    - Named pipes are a connection-oriented messaging mechanism.
+    - A process can use named pipes to communicate with other processes on the same machine.
+  - Remote Procedure Calls
+    - A remote procedure call (RPC) is a client-server mechanism that enables an application on one machine to make a procedure call to code on another machine.
+    - The Windows RPC mechanism follows the widely used distributed-computing-environment standard for RPC messages, so programs written to use Windows RPCs are highly portable.
+  - Component Object Model
+    - The component object model (COM) is a mechanism for interprocess communication that was developed for Windows.
+- Redirectors and Servers
+  - In Windows, an application can use the Windows I/O API to access files from a remote computer as though they were local, provided that the remote computer is running a CIFS server such as those provided by Windows.
+  - A redirector is the client-side object that forwards I/O requests to a remote system, where they are satisfied by a server.
+  - For performance and security, the redirectors and servers run in kernel mode.
+  - Distributed File System
+    - Windows supports a distributed file system (DFS) protocol that allows a network administrator to serve up files from multiple servers using a single distributed name space.
+  - Folder Redirection and Client-Side Caching
+    - To improve the PC experience for users who frequently switch among computers, Windows allow administrators to give users roaming profiles, which keep user's preferences and other settings on servers.
+    - Folder redirection is then used to automatically store a user's documents and other files on a server.
+  - Domains
+    - To manage the global access rights within such groups, Windows uses the concept of a domain.
+    - Specifically, a Windows domain is a group of Windows workstations and servers that share a common security policy and user database.
+  - Active Directory
+    - Active Directory is the Windows implementation of lightweight directory-access protocol (LDAP) services.
