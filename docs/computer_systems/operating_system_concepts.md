@@ -3360,3 +3360,26 @@ typedef struct {
 - Whenever any networking data arrive at this layer, either from an application's socket or from a network-device driver, the data are expected to have been tagged with an identifier specifying which network protocol they contain.
 - All communication between the layers of the networking stack is performed by passing single skbuff (socket buffer) structures.
 - The most important set of protocols in the Linux networking system is the TCP/IP protocol suite.
+
+### 16.11: Security
+
+- The security concerns can be classified in two groups:
+  - Authentication.
+    - Making sure that nobody can access the system without first providing that she has entry rights.
+  - Access control.
+    - Providing a mechanism for checking whether a user has the right to access a certain object and preventing access to objects as required.
+- Authentication
+  - Authentication in UNIX has typically been performed through the use of a publicly readable password file.
+  - A user's password is combined with a random "salt" value, and the result is encoded with a one-way transformation function and stored in the password file.
+  - A new security mechanism has been developed by UNIX vendors to address authentication problems. The pluggable authentication modules (PAM) system is based on a shared libary that can be used by any system component that needs to authenticate users.
+- Access Control
+  - Access contorl under UNIX systems, including Linux, is performed through the use of unique numeric identifiers.
+    - A user identifier (UID) identifies a single user or a single set of access rights.
+    - A group identifier (GID) is extra identifier that can be used to identify rights belonging to more than one user.
+  - Every object in a UNIX system under user and group access control has a single UID and a single GID associated with it. User object also have a single UID, but they may have more than one GID.
+  - Linux performs access control by assigning objects a protection mask that specifies which access modes - read, write, or execute - are to be granted to processes with owner, group, or world access.
+  - The only exception is the privileged root UID.
+
+### 16.12: Summary
+
+- これまでに書いている内容なので省略
