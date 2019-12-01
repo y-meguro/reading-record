@@ -3383,3 +3383,20 @@ typedef struct {
 ### 16.12: Summary
 
 - これまでに書いている内容なので省略
+
+## 17: Windows7
+
+- Chapter Objectives
+  - To explore the principles underlying Windows7's design and the specific components of the system.
+  - To provide a detailed discussion of the Windows7 file system.
+  - To illustrate the networking protocols supported in Windows7.
+  - To describe the interface available in Windows7 to system and application programmers.
+  - To describe the important algorithm implemented with Windows7.
+
+### 17.1: History
+
+- In the mid-1980s, Microsoft and IBM cooperated to develop the OS/2 operating system, which was written in assembly language for single-processor Intel 80286 systems.
+- In October 2001, Windows XP was released as both an update to the Windows 2000 desktop operating system and a replacement for Windows 95/98.
+  - Windows XP was the first version of Windows to ship a 64-bit version.
+- Windows Vista への批判を受けて改善させたのが Windows7。2009 年 10 月に server editions と共にリリース。
+  - Windows7 is a multiuser operating system, supporting simultaneous access through distributed services or through multiple instances of the GUI via the Windows terminal services.
