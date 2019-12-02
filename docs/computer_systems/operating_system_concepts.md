@@ -3,9 +3,12 @@
 ## 本
 
 - [Operating System Concepts | Abraham Silberschatz, Peter B. Galvin, Greg Gagne](https://amzn.to/2CN0bst)
-  - 参考: [Operating System Concepts - 9th edition](https://www.os-book.com/OS9/index.html)
-  - 最新はおそらく第 10 版 [Operating System Concepts 10e Wiley E-Text Student Package | Abraham Silberschatz](https://amzn.to/2qUswe8)
-  - 日本語版は第 7 版が最新のよう [オペレーティングシステムの概念 | Abraham Silberschatz, Peter Baer Galvin, Greg Gagne, 土居 範久, 大谷 真, 加藤 和彦, 光来 健一, 清水 謙多郎, 高田 眞吾, 高田 広章, 千葉 滋, 野口 健一郎 |本 | 通販 | Amazon](https://amzn.to/37Z0SNt)
+  - 参考
+    - [Operating System Concepts - 9th edition](https://www.os-book.com/OS9/index.html)
+  - 最新はおそらく第 10 版
+    - [Operating System Concepts 10e Wiley E-Text Student Package | Abraham Silberschatz](https://amzn.to/2qUswe8)
+  - 日本語版は第 7 版が最新
+    - [オペレーティングシステムの概念 | Abraham Silberschatz, Peter Baer Galvin, Greg Gagne, 土居 範久, 大谷 真, 加藤 和彦, 光来 健一, 清水 謙多郎, 高田 眞吾, 高田 広章, 千葉 滋, 野口 健一郎](https://amzn.to/37Z0SNt)
 
 ## かかった時間
 
