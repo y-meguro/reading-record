@@ -3801,3 +3801,27 @@ typedef struct {
 - The Compatible Time-Sharing System (CTSS) was designed at MIT as an experimental time-sharing system and first appeared in 1961.
 - CTSS was extremely successful and was in use as late as 1972.
 - Although it was limited, it succeeded in demonstrating that time sharing was a convenient and practical mode of computing.
+
+### 18.8: MULTICS
+
+- The MULTICS operating system was designed from 1965 to 1970 at MIT as a natural extension of CTSS.
+- It was extended to a multiprocessor system, allowing a CPU to be taken out of service for maintenance while the system countinued running.
+
+### 18.9: IBM OS/360
+
+- The longest line of operating-system development is undoubtedly that of IBM computers.
+- These systems were developed separately, often at independent sites. As a result, IBM was faced with many different computers, with different languages and different system software.
+- The IBM/360 - which first appeared in the mid 1960's - was designed to alter this situation.
+- The IBM/360 was designed as a family of computers spanning the complete range from small business machines to large scientific machines.
+
+### 18.10: TOPS-20
+
+- Perhaps the most influential of DEC's operating systems was TOPS-20.
+- TOP-20 had an advanced command-line interpreter that provided help as needed to users.
+
+### 18.11: CP/M and MS/DOS
+
+- An early "standard" operating system for these computers of the 1970s was CP/M, short for Control Program/Monitor, written by Gary Kindall of Digital Research, Inc.
+- CP/M ran primarily on the first "personal computer" CPU, the 8-bit Intel 8080.
+- When IBM entered the personal computer business, it decided to have Bill Gates and company write a new operating system for its 16-bit CPU of choice - the Intel 8086.
+  - This operating system, MS-DOS, was similar to CP/M but had a richer set of built-in commands, again mostly modeled after TOPS-10.
