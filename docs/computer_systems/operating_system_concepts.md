@@ -3825,3 +3825,20 @@ typedef struct {
 - CP/M ran primarily on the first "personal computer" CPU, the 8-bit Intel 8080.
 - When IBM entered the personal computer business, it decided to have Bill Gates and company write a new operating system for its 16-bit CPU of choice - the Intel 8086.
   - This operating system, MS-DOS, was similar to CP/M but had a richer set of built-in commands, again mostly modeled after TOPS-10.
+
+### 18.12: Macintosh Operating System and Windows
+
+- The Apple Macintosh computer was arguably the first computer with a GUI designed for home users.
+- It was certainly the most successful for the while, starting at its launch in 1984.
+- The desktop rivalry between Apple and Microsoft continue today, with new versions of Windows and Mac OS trying to outdo each other in features, usability, and application functionality.
+
+### 18.13: Mach
+
+- The Mach operating system traces its ancestry to the Accent operating system developed at Carnegie Mellon University (CMU).
+- Mach's development followed an evolutionary path from BSD UNIX systems.
+- Unlike UNIX, which was developed without regard for multiprocessing, Mach incorporates multiprocessing support throughout.
+
+### 18.14: Other Systems
+
+- History is littered with operating systems that suited a purpose for a time and then, when faded, were replaced by operating systems that had more features, supported newer hardware, were easier to use, or were better marketed.
+- We are sure this trend will continue in the future.
