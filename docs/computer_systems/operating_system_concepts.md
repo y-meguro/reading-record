@@ -3778,3 +3778,26 @@ typedef struct {
   - Like the Atlas system, it was used paging for memory management.
   - Unlike the Atlas system, it was a time-shared system.
 - A system-call instruction was added to the user-mode instruction set.
+
+### 18.5: THE
+
+- The THE operating system was designed at the Technische Hogeschool in Eindhoven in the Netherlands in the mid-1960's.
+- The mainly noted for its clean design, particularly its layer structure, and its use of a set of concurrent processes employing semaphores for synchronization.
+- Unlike the processes in the XDS-940 system, the set of processes in THE system was static.
+- A priority CPU-scheduling algorithm was used.
+
+### 18.6: RC 4000
+
+- The RC 4000 system, like the THE system, was notable primarily for its design concepts.
+- The goal was to create an operating-system nucleus, or kernel, on which a complete operating system could be built.
+- The kernel supported a collection of concurrent processes.
+- A round-robin CPU scheduler was used.
+- Although processes could share memory, the primary communication and synchronization mechanism was the message system provided by the kernel.
+- A message queue was associated with each process.
+- I/O devices were also threated as processes.
+
+### 18.7: CTSS
+
+- The Compatible Time-Sharing System (CTSS) was designed at MIT as an experimental time-sharing system and first appeared in 1961.
+- CTSS was extremely successful and was in use as late as 1972.
+- Although it was limited, it succeeded in demonstrating that time sharing was a convenient and practical mode of computing.
