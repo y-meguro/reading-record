@@ -4,10 +4,12 @@
 
 - [Operating System Concepts | Abraham Silberschatz, Peter B. Galvin, Greg Gagne](https://amzn.to/2CN0bst)
   - 参考: [Operating System Concepts - 9th edition](https://www.os-book.com/OS9/index.html)
+  - 最新はおそらく第 10 版 [Operating System Concepts 10e Wiley E-Text Student Package | Abraham Silberschatz](https://amzn.to/2qUswe8)
+  - 日本語版は第 7 版が最新のよう [オペレーティングシステムの概念 | Abraham Silberschatz, Peter Baer Galvin, Greg Gagne, 土居 範久, 大谷 真, 加藤 和彦, 光来 健一, 清水 謙多郎, 高田 眞吾, 高田 広章, 千葉 滋, 野口 健一郎 |本 | 通販 | Amazon](https://amzn.to/37Z0SNt)
 
 ## かかった時間
 
-- x 時間
+- 116.3 時間
 
 ## 読む前の状態
 
@@ -15,7 +17,13 @@
 
 ## 読む前後の変化
 
-- xxx
+- operating system の基本的な理解が深まった
+  - ユーザーモードとカーネルモード
+  - プロセスとスレッド
+  - メモリ管理
+  - ファイルシステムとストレージ管理
+- いまなら「詳解 LINUX カーネル」読み始められそう
+- 詳細になりすぎず、基本的なことがわかりやすくまとめられていて、読み応えのある本だった
 
 # 読書メモ
 
