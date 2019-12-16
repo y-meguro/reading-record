@@ -10,6 +10,7 @@
   * [Operating System Concepts](/docs/computer_systems/operating_system_concepts.md)
 * Algorithms
   * [やさしく学べる離散数学](/docs/algorithms/easy_learning_discrete_mathematics.md)
+  * [あたらしいグラフ理論入門](/docs/algorithms/graph_theory_introduction.md)
 * Pending
   * [コンピュータの構成と設計](/docs/pending/computer_organization_and_design.md)
   * [30日でできる! OS自作入門](/docs/pending/haribote_os.md)
