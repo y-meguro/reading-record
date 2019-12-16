@@ -38,6 +38,7 @@
       "no-doubled-joshi": false,
       // 感嘆符「!！?？」を使用を許容する
       "no-exclamation-question-mark": false,
+      "no-invalid-control-character": false,
       "max-comma": false,
       "max-ten": false
     },
