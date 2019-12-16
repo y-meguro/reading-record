@@ -8,6 +8,8 @@
   * [コンパイラの構成と最適化](/docs/computer_systems/costruction_and_optimization_for_compiler.md)
   * [作って理解するOS](/docs/computer_systems/create_and_understand_os.md)
   * [Operating System Concepts](/docs/computer_systems/operating_system_concepts.md)
+* Algorithms
+  * [やさしく学べる離散数学](/docs/algorithms/easy_learning_discrete_mathematics.md)
 * Pending
   * [コンピュータの構成と設計](/docs/pending/computer_organization_and_design.md)
   * [30日でできる! OS自作入門](/docs/pending/haribote_os.md)
