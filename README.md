@@ -16,6 +16,7 @@
 * Algorithms
   * [やさしく学べる離散数学](/docs/algorithms/easy_learning_discrete_mathematics.md)
   * [あたらしいグラフ理論入門](/docs/algorithms/graph_theory_introduction.md)
+  * [計算理論の基礎](/docs/algorithms/introduction_to_the_theory_of_computation.md)
 * Pending
   * [コンピュータの構成と設計](/docs/pending/computer_organization_and_design.md)
   * [30日でできる! OS自作入門](/docs/pending/haribote_os.md)
