@@ -59,3 +59,69 @@
 - Docker for Mac
   - Docker for Mac は Mac OS Yosemite に組み込まれたネイティブの仮想化機構である Hypervisor Framework を利用し、Docker エンジンの動作環境を提供する
   - ユーザーからは、仮想環境のホストの存在をほぼ意識することなく、Docker を Mac OS 上で利用できる
+
+## 3: はじめの一歩
+
+- 初めてのイメージ実行
+  - `docker run debian echo "Hello World"` を実行する
+  - 呼び出したコマンドが `docker run`
+  - `debian` が使いたいイメージの名前
+  - イメージがダウロードされると、Docker はそのイメージを実行中のコンテナに変え、その中で指定されたコマンドを実行する
+  - [run — Docker-docs-ja 17.06.Beta ドキュメント](http://docs.docker.jp/engine/reference/commandline/run.html)
+- コンテナ内のシェルを使う
+  - `docker run -i -t debian /bin/bash`
+  - `-i` と `-t` で Docker に対して tty 付きのインタラクティブセッションを要求する
+  - シェルを終了するとコンテナも停止する
+    - コンテナが動作するのは、そのコンテナのメインプロセスが動作している間だけ
+- コンテナの一括削除
+  - `docker rm $(docker ps -aq)`
+- コンテナのファイル変更や設定を、新しいイメージに収容する
+  - `docker commit cowsay test/cowsayimage`
+  - 上記だと cowsay がコンテナの名前、test が保存するリポジトリの名前、cowsayimage がイメージの名前
+  - [commit — Docker-docs-ja 17.06.Beta ドキュメント](http://docs.docker.jp/engine/reference/commandline/commit.html)
+- Dockerfile からのイメージの構築
+  - FROM 命令で使用するベースイメージを指定
+  - RUN コマンドはイメージ内で実行するシェルのコマンドを指定
+  - Dockerfile と同じディレクトリから `docker build` コマンドを実行すればイメージを構築できる
+  - [build — Docker-docs-ja 17.06.Beta ドキュメント](http://docs.docker.jp/engine/reference/commandline/build.html)
+  - 普通に docker build するとエラーが出るので `FROM debian/eol:wheezy` に変更した
+    - [sources list in wheezy should be switched to archive · Issue #65 · debuerreotype/docker-debian-artifacts](https://github.com/debuerreotype/docker-debian-artifacts/issues/65)
+  - ENTRYPOINT
+    - ENTRYPOINT にはコンテナが実行するファイルを指定する
+    - [ENTRYPOINT - Dockerfile リファレンス](http://docs.docker.jp/engine/reference/builder.html#entrypoint)
+  - COPY
+    - [COPY - Dockerfile リファレンス](http://docs.docker.jp/engine/reference/builder.html#copy)
+  - LABEL
+    - MAINTAINER は deprecated になったので LABEL を使う
+    - [LABEL - Dockerfile リファレンス](http://docs.docker.jp/engine/reference/builder.html#label)
+- Union File System(UFS)
+  - union file system は、複数のファイルシステムをオーバーレイして、単一のファイルシステムとしてユーザーに見せてくれる
+  - Docker のイメージは、複数のレイヤから構成される。イメージの各レイヤは、リードオンリーのファイルシステム
+- レジストリ、リポジトリ、イメージ、タグ
+  - レジストリ
+    - イメージのホスティングと配布を受け持つサービス。デフォルトのレジストリは Docker Hub
+  - リポジトリ
+    - 関連するイメージの集合（自分の場合は ymeguro リポジトリを持つ）
+  - タグ
+    - リポジトリ内のイメージに与えられる、アルファベット及び数値からなる識別子
+- イメージを再構築して、Docker Hub にアップロード
+  - [ymeguro/cowsay - Docker Hub](https://hub.docker.com/r/ymeguro/cowsay)
+- イメージの名前空間
+  - push された Docker のイメージが属する名前空間には 3 つの種類がある
+    - user
+      - `ymeguro/cowsay` のように、文字列と / でプレフィックスされた名前は "user" の名前空間に属する
+      - ユーザーによってアップロードされたイメージが属する
+    - root
+      - プレフィックスや / を持たない debian や ubuntu といった名前は "root" の名前空間に属する
+      - この名前空間は Docker Inc. が管理しており、公式イメージのために予約されている
+    - サードパーティのレジストリがホストしているイメージ(Docker Hub がホストしているものではない)
+      - ホスト名もしくは IP がプレフィックスになっているイメージ
+      - 例えば localhost:5000/wordpress はローカルのレジストリでホストされている WordPress のイメージ
+  - ボリューム
+    - データを永続化し、コンテナとホスト、あるいは他のコンテナとの間で簡単に共有するために、ボリュームを利用する
+    - ボリュームは通常の union file system の一部ではなく、ホストに直接マウントされるファイルもしくはディレクトリ
+      - つまり、ボリュームは他のコンテナと共有でき、すべての変更は直接ホストのファイルシステムに対して行われる
+    - ディレクトリをボリュームとして宣言する方法は 2 つある
+      - Dockerfile の中で VOLUME 命令を使う方法
+      - docker run で -v フラグを指定する方法
+    - デフォルトでは、指定したディレクトリやファイルは、ホスト上の Docker をインストールしたディレクトリ(通常は /var/lib/docker/)にマウントされる
