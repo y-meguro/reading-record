@@ -51,3 +51,11 @@
 - Docker のプラットフォームは 64bit Linux のみ
   - Docker を利用するコンピュータでは、64bit の Linux ディストリビューションを動作されなければならず、コンテナもすべて 64bit Linux でなければならない
   - そのため、Windows もしくは Mac OS のユーザーは、VM 内で Docker を動作させることになる
+
+## 2: インストール
+
+- Docker for Mac/Windows
+  - この本が書かれた時点では Docker Toolbox をインストールし、Virtual Box 上で Linux のホストを動作させるやり方だった。現時点では、Docker for Mac/Windows を利用して、それぞれのプラットフォーム固有の仮想化の機能を使うことで、ほぼ Linux と同様の感覚で Docker を使えるようになる
+- Docker for Mac
+  - Docker for Mac は Mac OS Yosemite に組み込まれたネイティブの仮想化機構である Hypervisor Framework を利用し、Docker エンジンの動作環境を提供する
+  - ユーザーからは、仮想環境のホストの存在をほぼ意識することなく、Docker を Mac OS 上で利用できる
