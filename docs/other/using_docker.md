@@ -460,3 +460,20 @@
       - 削除は行わない
     - rm
       - 停止しているコンテナを削除する
+
+## 6: シンプルな Web アプリケーションの作成
+
+- identidock で基本的な Web アプリケーションを作成した
+  - マイクロサービスでのアプローチを行った
+
+## 7: イメージの配布
+
+- 自動化ビルド
+  - コードを更新したらイメージも更新したい場合は、自動化ビルドを使う
+  - 自動化ビルドをセットアップすると、ソースコードの変更をプッシュすれば、Docker Hub がイメージをビルドして、リポジトリに保存してくれるようになる
+  - Docker repository と GitHub repository を連携させる
+  - [Docker Hub の自動構築 — Docker-docs-ja 17.06.Beta ドキュメント](http://docs.docker.jp/docker-hub/builds.html)
+- 独自のレジストリの運用
+  - Docker Hub 以外にも、選択肢はある
+  - Docker Registry は Docker Hub と同様にレジストリ API を実装している
+  - Docker Hub がクローズドソースのリモートサービスであるのに対して、Docker Registry はオープンソースであり、ローカルで動作させることが可能
