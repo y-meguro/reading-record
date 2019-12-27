@@ -477,3 +477,16 @@
   - Docker Hub 以外にも、選択肢はある
   - Docker Registry は Docker Hub と同様にレジストリ API を実装している
   - Docker Hub がクローズドソースのリモートサービスであるのに対して、Docker Registry はオープンソースであり、ローカルで動作させることが可能
+
+## 8: Docker を使った継続的インテグレーションテスト
+
+- Jenkins コンテナの作成
+  - ソケットマウント
+    - Jenkins コンテナがイメージをビルドできるようにするために、Docker ソケットをホストからコンテナにマウントする
+    - こうすることで、Jenkins は実質的に「兄弟」コンテナを生成できるようになる
+  - Docker-in-Docker (DinD)
+    - Docker コンテナが独自の「子」コンテナを作れるようにするもの
+    - Docker そのものを Docker コンテナ内で実行する
+  - Unlock Jenkins への対応
+    - `docker exec -it ${containerID} bash` でコンテナに入った後、`cat /var/jenkins_home/secrets/initialAdminPassword` でパスワードを確認して、入力する
+    - 参考: [[ docker ] jenkinsサーバ をdockerで始めてみる - Qiita](https://qiita.com/penguin_dream/items/e1c8a7174fc27d1e0b49)
