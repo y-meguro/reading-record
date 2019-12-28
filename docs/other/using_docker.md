@@ -480,6 +480,7 @@
 
 ## 8: Docker を使った継続的インテグレーションテスト
 
+- けっこう飛ばして読んだ
 - Jenkins コンテナの作成
   - ソケットマウント
     - Jenkins コンテナがイメージをビルドできるようにするために、Docker ソケットをホストからコンテナにマウントする
@@ -490,3 +491,14 @@
   - Unlock Jenkins への対応
     - `docker exec -it ${containerID} bash` でコンテナに入った後、`cat /var/jenkins_home/secrets/initialAdminPassword` でパスワードを確認して、入力する
     - 参考: [[ docker ] jenkinsサーバ をdockerで始めてみる - Qiita](https://qiita.com/penguin_dream/items/e1c8a7174fc27d1e0b49)
+
+## 9: コンテナのデプロイ
+
+- けっこう飛ばして読んだ
+- Docker Machine
+  - 新しいリソースをプロビジョニングする、最も速くてシンプルな方法は Docker Machine によって新たなリソースをプロビジョニングし、コンテナを実行する方法
+  - Docker Machine は、サーバーを生成し、生成したサーバーに Docker をインストールし、ローカルの Docker クライアントからアクセスできるようにしてくれる
+
+## 10: ロギングとモニタリング
+
+- けっこう飛ばして読んだ
