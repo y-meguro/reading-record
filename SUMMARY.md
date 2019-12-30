@@ -12,6 +12,7 @@
   * [やさしく学べる離散数学](/docs/algorithms/easy_learning_discrete_mathematics.md)
   * [あたらしいグラフ理論入門](/docs/algorithms/graph_theory_introduction.md)
   * [計算理論の基礎](/docs/algorithms/introduction_to_the_theory_of_computation.md)
+  * [アルゴリズムイントロダクション](/docs/algorithms/introduction_to_algorithms.md)
 * Other
   * [Docker](/docs/other/using_docker.md)
 * Pending
