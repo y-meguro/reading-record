@@ -162,3 +162,104 @@ for k = p to r
   - 転置対称性
     - f(n) = Ｏ(g(n)) の時、かつその時に限り g(n) = Ω(f(n))
     - f(n) = o(g(n)) の時、かつその時に限り g(n) = ω(f(n))
+
+## 4: 分割統治
+
+- 漸化式(recurrence)
+  - 漸化式はある入力に対する関数値を、それより小さい入力に対する関数値を用いて記述する等式または不等式である
+- 漸化式を解く方法 3 つ
+  - 置換え法(substitution method)
+    - まず限界を推測し、次にその推測が正しいことを数学的帰納法を用いて証明する
+  - 再帰木法(recursion-tree method)
+    - 節点が再帰の各レベルで必要なコストを表現する木の形に漸化式を変形し、和を上または下から抑える技法を用いて漸化式を解く
+  - マスター法(master method)
+    - 定数 a >= 1、b >= 1 と与えられた関数 f(n) によって `T(n) = a*T(n/b) + f(n)` と表現できる漸化式に対する限界を与える
+- 最大部分配列問題
+  - 配列 A に対して、要素の和を最大化する A の連続する部分配列を発見する問題
+  - この連続する部分配列を最大部分配列(maximum subarray)と呼ぶ
+  - 分割統治による解
+    - 部分配列の中央点 mid を計算し、部分配列 A[low ... mid] と A[mid+1 ... high] を考察する。すると、最大部分配列 A[i ... j] が見つかるのは以下の 3 つのどこかになる
+      - 完全に部分配列 A[low ... mid] の中にある。従って low <= i <= j <= mid
+      - 完全に部分配列 A[mid+1 ... high] の中にある。従って mid + 1 <= i <= j <= high
+      - 中央点をまたいでいる。従って low <= i <= mid < j <= high
+
+```
+FIND-MAXIMUM-SUBARRAY(A, low, high)
+if high == low
+  return (low, high, A[low]) // 基底。要素数1
+else mid = (low + high) / 2
+  (left-low, left-high, left-sum) = FIND-MAXIMUM-SUBARRAY(A, low, mid)
+  (right-low, right-high, right-sum) = FIND-MAXIMUM-SUBARRAY(A, mid + 1, high)
+  (cross-low, cross-high, cross-sum) = FIND-MAX-CROSSING-SUBARRAY(A, low, mid, high)
+if left-sum >= right-sum and left-sum >= cross-sum
+  return (left-low, left-high, left-sum)
+else if right-sum >= left-sum and right-sum >= cross-sum
+  return (right-low, right-high, right-sum)
+else
+  return (cross-low, cross-high, cross-sum)
+
+FIND-MAX-CROSSING-SUBARRAY(A, low, mid, high)
+left-sum = -∞
+sum = 0
+for i = mid downto low
+  sum = sum + A[i]
+  if sum > left-sum
+    left-sum = sum
+    max-left = i
+right-sum = -∞
+sum = 0
+for j = mid + 1 to high
+  sum = sum + A[j]
+  if sum > right-sum
+    right-sum = sum
+    max-right = i
+return (max-left, max-right, left-sum + right-sum)
+```
+
+- 行列積
+  - 単純な分割統治
+    - 以下を利用する
+      - C11 = A11 * B11 + A12 * B21
+      - C12 = A11 * B12 + A12 * B22
+      - C21 = A21 * B11 + A22 * B21
+      - C22 = A21 * B12 + A22 * B22
+    - n/2 * n/2 型行列の積の計算は T(n/2) 時間かかる
+    - 加算にはそれぞれ θ(n^2) 時間かかる
+    - 以上から
+      - `T(n) = θ(1)` n = 1 の時
+      - `T(n) = 8T(n/2) + θ(n^2)` n > 1 の時
+
+```
+SQUARE-MATRIX-MULTIPLY-RECURSIVE
+n = A.rows
+// C を新しい n * n 型行列とする
+if n == 1
+  c11 = a11 * b11
+else
+  C11 = SQUARE-MATRIX-MULTIPLY-RECURSIVE(A11, B11) + SQUARE-MATRIX-MULTIPLY-RECURSIVE(A12, B21)
+  C12 = SQUARE-MATRIX-MULTIPLY-RECURSIVE(A11, B12) + SQUARE-MATRIX-MULTIPLY-RECURSIVE(A12, B22)
+  C21 = SQUARE-MATRIX-MULTIPLY-RECURSIVE(A21, B11) + SQUARE-MATRIX-MULTIPLY-RECURSIVE(A22, B21)
+  C22 = SQUARE-MATRIX-MULTIPLY-RECURSIVE(A21, B12) + SQUARE-MATRIX-MULTIPLY-RECURSIVE(A22, B22)
+return C
+```
+
+- Strassen の方法
+  - 8 回あった n/2 * n/2 型行列の計算を 7 回で済ませる
+  - 10 個の n/2 * n/2 型行列 S1, S2,..., S10 を生成し、7 個の行列積 P1, P2,..., P7 を再帰的に計算する
+  - すると Strassen のアルゴリズムの実行時間 T(n) は以下のようになる
+    - `T(n) = θ(1)` n = 1 の時
+    - `T(n) = 7T(n/2) + θ(n^2)` n > 1 の時
+- 置換え法(substitution method)
+  - 2 段階で漸化式を解く
+    - 解の形を推定する
+    - 数学的帰納法を用いて定数を求め、推定した解がうまく働くことを示す
+  - 解の正しさを簡潔に証明するのに適しているが、うまい解の推定に苦労することがある
+- 再帰木法(recursion tree)
+  - 再帰木では、各節点はある再帰関数呼び出しに対応する部分問題のコストを表す
+  - 再帰木の各レベルにおいて、そのレベルに属する節点のコストの総和を取ることでレベルごとのコストを求め、レベルごとのコストの総和を取ることで再帰木全体のコストを求める
+  - 再帰木はいい推定を得るための最適の道具。そして得た推定の正しさを置換え法によって検証する
+- 漸化式を解くためのマスター法
+  - a >= 1 と b > 1 を定数、f(n) を関数とする。非負整数上の関数 T(n) を漸化式 `T(n) = a * T(n/b) + f(n)` によって定義する。すると T(n) は漸近的に次の限界を持つ
+    - ある定数 ε > 0 に対して f(n) = Ｏ(n^logb a-ε) ならば、`T(n) = θ(n^logb a)`
+    - f(n) = θ(n^logb a) ならば、`T(n) = θ(n^logb a * lg n)`
+    - ある定数 ε > 0 に対して f(n) = Ω(n^logb a+ε) であり、しかもある定数 c < 1 と十分大きな全ての n に対して a * f(n/b) <= c * f(n) ならば、`T(n) = θ(f(n))`
