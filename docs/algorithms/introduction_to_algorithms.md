@@ -263,3 +263,36 @@ return C
     - ある定数 ε > 0 に対して f(n) = Ｏ(n^logb a-ε) ならば、`T(n) = θ(n^logb a)`
     - f(n) = θ(n^logb a) ならば、`T(n) = θ(n^logb a * lg n)`
     - ある定数 ε > 0 に対して f(n) = Ω(n^logb a+ε) であり、しかもある定数 c < 1 と十分大きな全ての n に対して a * f(n/b) <= c * f(n) ならば、`T(n) = θ(f(n))`
+
+## 5: 確率的解析と乱択アルゴリズム
+
+- 確率的解析(probabilistic analysis)
+  - 確率を用いる問題の解析を確率的解析という
+- 乱択アルゴリズム(randomized algorithm)
+  - 一般的に、アルゴリズムの振る舞いが入力と乱数生成器(random-number generator)が生成する値の両方によって決まる時、このアルゴリズムを乱択アルゴリズムと呼ぶ
+- 期待実行時間(expected running time)
+  - 乱択アルゴリズムの実行時間を解析する時には、乱数生成器が返す値の分布の上で実行時間の期待値を取る
+  - 乱択アルゴリズムの実行時間を期待実行時間と呼ぶ
+- PERMUTE-BY-SORTING
+  - 多くの乱択アルゴリズムでは、与えられた入力配列を置換することで入力をランダム化する。PERMUTE-BY-SORTING はこのやり方の 1 つ。あとでもう 1 つの RANDOMIZE-IN-PLACE を紹介する
+  - PERMUTE-BY-SORTING は配列の各要素 A[i] に対してランダムに優先度 P[i] を割り当て、A の要素を優先度に従ってソートするやり方
+  - マージソートに `θ(n * lg n)` 時間かかるので、このやり方は `Ω(n * lg n)` 時間かかる
+
+```
+PERMUTE-BY-SORTING(A)
+n = A.length
+P[1..n] を新しい配列とする
+for i = 1 to n
+  P[i] = RANDOM(1, n^3) // 1 から n^3 の間で乱数を選ぶ
+P をキーとして A をソートする
+```
+
+- RANDOMIZE-IN-PLACE
+  - これは `Ｏ(n)` 時間で実現でき、PERMUTE-BY-SORTING より速い
+
+```
+RANDOMIZE-IN-PLACE(A)
+n = A.length
+for i = 1 to n
+  A[i] と A[RANDOM(i, n)] を置き換える
+```
