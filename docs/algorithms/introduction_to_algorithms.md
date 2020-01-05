@@ -296,3 +296,63 @@ n = A.length
 for i = 1 to n
   A[i] と A[RANDOM(i, n)] を置き換える
 ```
+
+## 6: ヒープソート
+
+- ヒープ(heap)
+  - (2 分木)ヒープデータ構造は、おおよそ完全 2 分木と見なすことができる配列オブジェクト
+  - ヒープを表現する配列は 2 つの属性を持つ
+    - `A.length` は通常通り配列の要素数を表す
+    - `A.heap-size` は配列 A に格納されているヒープの要素数を表す
+- max ヒープと min ヒープ
+  - max ヒープ
+    - 根以外の任意の節点 i が `A[Parent(i)] >= A[i]` の max ヒープ条件を満たすもの
+  - min ヒープ
+    - 根以外の任意の節点 i が `A[Parent(i)] <= A[i]` の max ヒープ条件を満たすもの
+- 高さ
+  - ヒープを木とみなした時、ヒープにおける節点の高さを、その節点からある葉に下る最長の単純パスに含まれる変数と定義する
+  - ヒープの高さは、その根の高さと定義する
+  - n 個の要素を含むヒープの高さは完全二分木に基づいているので θ(lg n) である
+- ヒープ条件の維持
+  - max ヒープ条件を維持するために手続き MAX-HEAPIFY を呼び出す
+  - 入れ替える対象となるどちらの子の部分木のサイズも 2n/3 以下だから（最悪の場合、は木の最ものレベルがちょうど半分だけ埋まっている時に起こる）、MAX-HEAPIFY の実行時間は漸化式 `T(n) <= T(2n/3) + θ(1)` で表現できる
+    - 計算すると `T(n) = Ｏ(lg n)` である
+
+```
+MAX-HEAPIFY(A, i)
+l = LEFT(i)
+r = RIGHT(i)
+if l <= A.heap-size かつ A[l] > A[i]
+  largest = l
+else
+  largest = i
+if r <= A.heap-size かつ A[r] > A[largest]
+  largest = r
+if largest != i
+  A[i] を A[largest] と交換する
+  MAX-HEAPIFY(A, largest)
+```
+
+- ヒープの構築
+  - ボトムアップ的に手続き MAX-HEAPIFY を適用することで、配列 A[1..n] を max ヒープに変換できる
+
+```
+BUILD-MAX-HEAP(A)
+A.heap-size = A.length
+for i = A.length/2 downto 1
+  MAX-HEAPIFY(A, i)
+```
+
+- ヒープソートアルゴリズム
+  - 最初に max ヒープを構築し、そこから順々に最大要素を取り出していく
+  - 実行時間は `Ｏ(n * lg n)`
+    - 実行時間 Ｏ(lg n) の MAX-HEAPIFY が n - 1 回呼ばれる
+
+```
+HEAPSORT(A)
+BUILD-MAX-HEAP(A)
+for i = A.length downto 2
+  A[1] を A[i] と交換する
+  A.heap-size = A.heap-size - 1
+  MAX-HEAPIFY(A, 1)
+```
