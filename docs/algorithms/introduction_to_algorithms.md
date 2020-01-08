@@ -502,3 +502,128 @@ else
     - `T(n) <= Ｏ(1)` n < 140 の場合
     - `T(n) <= T(n/5) + T(7n/10 + 6) + Ｏ(n)` n >= 140 の場合
       - これを解くと、最悪実行時間が線形になることがわかる
+
+## 10: 基本データ構造
+
+- スタックとキュー
+  - スタックとキューは削除操作 DELETE が決まった要素を削除する動的集合である
+    - スタックは最後に挿入した要素を削除する。後入れ先出し(LIFO: last-in, first-out)方策を実現する
+    - キューは集合に最も長時間滞在した要素を削除し、先入れ先出し(FIFO: first-in, first-out)方策を実現する
+- スタック(stack)
+  - スタックでは INSERT 操作を PUSH、DELETE 操作を POP と呼ぶ
+
+```
+STACK-EMPTY(S)
+if S.top == 0
+  return TRUE
+else
+  return FALSE
+
+PUSH(S)
+S.top = S.top + 1
+S[S.top] = x
+
+POP(S)
+if STACK-EMPTY(S)
+  error "アンダーフロー"
+else
+  S.top = S.top - 1
+  return S[S.top + 1]
+```
+
+- キュー(queue)
+  - キューでは挿入操作 INSERT を ENQUEUE、削除操作 DELETE を DEQUEUE と呼ぶ
+  - 操作の実行にはそれぞれ `Ｏ(1)` 時間かかる
+
+```
+ENQUEUE(Q, x)
+Q[Q.tail] = x
+if Q.tail == Q.length
+  Q.tail = 1
+else
+  Q.tail = Q.tail + 1
+
+DEQUEUE(Q)
+x = Q[Q.head]
+if Q.head == Q.length
+  Q.head = 1
+else
+  Q.head = Q.head + 1
+return x
+```
+
+- 連結リスト(linked list)
+  - オブジェクトがある順序で一列に並ぶデータ構造を連結リストという
+  - 配列では添字によってオブジェクトの線形順序が決まるが、連結リストの線形順序は各オブジェクトが持つポインタによって決まる
+  - いくつかの種類がある。一方向 / 双方向、ソート済み / 未ソート、循環 / 非循環、がある
+- 双方向連結リスト(doubly linked list)
+  - 双方向連結リスト L の各要素はキー属性 key と 2 つのポインタ属性、next と prev を持つオブジェクト
+- 循環リスト(circular list)
+  - リストの先頭の prev ポインタがリストの末尾を指し、末尾の next ポインタがリストの先頭を指す
+- 以下では、未ソート双方向連結リストを仮定して議論を進める
+- 連結リストの探索
+  - 手続き LIST-SEARCH(L, k) は、簡単な線形探索によってリスト L からキー k を持つ最初の要素を発見し、その要素を指すポインタを返す
+
+```
+LIST-SEARCH(L, k)
+x = L.head
+while x != NIL かつ x.key != k
+  x = x.next
+return x
+```
+
+- 連結リストへの挿入
+  - x を連結リストの先頭に継ぎ足す
+
+```
+LIST-INSERT(L, x)
+x.next = L.head
+if L.head != NIL
+  L.head.prev = x
+L.head = x
+x.prev = NIL
+```
+
+- 連結リストからの削除
+
+```
+LIST-DELETE(L, x)
+if x.prev != NIL
+  x.prev.next = x.next
+else
+  L.head = x.next
+if x.next != NIL
+  x.next.prev = x.prev
+```
+
+- 番兵(sentinel)
+  - 番兵は境界条件を簡略化するためのダミーオブジェクト
+  - 通常の双方向リストを番兵を持つ双方向循環リストに変える。リストの先頭と末尾の間に番兵 L.nil が置かれ、属性 L.nil.next がリストの先頭を、L.nil.prev がリストの末尾を指す
+- 未使用リスト(free list)
+  - 多重配列表現が使用する配列の長さを m とし、ある時点で動的集合が n <= m 個の要素を含むとする
+  - n 個のオブジェクトが動的集合の要素を表現し、残りの m - n 個のオブジェクトは未使用(free)である
+  - 未使用オブジェクトを未使用リストと呼ぶ一方向リストとして管理する
+
+```
+ALLOCATE-OBJECT()
+if free == NIL
+  error = "容量不足"
+else
+  x = free
+  free = x.next
+  return x
+
+FREE-OBJECT(x)
+x.next = free
+free = x
+```
+
+- 根付き木の表現
+  - 2 分木
+    - 属性 p、left、right を用いて 2 分木 T の各節点の親、左の子、右の子を指すポインタを格納する
+  - 分岐数に制約のない根付き木
+    - 左-子、右-兄弟表現(left-child, right-sibling representation)
+      - 2 つのポインタを持つ
+        - x.left-child は節点 x の最左の子を指す
+        - x.right-sibling は x のすぐ右の兄弟を指す
+  - これら以外にも、根付き木は別の方法で表現できる
