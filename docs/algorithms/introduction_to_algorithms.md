@@ -750,3 +750,143 @@ return NIL
   - 完全ハッシュ法を構成するために、各段階で万能ハッシュを用いる 2 段階ハッシュ法を用いる
     - 第 1 段階はチェイン法を用いるハッシュ法と基本的に同じで、万能ハッシュ関数の族から注意深く選んだハッシュ関数を用いて n 個のキーを m 個の枠にハッシュする
     - しかし、枠 j にハッシュされるキーの連結リストを作る代わりに、ハッシュ関数 hj を用いる小さな副ハッシュ表(secondary hash table) Sj を用いるところが違う
+
+## 12: 2 分探索木
+
+- 2 分探索木
+  - 2 分探索木では、キーを以下の 2 分探索木条件(binary-search-tree property)を満たすように格納する
+    - x を 2 分探索木の節点とする。y が x の左部分木の節点ならば y.key <= x.key、右部分木の節点ならば y.key >= x.key を満たす
+- ソートされた順序での印刷
+  - キー集合が 2 分探索木条件を満たすように格納されている時、中間順木巡回(inorder tree walk)と呼ぶ簡単な再帰的アルゴリズムを用いて、すべてのキーをソートされた順序で印刷できる
+  - x を n 個の節点を持つ部分木の根とする。INORDER-TREE-WALK(x) の実行に `θ(n)` 時間かかる
+
+```
+INORDER-TREE-WALK(x)
+if x != NIL
+  INORDER-TREE-WALK(x.left)
+  x.key を印刷する
+  INORDER-TREE-WALK(x.right)
+```
+
+- 探索
+  - 木の根を指すポインタとキー k が与えられた時、TREE-SEARCH はキー k を持つ節点が存在すれば、その節点を指すポインタを返し、存在しなければ NIL を返す
+  - 木の高さが h の時、TREE-SEARCH の実行時間は `Ｏ(h)` である
+  - 再帰を while の形に開くことで、同じ手続きを反復形に書き換えることができる
+
+```
+TREE-SEARCH(x, k)
+if x == NIL または k == x.key
+  return x
+if k < x.key
+  return TREE-SEARCH(x.left, k)
+else
+  return TREE-SEARCH(x.right, k)
+```
+
+```
+ITERATIVE-TREE-SEARCH(x, k)
+while x != NIL かつ k != x.key
+  if k < x.key
+    x = x.left
+  else
+    x = x.right
+return x
+```
+
+- 最小値と最大値
+  - 木の高さが h の時、実行時間は `Ｏ(h)` である
+
+```
+TREE-MINIMUM
+while x.left != NIL
+  x = x.left
+return x
+
+TREE-MAXIMUM
+while x.right != NIL
+  x = x.right
+return x
+```
+
+- 次節点と先行節点
+  - 木の高さが h の時、実行時間は `Ｏ(h)` である
+  - 以下は次節点の求め方、先行節点はこの対称となる
+
+```
+TREE-SUCCESSOR(x)
+if x.right != NIL
+  return TREE-MINIMUM(x.right)
+y = x.p
+while y != NIL かつ x == y.right
+  x = y
+  y = y.p
+return y
+```
+
+- 挿入
+  - TREE-INSERT では、ポインタ x は木の根から開始し、単純パスに沿って木を下る
+  - 最初の while 文で木を下り、z.key と y.key の比較結果によって、右側か左側か決める
+
+```
+TREE-INSERT(T, z)
+y = NIL
+x = T.root
+while x != NIL
+  y = x
+  if z.key < x.key
+    x = x.left
+  else
+    x = x.right
+z.p = y
+if y == NIL
+  T.root = z // 木 T が空の場合
+else if z.key < y.key
+  y.left = z
+else
+  y.right = z
+```
+
+- 削除
+  - 削除するための方針全体は以下の 3 つからなる
+    - z が子を持たない場合は簡単。z の親の子を z から NIL に置き換えて z を削除する
+    - z がちょうど 1 つの子を持つ場合は、z の親の子を z から z の子に変更することで、z の子を z の場所に持ち上げる
+    - z が 2 つの子を持つ場合は、z の右の部分木の中から z の次節点 y を発見し、y を z の場所に置く
+      - y が z の右の子である場合、y は右の子には触れず、z と y を置き換える
+      - y は z の右部分木の中にあるが、z の右の子ではない場合、最初に y と y の右の子を置き換え、次に z と y を置き換える
+  - 2 分探索木の中を部分木を移動させる必要があるため、ある節点の子である部分木を別の部分木に置き換えるサブルーチン TRANSPARENT を定義する
+    - 節点 u を根とする部分木を節点 v を根とする部分木と置き換えると、u の親が v の親になり、u の親が v を適切な子として持つことになる
+  - 木の高さが h の時、実行時間は `Ｏ(h)` である
+
+```
+TRANSPARENT(T, u, v)
+if u.p == NIL
+  T.root = v
+else if u == u.p.left
+  u.p.left = v
+else
+  u.p.right = v
+if v != NIL
+  v.p = u.p
+```
+
+```
+TREE-DELETE(T, z)
+if z.left == NIL
+  TRANSPARENT(T, z, z.right)
+else if z.right == NIL
+  TRANSPARENT(T, z, z.left)
+else
+  y = TREE-MINIMUM(z.right)
+  if y.p != z
+    TRANSPARENT(T, y, y.right)
+    y.right = z.right
+    y.right.p = y
+  TRANSPARENT(T, z, y)
+  y.left = z.left
+  y.left.p = y
+```
+
+- ランダムに構成した 2 分探索木(randomly built binary search tree)
+  - n 個の異なるキー上のランダムに構成した 2 分探索木を空の木に n 個のキーをランダムな順序で挿入して作る 2 分探索木と定義する
+  - ただし、入力される可能性のある n! 種類の順列はどれも等確率で出現すると仮定する
+  - この場合、高さの期待値は `Ｏ(lg n)` である
