@@ -890,3 +890,178 @@ else
   - n 個の異なるキー上のランダムに構成した 2 分探索木を空の木に n 個のキーをランダムな順序で挿入して作る 2 分探索木と定義する
   - ただし、入力される可能性のある n! 種類の順列はどれも等確率で出現すると仮定する
   - この場合、高さの期待値は `Ｏ(lg n)` である
+
+## 13: 2 色木
+
+- 2 色木(red-black tree)
+  - 2 色木は各節点がその色を記憶するために 1 ビットの余分な領域を持つ 2 分探索木である。節点の色は RED または BLACK である
+  - 2 色木では、根と葉を結ぶ任意の単純道上の節点の配色を節約することで、ある道の長さが他のある道の長さの 2 倍を超えることがないことを保証する
+    - すなわち、木はおおよそ平衡している(balanced)
+  - 木の各節点は属性 color, key, left, right, p を持つ
+  - 次の 5 つの 2 色条件(red-black properties)をすべて満たす 2 分探索木を 2 色木と呼ぶ
+    - 各節点は赤または黒のどちらかである
+    - 根は黒である
+    - すべての葉(NIL)は黒である
+    - ある節点が赤ならば、その子は共に黒である
+    - 各節点について、その節点とその子孫の任意の葉を結ぶ単純道は同数の黒節点を含む
+  - 黒高さ(black-height)
+    - ある節点 x から葉までの(x 自身は含まない)単純道上の黒節点の数を x の黒高さと呼び、bh(x) で表す
+    - 2 色木の黒高さをその根の黒高さと定義する
+  - 2 色木はいい探索木
+    - n 個の内部節点を持つ 2 色木の高さは高々 `2 * lg (n + 1)` である
+    - 動的集合 SEARCH, MINIMUM, MAXIMUM, SUCCESSOR, PREDECESSOR は高さ h の探索木上で Ｏ(h) 時間で走るように実現できる。この補題から、n 個の節点を持つ任意の 2 色木は高さが Ｏ(lg n) の探索木だから、これらの操作を 2 色木上で `Ｏ(lg n)` 時間で走るように実現できる
+- 回転(rotation)
+  - LEFT-ROTATE と RIGHT-ROTATE の 2 種類がある
+  - 両方とも `Ｏ(1)` 時間で走る
+
+```
+LEFT-ROTATE(T, x)
+y = x.right       // y を x の右の子とする
+x.right = y.left  // y の左部分木を x の右部分木にする
+if y.left != T.nil
+  y.left.p = x
+y.p = x.p         // x の親を y にする
+if x.p == T.nil
+  T.root = y
+else if x == x.p.left
+  x.p.left = y
+else
+  x.p.right = y
+y.left = x         // x を y の右の子にする
+x.p = y
+```
+
+- 挿入
+  - n 個の節点からなる 2 色木へある節点を Ｏ(lg n) 時間で挿入できる
+  - TREE-INSERT を用い、2 色木 T を通常の 2 分木探索とみなして節点 z を木 T に挿入し、z を赤に彩色する。次に 2 色条件を保存するために、補助手続き RB-INSERT-FIXUP を呼び出して、節点の再彩色と回転を行う
+  - TREE-INSERT と RB-INSERT との違い
+    - TREE-INSERT に現れる NIL はすべて T.nil で置き換える
+    - 正しい木構造を維持するために、RB-INSERT では T.nil を z.left と z.right に代入する
+    - z を赤に彩色する
+    - RB-INSERT-FIXUP(T, z) を呼び出して 2 色条件を回復する
+  - RB-INSERT の実行に `Ｏ(lg n)` 時間かかる
+    - 場合 1 が生起した時だけ while 文が繰り返され、最大繰り返し回数は Ｏ(lg n) である。場合 2 または 3 が生起すると while 文が停止する
+
+```
+RB-INSERT(T, z)
+y = T.nil
+x = T.root
+while x != T.nil
+  y = x
+  if z.key < x.key
+    x = x.left
+  else
+    x = x.right
+z.p = y
+if y == T.nil
+  T.root = z
+else if z.key < y.key
+  y.left = z
+else
+  y.right = z
+z.left = T.nil
+z.right = T.nil
+z.color = RED
+RB-INSERT-FIXUP(T, z)
+
+RB-INSERT-FIXUP(T, z)
+while z.p.color == RED
+  if z.p == z.p.p.left
+    y = z.p.p.right
+    if y.color == RED        // 場合1: z の叔父 y は赤
+      z.p.color = BLACK
+      y.color = BLACK
+      z.p.p.color = RED
+      z = z.p.p
+    else
+      if z == z.p.right      // 場合2: z の叔父 y は黒であり、z は右の子
+        z = z.p
+        LEFT-ROTATE(T, z)
+      z.p.color = BLACK      // 場合3: z の叔父 y は黒であり、z は左の子
+      z.p.p.color = RED
+      RIGHT-ROTATE(T, z.p.p)
+  else
+    then 節と同様。ただし「right」と「left」を交換する
+T.root.color = BLACK
+```
+
+- 削除
+  - 他の基本操作と同様、n 個の節点を持つ 2 色木上からの節点の削除も `Ｏ(lg n)` 時間で実現できる
+  - TRANSPARENT を 2 色木に適用できるよう修正する
+    - RB-TRANSPARENT と TRANSPARENT との違い
+      - NIL ではなく番兵 T.nil を参照する
+      - v.p に対する代入を無条件で実行する
+
+```
+RB-TRANSPARENT(T, u, v)
+if u.p == T.nil
+  T.root = v
+else if u == u.p.left
+  u.p.left = v
+else
+  u.p.right = v
+v.p = u.p
+```
+
+```
+RB-DELETE(T, z)
+y-original-color = y.color
+if z.left == T.nil
+  x = z.right
+  RB-TRANSPARENT(T, z, z.right)
+else if z.right == T.nil
+  x = z.left
+  RB-TRANSPARENT(T, z, z.left)
+else
+  y = TREE-MINIMUM(z.right)
+  y-original-color = y.color
+  x = y.right
+  if y.p == z
+    x.p = y
+  else
+    RB-TRANSPARENT(T, y, y.right)
+    y.right = z.right
+    y.right.p = y
+  RB-TRANSPARENT(T, z, y)
+  y.left = z.left
+  y.left.p = y
+  y.color = z.color
+if y-original-color == BLACK
+  RB-DELETE-FIXUP(T, x)
+```
+
+- RB-DELETE-FIXUP
+  - 手続き RB-DELETE-FIXUP が性質 1、2、4 を回復することを証明する
+  - while 文では、以下の 3 つの条件のいずれかが成立するまで木の中で特黒を持ち上げる
+    - x が赤黒節点を指す。この場合は最後に x を(普通の)黒に彩色する
+    - x が根を指す。この場合には特黒を単に取り除く
+    - 適切な回転と再彩色を行って、ループを停止する
+
+```
+RB-DELETE-FIXUP(T, x)
+while x != T.root かつ x.color == BLACK
+  if x == x.p.left
+    w = x.p.right
+    if w.color == RED                                     // 場合 1: x の兄弟 w が赤の場合
+      w.color = BLACK
+      x.p.color = RED
+      LEFT-ROTATE(T, x.p)
+      w = x.p.right
+    if w.left.color == BLACK かつ w.right.color == BLACK  // 場合 2: x の兄弟 w も w の両方の子もすべて黒の場合
+      w.color = RED
+      x = x.p
+    else
+      if w.right.color == BLACK                           // 場合 3: x の兄弟 w は黒、w の左の子は赤、w の右の子は黒の場合
+        w.left.color = BLACK
+        w.color = RED
+        RIGHT-ROTATE(T, w)
+        w = x.p.right
+      w.color = x.p.color                                 // 場合 4: x の兄弟 w が黒で w の右の子が赤の場合
+      x.p.color = BLACK
+      w.right.color = BLACK
+      LEFT-ROTATE(T, x.p)
+      x = T.root
+    else
+      then 節と同様。ただし「right」と「left」を交換する
+x.color = BLACK
+```
