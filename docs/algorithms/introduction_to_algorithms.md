@@ -1065,3 +1065,71 @@ while x != T.root かつ x.color == BLACK
       then 節と同様。ただし「right」と「left」を交換する
 x.color = BLACK
 ```
+
+## 14: データ構造の補強
+
+- ほとんどの場合、追加情報を格納して教科書的なデータ構造を補強することで、必要とする応用に即したデータ構造上の新しい操作がプログラムできる
+- 順序統計量木(order-static tree)
+  - 各節点に追加情報を格納した 2 色木
+  - 動的集合の任意の順序統計量を Ｏ(lg n) 時間で決定できるようにする
+    - ようは i 番目に小さいキーを持つ要素を Ｏ(lg n) 時間で決定できる
+  - 通常の 2 色木の節点 x が保持する x.key, x.color, x.p, x.left, x.right の他に x.size を持ち、x を根とする部分木に属する(x 自身を含む)内部接点数、すなわちその部分木のサイズを格納する
+- 与えられた順位を持つ要素の検索
+  - x を根とする部分木の中で i 番目に小さいキーを持つ節点へのポインタを返す
+
+```
+OS-SELECT(x, i)
+r = x.left.size + 1
+if i == r
+  return x
+else if i < r
+  return OS-SELECT(x.left, i)
+else
+  return OS-SELECT(x.right, i - r)
+```
+
+- 与えられた要素の順位の決定
+  - 順序統計量木 T に属する節点 x へのポインタが与えられた時、線形順序における x の順位を返す
+  - 最悪計算時間は木の高さに比例するので、接点数が n の場合 Ｏ(lg n) 時間
+
+```
+OS-RANK(T, x)
+r = x.left.size + 1
+y = x
+while y != T.root
+  if y == y.p.right
+    r = r + y.p.left.size + 1
+  y = y.p
+return r
+```
+
+- 部分木のサイズの維持
+  - 各節点が size 属性を維持することで、手続き OS-SELECT と OS-RANK は順序統計的情報を高速に計算できる
+  - LEFT-ROTATE(T, x) に次の 2 行を付け加えることでサイズが維持される
+
+```
+y.size = x.size
+x.size = x.left.size + x.right.size + 1
+```
+
+- データ構造補強法
+  - 4 つの段階
+    - 基礎となるデータ構造を選ぶ
+    - 基礎データ構造の中で新たに管理する情報を決定する
+    - 追加された情報が基礎データ構造上の基本変更操作によって維持できることを検証する
+    - 新しい操作を開発する
+  - ただし、この順番に盲目的に従うべきではない
+- 閉区間(closed interval)
+  - 閉区間は t1 <= t2 を満たす実数の順序対 [t1, t2] である。区間 [t1, t2] は集合 {t ∈ R: t1 <= t <= t2} を表す
+  - 開区間(open interval)と半開区間(half-open interval)はそれぞれ閉区間から両端点と片端点を除去したもの
+- 区間木(interval tree)
+  - 区間 [t1, t2] を属性 i.low = t1 (下端点: low endpoint) と i.high = t2 (上端点: high endpoint) を持つオブジェクト i として表現できる
+  - 任意の 2 つの区間 i と i' の関係は区間 3 分律(interval trichotomy)を満たす
+    - i と i' は重なっている
+    - i は i' の左にある(すなわち i.high < i'.low)
+    - i は i' の右にある(すなわち i'.high < i.low)
+  - 各要素 x がある区間 x.int を格納している時、これらの要素から構成される動的集合を維持する 2 色木を区間木と呼ぶ
+  - 区間木では以下の操作が利用できる
+    - INTERVAL-INSERT(T, x) は要素 x の int 属性がある区間を含むと仮定する時、x を区間木 T に挿入する
+    - INTERVAL-DELETE(T, x) は区間木 T から要素 x を削除する
+    - INTERVAL-SEARCH(T, i) は、区間 i と重なる区間 x.int を持つ要素 x が区間木 T の中にあれば x へのポインタを返し、そのような要素がない時には番兵 T.nil を返す
