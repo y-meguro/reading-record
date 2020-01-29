@@ -27,6 +27,7 @@
     },
     // 技術文書向けのルールプリセット
     "preset-ja-technical-writing": {
+      "arabic-kanji-numbers": false,
       // 1文の長さ指定
       "sentence-length": {
         max: 300
