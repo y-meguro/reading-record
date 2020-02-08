@@ -1133,3 +1133,136 @@ x.size = x.left.size + x.right.size + 1
     - INTERVAL-INSERT(T, x) は要素 x の int 属性がある区間を含むと仮定する時、x を区間木 T に挿入する
     - INTERVAL-DELETE(T, x) は区間木 T から要素 x を削除する
     - INTERVAL-SEARCH(T, i) は、区間 i と重なる区間 x.int を持つ要素 x が区間木 T の中にあれば x へのポインタを返し、そのような要素がない時には番兵 T.nil を返す
+
+## 15: 動的計画法
+
+- 動的計画法(dynamic programming)
+  - 動的計画法は、分割統治法と同様、部分問題の解を統合することによって問題を解く方法(ここで「programming」は表を用いる方法を意味し、コンピュータプログラムを書くことではない)
+- 動的計画アルゴリズムは以下の 4 つの段階を経て開発される
+  - 最適解の構造を特徴づける
+  - 最適解の値を再帰的に定義する
+  - (多くの場合にはボトムアップ方式で)最適解の値を計算する
+  - 計算された情報から 1 つの最適解を構成する
+
+### 15.1: ロッド切出し
+
+- ロッド切出し問題(rod-cutting problem)
+  - 長さ n インチの 1 本の金属棒と、i = 1, 2, ..., n に対する価格 pi の表が与えられた時、この金属棒から切り出される金属棒を、価格表に従って販売して得る事ができる収入の最大値を計算する問題
+- 部分構造最適性(optimal substructure)
+  - 問題の最適解は、関連する部分問題の最適解を含んでいて、これらの部分問題は独立に解ける
+- 再帰的トップダウン型実現
+  - 以下のように書く
+  - しかし、これだと実行に n の指数時間がかかる
+
+```
+CUT-ROD(p, n)
+if n == 0
+  return 0
+q = -∞
+for i = 1 to n
+  q = max(q, p[i] + CUT-ROD(p, n - i))
+return q
+```
+
+- 動的計画法を用いて CUT-ROD を効率的なアルゴリズムに変換する方法
+  - 各部分問題を解いた時にその解を保存することによって、各部分問題を 1 度だけ解けば十分なようにする
+  - 「履歴管理を用いるトップダウン方式」と「ボトムアップ方式」の 2 つの等価な実現方法がある
+- 履歴管理を用いるトップダウン方式(top-down with memoization)
+  - 手続きを再帰的に記述するが、各部分問題の解を保存するように変更を加える
+
+```
+MEMOIZED-CUT-ROD(p, n)
+r[0..n] を新しい配列とする
+for i = 0 to n
+  r[i] = -∞
+return MEMOIZED-CUT-ROD-AUX(p, n, r)
+
+MEMOIZED-CUT-ROD-AUX(p, n, r)
+if r[n] >= 0
+  return r[n]
+if n == 0
+  q == 0
+else
+  q = -∞
+  for i = 1 to n
+    q = max(q, p[i] + MEMOIZED-CUT-ROD-AUX(p, n - i, r))
+r[n] = q
+return q
+```
+
+- ボトムアップ方式(bottom-up method)
+  - ボトムアップ方式ではすべての部分問題をサイズの昇順でソートし、サイズの小さいものから順に解いていく
+
+```
+BOTTOM-UP-CUT-ROD(p, n)
+f[0..n] を新しい配列とする
+r[0] = 0
+for j = 1 to n
+  q = -∞
+  for i = 1 to j
+    q = max(q, p[i] + r[j - i])
+  r[j] = q
+return r[n]
+```
+
+- 解の再構成
+  - 各部分問題に対して、その最適値だけでなく、最適値を達成する選択を保存できるようにする
+  - 以下は配列 s を計算し、長さ n の金属棒に対する最適な切り出し方を保存する
+
+```
+EXTENDED-BOTTOM-UP-CUT-ROD(p, n)
+r[0..n] と s[1..n] を新しい配列とする
+r[0] = 0
+for j = 1 to n
+  q = -∞
+  for i = 1 to j
+    if q < p[i] + r[j - 1]
+      q = p[i] + r[j - 1]
+      s[j] = i
+  r[j] = q
+return r and s
+```
+
+### 15.2: 連鎖行列積
+
+- 連鎖行列積問題(matrix-chain multiplication problem)
+  - n 個の行列の連鎖 <A1, A2, ..., An> が与えられた時、スカラー乗算回数を最小化するように積 A1A2...An を完全に括弧付けする問題
+- 動的計画法の適用
+  - 第 1 段階: 最適括弧付けの構造
+    - i <= j とする時、AiAi+1...Aj の最適括弧付けは、ある整数 k(i <= k <= j) について Ai...Ak と Ak+1...Aj を計算し、最も良い k を探すと言い換えられる
+  - 第 2 段階: 再帰的な解
+    - m[i, j] を行列 Ai..j の計算に必要な最小現必要なスカラー乗算の回数とする
+    - `m[i, j] = m[i, k] + m[k + 1, j] + pi-1 * pk * pj` が成立する
+  - 第 3 段階: 最適コストの計算
+    - ボトムアップ方式で計算するためにサイズの小さいものから順々に計算していくようにする
+    - 以下の MATRIX-CHAIN-ORDER のようになる
+  - 第 4 段階: 最適解の構成
+    - 配列 s を使って、最適な括弧付けを出力できるようにする
+    - 以下の PRINT-OPTIMAL-PARENS のようになる
+
+```
+MATRIX-CHAIN-ORDER(p)
+n = p.length - 1
+m[1..n, 1..n] と s[1..n-1, 2..n] を新しい表とする
+for i = 1 to n
+  m[i, i] = 0
+for l = 2 to n       // l は連鎖の長さ
+  for i = 1 to n - l + 1
+    j = i + l - 1
+    m[i, j] = ∞
+    for k = i to j - 1
+      q = m[i, k] + m[k + 1, j] + pi-1 * pk * pj
+      if q < m[i, j]
+        m[i, j] = q
+        s[i, j] = k
+return m と s
+
+PRINT-OPTIMAL-PARENS(s, i, j)
+if i == j
+  print "A"i
+else
+  print "("
+  PRINT-OPTIMAL-PARENS(s, i, s[i, j])
+  PRINT-OPTIMAL-PARENS(s, s[i, j + 1], j)
+  print ")"
+```
