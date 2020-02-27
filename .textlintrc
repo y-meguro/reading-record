@@ -41,7 +41,8 @@
       "no-exclamation-question-mark": false,
       "no-invalid-control-character": false,
       "max-comma": false,
-      "max-ten": false
+      "max-ten": false,
+      "no-mix-dearu-desumasu": false
     },
     "spellcheck-tech-word": false
   }
