@@ -22,6 +22,9 @@
   - 問題をきちんと定義し、正しく理解すること
   - 最初のアイデアに飛びつく前に、より良いやり方がないか考える（正しく怠ける）
   - 入力、出力、中間のデータ構造を徹底的に理解し、適切なデータ構造を利用する
+  - フェルミ推定でチェックすること
+  - 計算回数を減らすために
+    - 記録する、再帰を利用する、データの持ち方を工夫する
 
 # 読書メモ
 
@@ -259,3 +262,95 @@ for i = [0, n)
 - 原則
   - Einstein のアドバイス
     - 「何でも可能な限り単純に考えるべきです。しかし、単純すぎないように」
+
+## 8: アルゴリズムデザインのテクニック
+
+- 問題
+  - n 要素の浮動小数点数の配列 x を入力とし、配列 x の連続した要素でその和が最大になるものを見つけ、その和を出力する
+- 3 乗のアルゴリズム
+  - n が 10000 の時 22 分かかり、n が 100000 の時 15 日かかる
+
+```
+maxsofar = 0
+for i = [0, n)
+  for j = [0, n)
+    sum = 0
+    for k = [i, j)
+      sum += x[k]  // sum は x[i..j] の和
+    maxsofar = max(maxsofar, sum)
+```
+
+- 2 乗のアルゴリズム
+  - 2 つある
+
+```
+maxsofar = 0
+for i = [0, n)
+  sum = 0
+  for j = [i, n)
+    sum += x[j]  // sum は x[i..j] の和
+    maxsofar = max(maxsofar, sum)
+```
+
+```
+cumarr[-1] = 0  // cumarr には x[0..i] の和が格納される
+for i = [0, n)
+  cumarr[i] = cumarr[i - 1] + x[i]
+maxsofar = 0
+for i = [0, n)
+  for j = [i, n)
+    sum = cumarr[j] - cumarr[i - 1]  // sum は x[i..j] の和
+    maxsofar = max(maxsofar, sum)
+```
+
+- 分割して征服するアルゴリズム
+  - アイデア
+    - 配列を前半と後半にわけて、どちらかにあるか、またはまたがっているか
+  - 実行時間は O(n log n)
+
+```
+float maxsum3(l, u)
+  if (l > u)  // 要素がない場合
+    return 0
+  if (l == u)  // 1 要素の場合
+    return max(0, x[l])
+  m = (l + u) / 2
+  lmax = sum = 0  // 境界から左側に伸びる部分配列の和の最大値
+  for (i = m; i >= 1; i--)
+    sum += x[i]
+    lmax = max(lmax, sum)
+  rmax = sum = 0  // 境界から左側に伸びる部分配列の和の最大値
+  for (m, u]
+    sum += x[i]
+    rmax = max(rmax, sum)
+  return max(lmax + rmax, maxsum3(l, m), maxsum3(m + 1, u))
+
+answer = maxsum3(0, n - 1)
+```
+
+- 走査アルゴリズム
+  - アイデア
+    - 配列の左端の x[0] から右端の x[n - 1] まで、常にそこまでの部分配列の和の最大値を記録しながら走査する
+    - いま x[0..i-1] についてこの問題の解がわかっているとする。x[i] に拡張することを考える
+      - i 要素中で要素の和が最大になる部分配列は、i - 1 要素中で要素の和が最大になる部分配列(maxsfar という変数に記録する)か、i 番要素で終わる部分配列中で要素の和が最大になるもの(maxendinghere という変数に記録する)のどちらか
+  - 実行時間は O(n)
+
+```
+maxsofar = 0
+maxendinghere = 0
+for i = [0, n)
+  // 不変な表明: maxendinghere と maxsofar は x[0..i-1] について成立している
+  maxendinghere = max(maxendinghere + x[i], 0)
+  maxsofar = max(maxsofar, maxendinghere)
+```
+
+- 原則
+  - 状態を記録し、再計算を避ける
+  - データを前処理してまとめる
+    - cumarr に部分配列の和を記録した
+  - 「分割して征服」アルゴリズム
+  - 走査アルゴリズム
+    - x[0..i-1] の答えから x[0..i] の答えをどう探すか
+  - 累計
+  - 実行時間の下限
+    - 自分のアルゴリズムが「実行時間の下限」であることを示すことで安心して眠れる
