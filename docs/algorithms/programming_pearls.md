@@ -633,3 +633,30 @@ void extractmin()
   - 手続きの抽象
     - ソート関数を使って配列をソートする時、その関数の中身のコードを知っている必要はない
   - データ型の抽象
+
+## 15: 真珠の列
+
+- 文書中単語が何回現れるか数えるプログラム
+
+```
+int main(void) {
+  map<string, int> M;
+  map<string, int>::iterator j;
+  string t;
+  while (cin >> t) {
+    M[t]++;
+  }
+  for (j = M.begin(); j != M.end(); ++j) {
+    cout << j->first << " " << j->second << "\n";
+  }
+  return 0;
+}
+```
+
+- 原則
+  - 文字列の問題
+  - 文字列のデータ構造
+    - ハッシュ表
+    - バランスした木
+    - サフィックス配列
+  - ライブラリを使うか自家製のコンポーネントを使うか
