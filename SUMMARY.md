@@ -17,7 +17,7 @@
 * Other
   * [Docker](/docs/other/using_docker.md)
   * [マスタリングTCP/IP―入門編](/docs/other/mastering_tcp_ip_basic.md)
-  * [例解 和文英訳教本 (文法矯正編)](https://amzn.to/2Yh4ibY)
+  * [例解 和文英訳教本 (文法矯正編)](/docs/other/translation_from_japanese_into_english.md)
 * Pending
   * [コンピュータの構成と設計](/docs/pending/computer_organization_and_design.md)
   * [30日でできる! OS自作入門](/docs/pending/haribote_os.md)
