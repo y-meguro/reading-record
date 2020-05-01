@@ -110,3 +110,71 @@
 - But ならかわりに However を用いる
 - And「しかも、さらに」なら、And よりも Besides / In addition / Further / Moreover などを使う
   - これらはすべて堅い文語体だが、On top of that は口語体でも使える
+
+## 5: 過去進行形 + when + SV
+
+- 「暗がりを歩いていたら、急に誰かに肩をたたかれた」をどう訳すか
+  - 「歩いていた」の時制は過去進行形、「肩をたたかれた」は過去形で良いというところまではわかるが、この 2 つの文を when でつなぐ際、どちらの文を when 節に入れるべきか
+  - また when 節は文頭に入れるべきかどうか
+  - 普通に書くと a: When I was walking in the dark, someone tapped me on the shoulder. となるが、英米人の先生が書くと b: I was walking in the dark (,) when someone tapped me on the shoulder. となる
+- a と b の違い
+  - b のほうが後半で「突発的に何かが起きた」という感じがでる
+  - When + SV とすると、主節の SV の存在が予想できるので、先にオチがわかってしまう
+  - b のほうだと、when が来るまでは、もう 1 つ文が続くことが予想できない
+- 過去進行形 + when + SV
+  - ただし、どんな文でも when 節を後半にすれば、突発性が出るわけではない
+    - 前半の文の時制が過去進行形か was (just) about to do 〜 でなければならない
+- まとめ: 過去進行形 + when + SV
+  - 1: S1 + was doing 〜 (,) when S2 + (suddenly) + V(過去形) ...
+    - S1 が 〜 してたら、(突如) S2 が ... した
+  - 2: S2 + was (just) about to do 〜 (,) when S2 + (suddenly) + V(過去形) ...
+    - S2 が 〜 しようとしたら、(突如) S2 が ... した
+
+## 6: 現在完了(継続)
+
+- 過去形は「今」を含まない
+  - 「過去のある時点から現在に至るまで続く状態」を表すのが「現在完了」(have + p.p.)
+  - have + p.p. の基本的な意味は「現在から過去を振り返る」である
+- from 〜 と since 〜
+  - since は「時間の起点から現在まで」、from は「時間の起点」を示すだけで、この場合は普通「時間の終点」を表す to を使う
+  - since は線分、from は点
+- 現在完了 4 つの意味
+  - 継続・経験・完了・結果の 4 つであるが、よく考えると「継続」と「完了」は矛盾している
+    - 現在完了の意味が 4 つのどれなのかを明示するために、何か副詞や前置詞句などを加えなければならない
+  - 例
+    - 継続
+      - I have lived here *for* ten years.
+        - 私は 10 年間ここに住んでいる
+      - I have been busy *since* this morning.
+        - 私は今朝からずっと忙しい
+    - 経験
+      - Have you *ever* been to Europe?
+        - ヨーロッパに行ったことがありますか
+      - I have *never* read his book.
+        - あの人の本は読んだことがない
+    - 完了
+      - I have *just* finished my work.
+        - 私はちょうど仕事を終えたところです
+      - I haven't cooked lunch *yet*.
+        - まだ昼食を作っていません
+- 現在完了の意味の判別になる副詞(句)
+  - 継続
+    - for 〜: 〜間
+    - since 〜: 〜以来(前置詞 or 接続詞)
+    - How long 〜?: どれくらい〜?
+    - always: 昔から
+  - 経験
+    - ever: これまで(疑問文のみ)
+    - never: 一度も〜ない
+    - before: 以前
+    - often: たびたび
+    - once: 一度、かつて
+    - 〜 times: 〜回
+  - 完了
+    - just: たった今
+    - yet: まだ(〜ない)(ふつう否定文で)
+    - already: すでに
+    - now: もう
+- 結果を表す現在完了だけは、このような副詞を伴わない場合が多い
+- 継続の現在完了は for や since などを伴うと書いたが、「幼い頃から」の訳は have always + p.p. だけでもよい
+  - これだけで「昔から〜してきた」の意味になる
