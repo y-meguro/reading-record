@@ -60,3 +60,53 @@
   - think の目的語が that 節のときは現在形しかありえない
   - think about 〜 や think of 〜 の場合は現在形も現在進行形も両方可能
   - 現在形の場合は「日頃からの自分の意見」、現在進行形の場合は「一時的思考」を表す
+
+## 3: 状態動詞と動作動詞
+
+- 動詞には大きく 2 種類ある
+  - 状態・心理・無意識な知覚などを表す状態動詞
+  - 動作・意識的な知覚などを表す動作動詞
+- 状態動詞の主なもの
+  - 状態
+    - be / have / belong / consist / contain / differ / exist / own / possess / resemble
+  - 好き嫌い
+    - like / love / prefer / hate / hope / want / wish
+  - 思考
+    - believe / consider / doubt / fear / find / imagine / suppose / think
+  - 認識
+    - forget / know / recognize / remember / trust / understand
+  - 知覚
+    - see「(自然に)〜が目に映る」/ hear「(自然に)〜を耳にする」
+- 状態動詞は原則的に進行形にできない
+- ただし、「一時的な状態」を強調する場合は進行形にできる
+- 他にも状態動詞と動作動詞で意味が異なる場合は、進行形にできるものもある
+  - 例 1
+    - Catherine has blue eyes. <状態動詞>
+      - キャサリンは青い目をしている
+    - Catherine is having sandwiches. <動作動詞>
+      - キャサリンはサンドイッチを食べている
+  - 例 2
+    - Biff looks exactly like his father. <状態動詞>
+      - ビフは父親にそっくりだ
+    - Biff is looking at Sally. <動作動詞>
+      - ビフはサリーの顔を見ている
+  - 例 3
+    - I can see Sirius. <状態動詞>
+      - シリウスが見える
+    - I am seeing her parents on Sunday. <動作動詞>
+      - 彼女の両親と日曜日に会う予定だ
+- 「着る」の場合、状態動詞は wear で動作動詞は put 〜 on
+
+## 4: be 動詞 + always + doing 〜
+
+- 進行形による批判的表現
+  - be 動詞 + always + doing 〜: 四六時中〜ばかりしている
+  - 現在形だと客観的、現在進行形だと感情的な表現になる
+  - 現在進行形と always をともに使うことで、批判的な意味になる
+
+## コラム 1: and と but
+
+- アカデミックな書き方では、and や but などの等位接続詞(他にも or / so / for / yet / nor)の先頭を大文字にすることは敬遠される
+- But ならかわりに However を用いる
+- And「しかも、さらに」なら、And よりも Besides / In addition / Further / Moreover などを使う
+  - これらはすべて堅い文語体だが、On top of that は口語体でも使える
