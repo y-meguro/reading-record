@@ -236,3 +236,52 @@
     - have been doing:「行為そのもの」「プロセス」に重点
   - 3: 現在進行形・過去進行形の注意点
     - 進行形は「期間を表す語句」とは使えない
+
+## 9:「〜してから x 年になる」
+
+- 「父が亡くなってから 10 年になる」を英語で書けるか
+  - 1: My father has been dead for ten years.
+  - 2: It has been ten years since my father died.
+  - 3: It is ten years since my father died. (英)
+    - イギリス英語では可能だが、アメリカ英語では since を使う場合は現在完了を用いる
+  - 4: Ten years have passed since my father died.
+  - 5: My father died ten years ago.
+- 「アルバイトを始めてから 1 週間にしかならない」の英訳
+  - 1: I have only been working part-time for a week.
+    - have worked の現在完了では不適切。行為そのものに重点が置かれているので、現在完了進行形が適切
+  - 2: It has been only a week since I started working part-time.
+    - 2・3・4 共通で since の中が I worked だと不適切。since の中は「起点」を表す動詞が入る。began でもよい
+  - 3: It is only a week since I started working part-time. (英)
+  - 4: Only a week has passed since I started working part-time.
+  - 5: I started working part-time only a week ago.
+- only の位置
+  - 1: 修飾する語句の直前
+  - 2: not と同じ位置 → be 動詞や助動詞の後、have(had) と p.p. の間
+- 「もうすっかり仕事に慣れた」の時制は?
+  - get used to (動作動詞) を使う場合
+    - 過去形を使うと、「今」を含まないことになってしまうので、現在完了が正しい
+    - I have already got used to it. となる
+  - be used to (状態動詞) を使う場合
+    - この場合、状態動詞の現在形は現在の状態を表すこともある
+    - be 動詞の現在完了の形は、普通「継続」の意味になることが多い。また「継続」の意味であることをはっきりさせるために、for / since / always を伴うのが普通
+      - 「結果」の意味になることはない
+    - なので、I am used to it. が正しい
+
+## 10:「最近」
+
+- 最近 / この頃 / 近頃、を表す英単語は大きくわけて 2 通り
+  - these days / nowadays: 現在形(状態動詞の場合) or 現在進行形(動作動詞の場合)
+  - recently: 現在完了(進行形) or 過去形
+  - lately: 現在完了(進行形)
+- these days / nowadays は悠久の時間とも取れる、かなり長い期間
+  - 例: These days the weather is changeable.
+    - この頃は天候が変わりやすい
+  - 「昔と違って最近は」の意味
+- 一方、recently や lately の時間的守備範囲はかなり短い。これらは「現在」という時間に近い
+  - だから現在完了と用いることが多い
+- まとめ: these days と recently の使い分け
+  - these days / nowadays:「昔と違って最近は」
+  - recently / lately:「(狭い意味で)最近、ついさっき、この間」
+- 現在形と現在進行形
+  - these days や nowadays は「半永久的」ともいえる長期間について言及しているから、現在形と使うのが原則
+  - ただし、動作動詞の場合は、現在進行形にしたほうがよい
