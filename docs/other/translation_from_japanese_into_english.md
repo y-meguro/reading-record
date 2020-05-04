@@ -678,23 +678,56 @@
 
 - may の純粋な過去を表したいときは may + have + p.p. か might + have + p.p. を使う
 - さらに「助動詞 + have + p.p.」は「過去を推量する」ものと「過去を後悔する」ものに大別される
-  - 過去を推量
-    - may have + p.p.
-      - 〜したかもしれない
-    - might have + p.p.
-      - ひょっとしたら〜したかもしれない
-    - can't have + p.p.
-      - 〜したはずがない
-    - must have + p.p.
-      - 〜したに違いない
-  - 過去を後悔
-    - should have + p.p.
-      - 〜すべきだった(のに)
-    - shouldn't have + p.p.
-      - 〜すべきでなかった(のに)
-    - ought to have + p.p.
-      - 〜すべきだった(のに)
-    - ought not to have + p.p.
-      - 〜すべきでなかった(のに)
-    - need not have + p.p.
-      - 〜する必要はなかった(のに)
+- 過去を推量
+  - may have + p.p.
+    - 〜したかもしれない
+  - might have + p.p.
+    - ひょっとしたら〜したかもしれない
+  - can't have + p.p.
+    - 〜したはずがない
+  - must have + p.p.
+    - 〜したに違いない
+- 過去を後悔
+  - should have + p.p.
+    - 〜すべきだった(のに)
+  - shouldn't have + p.p.
+    - 〜すべきでなかった(のに)
+  - ought to have + p.p.
+    - 〜すべきだった(のに)
+  - ought not to have + p.p.
+    - 〜すべきでなかった(のに)
+  - need not have + p.p.
+    - 〜する必要はなかった(のに)
+
+## 37: should と had better
+
+- had better を使う際に気をつけておきたいことは、「〜したほうがいい」のみならず、「しないと大変なことになる!」という含みがあるということ
+  - You had better clean up your room; otherwise your mom will be mad.
+    - 部屋を片付けたほうがいい。さもなければお前のお母さんが怒るぞ
+- might(may) as well で「〜したほうがいい」を表す場合、「(結果は同じだが)どうせなら〜したほうがいい」となる
+  - We might as well walk.
+    - これは「バスで行っても歩いて行っても、バスはのろのろ運転だからあまり変わりはない。ならば金もかからないし健康にもよい歩行の方がいいだろう」といった内容のとき使われる
+- ふつうに友人や親しい人に「〜したほうがいい」と言っているのであれば should がもっともよく使われる
+  - You should get someone else to do some of the work for you.
+    - その仕事の一部を誰かにやってもらった方がいい
+  - ought to でも構わないが、should と比べると「客観的」な言い方に聞こえる
+  - 逆に should は「主観的」な響きがするので、その分だけ親身になって助言している感じが出る
+- 法助動詞と迂言法助動詞
+  - 法助動詞とは should や would のように 1 語からなる助動詞
+  - 迂言法助動詞は ought to や used to のように to 不定詞が付く助動詞
+  - 一般に法助動詞は主観的に、迂言法助動詞は客観的に聞こえる
+    - should / ought to
+    - would / used to
+    - must / have to
+    - can / be able to
+
+## 38: used to
+
+- 「昔」の訳
+  - once や in the past でも間違いではないが、used to という助動詞をよく用いる
+- used to 止めと used to be 止め
+  - used to で文が終わる場合、to の次が一般動詞(be 動詞以外)なら to で止め、be 動詞のときは be まで書いて止める
+- used to と would(過去の習慣)との違い
+  - 1: would の次の動詞は動作動詞しか使えないが、used to は動作動詞にも状態動詞にも両方使える
+  - 2: would は used to と違って、文末に would で止めることはできない
+  - 3: used to は迂言法助動詞なので客観的な言い方になるが、would は法助動詞なので主観的、回顧的なイメージになる
