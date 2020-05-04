@@ -656,3 +656,45 @@
   - さらに may を「〜かもしれない」の意味で使うのは往々にして、次の文が but で続くときであり、いわゆる「譲歩」を表す構文のとき
   - Richard may be young, but he is equal to the task.
     - リチャードは若いかもしれないが、その仕事をやる力量はある
+
+## 35: might
+
+- might は may の過去形ではない
+  - 両方とも「可能性の低い推量」
+- It may rain tomorrow. も It might rain tomorrow. もどちらも「明日は雨が降るかもしれない」という意味でほぼ同じ
+  - あえて違いをあげれば may が「50% 推量: 〜かもしれない」で、might は「20 〜 30% 推量: ひょっとしたら〜かもしれない」という違い
+  - また might のほうが may より丁寧な感じが出る
+    - might は「過去形」ではなく、「遠い形」「人間関係が遠い」から
+- 「〜したかもしれない」と「過去の推量」を表したければ、may(might) have + p.p. を用いる
+  - It may(might) have rained last night.
+    - 昨夜は雨が降ったかもしれない
+- 「日記をつけることは皆さんが思っているほど難しいものではない」
+  - 現在形で書くと Keeping a diary is not as difficult as you think.
+    - これだと「日記を書くことは、半永久的に(= 普段から)考えているほど難しいことではない」という意味になる
+  - ここに might をいれると「普段は考えないようなことだけれど」という感じになる。might は可能性の低い推量であるため
+    - Keeping a diary is not as difficult as you might think.
+
+## 36: 助動詞 + have + p.p.
+
+- may の純粋な過去を表したいときは may + have + p.p. か might + have + p.p. を使う
+- さらに「助動詞 + have + p.p.」は「過去を推量する」ものと「過去を後悔する」ものに大別される
+  - 過去を推量
+    - may have + p.p.
+      - 〜したかもしれない
+    - might have + p.p.
+      - ひょっとしたら〜したかもしれない
+    - can't have + p.p.
+      - 〜したはずがない
+    - must have + p.p.
+      - 〜したに違いない
+  - 過去を後悔
+    - should have + p.p.
+      - 〜すべきだった(のに)
+    - shouldn't have + p.p.
+      - 〜すべきでなかった(のに)
+    - ought to have + p.p.
+      - 〜すべきだった(のに)
+    - ought not to have + p.p.
+      - 〜すべきでなかった(のに)
+    - need not have + p.p.
+      - 〜する必要はなかった(のに)
