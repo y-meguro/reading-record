@@ -597,3 +597,38 @@
   - 結果
     - I'll have forgotten all these things in ten years.
       - 10 年後にはこうしたことはすべて忘れているだろう
+
+# 第 2 章: 助動詞
+
+## 31: could
+
+- ★ could は「遠い形」
+  - 1: 時間的に遠い:「〜できた」
+    - 「いつ?」に相当する語句と使う
+  - 2: 現実から遠い:「(...なら)できよう」
+    - 前後の文は「近い形」
+  - 3: 人間関係が遠い
+    - Could you do 〜 ?「〜していただけませんか」
+- 「〜できた」は「was able to do 〜」や「managed to do 〜」で訳すという手もある
+
+## 32: must と have to
+
+- cannot help doing 〜 は「反射的に〜してしまう」が基本的な意味で、「つい(思わず)〜してしまう」という訳語で覚えたほうが正しく使える
+- have to と must の区別
+  - have to
+    - 1 人称が主語の場合
+      - 仕方なく〜しなければならない
+    - 2,3 人称が主語の場合
+      - 周囲の状況が課す義務
+  - must
+    - 1 人称が主語の場合
+      - 自発的に〜しなければならない
+    - 2,3 人称が主語の場合
+      - 話者が課す義務
+- I must go と I must be going
+  - 進行形だと must be doing 〜 / have to be doing 〜 / should be doing 〜 の形
+  - 進行形のほうが、通常の形より切迫感が出る
+  - I must go now.
+    - そろそろ行かなきゃ
+  - I must be going now.
+    - もういい加減行かなきゃ!
