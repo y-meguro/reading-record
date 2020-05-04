@@ -632,3 +632,27 @@
     - そろそろ行かなきゃ
   - I must be going now.
     - もういい加減行かなきゃ!
+
+## 33: must「〜に違いない」
+
+- 「〜に違いない」という日本語に近いのは must よりも will
+- must は「現状の推量」においては「〜に違いない」の意味になる
+  - There must be about one hundred people in this room.
+    - この部屋にはおよそ 100 人いるに違いない
+  - My father must be working late at the office.
+    - 父は残業しているに違いない
+- must を「〜に違いない」の意味で使うときは、十中八九 must be 〜 の形になる
+  - また、この must を使う場合は推量するための確実な判断材料がなければならない
+  - この点も(あまり根拠がない) will とは違うところである
+
+## 34: may
+
+- You may 〜 の意味
+  - You may 〜 と言われて真っ先に思いつく訳語は「〜したまえ」である
+    - You may sit down. は「かけたまえ!」
+- May I 〜 ? だと「〜してもよろしいでしょうか」になる
+  - may を「〜してもよい」の意味で使うのはほとんど May I 〜 ? の時だけ
+- may 〜, but ...
+  - さらに may を「〜かもしれない」の意味で使うのは往々にして、次の文が but で続くときであり、いわゆる「譲歩」を表す構文のとき
+  - Richard may be young, but he is equal to the task.
+    - リチャードは若いかもしれないが、その仕事をやる力量はある
