@@ -519,3 +519,52 @@
   - その点、will は「近い未来の推量」にも「遠い未来の推量」にも両方使える
 - will も be going to もあまり変わらない場合
   - 従節で使われる場合は、あまり変わらない場合もある。ただし、主節で使った場合ははっきり区別している場合が多い
+
+## 27: 現在形と will
+
+- ★ 現在形と will の違い
+  - 現在形: だれでも成り立つこと
+    - 普遍的なこと、一般論
+  - will: 特定の人にだけ成立すること
+    - 個人の特定のこと
+- ★「〜するには時間がかかる」表現の注意点
+  - It takes + 時間 + to do 〜
+    - 一般論なら you を書かない
+  - It takes + 人 + 時間 + to do 〜
+    - 特定の人の一般論
+  - It will take + 人 + 時間 + to do 〜
+    - 「特定の人がやれば」という条件
+- ★ 期間に関わる for と in の使い分け
+  - for 〜: 〜間
+    - プロセスに重点
+  - in 〜: 〜(間)で
+    - 結果に重点
+    - 日本語で考えて「で」が付いたほうが自然なら in と判断できる
+
+## 28: 時制の一致の would
+
+- 時制の一致の原則
+  - 主節の動詞の時制が過去形の時、従節の動詞の時制もそれに合わせて過去形に揃える
+  - 例
+    - I think (that) it will rain.
+      - 雨が降ると思う
+    - I thought (that) it would rain.
+      - 雨が降ると思った
+- 時制の一致の例外
+  - 不変の真理を述べる場合
+    - We were taught that the earth revolves around the sun. (現在形のまま)
+      - 地球が太陽の周りを回ると教わった
+    - ただし、不変の真理に関しては、時制の一致をすることもある
+  - 歴史的事件を述べる場合
+    - We were taught that the French Revolution broke out in 1789. (過去形のまま)
+      - フランス革命は 1789 年に起きたと教わった
+  - 従節に仮定法を用いる場合
+    - I thought I could fly to him if I were a bird. (そのまま)
+      - 自分が鳥なら彼のもとへ飛んでいけるのにと思いました
+- ★ through の後に続く名詞に注意
+  - through + 具体物
+    - 本当に中を通す
+    - through the window はいいが、through one's cell phone は不可
+  - through + 抽象名詞
+    - 手段
+    - through the Internet や through trial and error など
