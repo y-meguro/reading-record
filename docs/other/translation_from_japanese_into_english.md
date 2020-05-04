@@ -568,3 +568,32 @@
   - through + 抽象名詞
     - 手段
     - through the Internet や through trial and error など
+
+## 29: 未来進行形
+
+- 未来進行形: will be doing
+  - 1: 未来のある時点において進行中の動作
+    - At this time next year I will be studying at university.
+      - 来年の今頃は大学で勉強をしていることであろう
+  - 2: はっきり約束をしているわけではないが「成り行き上、起こりそうなこと」
+    - I'll be seeing Tsuyoshi tonight, so I'll give him your notebook.
+      - 今夜はツヨシと会うことになるだろうから、彼に君のノートを渡しておいてあげるよ
+
+## 30: 未来完了(will have + p.p.)
+
+- 未来完了形
+  - by the time 節と使う主節はしばしば未来完了になる
+  - 未来完了とは「未来のある時点までの継続・経験・完了・結果」を表す
+- 例
+  - 継続
+    - I'll have been here for ten years by next April.
+      - 今度の 4 月までには 10 年間ここにいることになる
+  - 経験
+    - When I finish reading this book, I'll have read it five times.
+      - この本を読み終えると、5 回読んだことになる
+  - 完了
+    - By the time you get here, I'll have left the country.
+      - 君が着く頃には私は国を離れているだろう
+  - 結果
+    - I'll have forgotten all these things in ten years.
+      - 10 年後にはこうしたことはすべて忘れているだろう
