@@ -867,3 +867,49 @@
 - to 不定詞と動名詞のどちらかが目的語になる動詞
   - to 不定詞は「これからのこと」をあらわすので、どちらかというと「実現に積極的」な動詞が多い
   - 動名詞は「体験済み」のもの、「実現に消極的」なものが多い
+
+## 43: to 不定詞と動名詞(補語)
+
+- 補語の場合は to 不定詞か動名詞か
+  - 動名詞
+    - 例
+      - His bad habit is smoking.
+        - 彼の悪習は喫煙だ
+    - 動名詞の場合は「それ自体が純粋な名詞と言っても過言ではないような語」である
+- ★ 補語を to 不定詞にする主なパターン
+  - All you have to do is (to) do ...
+    - ...しさえすればよい
+  - All you can do is (to) do ...
+    - できることは...だけだ
+  - The best way to do 〜 is (to) do ...
+    - 〜する最良の方法は...することだ
+  - The best thing you should do is (to) do ...
+    - 真っ先にすべきことは...だ
+  - The least thing you can do is (to) do ...
+    - 最低限すべきことは...だ
+- これらの表現の補語の部分を動名詞にすることはできない
+  - 動名詞は「繰り返しやること」や「すでに体験済みのこと」を意味するが、これらの表現はすべて「これからやること」について言及する
+  - よって to 不定詞が使われる
+
+## 44:「〜するために」「〜しないように」
+
+- to 不定詞の副詞用法で一番良く使うのが「目的」を表す「〜するために」「〜するように」の用法
+  - これは口語体でも文語体でも使える
+- ★「〜するために」のパターン
+  - 1: SV ... to do 〜 (口語体)
+  - 2: SV ... so that S will(can) do 〜 (口語体)
+  - 3: SV ... in order (for sb) to do 〜 (文語体)
+  - 4: SV ... so as to do 〜 (文語体)
+  - 5: SV ... in order that S may do 〜 (古い)
+- so that SV 〜 は「その結果」という意味もあるが、「その結果」という意味の so that は現代英語ではほとんど使われない
+- ★「〜しないように」のパターン
+  - 1: SV ... so (that) S won't[can't] do 〜 (口語体)
+  - 2: SV ... in order not to do 〜 (文語体)
+  - 3: SV ... so as not to do 〜 (文語体)
+  - 4: SV ... not to do 〜 (☓)
+    - 例外
+      - be careful not to do 〜 (○)
+      - take care not to do 〜 (○)
+- in case SV 〜
+  - 「〜しないように」ではなくて「〜した場合に備えて」と暗記すべき
+- lest S (should) do 〜 や for fear that S would do 〜 はいずれも古い表現
