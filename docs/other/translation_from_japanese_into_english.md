@@ -731,3 +731,77 @@
   - 1: would の次の動詞は動作動詞しか使えないが、used to は動作動詞にも状態動詞にも両方使える
   - 2: would は used to と違って、文末に would で止めることはできない
   - 3: used to は迂言法助動詞なので客観的な言い方になるが、would は法助動詞なので主観的、回顧的なイメージになる
+
+## 39: 代動詞? の do
+
+- 代動詞? の do
+  - 英語では同じ語句を何度も繰り返し使うことはよしとしない
+  - そこで同じ動詞句を繰り返す場合は、代動詞を使うことになるが、代動詞というのは学習者が自分で使うのはかなり難しい
+- 世間で「代動詞の do」と呼んでいるものは実は助動詞
+  - don't の do は助動詞。だからこそ次の動詞が原形になる
+    - なので→はだめ No matter how much they want to travel abroad, there are some people who are not able to **do**. (☓)
+    - can や will が to can や to will とできないように、do も to 不定詞のあとに置けない
+    - No matter how much they want to travel abroad, there are some people who are not able **to**. (○) なら OK
+- ★「繰り返しを避ける単独の do」の禁則
+  - 1: to 不定詞と使う
+  - 2: -ing にする(進行形 or 動名詞)
+  - 3: 副詞を伴う
+- 使用例
+  - 例 1
+    - I don't give him any advice, because it is useless to **do**. (☓)
+    - I don't give him any advice, because it is useless to **do so**. (○)
+      - 彼にはいっさい助言しない。そんなことしても無駄だから
+  - 例 2
+    - Joe often picks his nose. I often see him **doing**. (☓)
+    - Joe often picks his nose. I often see him **doing so**. (○)
+      - ジョーはしょっちゅう鼻をほじる。そうするのをよく見かける
+  - 例 3
+    - They told me to turn off my cell phone and I **did** openly. (☓)
+    - They told me to turn off my cell phone and I **did so** openly. (○)
+      - 携帯を切るように言われたので、これ見よがしに切ってやった
+  - これらの文はすべて「繰り返しを避ける単独の do」は使えず、do so にしなければならない
+    - このときの do so は助動詞ではなく、本動詞
+    - 1 〜 3 の文で「繰り返しを避ける単独の do」が使えない理由は、この do が助動詞だということで説明がつく
+- 「繰り返しを避ける単独の do」が使える場合
+  - 「繰り返しを避ける単独の do」は基本的に対比があるときに用いる。特に比較構文で使うことが多い
+  - Keiko speaks much better English than I do.
+    - ケイコは私よりもずっと上手に英語を話す
+    - 「ケイコ」と「私」の対比
+  - They say they are going to stop, but they never do.
+    - 彼らはやめると言っていながらいっこうにやめない
+    - 「言葉」と「行動」の対比。いわば「理想」と「現実」の対比
+  - これらは do のあとの speak や stop を省略している
+    - Yes, I do. の形と同じ
+- do so は文章体
+  - do so も万能というわけではない
+  - do so は文章体であるから、口語体の文には向かない
+    - 口語体では、文が to 不定詞や助動詞で終わる場合は do so などを付けずに to や助動詞で止めるのがふつうである
+  - 例 1
+    - You don't have to say if you don't want **to**. (○)
+      - 話したくなければ話さなくてもよい
+    - You don't have to say if you don't want **to do so**. (△)
+  - 例 2
+    - I'll fix the machine for myself if I **must**. (○)
+      - その機械を修理しなければならないのなら自分で修理しよう
+    - I'll fix the machine for myself if I **must do so**. (△)
+- do so を使う際の注意
+  - まず文章体であること
+  - do so の次には副詞(句)がある場合が多い
+    - ただし、次に副詞句が伴わない時もあり、特に形容詞用法の to 不定詞内で do so を用いる時にこの傾向がある
+
+# 第 3 章: 準動詞
+
+## 40: to 不定詞と動名詞(主語)
+
+- to 不定詞の名詞用法
+  - 3 用法ある
+    - 名詞用法・形容詞用法・副詞用法
+- to 不定詞の名詞用法と動名詞の違い
+  - to 不定詞
+    - to 不定詞は「to + 動詞の原形」で表され、「未来の方向」を指す。「これからやること」という意味
+  - 動名詞
+    - -ing の定義は「動く」なので、CD やコマのように「ぐるぐる回っている」イメージ
+  - 違いをまとめる
+    - to 不定詞は「これからやること → まだやっていないこと」を表す
+    - 動名詞は「繰り返し行うこと → もうすでにやっていること」を表す
+- ただし、文頭の不定詞は単に古い用法だからもう使わない、という意見もある
