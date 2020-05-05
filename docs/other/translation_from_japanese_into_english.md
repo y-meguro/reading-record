@@ -913,3 +913,48 @@
 - in case SV 〜
   - 「〜しないように」ではなくて「〜した場合に備えて」と暗記すべき
 - lest S (should) do 〜 や for fear that S would do 〜 はいずれも古い表現
+
+## 45: be to 不定詞
+
+- be to 不定詞の 5 つの意味
+  - 予定・義務・可能・運命・意図
+  - ただし、この知識は作文では有害
+- be to 不定詞の特徴は背後に「第三者の意志」が隠れていること
+- be to 不定詞の「義務」とは
+  - You are not to smoke here.
+    - 第三者の命令を話者が伝達
+  - You must not smoke here.
+    - 話者自身の命令
+- be to 不定詞の「予定」とは
+  - 「首相は記者団に、近く渡米の予定だと語った」だと、 be to 不定詞が珍しく使える
+    - 首相自身が決めているのでなく、秘書などの第三者によって決められていると考えられるため
+  - ただし、あらかじめ決まっていることは be going to が使えるので、それでも十分
+- be to 不定詞の「意図」とは
+  - 「意図」を表す be to 不定詞は、ふつう if 節中で使う
+  - ただし「公の願望」と「人類全体にとっての願望」の場合だけである
+  - 個人の願望には使えない
+
+## 46: タフ移動
+
+- ★「タフ移動」の構文
+  - S + be 動詞 + 形容詞 + to 他動詞 Φ
+    - 他動詞の目的語を書かない
+  - S + be 動詞 + 形容詞 + to 自動詞 + 前置詞 Φ
+    - 前置詞の目的語を書かない
+  - ※Φは目的語の抜け落ちている部分(文の主語が抜け落ちている)
+- 例
+  - My father is hard to please.
+    - 父は気難しい
+  - This river is dangerous to swim in in winter.
+    - この川は冬に泳ぐのは危険である
+- この「タフ移動」の構文は、to 不定詞の副詞用法のうち、「形容詞を修飾する用法」として参考書に載っている
+- 「タフ移動」の構文でよく使われる形容詞
+  - easy / difficult / hard / dangerous / impossible / tough
+- 「この新しいタイプの携帯電話は小さな子供でも簡単に扱える」の訳
+  - タフ移動: The new type of cell phone is easy even for a child to handle Φ.
+  - 仮主語を使う: It is easy for a child to handle the new type of cell phone.
+- 「スカートよりもジーパンの方が活動的だという意見に私も賛成だ」の訳
+  - タフ移動: Jeans are easier to get about in Φ.
+  - 仮主語を使う: It is easy to get about in jeans.
+- 「タフ移動」の構文でも、仮主語を使った構文でも意味は一緒だが、新情報と旧情報が変わってくる
+  - どちらが適切かは文脈次第
