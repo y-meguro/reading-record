@@ -805,3 +805,65 @@
     - to 不定詞は「これからやること → まだやっていないこと」を表す
     - 動名詞は「繰り返し行うこと → もうすでにやっていること」を表す
 - ただし、文頭の不定詞は単に古い用法だからもう使わない、という意見もある
+
+## 41: to 不定詞と動名詞(目的語 1)
+
+- prefer の目的語は動名詞か to 不定詞か
+  - prefer という動詞の語法は prefer A to B で「B より A を好む」という意味だが、この A と B には純粋な名詞が来ることもあれば、動名詞が来ることもある
+    - a: I prefer tea to coffee.
+      - コーヒーよりも紅茶が好きだ
+    - b: I prefer jogging to swimming.
+      - 水泳よりもジョギングが好きだ
+  - さらに目的語が to 不定詞の場合もある
+    - c: I'd prefer to swim rather than (to) jog because it is hot today.
+      - 今日は暑いからジョギングするよりも泳ぎたい
+- to 不定詞と動名詞の違い
+  - to 不定詞
+    - 1: これからやること
+    - 2: 1 回限り特定のこと
+    - 3: will(would) と仲良し
+    - 4: まだ実現していないこと
+  - 動名詞
+    - 1: 繰り返しやること
+    - 2: 一般論
+    - 3: 現在形と仲良し
+    - 4: 体験済み・実現済みのこと
+- 願望の would
+  - would like to do 〜 は熟語で「〜したいと思う」だが、like doing 〜「半永久に〜することが好き」とは違って「一時的に〜したい」という意味
+  - この辺から would に「願望」の意味が加味されている
+  - would rather do 〜 than do ...「...するくらいなら〜したい」の would もそう
+- I wish + S + 仮定法
+  - もし I wish it stopped raining. だと「半永久的に雨なんか止んでしまえばいいのに」という意味になる
+  - stop のような動作動詞の仮定法過去は「半永久的なことの逆」を意味するから
+  - もし「明日だけ」の場合 would をいれて書くのが正しい
+    - I wish it would stop raining tomorrow.
+      - 明日は雨が止んでほしい
+
+## 42: to 不定詞と動名詞(目的語 2)
+
+- 「〜する習慣を身につける」という表現は決まり文句で「get into the habit of doing 〜」という
+  - get into the habit of to do 〜 とは言わない
+  - to 不定詞は「1 回限りの特定のこと」だが、habit は何度も繰り返すものなので、動名詞が選択される
+- 「〜に慣れる」の訳
+  - get used to + 名詞 or doing
+  - これも繰り返すことなので doing を使う
+- 「〜を取りやめる」の訳
+  - give up 〜 が考えられる
+- 「(一時的に)〜することをあきらめる」と言いたい場合
+  - give up doing 〜 だと「繰り返し〜することをやめる」となってしまい不適切。give up to do 〜 とも言わない
+  - give up the idea of doing 〜「〜するという考えをあきらめる」と表現する
+    - 動名詞にはもう 1 つ「体験済みのこと」「実現したこと」を表すという特徴がある
+- remember / forget / try は目的語に to 不定詞と動名詞が来る場合で意味が違うことで有名だが、要は「実現したかどうか」で決まる
+  - forget
+    - I was in such a hurry that I forgot to lock the door.
+      - 慌てていたのでドアに鍵をかけ忘れた(実現していない)
+    - I will never forget traveling in Europe last year.
+      - 昨年ヨーロッパを旅したことは決して忘れまい(体験済み・実現済み)
+  - try
+    - I tried to write to her, but I couldn't.
+      - 彼女に手紙を書こうとしたが、できなかった(実現していない)
+    - I tried writing to her, but she didn't reply.
+      - 彼女に手紙を書いてみたが、返事は来なかった(体験済み・実現済み)
+- to 不定詞と動名詞のどちらかが目的語になる動詞
+  - to 不定詞は「これからのこと」をあらわすので、どちらかというと「実現に積極的」な動詞が多い
+  - 動名詞は「体験済み」のもの、「実現に消極的」なものが多い
