@@ -958,3 +958,51 @@
   - 仮主語を使う: It is easy to get about in jeans.
 - 「タフ移動」の構文でも、仮主語を使った構文でも意味は一緒だが、新情報と旧情報が変わってくる
   - どちらが適切かは文脈次第
+
+## 47: 現在分詞と過去分詞
+
+- ★ 他動詞の -ing / -ed の区別
+  - 他動詞の -ing「与える」
+    - 人を〜させるような
+  - 他動詞の -ed「もらう」
+    - (主語になる人)本人が〜する
+- 例:「彼の講義は退屈だ」
+  - His lecture is boring.
+  - I'm bored with his lecture.
+- ★ 自動詞の -ing / -ed の区別
+  - 自動詞の -ing「進行的」
+    - 〜しつつある
+  - 自動詞の -ed「完了・結果的」
+    - 〜してしまった
+  - 例
+    - falling leaves: 落ちつつある葉
+    - fallen leaves: 落ちてしまった葉 = 落ち葉
+
+## 48: 分詞構文
+
+- 分詞構文は英訳の際にはあまり使わないほうがよい
+  - 分詞構文は「理由・時・条件・譲歩・付帯状況」などいろいろな意味に解釈でき、文意を曖昧にしがちであるため
+- また、分詞構文は文語体である
+- 分詞構文が使える場合(1):「〜しながら」
+  - 「〜しながら」という意味のときは、分詞構文を使ったほうがいい
+  - 「テレビを見ながら朝食をとる」といった場合
+    - Many Japanese have breakfast watching TV.
+    - Many Japanese have breakfast while watching TV.
+      - 意味をはっきりさせるために while を入れた場合
+- 分詞構文が使える場合(2): 慣用句
+  - もう 1 つ分詞構文が使えるのは、それ自体が慣用句になっている場合
+- ★ 慣用的な分詞構文
+  - Generally speaking, SV ...
+    - 一般的に言って...
+  - Talking of(about) 〜, SV ...
+    - 〜と言えば...
+  - Other things being equal, SV ...
+    - 他の条件が同じなら...
+  - Looking back on(over) 〜, SV ...
+    - 〜を振り返って
+  - SV 〜, depending on ...
+    - ...に応じて〜
+  - SV 〜, thinking ...
+    - ...と考えて〜
+  - SV 〜 a letter, saying ...
+    - ...という内容の手紙を〜
