@@ -1062,3 +1062,88 @@
     - よって in a car というように a などが必要になる
   - on の基本的な意味は「接触」。接触するということは対象は具体物でなければならない
     - そのため冠詞が必要になる
+
+## 53: a は「いくつかあるうちの 1 つ」
+
+- my friend と a friend of mine
+  - 「私の友達」は my friend ではなく a friend of mine という
+  - my friend というと「唯一の友人」すなわち、友人がたった 1 人しかいないように聞こえるから
+    - ただし my best friend「親友」という場合と、my friend John「私の友人のジョン」という場合は使う
+  - a friend of mine なら「何人かいる友人の 1 人」という意味になり、友達は何人かいることになる
+  - 「旧友」の場合も my old friend より an old friend (of mine) のほうがよい
+- a は「いくつかあるうちの 1 つ」という意味
+
+## 54: 相手を興味津々にさせる a
+
+- drive a car だと「ある車を運転する」という日本語に等しい
+  - すると聞いている方は「どんな車?」と聞きたくなる
+  - すなわち、a には「相手を興味津々にさせる」働きがある
+- 「車を運転する」は drive a car ではなく自動詞の drive
+- a car という場合
+  - 相手の興味をひくために使う場合
+  - 一般に修飾語が付く場合
+    - I drove **a new** car for the first time yesterday.
+      - 昨日はじめて新車を運転した
+    - I used to read **a** book **by Bertrand Russell** to study English.
+      - 英語の勉強のために昔はバートランド=ラッセルの本を読んだ
+  - 「新車」「ラッセルの書いた本」はいくつもあるわけで、「そのうちの 1 つ」だから a が付く
+
+## 55: a は「1」を表す?
+
+- a の次の名詞が数量の単位を表す場合、a が「1」を表す
+  - Rome was not built in **a day**.
+    - ローマは一日にしてならず
+- 「数量を表す単位」以外に「1」を表したい場合
+  - a だけではダメ
+  - only one 〜 や a single 〜 というのが普通
+    - There is **only one** hot spring in the world where you can take a bath with monkeys.
+      - 猿と一緒に入れる温泉が世界でただ一つだけある
+- ただし a と one は決してイコールではない
+  - a が「1」を表せるのはあくまでも「数量を表す単位」の名詞と使う時だけ
+  - それ以外で「1」を表したければ one が正しいが、one も単独で使うことはまれで、only を伴うことが多い
+  - また、a single は否定文で使われることが多い
+
+## 56:「ちょっと」を表す a
+
+- shower の冠詞はなぜ a になるのか
+  - 「にわか雨にあう」は get caught in a shower というがなぜか
+  - 「単数ということは、複数と比べて少ない」ということから a には「ちょっと、少し、一瞬」という意味が派生する
+  - 「にわか雨」は一瞬で止むものであるから a shower という。これに対し rain は「しばらく降る雨」を指す
+    - しばらくといっても期間は漠然としてイメージがわかないから rain は不可像名詞となる
+- look at 〜 と take a look at 〜
+  - Look at me.
+    - こっち見て
+  - Take a look at me.
+    - ちょっとこっち見て
+
+## 57: 初登場でも the?
+
+- 初登場であっても、状況からわかる場合は the を使う
+- 「一度出てきた名詞」に付く the も「状況からわかる」the にしても、共通点は「自動的に唯一に決まる」ということ
+  - the の定義は「唯一」
+- 例
+  - It's cold. Can you shut **the window**?
+    - 寒いよ。窓を閉めてくれ
+    - 開いてる窓は自動的に 1 つに決まる
+  - I have to hand in this paper by the end of **the month**.
+    - 今月の末までにはレポートを提出しなければならない
+    - the が「今」に相当する。ここから the に「今」という意味が派生してくる
+- ★ 自動的に 1 つに決まる the
+  - the first / the second / the third ...
+  - the last 〜: 最後の / the only 〜: 唯一の / the same 〜: 同じ / the best などの最上級
+- ただし序数でも another「もう 1 つ〜」に近い場合は a になる
+  - I had a second helping of rice this morning.
+    - 今朝はご飯のお代わりをした
+    - helping:（食べ物の）ひと盛り、1 杯
+
+## 58: 関係詞と冠詞(単数)
+
+- 関係詞の先行詞になる名詞の冠詞
+  - 原則は変わらない。「いくつかあるうちの 1 つ」なら a、「唯一」なら the
+  - 例
+    - Japan is **a** country that doesn't have a lot of natural resources.
+      - 日本は天然資源の乏しい国だ
+      - 「天然資源の乏しい国」は日本以外にもあるので a を使う
+    - Do you know **the** town where Shakespeare was born and brought up?
+      - 君はシェークスピアが生まれ育った町を知っていますか?
+      - （育った町はいくつかあるかもしれないが）少なくとも「生まれた町」は 1 つなので the を使う
