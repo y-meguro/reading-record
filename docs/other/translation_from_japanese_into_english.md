@@ -1211,3 +1211,32 @@
       - 悪天候は気分に悪影響を及ぼす
       - 形容詞が付いて、さらに一般論を表す場合には the は必要なくなる場合が多い
       - また、weather は常に不可像名詞なので a は付かない
+
+## 61: 対比の the
+
+- 対比の the
+  - その語自体に反対概念が存在するような単語には the が付くことが多い
+  - 例
+    - the country / the countryside「田舎」<-> the city「都会」
+    - the individual「個人」<-> the group「集団」
+    - the right「右」<-> the left「左」
+    - the former「前者」<-> the latter「後者」
+    - the east「東」<-> the west「西」
+    - the beginning「始まり」<-> the middle「中間」<-> the end「終わり」
+    - in the morning「午前中」<-> in the afternoon「午後」<-> in the evening「夜」
+    - in (the) summer「夏に」<-> in (the) winter「冬に」
+    - in (the) spring「春に」<-> in (the) autumn(fall)「秋に」
+  - wrong で修飾される名詞にもしばしば the が付く
+    - これは反対概念の the right 〜「正しい〜」を想定するため
+- 「田舎」と「都会」
+  - country には「国」の意味があって紛らわしいので、同じ文中に the city を伴わないときは the countryside を用いるべき
+
+## 62: the 複数名詞(集団)
+
+- girls と the girls の違い
+  - 「無冠詞複数形」は「総称」「一般論」を表す。よって girls の直訳は「女の子というもの」となる
+  - 「the + 複数形」は「特定の集団」を表す。なので the girls は有限集合
+- 固有名詞の集団名は the + 複数形
+  - the Beatles など
+  - この the は「メンバーをぐるっと巻いて締める」感じ
+  - 苗字の複数形に the を付けると「〜一家 / 夫妻 / 兄弟 / 姉妹」という意味になる
