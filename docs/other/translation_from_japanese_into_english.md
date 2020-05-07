@@ -1240,3 +1240,30 @@
   - the Beatles など
   - この the は「メンバーをぐるっと巻いて締める」感じ
   - 苗字の複数形に the を付けると「〜一家 / 夫妻 / 兄弟 / 姉妹」という意味になる
+
+## 63: 関係詞と冠詞(複数)
+
+- 複数形の先行詞と the の関係
+  - 無冠詞複数形 + 関係詞 + SV 〜: 一般論
+    - 数え切れないくらい存在する
+  - the + 複数形 + 関係詞 + SV 〜: 特定の集団
+    - その気になったら数えられそう
+- 例
+  - **People** who have a lot of opportunities to speak in public tend to stay young.
+    - 人前で話をする機会に恵まれた人はいつまでも若いものだ
+  - Paul lends money only to **the people** who are sure to pay him back.
+    - ポールは確実に返済してくれそうな人にしか金を貸さない
+
+## 64:「ほとんどの〜」
+
+- 「ほとんどの人間」を何というか
+  - most people / almost all people
+  - almost は副詞なので名詞を修飾できない
+  - almost の基本的な意味は「一歩手前」なので almost all は「すべての一歩手前」なので「90% ぐらい」の意味になる
+- most か most of か
+  - 「most + 複数形」は「一般論」で使う
+  - 「most of the + 複数形」は「特定の集団」に対して使う
+    - 特定の集団がどこなのかその後に示すため、正確には「most of the 複数形 + in + 集団名」となるのが普通
+- most ≒ almost all
+  - 「almost all + 複数形」は「most + 複数形」とほぼ等しく一般論を表す
+  - 「almost all of (the) + 複数形 + in + 集団名」は「most of the + 複数形 + in + 集団名」とほぼ等しく特定の集団を表す
