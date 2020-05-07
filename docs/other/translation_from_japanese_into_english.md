@@ -1147,3 +1147,67 @@
     - Do you know **the** town where Shakespeare was born and brought up?
       - 君はシェークスピアが生まれ育った町を知っていますか?
       - （育った町はいくつかあるかもしれないが）少なくとも「生まれた町」は 1 つなので the を使う
+
+## 59: 同格と冠詞
+
+- 同格で使う名詞の冠詞は the
+  - 同格「〜(する)という(名詞)」と訳せる場合
+  - 例
+    - I heard **the** rumor **that** Mr. Kato is going to run for mayor.
+      - 加藤氏が市長選に出馬するという噂を聞いた
+    - I disagree with **the** idea **of** euthanasia.
+      - 安楽死という考え方には反対だ
+- that 節で「同格」の場合は the になることが多いが、「関係代名詞」の場合は the とは限らないので注意
+  - 「同格」の that は接続詞なので節内は完全文
+  - 「関係代名詞」の場合は節内は不完全文
+- ★ 同格の that と関係代名詞の that
+  - 同格
+    - the + 名詞 + that SV 〜 (完全文)
+      - the が多い
+  - 関係代名詞
+    - the + 名詞 + that (S)V 〜 (不完全文)
+      - 唯一
+    - a + 名詞 + that (S)V 〜 (不完全文)
+      - いくつかある中の 1 つ
+- 同格でも a となる場合
+  - There is **a** rumor circulating **that** Mr. Kato is going to run for mayor.
+    - 加藤氏が市長選に出馬するという噂が広まっている
+  - この場合は there is 構文との兼ね合いが大きい
+  - 一般に there is の次の名詞は新情報となるので a が適切になる
+- 「主格」「目的格」の of の場合も the になる(ならない場合もある)
+  - **the** effect **of** acid rain on plants
+    - 酸性雨が植物に及ぼす影響
+    - of は主格
+      - 名詞 + of + A の A が意味的に主語
+  - **the** application **of** technology to war
+    - 科学を戦争に応用すること
+      - 名詞 + of + A の A が意味的に目的語
+
+## 60: 環境の the
+
+- 「太陽」に the が付く理由
+  - 「太陽」は世の中に 1 つしか存在しない、つまり唯一の存在
+  - ただし、sun が複数になったり、無冠詞になる場合もある
+  - 例
+    - **The sun** rises in the east and sets in the west.
+      - 日は東から昇り、西に沈む
+    - **Suns** don't necessarily have planets going around them
+      - 恒星の周りに惑星があるとは限らない
+      - この場合は sun は「恒星」を表す
+    - My room doesn't get a lot of **sun**.
+      - 僕の部屋は日当たりがよくない
+      - この場合は「日光」というイメージしにくい概念であるということと、a lot of の次は無冠詞にするという規則による
+- 環境の the
+  - 「太陽」と同様に、この世を構成する上で不可欠のもの、月・空・海・風・大地などには the が付く
+  - これを簡潔に「環境の the」と呼ぶ
+  - 例
+    - the sun / the moon / the earth / the world / the sky / the sea / the air / the wind / the universe / the environment / the weather
+- 環境単語でも the が付かない場合
+  - 例
+    - We couldn't survive without **air** and water.
+      - 空気や水がなければ我々は生きてはいけないだろう
+      - 物質的観点から述べている。「物質」は絵に描きにくいので無冠詞になる
+    - **Bad weather** adversely affects your mind.
+      - 悪天候は気分に悪影響を及ぼす
+      - 形容詞が付いて、さらに一般論を表す場合には the は必要なくなる場合が多い
+      - また、weather は常に不可像名詞なので a は付かない
