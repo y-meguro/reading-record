@@ -1375,3 +1375,34 @@
   - There are **books** on the desks. (△)
   - There are **some books** on the desk. (○)
 - some の訳語としては「一部の」が近いだろう
+
+## 71: some + 不可像名詞
+
+- some まとめ
+  - 無冠詞複数形: 〜というもの
+    - books
+      - 本というもの = 総称
+  - some + 可像名詞複数形: (一部の)〜
+    - some books
+      - 本の複数
+  - 無冠詞の不可像名詞: 〜というもの
+    - money
+      - お金というもの = 総称
+  - some + 不可像名詞: (少量の)〜
+    - some money
+      - (少額の)お金
+
+## 72: some と any
+
+- some は肯定文、any は疑問文・否定文で使うというが、疑問文でも any ではなく、some を使う場合がある
+  - 例
+    - Could you lend me some money? (○)
+    - Could you lend me money? (△)
+    - Could you lend me any money? (☓)
+  - any の基本的な意味は「何でも」
+  - 「お金」は英語で money ではなく some money
+- 逆に肯定文で any を用いることもある
+  - will / can / would / could / may / might と使うことが多い
+  - 例
+    - Do you have something to write with? **Anything** will do.
+      - 何か書くものない? 何でもいいから
