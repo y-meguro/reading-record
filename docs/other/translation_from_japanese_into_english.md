@@ -1280,6 +1280,7 @@
 
 - 定義の a
   - 通常「総称」や「一般論」は「無冠詞複数形」で表すが、a 〜 で書いても良い場合、書いたほうが良い場合がある
+    - 世間で言う「総称の a」
   - 例
     - 1: **An orphan** is **a child** who has no parents.
       - 孤児とは両親を失くした子供のことです
@@ -1292,3 +1293,45 @@
     - 主語で使う
   - 1 人 1 つずつの a
     - 目的語で使う
+
+## 67: 総称の the
+
+- 学問の the
+  - 世間で言う「総称の the」
+  - これを用いるときは学問的に物事を述べるときなので、この本では「学問の the」と呼ぶことにする
+  - 「学問の the」を使う名詞は決まっていて「発明品」「動物」「体の部分」である
+  - 例
+    - **The computer** has revolutionized our way of life. (発明品)
+      - コンピューターは人間の生活様式に大変革をもたらした
+    - In contrast to **the dog**, **the cat** has become domesticated only in recent times. (動物)
+      - 犬と違って、猫が人間に飼われるようになったのは、つい最近のことである
+    - Carol caught me by the arm. (体の部分)
+      - キャロルは僕の腕をつかまえた
+- 同じ情報の the
+  - どの情報源でもだいたい情報は同じもの
+  - the weather forecast / the newspaper / the dictionary
+
+## 68: the と固有名詞
+
+- 固有名詞に the が付く場合と付かない場合
+  - the が付く場合
+    - 駅・公園・山
+      - Shinjuku Station: 新宿駅
+      - Yoyogi Park: 代々木公園
+      - Mt. Fuji: 富士山
+  - the が付かない場合
+    - 川・海洋・山脈・山地
+      - the Katsura (River): 桂川
+      - the Rubicon: ルビコン川
+      - the Pacific (Ocean): 太平洋
+      - the Atlantic: 大西洋
+      - the Rocky Mountains: ロッキー山脈
+- the + 普通名詞 = 抽象名詞
+  - **The pen** is mightier than **the sword**.
+    - 文は武より強し、言論は武力に勝る
+  - the pen は「言論」、the sword は「武力」を表す
+  - pen という普通名詞に the が付いて、抽象名詞になる
+  - the は「唯一」を表すので、the pen は「ペンと聞いて唯一に決まるもの」「ペンと聞いて誰もが連想する共通のもの」= 武力 となる
+- 川・海洋には the が付くわけだが、the Katsura の次の River は省略できる
+  - 桂と聞いて誰もが連想する唯一のもの = 桂川
+- 逆に Sinjuku Station の Station が省略できないので、the を付ける必要もない
