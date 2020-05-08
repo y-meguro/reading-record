@@ -1447,3 +1447,84 @@
   - There is + a + 名詞 + doing 〜: 名詞は「新情報」
   - The + 名詞 + is doing 〜: 名詞は「旧情報」
 - 「〜が残っている」の訳は決まり文句があり、there is 〜 left と訳す
+
+## 77: 代名詞を文末にしないように
+
+- 代名詞(旧情報)で文を終えるのはよくない
+- 例 1
+  - SV 〜. We don't realize it. (△)
+  - We don't realize that SV 〜. (○)
+- 例 2
+  - SV 〜. I think so. (△)
+  - I think that SV 〜. (○)
+  - SV 〜. This is what I think. (○)
+
+## 78: 句動詞の語順
+
+- 「(水などを)止める」という熟語(句動詞) turn / 〜 / off の目的語の位置は、文法的には turn off the tap でも turn the tap off でもよいことになっている
+  - しかし、この 2 つは微妙に伝えたいことが異なる
+  - turn off the tap だと the tap が新情報
+    - 「止めるのはどの蛇口?」という問いに対して返事をするのなら、この語順
+  - turn the tap off だと off が新情報
+    - 止めることに重点をおくのであればこの語順
+- 代名詞は間に挟む
+  - turn / 〜 / off の目的語が代名詞(例えば it)の場合は、turn it off の語順しか許されない
+  - 代名詞は一度出てきた名詞を受けるわけであるから、一般には旧情報とみなされる
+- これは他の「他動詞 + 副詞」の句動詞でも当てはまる
+  - back 〜 up / bring 〜 up / call 〜 off など
+
+## 79: 第 4 文型か第 3 文型か
+
+- 「先生が私に人形をくれました」の 2 つの訳
+  - My teacher gave me **a doll**.
+    - a doll が新情報
+  - My teacher gave a doll **to me**.
+    - to me が新情報
+
+## 80: 節の語順
+
+- ★ when 節の位置で重点情報が変わる
+  - When SV 〜, SV ...:「〜したとき、...した」
+    - 重点は主節(when 節が旧情報、主節が新情報)
+  - SV ..., when SV 〜:「...したのは〜したときだ」
+    - 重点は when 節(主節が旧情報、when 節が新情報)
+- because の注意点
+  - because という接続詞を使う以上、SV は 2 つ必要
+    - SV 〜. Because SV ... (☓)
+      - 文法的に非文。SV は 2 つ必要
+    - SV 〜 (,) because SV ... (○)
+    - SV 〜. This is because SV ... (○)
+    - Because SV ..., SV 〜 (△)
+      - 文法的には正しいがなるべく避けたい
+      - because はふつう新情報を言及するときに用いる語だから
+    - Just because SV 〜, SV ... (○)
+      - Because 節を文頭にしたいときは、just から始める場合が多い
+- Why 〜 ? に対して Because ... で答える文
+  - 一見 SV が 1 つしかないように思えるが、実は Because の前にもう 1 つ SV 〜 が隠れている
+  - "Why were you late?" "(I was late) because our train was late."
+- ★ 理由を表す接続詞と情報の新旧
+  - SV 〜, because SV ...:「〜は...だからだ」
+    - SV 〜 が旧情報、because 〜 が新情報
+  - Since SV, SV 〜:「(知っての通り)...なのだから〜だ」
+    - since 〜 が旧情報、SV 〜 が新情報
+  - SV ..., so SV 〜:「...だ。だから〜だ」
+    - SV ... が旧情報、so 〜 が新情報
+
+## コラム 3: 接続詞と接続副詞
+
+- but が接続詞で however が接続副詞
+- 接続詞の次にカンマを打つことは(挿入でもない限り)ないが、接続副詞の次には必ずカンマが必要
+- 等位接続詞の場合は、文の先頭において、大文字にして But などとすることは回避される
+  - 接続副詞は「前の文で必ず切って、新たに大文字からスタートするか」、「主語と動詞の間に挿入的に入れるか」のどちらか
+- また、等位接続詞の前の文はカンマで区切るのが大鉄則
+- 使い方
+  - SV 〜, but SV ... (○)
+    - 等位接続詞の前はカンマで区切り、but は小文字
+  - SV 〜. But SV ... (△)
+    - アカデミックな書き方では敬遠される
+  - SV 〜, however SV ... (☓)
+    - 接続副詞の前は文を切らなければならない
+  - SV 〜. However, SV ... (○)
+    - 接続副詞の直後にはカンマを打つ
+  - SV 〜. S, however, V ... (○)
+    - 主語と動詞の間に接続副詞を挟んでもよい
