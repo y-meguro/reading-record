@@ -1335,3 +1335,43 @@
 - 川・海洋には the が付くわけだが、the Katsura の次の River は省略できる
   - 桂と聞いて誰もが連想する唯一のもの = 桂川
 - 逆に Sinjuku Station の Station が省略できないので、the を付ける必要もない
+
+## 69: school は無冠詞
+
+- school は無冠詞の時もあれば、冠詞がついたり、複数形になったり、いろいろな場合がある
+  - 例
+    - Parents play a crucial role in preparing their child for **school**.
+      - 親は子供を学校に送るという大事な役割を演じている
+      - この場合は「学校教育」という概念に近い。「学校教育」はイメージしにくいので不可像名詞扱いとなる
+    - There are five hundred students at **our school**.
+      - うちの学校は総勢 500 人の生徒数である
+      - 「うちの学校だけ」ということを特定する時に、our school ということもある
+    - **The school** is very authoritarian.
+      - あの学校はとても権威主義的である
+      - 「特定の学校」について言及する場合は the school
+    - Koji is going to **a commercial school**.
+      - 浩二は商業学校に進学する予定である
+      - 学校の種類についての言及は a + 形容詞 + school の形を取る
+    - **Schools** used to be a place to play more than study.
+      - 学校は昔は勉強する場所というよりも遊び場であった
+      - 「一般に学校というもの」と総称で使うときには schools と複数形にする
+- school を無冠詞で使うのは、ほとんどが慣用句
+  - go to school: 通学する
+  - leave school: 卒業する
+  - do well in(at) school: 成績がよい
+  - after school: 放課後
+  - at school: 学校(という場所)で
+  - in school: 学校時代に、校内で
+  - on one's way to school: 学校へ行く途中
+  - on one's way home from school: 学校からの帰宅途中
+  - stay away from school: 学校を休む
+  - be suspended from school: 停学になる
+  - be expelled from school: 退学になる
+
+## 70: some + 可像名詞
+
+- 複数形は複数ではなくて「総称」、「some + 可像名詞の複数形」がいわゆる「複数形」
+- 例
+  - There are **books** on the desks. (△)
+  - There are **some books** on the desk. (○)
+- some の訳語としては「一部の」が近いだろう
