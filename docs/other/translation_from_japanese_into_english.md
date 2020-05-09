@@ -1597,3 +1597,30 @@
 - 真主語を to 不定詞にするか that 節にするか
   - 一般には「仮定的なこと」「これからやること」なら to 不定詞にする
   - 「確定的なこと」「現実的なこと」「前提とされていること」なら that 節とする
+
+## 85: 連鎖関係代名詞
+
+- 連鎖関係代名詞
+  - 先行詞 + [関係代名詞(主格) + {S + think} + V 〜] のような構造の関係代名詞のこと
+  - The person [who {I thought} was his brother] turned out to be 〜
+- ちなみに、連鎖関係代名詞は主格であっても省略されることがある
+  - 例
+    - The person I thought was his brother turned out to be a complete stranger.
+  - 主格の関係代名詞は省略できないのが原則だが、連鎖の場合はネイティブスピーカーも目的格と勘違いするらしく省略される
+    - しかし、これは作文では避けたい
+
+## 86: 見せかけの have to
+
+- 見せかけの have to
+  - 例
+    - I don't want to listen to what you **have to** say.
+      - 君の言い訳など聞きたくない
+  - この have to は「〜しなければならない」という熟語ではない
+  - 正しくは You have something to say. と同じ構造
+  - これを「見せかけの have to」と呼んでいる
+- 「見せかけの have to」と「本当の have to」の見分け方
+  - 1: 関係代名詞中の have to は「見せかけの have to」である可能性が高い
+  - 2: 「本当の have to」だと思ったら「仕方なく〜しなければならない」という日本語で訳してみて、しっくりくるか確認する
+  - 3: 「見せかけの have to」はだいたい次の動詞が say / teach / offer である
+- とはいえ、「見せかけの have to」を英作文で使うのは what 〜 have to say という決まり文句が圧倒的に多い
+  - 〜の言葉 / 発言 / 発言内容 / 内容 / 話 / 声 / 言い分、などと意訳できる
