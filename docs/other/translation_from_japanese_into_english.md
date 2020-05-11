@@ -1773,3 +1773,49 @@
 - ★ more の次が名詞の場合は要注意
   - 〜 many more + 可像名詞 + than ...
   - 〜 much more + 不可像名詞 + than ...
+
+## 99: 最上級
+
+- 最上級構文には全体集合を明示する必要がある
+  - 例
+    - Sam is **the tallest** student **in the class**.
+      - サムはクラスでいちばん背が高い
+    - Sam is **the tallest of all the students**.
+      - サムはすべての学生の中でいちばん背が高い
+  - 最上級を使う場合は、この in 以下や of 以下の部分が不可欠の要素となる
+  - ever を使って「史上で」のようにする場合もある
+  - また、最上級の次の全体集合は関係代名詞節で示されることもある
+- 最上級には the が付く
+  - これは厳密に言うと、最上級に the が付いているのではなく、最上級の次の名詞(省略されている場合もあるが)に the が付いている
+  - 全体集合さえ示されば、最上級で表される「いちばん〜」なものは「唯一」に決まることになる
+    - the は「唯一」を表すので(S58)、最上級に the が付く
+- 最上級に the が付かない場合
+  - This lake is **the deepest** in Japan.
+    - この湖は日本でいちばん深い
+    - この例では the が付く
+    - この場合は deepest の後に lake が省略されている
+      - This lake is **the deepest** (lake) in Japan.
+  - This lake is **deepest** at this point.
+    - この湖はこの地点がいちばん深い
+    - この例では the がつかない
+    - この場合は deepest の後に lake が省略されてない。なので、the も付かない(the は上述の通り、名詞に付く)
+
+## 100:「〜ほど...なものはない」
+
+- 最上級 <-> 原級・比較級
+  - 「時ほど貴重なものはない」の訳 5 通り
+    - Time is **the most** precious thing of all.
+      - 最上級の形
+    - **Nothing** is **as** precious **as** time.
+      - Nothing is as ... as 〜 の形
+    - **Nothing** is **more** precious **than** time.
+      - Nothing is 比較級 than 〜 の形
+    - Time is **as** precious **as anything else**.
+      - 〜 is as ... as anything の形
+    - Time is **more** precious **than anything else**.
+      - 〜 is 比較級 than anything else の形
+- No other xxx as ... as 〜 などで other を使う場合、other の次の名詞は単数形にすることに注意
+  - 通常は other cities のように複数形にするのがふつうだが、比較構文においては単数形にする
+  - 英語の比較は「1 対 1 対応」が基本だから
+- 日本語の「〜ほど...なものはない」は必ずしも英語の「Nothing is 比較級 than 〜」などの表現とは一致しない
+  - really で強調するほうが適切な場合などがある
