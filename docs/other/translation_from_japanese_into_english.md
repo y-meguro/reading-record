@@ -1710,3 +1710,50 @@
     - You should / must / will 〜 という文で使うときは特定の「あなた」の意味になることが多い
 - we が使えるのは対比概念が存在する時
   - 主に「人間」(<-> 動物)、「現代人」(<-> 昔の人)、「我々日本人」(<-> 日本人以外の外国人) の 3 つ
+
+## 95: it と this と that
+
+- 日本語で「それ」といった場合は、具体的な事物 1 つを指す場合と、内容全体を指す場合がある
+- 英語の it は原則前文の 1 語を指す
+  - it が前文の内容全体を指すということは原則としてない
+- 前文の内容を指す場合は、自分の発言なら this を、相手の発言を受けるなら that を使うのが原則
+- this と that は対比概念であるが、it 自体は特に対比を暗示するものではない
+- that は文末に置いてもよい
+  - I've already given Chris it. (☓)
+    - it はふつう旧情報なので、文末にはしない
+    - I've already given it to Chris. なら OK
+  - I've already given Chris that. (○)
+    - that は文末に置いてもよい。that というときには何がしかの this という概念を念頭に置いている
+    - このような対比概念は新情報に属すると考えられるので、文末に置く理由がある
+
+## コラム 5: much の勘違い
+
+- 形容詞を強調するときは very much ではなく、形容詞の直前に very を置く
+  - This flower is very beautiful. (○)
+  - This flower is beautiful very much. (☓)
+- much は原則的に形容詞
+  - I ate cake too much. (△)
+  - I ate too much cake. (○)
+- much はすべての動詞を修飾できるわけではない
+  - I've lost weight very much. (☓)
+  - I've lost a lot of weight. (○)
+- much は原則として肯定文では使えない
+  - I have much money. (☓)
+  - I have a lot of money. (○)
+  - 例外として so / as / too / how / very と使うときは肯定文でも可
+
+## 96: 比較構文の基本の盲点
+
+- 「少ない」の訳
+  - 可像名詞なら few、不可像名詞なら little
+  - few の比較級は fewer、little の比較級が less
+- 「少ない」から「〜ほど...ない」という発想に変える
+  - not as ... as 〜 に置き換える
+- as と as の間に挟める語
+  - 形容詞か副詞だけ
+    - as + 形容詞 + as 〜 / as + 副詞 + as 〜
+  - 名詞を挟みたいときは many か much を添える
+    - as many + 可像名詞 + as 〜 / as much + 不可像名詞 + as 〜
+- 比較構文の as や than は原則は接続詞
+  - as や than は基本的に接続詞であるから、直後は SV 構造になるのが通常だが、as / than 以下の主語が代名詞以外のときは動詞(or 助動詞)は省略されることがある
+- as / than 以下は明らかなことを述べる
