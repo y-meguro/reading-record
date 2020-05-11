@@ -1819,3 +1819,63 @@
   - 英語の比較は「1 対 1 対応」が基本だから
 - 日本語の「〜ほど...なものはない」は必ずしも英語の「Nothing is 比較級 than 〜」などの表現とは一致しない
   - really で強調するほうが適切な場合などがある
+
+## 101: 最上級相当表現
+
+- ★ 文頭の否定語と倒置のパターン
+  - Nowhere [be 動詞 + S / 助動詞 + S + 動詞原形 / have + S + p.p.] [as 〜 as / 比較級 + than] in ...
+    - ...(における)ほど S が 〜 な場所はどこにもない
+- as / than 以下が省略されるパターン
+  - 前の文の as / than 以下と同じ場合
+    - Nothing is more precious than time, but nothing is more irritating (than time).
+      - 時間ほど貴重なものはないが、時間ほど人をいらつかせるものもない
+  - this との比較
+    - この場合は could「〜できよう」と使う場合が多い
+    - Nothing could be as ... (as this)
+    - Nothing could be 比較級 ... (than this)
+    - Nothing could be father from the truth (than this).
+      - これほど真実からかけ離れていることはなかろう
+  - 「今」との比較
+    - この場合は主節が have never + p.p. であることが多い
+    - S + have never + p.p. + as ... (as now)
+    - S + have never + p.p. + 比較級 ... (than now)
+    - Never before have so many people been so well of (as they are now).
+      - 今ほど多くの人々がこんなにも裕福であった時代はなかった
+  - 「現実」と「仮想」の比較
+    - この場合は仮定法と使うことが多い
+    - "How was your summer vacation?" "It couldn't have been better (that it was)."
+      - 「夏休みはどうだった」「最高だったよ」
+- 「これほど〜な...をーしたことはない」の構文
+  - 「こんなに美しい夕日を今まで見たことがない」の訳 5 通り
+    - This is **the most beautiful** sunset I've ever seen.
+      - これが最も頻度が高い
+    - This is **the first time** I've ever seen **such** a beautiful sunset.
+    - I have **never** seen **such** a beautiful sunset (**as** this).
+    - I have **never** seen **as** beautiful a sunset (**as** this).
+    - I have **never** seen a **more** beautiful sunset (**than** this).
+
+## 102:「x 年ぶり」
+
+- 「x 年ぶりに ... した」の表現 2 種類
+  - 1: 「x 年ぶりに ... した」
+  - 2: 「こんな 〜 を ... するのは x 年ぶりだ」
+- ★「x 年ぶりに ... した」の 3 パターン
+  - S + 過去形 + for the first time in x years.
+    - The other day I played soccer for the first time in twenty years.
+      - 先日、20 年ぶりにサッカーをした
+  - S + 過去形 〜 . That was the first time in (the past) x years.
+    - The other day I played soccer. That was the first time in (the past) twenty years.
+  - S + hadn't + p.p. 〜 for (the past) x years (, but + S + 過去形).
+    - I hadn't played soccer for (the past) twenty years, but I did the other day.
+- 「お久しぶりです」の 3 パターン
+  - I haven't seen you for ages.
+  - It's been a long time since I saw you last.
+  - Long time, no see.
+- ★「こんな 〜 を ... するのは x 年ぶりだ」の 3 パターン
+  - It[This] is the + 最上級 + 名詞 + have + p.p. for[in] (the past) x years.
+    - This is the most beautiful sunset I've seen for (the past) ten years.
+      - こんなに美しい夕日を見たのは 10 年ぶりだ
+  - It[This] is the first time in (the past) x years that + S + have + p.p. + such 〜.
+    - This is the first time in (the past) ten years that I've seen such a beautiful sunset.
+  - S + haven't + p.p. + as 〜 for (the past) x years.
+    - I haven't seen as beautiful a sunset for (the past) ten years.
