@@ -1879,3 +1879,39 @@
     - This is the first time in (the past) ten years that I've seen such a beautiful sunset.
   - S + haven't + p.p. + as 〜 for (the past) x years.
     - I haven't seen as beautiful a sunset for (the past) ten years.
+
+## 103:「増える」
+
+- ★「増える」のパターン
+  - more and more(口語体)
+    - More and more people do 〜: 現在形 -> 状態動詞
+    - More and more people are doing: 現在進行形 -> 動作動詞
+    - There are more and more people who do 〜
+  - THe number of people who 〜 is increasing: 統計値がある時(文語体)
+
+## 104:「減る」
+
+- 「減る」のパターン
+  - There are fewer (and fewer) + 可像名詞(複数形)
+  - There is less (and less) + 不可像名詞
+  - The number of people who 〜 is [decreasing(文語体) / falling / declining]
+    - decreasing を使うときは「統計値がある時」
+  - S + not + V + as many + 可像名詞(複数形) + as + S + used to
+  - S + not + V + as much + 不可像名詞 + as + S + used to
+
+## 105: the + 比較級 〜, the + 比較級 ...
+
+- 「the + 比較級 〜, the + 比較級 ...」の基本
+  - 〜すればするほど、それだけ...
+- more が絡む場合
+  - 「たくさんの問題を解けば解くほど数学に興味がわく」の英訳
+    - The more you answer questions, the more you become interested in mathematics. (☓)
+    - The more questions you answer, the more interested you become in mathematics. (○)
+- more の 2 つの役割
+  - many や much の比較級
+    - この使われ方の場合、上の例であるように、more questions は離されない
+  - -er 活用しない形容詞・副詞の比較級を作る
+    - この使われ方の場合、上の例であるように、more interested は離されない
+- 「〜するにつれて」の as のパターン
+  - As + S + [変化を表す動詞 / V + 比較級] 〜, S + [変化を表す動詞 / V + 比較級] ...
+- 「変化を表す動詞」とは change / increase / grow / decrease / fall / decline など
