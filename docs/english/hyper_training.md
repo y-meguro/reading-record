@@ -144,3 +144,42 @@
   - どこで段落分けをすべきという明確なルールはないが以下のどちらかにして計 4 段落がよいだろう
     - トピックセンテンス、1 つめの理由、2 つめの理由、コンクルージョン
     - トピックセンテンス、譲歩、打ち消し、コンクルージョン
+
+## Step 3: ショートエッセイで使うと便利な表現を学ぶ
+
+### 1: トピックセンテンスで使う表現(1)
+
+- トピックセンテンスではできる限り簡潔明瞭に書く
+- トピックセンテンスで使うとよい表現
+  - I think that SV.
+  - I don't think that SV.
+  - I agree with the opinion that SV.
+  - I don't agree with the opinion that SV.
+- 文法・語法上使えない表現
+  - I agree to do. (☓)
+  - I am opposed to -ing / I object to -ing (☓)
+  - これらは「(to 不定詞 / 動名詞の)意味上の主語は原則、主文の主語と一致する」という文法のルールがあるので基本的に使えない
+
+### 2: トピックセンテンスで使う表現(2)
+
+- トピックセンテンスで好ましくない表現
+  - 主文が肯定文なのに、that 節の中が否定文であるような文
+    - 否定は that 節の前に出す
+    - I don't think it will rain tomorrow. (○)
+    - I think it will not rain tomorrow. (△)
+  - 二重否定文
+    - わかりにくいので避ける
+
+### 3: サポート(理由)で使う表現
+
+- あまりに当たり前の理由を書くときには、わざわざ「その理由は…」などと書かないほうが自然
+- because を使った表現
+  - SV because SV.
+  - SV. It is because SV.
+  - SV. I think so because SV.
+  - 文頭の Because は避ける
+- reason を使った表現
+  - One (big) reason (I think so) is that SV.
+  - One reason (I think so) is that SV. Another reason is that SV.
+  - 「the reason」のように the を付けてしまうと、それが唯一の理由であることになってしまうので one reason のほうがよい
+  - 同様に「the other」としてしまうと、「もうこれ以上ない」というニュアンスになってしまうので、another のほうがよい
