@@ -183,3 +183,91 @@
   - One reason (I think so) is that SV. Another reason is that SV.
   - 「the reason」のように the を付けてしまうと、それが唯一の理由であることになってしまうので one reason のほうがよい
   - 同様に「the other」としてしまうと、「もうこれ以上ない」というニュアンスになってしまうので、another のほうがよい
+
+### 4: サポート(譲歩)で使う
+
+- 譲歩の前には、それが譲歩であること示すキーワードを置かなければならない
+  - 代表的なものは of course
+- 譲歩で使う表現
+  - Of course, S V ... . But 〜
+    - もちろん ... だけれど 〜
+  - To be sure, S V ... . However, 〜
+    - 確かに ... しかし 〜
+  - Admittedly, S V ... . Yet, 〜
+    - ... は認めるが、しかし 〜
+  - Some people may say S V ... , but 〜
+    - ... のように言う人もいるかもしれないが、しかし〜
+  - Many people believe that S V ... , but 〜
+    - ... と思っている人も多いが、しかし〜
+  - Proponents(Opponents) may argue S V ... , but 〜
+    - 賛成論者は(反対論者は) ... と主張するかもしれないが、しかし〜
+- 「逆接 + 逆接」でつなぐのでなく、「譲歩 + 逆接」でつなぐように注意
+
+### 5: サポート(打ち消し)で使う表現
+
+- 打ち消しを表す表現
+  - but / yet
+    - 等位接続詞
+  - however / nevertheless
+    - 接続副詞
+- 打ち消しの強調に使う表現
+  - SV, but it doesn't mean that SV.
+    - ...だが、それは〜を意味しない
+  - SV, but it doesn't follow that SV.
+    - ...だが、だからといって〜ではない
+  - SV, but there are more disadvantages than advantages about it.
+    - ...だが、それに関しては長所よりむしろ短所が多い
+  - SV, but there are more also bad points about it. One is that SV.
+    - ...だがそれに関しては悪い点もある。1 つは〜
+  - SV, but that is only one side of the story.
+    - ...だがそれは話の一面にすぎない
+
+### 6: 肉付けで使うと良い表現
+
+- 一番簡単なのはコロン「:」を使うこと
+  - これだけで「つまり、すなわち」という意味を表す
+- 接続副詞
+  - for example / for instance: たとえば
+  - in fact: 実際
+- 前置詞
+  - like / such as
+- それ以外の表現
+  - take + 名詞 + for example: 〜を例にとろう
+    - Sports are good for your health: take swimming for example. 〜
+    - スポーツは健康によい。たとえば水泳を例にとろう。〜
+  - suppose / imagine: 想像してみよう
+
+### 7: 対比の表し方
+
+- while
+  - 接続詞で 2 文をつなぐ
+- on the other hand
+  - 接続副詞でつなげないので注意
+- 前置詞の unlike
+  - 比較の対照をコンパクトに表現できる
+- その他
+  - be true of 〜 / be the case with 〜: 〜に当てはまる
+    - You can e-mail anytime, which is not true of telephone calls.
+    - e メールはいつでもできるが、そのことは電話には当てはまらない
+  - an advantage over 〜: 〜に対する長所
+    - You can e-mail anytime, which is **an advantage** of e-mail **over** telephone calls.
+    - e メールはいつでもできる。それは e メールの電話に対する長所だ
+
+### 8: コンクルージョンで使うとよい表現
+
+- コンクルージョンは一番定型化しにくい
+- コンクルージョンには大きく「再主張」「一般化」「提言」の 3 種類があった
+- 提言の書き方
+  - propose / suggest を使うのがよい
+    - I (would) suggest[propose] that SV の形
+    - 目的語にあたる that 節の中の動詞を原形にしなければいけないので注意
+  - 他にも wise「賢い」、sensible「常識的な、合理的な」、better「よりよい」などの形容詞を使って書いてもよい
+    - It (would) be wise[sensible / better] to do の形
+    - 例
+      - It would be wise to begin to study English as soon as possible.
+      - 英語をできる限り早い時期から始めるほうが賢いだろう
+- 再主張と一般化の書き方
+  - それほどまとめておくべき表現はない
+  - 結論を述べる時の言い方
+    - therefore「それゆえ」、so「だから」、in short「要するに」、in conclusion「結論として」
+    - 上記のうち so だけ接続詞、他は接続副詞
