@@ -127,3 +127,39 @@
   - Introduction を完成させる
   - Introduction の主張の裏付け理由を Body の第 1 文で述べる(トピックセンテンスの作成)
   - トピックセンテンスの根拠となる詳細情報や具体例を述べる(サポートセンテンスの作成)
+
+## 5: 転換語の役割
+
+- いろいろな転換語
+  - 順序
+    - first / second / third / last
+    - one reason is / the second reason is
+    - to begin (with): 初めに / next / finally
+  - 追加
+    - in addition / furthermore / moreover / further: さらに
+    - in addition to 〜: 〜に加えて
+    - likewise / similarly: 同様に
+  - 結果
+    - therefore / hence / thus: したがって
+    - consequently: その結果
+    - as a result: 結果として
+    - for this[that / these] reason(s): この[その / これらの]理由により
+  - 対比
+    - however
+    - nevertheless / nonetheless: それにも関わらず
+    - by[in] contrast: 対象的に, 反対に
+    - while 〜 / whereas 〜: 〜であるのに, 〜の一方で
+  - 例証
+    - for example / for instance: 例えば
+    - such as 〜: 例えば〜のような
+    - in particular / particularly / especially: 特に
+    - in fact / as a matter of fact: 実は
+- 多用を避けたい転換語: 使ってはいけないということはないが、できるだけ文頭ではこれまでに学習した転換語を使うほうがよい
+  - 追加
+    - and / also / besides
+  - 結果
+    - so / then
+  - 対比
+    - but
+  - そのほか
+    - by the way
