@@ -74,3 +74,43 @@
 - 語彙を強化する
 - 文法や語法の確認をする
 - 解答例から学び、自分の解答を評価する
+
+# Chapter 2: 基礎学習
+
+## 1: Q1 の解答の組み立て方をマスターする
+
+- Question1 では「主題、主題の理由、例や詳細、結論」の順に解答を組み立てると、明瞭でわかりやすい構成になる
+  - 1: M(Main Point)
+    - 主題
+    - 答えのうち最も重要な点を述べる
+  - 2: O(Organization Indicator)
+    - 構成標示
+    - 理由の数、ときに内容を示す。時々省略される
+  - 3: R(Supporting Reasons)
+    - 主題の理由
+  - 4: E(Examples / Details)
+    - 理由に関する例や詳細
+  - 5: C(Concluding Statement)
+    - 結論
+    - 時々省略される
+  - また T(Transition Word) も使う
+    - 接続語句
+    - 文と文、節と節などをつなぐ語句で、要素のつながり、全体の構成、順番を示す
+- 15 秒で準備をして、45 秒で解答する
+- 重要表現: 願望に関する表現
+  - 「自国において休暇で最も行きたいのは沖縄である」ことを示す場合
+  - In my home country, **I would most like to go on vacation to** Okinawa.
+  - In my home country, **I would most like to go to** Okinawa **for a vacation**.
+  - Of all places in my home country, **the spot that I would choose for a vacation is** Okinawa.
+  - **The place I would most like to vacation** in my home country is Okinawa.
+
+## 2: Q1 の解答に接続語句を活用する
+
+- 重要表現
+  - 順番を示す接続語句
+    - First / First of all / To begin with
+    - Second / Second of all / The second reason is that
+  - 追加を示す接続語句
+    - Next / Moreover / Furthermore / Another reason is that
+  - 結論を示す接続語句
+    - All in all / Therefore / Consequently / Thus / As a result / In conclusion
