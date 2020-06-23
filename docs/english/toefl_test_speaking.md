@@ -114,3 +114,17 @@
     - Next / Moreover / Furthermore / Another reason is that
   - 結論を示す接続語句
     - All in all / Therefore / Consequently / Thus / As a result / In conclusion
+
+## 3: Q1 の解答で例や詳細を十分に述べる
+
+- 「例、詳細」を十分に述べるコツ
+  - 名称:「理由」に関する有名な人名、地名、題名
+  - 種類:「理由」に関する種類、区分
+  - 特徴:「理由」に関する特徴、長所
+  - 経験:「理由」に関する自分の経験、思い出
+- 重要表現
+  - 「例、詳細」を述べる表現(「ノートパソコンの使用方法」を説明する際の「例、詳細」)
+    - **For example**, I write all of my assignments on my laptop, **which includes** essays, reports, **and other kinds of** homework.
+    - **For instance**, **I use it to** write and receive my emails several times a day.
+    - **In addition**, I access news on the Internet **using** my laptop, **especially** sports news.
+    - **Many of** my classes, **such as** economics and business, require Internet research.
