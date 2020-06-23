@@ -122,9 +122,37 @@
   - 種類:「理由」に関する種類、区分
   - 特徴:「理由」に関する特徴、長所
   - 経験:「理由」に関する自分の経験、思い出
-- 重要表現
-  - 「例、詳細」を述べる表現(「ノートパソコンの使用方法」を説明する際の「例、詳細」)
-    - **For example**, I write all of my assignments on my laptop, **which includes** essays, reports, **and other kinds of** homework.
-    - **For instance**, **I use it to** write and receive my emails several times a day.
-    - **In addition**, I access news on the Internet **using** my laptop, **especially** sports news.
-    - **Many of** my classes, **such as** economics and business, require Internet research.
+- 重要表現:「例、詳細」を述べる表現(「ノートパソコンの使用方法」を説明する際の「例、詳細」)
+  - **For example**, I write all of my assignments on my laptop, **which includes** essays, reports, **and other kinds of** homework.
+  - **For instance**, **I use it to** write and receive my emails several times a day.
+  - **In addition**, I access news on the Internet **using** my laptop, **especially** sports news.
+  - **Many of** my classes, **such as** economics and business, require Internet research.
+
+## 4: Q2 の解答の組み立て方をマスターする
+
+- Question2 では 2 つの意見や立場のうち、1 つを選択し、その合理的な「理由」「例、詳細」を述べる
+  - 1: M(Main Point)
+    - 主題
+    - 2 つの意見のうち 1 つを選び述べます
+  - 2: O(Organization Indicator)
+    - 構成標示
+    - 理由の数、ときに内容を示す。時々省略される
+  - 3: R1(Supporting Reason 1)
+    - 主題の第 1 の理由
+  - 4: E1(Examples / Details 1)
+    - 第 1 の理由に関する例や詳細
+  - 5: R2(Supporting Reason 2)
+    - 主題の第 2 の理由
+  - 6: E2(Examples / Details 2)
+    - 第 2 の理由に関する例や詳細
+  - 7: C(Concluding Statement)
+    - 結論
+    - 「これらの理由で、私は〜と考える」と述べる
+    - 時々省略される
+  - また順序、結論などを示す「接続語句」T(Transition Word) を適切に使う
+- 15 秒で準備をして、45 秒で解答する
+- 重要な表現: 比較級を使って自分の立場を表す表現(「夜より朝勉強するほうが効果的である」ことを示す場合)
+  - **I think** the morning **is better** for studying.
+  - **In my opinion**, studying in the morning is **much more effective than** studying in the evening.
+  - **I find** that studying in the morning is **more beneficial than** studying in the evening.
+  - **For me**, the morning is **by far** a **more** advantageous time to study **than** the evening.
