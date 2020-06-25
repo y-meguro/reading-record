@@ -164,3 +164,25 @@
   - 日頃から自分は何を大切にするか具体的に考えておくと、解答を構成する際に助けになる
 - 重要表現: 結論を表す表現
   - Consequently / For these reasons / As a result / Thus
+
+## 6: Q3 の解答の組み立て方をマスターする
+
+- Question3 では、リーディング、男女の会話のリスニングの後、指定されたどちらかの人の意見を述べ、理由や詳細を説明する
+- ポイント
+  - 1: 課題文の方針を読み、要点を用紙の左半分にメモ
+    - 45 秒間、約 75 - 100 語の大学や学生生活に関するある方針についての文章を読む
+  - 2: 会話を聞き、読んだ文と関連付けながら要点を右半分にメモ
+    - 約 60 - 80 秒で、約 150 - 180 語の方針に関する 2 人の学生の会話を聞く
+    - 会話内の男性または女性が、方針に賛成か反対かの立場と、その理由をメモする
+  - 3: メモを用いて意見とその理由などを説明
+    - 方針を述べ、指定された男性 / 女性の意見とその理由を述べる
+- 重要表現
+  - リーディングにおいて方針を説明する表現
+    - A student ID **will be required to** both enter the gym and check out equipment.
+    - **The usual ban** on bike riding on campus **will be suspended** during the renovation period.
+    - **No student will be allowed to** register for more than 2 evening laboratory classes in one team.
+  - 方針について賛成か反対かの立場を示す表現
+    - For three reasons, the man **agrees with the decision to** discontinue the use of frequent rider bus coupons.
+    - These are the reasons why the man thinks **the change is positive**.
+    - That's why he **supports** the fee increase.
+    - She **is against** the $75 increase in student fees.
