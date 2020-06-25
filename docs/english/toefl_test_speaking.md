@@ -156,3 +156,11 @@
   - **In my opinion**, studying in the morning is **much more effective than** studying in the evening.
   - **I find** that studying in the morning is **more beneficial than** studying in the evening.
   - **For me**, the morning is **by far** a **more** advantageous time to study **than** the evening.
+
+## 5: Q2 の解答力を伸ばす - 自分の意見、理由を適切に述べる
+
+- 自分の経験に基づいた「理由」、「例、詳細」を使用する
+- 自分の価値観を確認する
+  - 日頃から自分は何を大切にするか具体的に考えておくと、解答を構成する際に助けになる
+- 重要表現: 結論を表す表現
+  - Consequently / For these reasons / As a result / Thus
