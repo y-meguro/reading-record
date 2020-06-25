@@ -186,3 +186,22 @@
     - These are the reasons why the man thinks **the change is positive**.
     - That's why he **supports** the fee increase.
     - She **is against** the $75 increase in student fees.
+
+## 7: Q3 の解答力を伸ばす - 課題文を読み、会話内の意見を要約する
+
+- 解答の基本的な構成
+  - 1: 主題(M)
+    - 問題文の「主題」に関わる語句を使い、男性 / 女性が方針に賛成または反対であることを述べる
+  - 2: 構成(O)
+    - 賛成または反省の「理由」が 2 - 3 個あることを述べる
+  - 3: 第 1 の「理由」(R)と「例、詳細」(E)
+  - 4: 第 2 の「理由」と「例、詳細」。もし 3 つ目の理由があれば挙げる
+  - 5: 結論(C)
+    - 「これらの理由で、男性 / 女性は〜に賛成 / 反対である」ことを述べる
+- 重要表現: 会話における男性 / 女性の意見とその理由を説明する表現
+  - **The man feels that** the $75 increase in student fees **is reasonable**.
+  - **He feels that** they **deserve** a high-quality arena to play their home games in.
+  - **The woman thinks that it's unfair to** ask all students to pay for the construction of the new sports arena.
+  - **She points out that not every student** cares about intercollegiate sports.
+  - **She suggests that students who** think the new arena is necessary pay for it themselves.
+  - **She recommends soliciting** more alumni contributions to cover the shortfall.
