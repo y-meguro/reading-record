@@ -227,3 +227,19 @@
   - **The best thing for the woman to do is to** move out.
   - **If I were in the woman's position, I'd certainly choose to** move out.
   - **If I were the woman, I would choose to** move out.
+
+## 9: Q5 の要点をメモし、解答にパラフレーズを用いる
+
+- ポイント
+  - 要点をメモする
+    - 短時間でメモを取るためには、解答の構成要素のうち、以下の要素に絞って書き出す
+    - 問題点(PR)・解決策(S)・解決策の理由(R)、最後に自分の意見と理由(O&R)
+  - パラフレーズ(言い換え)を用いる
+    - よく使われるパラフレーズの方法は以下
+      - 1: 品詞の変換(例えば名詞 choice を、動詞 choose に言い換える)
+      - 2: 同意語の使用(例えば choice を、同意語の alternative に言い換える)
+- 重要表現: 2 つの選択肢を明確に述べる表現
+  - **The man is facing a choice between** majoring in music and majoring in business.
+  - **The man faces a dilemma and must choose** a major in music or a major in business.
+  - **The man must decide whether** to major in music **or** to major in business.
+  - **The man needs to make up his mind if he should** major in music or business.
