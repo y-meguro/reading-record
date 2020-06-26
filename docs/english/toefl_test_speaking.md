@@ -205,3 +205,25 @@
   - **She points out that not every student** cares about intercollegiate sports.
   - **She suggests that students who** think the new arena is necessary pay for it themselves.
   - **She recommends soliciting** more alumni contributions to cover the shortfall.
+
+## 8: Q5 の解答の組み立て方をマスターする
+
+- Question5 では、男女の会話を聞いた後、問題点と自分の意見を説明する
+- 手順
+  - 1: 会話を聞き、要点をメモする
+    - 約 60 - 90 秒で、約 180 - 220 語の男女の学生による会話を聞く
+    - 下記の点について、短縮した形や記号を使って簡潔なメモを作りながら、自分はどちらの解決方法に賛成か決める
+      - 1. PR(Problem): 学生が授業や学生生活に関して示す問題点
+      - 2. S(Solution): 話し相手または本人が、問題点に対して示す解決方法あるいは課題に対する選択肢(通常 2 つ)
+      - 3. R(Supporting Reason): それぞれの解決方法
+  - 2: 意見を加え、メモを用いて意見と理由を説明する
+    - 4. OP&R(Opinion and Supporting Reason): 自分の意見とその理由
+- 解答では、2 つの解決方法のうち、自分がどちらを選択するかをその理由を含めて述べる
+- メモの最後に、自分がどちらを選択するかという意見と、その理由について書く
+  - 理由は、会話の中の理由か独自の理由をあげる
+- 重要表現: 2 つの解決方法のうち、1 つを自分の意見として述べる表現
+  - **Of these two alternatives, I think the woman should choose to** move out.
+  - **Of these two alternatives, I'd recommend that the woman** move out.
+  - **The best thing for the woman to do is to** move out.
+  - **If I were in the woman's position, I'd certainly choose to** move out.
+  - **If I were the woman, I would choose to** move out.
