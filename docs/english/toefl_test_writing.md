@@ -201,6 +201,24 @@
   - 3: 主張を裏付けるための理由や具体例をブレインストーミングする
   - 4: Introduction から順次、書き始める
 
+```
+# 問題例
+Do you agree or disagree with the following statement?
+"It is better for students to study online using a computer than to attend class at the university."
+Use specific reasons and examples to support your answer.
+
+# 解答例
+Although many students might rather attend courses in the classrooms of a traditional university, I would prefer the more innovative approach of studying online. There are two principal reasons: cost and convenience.
+
+To begin, online courses are typically far cheper than conventional on-campus classes. First, the university does not have to expend as much funding on faculty salaries, because one professor can teach many more students. In fact, one well-designed course can be taught to literally thousands of students on the Internet, rather than limiting itself to however many will fit in a classroom. For instance, at the present time, my brother is taking a business marketing course online. More than three thousand other students are enrolled in the course. As a result, it is only about one-fifth of the cost of comparable courses at other universities in our community. Furthermore, since educational institutions offering online courses do not have to pay for constructing classroom buildings, or for heating, cleaning, and maintenance expenses, they are able to offer Internet instruction for far less than universities that offer only conventional classes.
+
+In addition, studying online is much more convenient than physically going to a classroom. Most of my current classmate travel approximately two hours every day to the college where we study. This is valuable time that they could be using for studying, working, or simply enjoying their lives. Moreover, online access to courses allows one to choose the particular time one wishes to study rather than follow a schedule someone else designs. In my case, I prefer to wake up early at 6 a.m. and tackle difficult material while I am alert and fresh. However, conventional universities do not offer courses at that time. These may be all reasons why a recent survey at our local high school revealed that 70 percent of the students preferred online instruction to classroom learning.
+
+In conclusion, even though many students still attend traditional classes on university campuses, my own preference is for online study. This is primarily due to the fact that it is less costly and far more convenient.
+
+(347語)
+```
+
 ## 10: そのほかのトピックタイプ
 
 - Independent Writing で出題の基本となるのは Step 9 で扱った議論型
