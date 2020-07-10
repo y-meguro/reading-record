@@ -7,6 +7,7 @@
 ## 参考
 
 - [Introduction to Algorithms, Third Edition | The MIT Press](https://mitpress.mit.edu/books/introduction-algorithms-third-edition)
+- [演習問題の解答](http://mitp-content-server.mit.edu:18180/books/content/sectbyfn?collid=books_pres_0&id=8030&fn=Intro_to_Algo_Selected_Solutions.pdf)
 
 ## かかった時間
 
@@ -29,6 +30,8 @@
 ## 1. 計算におけるアルゴリズムの役割
 
 - アルゴリズムは、ある値または値の集合を入力(input)として取り、ある値または値の集合を出力(output)として生成する、明確に定義された計算手続き
+- データ構造は、アクセスと更新を容易にする目的のために、データを蓄積し組織化する方法
+  - どのデータ構造もすべての目的に対して満足に働くことはない。したがって、いくつかのデータ構造について、その長所と限界を理解することが重要
 
 ## 2. さあ、始めよう
 
