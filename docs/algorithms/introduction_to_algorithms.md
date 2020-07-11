@@ -539,6 +539,7 @@ else
 - 数学の集合は変化しないが、アルゴリズムが扱う集合は成長したり、縮んだり、時間とともに変化する。この集合を動的であるという
 - 10 章ではスタック、キュー、連結リスト、根付き木のような単純なデータ構造を扱う上でキーとなることを説明する
 - 11 章ではハッシュ表、12 章では 2 分探索木を扱う
+- 13 章で 2 分探索木の改良である 2 色木、14 章では 2 色木を補強する方法を示す
 
 ## 10: 基本データ構造
 
@@ -907,14 +908,14 @@ else
     - z が子を持たない場合は簡単。z の親の子を z から NIL に置き換えて z を削除する
     - z がちょうど 1 つの子を持つ場合は、z の親の子を z から z の子に変更することで、z の子を z の場所に持ち上げる
     - z が 2 つの子を持つ場合は、z の右の部分木の中から z の次節点 y を発見し、y を z の場所に置く
-      - y が z の右の子である場合、y は右の子には触れず、z と y を置き換える
+      - y が z の右の子である場合、y の右の子には触れず、z と y を置き換える
       - y は z の右部分木の中にあるが、z の右の子ではない場合、最初に y と y の右の子を置き換え、次に z と y を置き換える
   - 2 分探索木の中を部分木を移動させる必要があるため、ある節点の子である部分木を別の部分木に置き換えるサブルーチン TRANSPARENT を定義する
     - 節点 u を根とする部分木を節点 v を根とする部分木と置き換えると、u の親が v の親になり、u の親が v を適切な子として持つことになる
   - 木の高さが h の時、実行時間は `Ｏ(h)` である
 
 ```
-TRANSPARENT(T, u, v)
+TRANSPLANT(T, u, v)
 if u.p == NIL
   T.root = v
 else if u == u.p.left
@@ -928,16 +929,16 @@ if v != NIL
 ```
 TREE-DELETE(T, z)
 if z.left == NIL
-  TRANSPARENT(T, z, z.right)
+  TRANSPLANT(T, z, z.right)
 else if z.right == NIL
-  TRANSPARENT(T, z, z.left)
+  TRANSPLANT(T, z, z.left)
 else
   y = TREE-MINIMUM(z.right)
   if y.p != z
-    TRANSPARENT(T, y, y.right)
+    TRANSPLANT(T, y, y.right)
     y.right = z.right
     y.right.p = y
-  TRANSPARENT(T, z, y)
+  TRANSPLANT(T, z, y)
   y.left = z.left
   y.left.p = y
 ```
@@ -1189,6 +1190,7 @@ x.size = x.left.size + x.right.size + 1
     - INTERVAL-INSERT(T, x) は要素 x の int 属性がある区間を含むと仮定する時、x を区間木 T に挿入する
     - INTERVAL-DELETE(T, x) は区間木 T から要素 x を削除する
     - INTERVAL-SEARCH(T, i) は、区間 i と重なる区間 x.int を持つ要素 x が区間木 T の中にあれば x へのポインタを返し、そのような要素がない時には番兵 T.nil を返す
+  - 区間木は 2 色木を基礎データ構造として、4 段階で設計できる
 
 ## 15: 動的計画法
 
