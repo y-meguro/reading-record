@@ -433,6 +433,7 @@ if p < r
   - すべての置換が、到達可能な葉として出現する
 - 最悪時の下界
   - 決定木の根から任意の葉までの単純パスの長さの最大値が、対応するソーティングアルゴリズムの最大比較回数となる
+  - 任意の比較ソートアルゴリズムは最悪時に `Ω(n * lg n)` 回の比較が必要(定理 8.1)
 - 計数ソート(counting sort)
   - n 個の入力要素はある整数 k に対して 0 から k の範囲の整数から選ばれると仮定する
   - k = Ｏ(n) ならば計数ソートは Ｏ(n) 時間で走る
@@ -1584,7 +1585,7 @@ if i < A.length
 # Ⅴ: 高度なデータ構造
 
 - Ⅲ部で紹介しなかった高度なデータ構造を紹介する
-- 18 章では B 木、19章ではマージ可能ヒープの実現方法を説明する
+- 18 章では B 木、19 章ではマージ可能ヒープの実現方法を説明する
 - 20 章では、キーが限られた範囲の自然数である時に、動的集合操作 SEARCH / INSERT / DELETE / MINIMUM / MAXIMUM / SUCCESSOR / PREDECESSOR が `o(lg n)` 時間で実行できるデータ構造を設計できるか否かを問う
 - 21 章では、互いに素な集合のためのデータ構造を紹介する
 
@@ -1645,7 +1646,7 @@ T.root = x
 
 - B 木へのキーの挿入
   - キーを B 木に挿入する手続きは、すでに存在する葉に新たなキーを挿入する
-  - しかし、飽和した葉にキーを挿入することはできないから、(2t - 1個のキーを持つ)飽和節点 y をその中央キー y.keyt を境にして、それぞれが t - 1 個のキーを持つ 2 つの節点に分割する操作を導入する。中央キーは y の親に移し、新しく作った 2 つの木を分離する場所を特定するために用いる
+  - しかし、飽和した葉にキーを挿入することはできないから、(2t - 1 個のキーを持つ)飽和節点 y をその中央キー y.keyt を境にして、それぞれが t - 1 個のキーを持つ 2 つの節点に分割する操作を導入する。中央キーは y の親に移し、新しく作った 2 つの木を分離する場所を特定するために用いる
   - しかし、y の親もまた飽和節点ならば、この新しいキーを挿入する前にこれを分割しておく必要があるから、飽和節点に対する分割操作は木を上方に伝播していく可能性がある
 - B 木における節点分割
   - p411 参照
@@ -1781,7 +1782,7 @@ else
 
 - 新しいフィボナッチヒープの生成 MAKE-FIB-HEAP
   - H.n = 0 かつ H.min = NIL であるフィボナッチヒープオブジェクト H を生成し、これを返す。H には木は存在しない
-  - t(H) = 0 かつ m(H) = 0 なので ポテンシャル Φ(H) = 0
+  - t(H) = 0 かつ m(H) = 0 なので、ポテンシャル Φ(H) = 0
   - したがって MAKE-FIB-HEAP のならしコストはその実コスト `Ｏ(1)` に等しい
 - 節点の挿入(p425 参照)
   - H を入力のフィボナッチヒープ、H' を結果として得るフィボナッチヒープとする
@@ -1956,3 +1957,252 @@ FIB-HEAP-EXTRACT-MIN(H)
 - x をフィボナッチヒープの任意の節点とし、k = x.degree とする。φ = (1 + √5) / 2 とする時、size(x) >= F k+2 >= φ^k である(補題 19.4)
 - すると節点数 n のフィボナッチヒープに属する任意の節点を x とし、k = x.degree とする。補題 19.4 より n >= size(x) >= φ^k なので φ を底として対数を取ると、k <= logφ n となる
   - したがって、任意の節点の最大次数 D(n) は `Ｏ(lg n)` である
+
+## 20: van Emde Boas(ファン・エンデ・ボス) 木
+
+- 集合 {0, 1, ..., u - 1} を格納できる値の普遍集合と予備、u を普遍集合サイズと呼ぶ
+- 本章を通して、u は 2 のべき乗、すなわち、ある k >= 1 に対して u = 2^k であると仮定する
+
+### 20.1: 設計方針の予備的考察
+
+- 本節では動的集合を格納するための様々な方針を検討する
+- 直接アドレス指定法
+  - 普遍集合 {0, 1, ..., u - 1} に属する値を格納するために、u ビットの配列 A[0...u-1] を管理する
+  - 値 x がその動的集合に属するならば A[x] = 1、そうでなければ A[x] = 0 である
+  - INSERT / DELETE / MEMBER 操作はそれぞれ `Ｏ(1)` 時間で実行できる
+  - MINIMUM / MAXIMUM / SUCCESSOR / PREDECESSOR の実行には θ(u) 個の要素を走査しなければならなくなる可能性があり、最悪時には `θ(u)` 時間がかかる
+- 2 分木構造の添加(図 20.1 参照)
+  - ビットベクトル上に 2 分木構造を添加することで長い走査を短縮できる
+  - ビットベクトルの要素が 2 分木の葉に対応しており、2 分木の各内部節点が 1 を持つのは、その内部節点を根とする部分木に属するある葉が 1 を持つ時、かつその時に限る
+  - これを使うと、INSERT / DELETE / MINIMUM / MAXIMUM / SUCCESSOR / PREDECESSOR を `Ｏ(lg u)` 時間で実行でき、MEMBER を `Ｏ(1)` 時間で実行できる
+  - 単純な 2 色木と比べて MEMBER 操作が早いが、格納されている要素数 n が普遍集合サイズ u に比べて十分に小さい時には、MEMBER 以外のすべての操作の実行速度は 2 色木が勝る
+- 定数高さを持つ木の添加
+  - ある整数 k に対して普遍集合サイズを u = 2^2k と仮定する。したがって √u は整数である
+  - 2 分木をビットベクトルの上に添加する代わりに、次数 √u の木を添加する
+  - これは MINIMUM / SUCCESSOR / PREDECESSOR / DELETE を `Ｏ(√u)` 時間で実行できる
+
+### 20.2: 再帰構造
+
+- 次数 √u の木をビットベクトルの上に添加するというアイデアを本節では改良する
+  - 前節では構造 summary を用いたが、今度はこの構造を再帰的にし、各再帰のレベルで普遍集合サイズが 1/2 乗に減少するようにする
+  - 簡単のため、ある整数 k に対して、2^(2^k) であると本節では仮定する(次節でこの制約を緩和し、k = 2^k であれば十分であるようにする)
+  - 各操作に対して `Ｏ(lg lg u)` 実行時間を達成することが目的
+- 以下の関数を用意する
+  - high(x) = x / √u の整数部分
+  - low(x) = x mod √u
+  - index(x, y) = x√u + y
+- プロト van Emde Boas 構造(proto van Emde Boas structure)
+  - 普遍集合 {0, 1, ..., u - 1} に対して、プロト van Emde Boas 構造または proto-vEB 構造(proto-vEB structure) を proto-vEB(u) で表し、以下のように再帰的に定義する
+    - u = 2 が基底となる普遍集合サイズで、2 ビットの配列 A[0..1] を含む
+    - ある整数 k >= 1 に対して、u = 2^(2^k)、したがって u >= 4 の場合、データ構造 proto-vEB(u) は普遍集合サイズ u 以外に図 20.3 に示す次の属性を含む
+      - summary と名付けられた proto-vEB(√u) 構造を指すポインタ
+      - proto-vEB(√u) 構造を指す √u 個のポインタの配列 cluster[0..√u - 1]
+  - 図 20.4 がわかりやすい
+- 集合への所属判定
+  - 各再帰呼び出しは、それが行う再帰呼び出しの時間を除くと、定数時間しかかからない
+  - すると実行時間は T(u) = T(√u) + Ｏ(1) で特徴づけられる
+  - よって、実行時間は `Ｏ(lg lg u)` となる
+
+```
+PROTO-VEB-MEMBER(V, x)
+if V.u == 2  // 基底か判断
+  return V.A[x]
+else
+  return PROTO-VEB-MEMBER(V.cluster[high(x)], low(x))
+```
+
+- 最小要素の発見
+  - 再帰呼び出しを 2 回行うので、最悪実行時間は期待する `Ｏ(lg lg u)` ではなく `Ｏ(lg u)`
+
+```
+PROTO-VEB-MINIMUM(V)
+if V.u == 2
+  if V.A[0] == 1
+    return 0
+  elseif V.A[1] == 1
+    return 1
+  else
+    return NIL
+else
+  min-cluster = PROTO-VEB-MINIMUM(V.summary)
+  if min-cluster == NIL
+    return NIL
+  else
+    offset = PROTO-VEB-MINIMUM(V.cluster[min-cluster])
+      return index(min-cluster, offset)
+```
+
+- 直後の要素の発見
+  - 最悪の場合、PROTO-VEB-SUCCESSOR は proto-vEB(√u) 構造上でそれ自体を再帰的に 2 回呼び出すと共に、proto-vEB(√u) 構造上で PROTO-VEB-MINIMUM を 1 回呼び出す
+  - 最悪時の実行時間は `θ(lg u * lg lg u)`
+
+```
+PROTO-VEB-SUCCESSOR(V, x)
+if V.u == 2
+  if x == 0 かつ V.A[1] == 1
+    return 1
+  else
+    return NIL
+else
+  offset = PROTO-VEB-SUCCESSOR(V.cluster[high(x)], low(x))
+  if offset != NIL
+    return index(high(x), offset)
+  else
+    succ-cluster = PROTO-VEB-SUCCESSOR(V.summary, high(x))
+    if succ-cluster == NIL
+      return NIL
+    else
+      offset = PROTO-VEB-MINIMUM(V.cluster[succ-cluster])
+      return index(succ-cluster, offset)
+```
+
+- 要素の挿入
+  - 要素を挿入するには、要素を正しいクラスタに挿入し、対応する要約ビットを 1 に設定する設定する必要がある
+  - 最悪時に再帰呼び出しを 2 回行うので、`θ(lg u)` 時間で走る
+
+```
+PROTO-VEB-INSERT(V, x)
+if V.u == 2
+  V.A[x] = 1
+else
+  PROTO-VEB-INSERT(V.cluster[high(x)], low(x))
+  PROTO-VEB-INSERT(V.summary, high(x))
+```
+
+- 要素の削除
+  - DELETE 操作は挿入よりも複雑
+  - 挿入では常に要約ビットを 1 にできるが、削除では対応する要約ビットを簡単に 0 に戻せない
+  - proto-vEB 構造の定義から、クラスタ中に値 1 を持つビットが残っているかどうかを判断するために、√u 個のビットをすべて調べなければならない
+  - これは大変なので、代案として、保持する 1 の個数を計数する属性 n を proto-vEB 構造に追加することが考えられる
+  - proto-vEB 構造の改良を次節で考える
+
+### 20.3: van Emde Boas 木
+
+- 前節の proto-vEB 構造によって目標の `Ｏ(lg lg n)` 実行時間に近づいたが、多くの操作の実行で再帰回数が多すぎるという問題を抱えた
+  - 本節では、proto-vEB 構造によく似たデータ構造を設計し、再帰のいくつかを回避するようにする
+- ここから先は 2 の任意のべき乗を u として許す
+- van Emde Boas(ファン・エンデ・ボス)木、あるいは vEB 木
+  - vEB 木は proto-vEB 構造が含まない次の 2 つの属性を含む
+    - vEB の最小要素を表す min
+      - ただし、min に格納された要素は cluster 配列が指す再帰的 vEB(√u) 木に出現しない(max は出現する)
+    - vEB の最大要素を表す max
+  - 図 20.6 参照
+- 属性 min と max が果たす役割
+  - 1: MINIMUM および MAXIMUM 操作は min あるいは max 値を返せばよいから、再帰をする必要がない
+  - 2: SUCCESSOR 操作において値 x の直後の値が high(x) の中にあるか否かを判定する再帰呼び出しを回避できる。PREDECESSOR と min に対しても同様
+  - 3: min と max が共に NIL ならばこの vEB 木は要素を持たない。min = max != NIL ならこの vEB 木はちょうど 1 個の要素を持つ。min と max が共に NIL ではなく、しかも min != max ならばこの vEB 木は 2 個以上の要素を持つ
+    - このように、min と max の値から vEB 木が要素を何個持つか定数時間で判定できる
+    - この能力は INSERT と DELETE 操作を助ける
+  - 4: 要素を持たない vEB 木に対しては min と max 更新するだけで要素が挿入できる。同様に要素をちょうど 1 個持つ vEB 木からの(この要素の)削除は min と max 属性を更新するだけで定数時間で実現できる
+- すると vEB 木操作を実現する再帰手続きはすべて漸化式 `T(u) <= T(√u) + Ｏ(1)` で表すことができ、これは `T(u) = Ｏ(lg lg u)` となる
+- 最小および最大要素の発見
+
+```
+VEB-TREE-MINIMUM(V)
+return V.min
+
+VEB-TREE-MAXIMUM(V)
+return V.max
+```
+
+- 集合への所属判定
+  - 実行時間は `Ｏ(lg lg u)`
+
+```
+VEB-TREE-MEMBER(V, x)
+if x == V.min または x == V.max
+  return TRUE
+elseif V.x == 2
+  return FALSE
+else
+  return VEB-TREE-MEMBER(V.cluster[high(x)], low(x))
+```
+
+- 直後および直前の要素の発見
+  - VEB-TREE-SUCCESSOR
+    - 1 回の再帰呼び出しが行われるが、普遍集合サイズが高々 √u、VEB-TREE-MINIMUM と VEB-TREE-MAXIMUM は `Ｏ(1)` 時間で実行できるので、最悪実行時間は `Ｏ(lg lg u)` となる
+  - VEB-TREE-PREDECESSOR
+    - 基本的には VEB-TREE-SUCCESSOR と対称(詳細は p460)。最悪時に `Ｏ(lg lg u)` で走る
+
+```
+VEB-TREE-SUCCESSOR(V, x)
+if V.u == 2
+  if x == 0 かつ V.max == 1
+    return 1
+  else
+    return NIL
+elseif V.min != NIL かつ x < V.min
+  return V.min
+else
+  max=low = VEB-TREE-MAXIMUM(V.cluster[high(x)])
+  if max-low != NIL かつ low(x) < max-low
+    offset = VEB-TREE-SUCCESSOR(V.cluster[high(x)], low(x))
+    return index(high(x), offset)
+  else
+    succ-cluster = VEB-TREE-SUCCESSOR(V.summary, high(x))
+    if succ-cluster == NIL
+      return NIL
+    else
+      offset = VEB-TREE-MINIMUM(V.cluster[succ-cluster])
+      return index(succ-cluster, offset)
+```
+
+- 要素の挿入
+  - まず空の vEB 木に対する要素の挿入は、以下のように再帰を必要としない
+  - 実行時間は `Ｏ(lg lg u)` となる
+
+```
+VEB-EMPTY-TREE-INSERT(V, x)
+V.min = x
+V.max = x
+
+VEB-TREE-INSERT(V, x)
+if V.min == NIL
+  VEB-EMPTY-TREE-INSERT(V, x)
+else
+  if x < V.min
+    x と V.min を交換する
+  if V.u > 2
+    if VEB-TREE-MINIMUM(V.cluster[high(x)]) == NIL
+      VEB-TREE-INSERT(V.summary, high(x))
+      VEB-EMPTY-TREE-INSERT(V.cluster[high(x)], low(x))
+    else
+      VEB-TREE-INSERT(V.cluster[high(x)], low(x))
+  if x > V.max
+    V.max = x
+```
+
+- 要素の削除
+  - VEB-TREE-DELETE(V, x) では x が VEB 木 V が表現する集合に属していると仮定する
+  - 2 つの VEB-TREE-DELETE が同時に起こるのは、x がそのクラスタの唯一の要素である場合
+    - これは 1-3 行を実行するだけで終了する
+  - よって、再帰呼び出しは最大 1 回しか起こらず、最悪実行時間は `Ｏ(lg lg u)` となる
+
+```
+VEB-TREE-DELETE(V, x)
+if V.min == V.max
+  V.min = NIL
+  V.max = NIL
+elseif V.u == 2
+  if x == 0
+    V.min = 1
+  else
+    V.min = 0
+  V.max = V.min
+else
+  if x == V.min
+    first-cluster = VEB-TREE-MINIMUM(V.summary)
+    x = index(first-cluster, VEB-TREE-MINIMUM(V.cluster[first-cluster]))
+    V.min = x
+  VEB-TREE-DELETE(V.cluster[high(x)], low(x))
+  if VEB-TREE-MINIMUM(V.cluster[high(x)]) == NIL
+    VEB-TREE-DELETE(V.summary, high(x))
+    if x == V.max
+      summary-max == VEB-TREE-MAXIMUM(V.summary)
+      if summary-max == NIL
+        V.max = V.min
+      else
+        V.max = index(summary-max, VEB-TREE-MAXIMUM(V.cluster[summary-max]))
+  elseif x == V.max
+    V.max = index(high(x), VEB-TREE-MAXIMUM(V.cluster[high(x)]))
+```
