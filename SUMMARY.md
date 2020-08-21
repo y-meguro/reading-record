@@ -14,6 +14,7 @@
   * [計算理論の基礎](/docs/algorithms/introduction_to_the_theory_of_computation.md)
   * [アルゴリズムイントロダクション](/docs/algorithms/introduction_to_algorithms.md)
   * [珠玉のプログラミング](/docs/algorithms/programming_pearls.md)
+  * [世界で戦うプログラミング力を鍛える本](/docs/algorithms/cracking_the_coding_interview.md)
 * English
   * [例解 和文英訳教本 (文法矯正編)](/docs/english/translation_from_japanese_into_english.md)
   * [英作文ハイパートレーニング 自由英作文編](/docs/english/hyper_training.md)
