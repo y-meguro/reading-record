@@ -105,7 +105,7 @@
     - Yours sincerely, の後にフルネーム
   - semi-formal(よく知っている人)
     - Best regards, の後に first name
-- Your name: Mike; MikeMike Wattie など
+- Your name: Mike; Mike Wattie など
   - 友達や家族なら first name
   - formal なら first and last name
     - 友達の場合でもフルネーム書いてよい
@@ -175,5 +175,52 @@ I would also appreciate any information you can offer about places for sightseei
 Thank you in advance for your kind cooperation.
 
 Yours faithfully,
+Mike Wattie
+```
+
+### 3.5: Giving information
+
+- どの情報を与えるか正確に特定することが大切
+
+```
+例
+
+You recently subscribed to a new magazine. A representative of the magazine has asked you to give some feedback on their magazine. Write a letter to the representative of the magazine that includes the following information:
+- details of why you bought the magazine
+- what you liked about the latest edition
+- any improvements you would recommend
+```
+
+- 使える表現
+  - To begin letters
+    - I am writing in response to your enquiry about ...
+    - I am writing with regard to ...
+    - I am writing to advise you that ...
+  - To end letters
+    - I hope that this information will be of some assistance.
+    - Please do not hesitate to contact me if you have any further questions.
+    - Do not hesitate to contact me should you require further assistance.
+  - Other useful phrases
+    - Please find enclosed a ...
+    - May I bring to your attention ...
+    - The following information may be of use to you ...
+    - I would also like to draw to your attention ...
+
+```
+解答例
+
+Dear Mrs. Brown,
+
+The purpose of this letter is to express my opinion about your magazine. I believe it is a wonderful idea to ask for the thoughts of your readers about your recently released publication.
+
+I purchased the magazine because it includes topics that relate to my hobby of bird watching. I often seek out new places to visit to take photos of birds and your magazine seems to provide lots of good recommendations.
+
+What I loved the most about your current issue was the article describing places to go bird watching in local national parks. I especially like the way you covered the latest developments in the parks that support birdwatchers. Moreover, I felt attracted by the images portrayed on the cover page.
+
+I would like to suggest you to continue producing material which is useful and enjoyable to read. Also, I suggest that you make the magazine more concise and with fewer images so it is lighter and even more appealing.
+
+I hope you find my comments and recommendations helpful.
+
+Yours sincerely,
 Mike Wattie
 ```
