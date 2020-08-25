@@ -272,3 +272,50 @@ Thank you in advance for your help in straightening out this matter.
 Yours faithfully,
 Mike Wattie
 ```
+
+### 3.7: Making an apology
+
+```
+例題
+
+Recently you had a party at your house. There was a lot of noise late at night and you disturbed your next door neighbour. Write a letter to your neighbour. In your letter:
+- explain the reasons for the noise
+- apologise
+- describe what action you will take to prevent it from happening again
+```
+
+- 使える表現
+  - To begin letters
+    - I am writing to sincerely apologise for ...
+    - Please accept my profuse apologies for ...
+    - I would like to apologise for ...
+  - Expressing regret
+    - Please accept my apology for ...
+    - I am sorry that I am unable to ...
+    - Regrettably, I cannot ...
+  - Making amends
+    - Please allow me to offer compensation for ...
+    - I insist on making up for your inconvenience by ...
+  - To end letters
+    - Once again, my apologies for the inconvenience caused.
+    - I hope that you will accept my apologies.
+    - I hope that you can overlook this regrettable error.
+
+```
+解答例
+
+Dear Mr and Mrs Smith,
+
+I am writing to sincerely apologise for the disturbance caused during my birthday party last Saturday night.
+
+I was celebrating my 25th birthday with my friends and approximately two hours after the party started, two people, who were friends of a friend, started arguing about an issue that is still unknown to me. Initially, it was just a discussion, but then it became a fight and I was forced to call the police.
+
+I deeply regret having interrupted your sleep. Please accept my most sincere apologies. The situation got out of control and noise at that point was inevitable. However, I understand that we all enjoy living in a peaceful neighbourhood and whatever happened at my party should not have disturbed you.
+
+I will refrain from holding parties in my unit in the future in order to avoid further problematic events in our residental area.
+
+Once again, my apologies for the inconvenience caused.
+
+Kind regards,
+Mike Wattie
+```
