@@ -109,3 +109,71 @@
   - 友達や家族なら first name
   - formal なら first and last name
     - 友達の場合でもフルネーム書いてよい
+
+### 3.3: Types of letters
+
+- Formality of letters
+  - 手紙の audience と purpose によって style を決定する
+  - formal letters
+    - ビジネスの知り合いや、知らない人に送る場合
+  - semi-formal letters
+    - 知人や友人、家族に送る場合
+    - ビジネスの手紙と比べると friendlier にする
+  - informal letters
+    - このタイプは IELTS のテストでは書かない
+    - スラングや省略を使う
+- Purposes of letters
+  - IELTS では以下のタイプの手紙を書くことになる
+    - Requesting information
+    - Giving information
+    - Making a complaint
+    - Making an apology
+    - Thanking someone
+
+### 3.4: Requesting information
+
+- polite tone で書く
+
+```
+例
+
+You are planning to spend a weekend at a hotel with your family.
+Write a letter to the hotel making the arrangements.
+Ask them the following
+- when you want to arrive and leave
+- what type of rooms you would like and ask how much they will cost
+- you are interested to know about activities and places of interest near the hotel
+```
+
+- 使える表現
+  - To begin letters
+    - I am writing to ask if you would be so generous as to ...
+    - I am writing to request your kind permission for ...
+    - I wonder if I might ask you for your valuable advice concerning ...
+  - Phrases to make requests
+    - Could you also provide details of ...
+    - I would also like to know ...
+    - In addition, could you tell me ...
+  - To end letters
+    - I hope that my request will not inconvenience you too much.
+    - I appreciate your time and attention to this matter.
+    - Thank you in advance for your kind cooperation.
+
+```
+解答例
+
+Dear Sir/Madam,
+
+I am writing to ask if you would be so kind as to give me some details about your hotel's accomodation.
+
+I would like to book accomodation for my family and I from the 11th of March until the 15th. On the 11th I would like to arrive late in the afternoon, and on the 15th, if possible, I would like to have a late check-out at about 4 pm.
+
+As we are two adults and a child, I would like to book a one-bedroom suite, if possible. I would also prefer a non-smoking room as my daughter has allergies. Please, let me know how much it would be for the entire length of our stay and also whether the price includes anything extra like breakfast.
+
+I would also appreciate any information you can offer about places for sightseeing and leisure activities as we will be spending a few days in the town nearby.
+
+Thank you in advance for your kind cooperation.
+
+Yours faithfully,
+Mike Wattie
+```
