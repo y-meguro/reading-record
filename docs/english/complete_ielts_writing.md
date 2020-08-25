@@ -319,3 +319,47 @@ Once again, my apologies for the inconvenience caused.
 Kind regards,
 Mike Wattie
 ```
+
+### 3.8: Thanking someone
+
+```
+例題
+
+A friend from overseas recently sent you a gift in the mail. Write a letter to your friend to thnak him/her. In your letter:
+- say how you felt when you received the present
+- describe what you like about it
+- explain how you will use the present
+```
+
+- 使える表現
+  - To begin letters
+    - I am writing to thank you for ...
+    - I am writing to express my gratitude for ...
+    - I would like to tell how cheerful I felt when ...
+  - Giving thanks
+    - I am indeed indebted to you for ...
+    - I very much appreciated your ...
+    - I am extremely grateful to you for ...
+  - To end letters
+    - Once again thank you for ...
+    - Once again I really appreciated the ...
+    - I would like to once again express my gratitude for ...
+
+```
+解答例
+
+Dear Peter,
+
+It seems like ages since we were together at university. I am writing to express my gratitude for remembering my birthday.
+
+I felt really excited when I found a parcel from you in my letter box. I was really touched that you have still kept in touch and what's more, you remembered my birthdday. It really makes me feel we have a close and special friendship despite the physical distance between us.
+
+When I opened up the box and I found that you had sent a bottle of my favourite maple syrup I was really happy. As you know I just love that sweet syrup and I also liked the oak casket that it was packaged in.
+
+Every Sunday, I am going to pour some of the syrup over my pancakes. I might also make some of those maple syrup toffees I used to make when we were flatmates.
+
+Once again I really appreciated you remembering my birthday.
+
+Cheers,
+Mike
+```
