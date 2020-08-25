@@ -135,7 +135,7 @@
 - polite tone で書く
 
 ```
-例
+例題
 
 You are planning to spend a weekend at a hotel with your family.
 Write a letter to the hotel making the arrangements.
@@ -183,7 +183,7 @@ Mike Wattie
 - どの情報を与えるか正確に特定することが大切
 
 ```
-例
+例題
 
 You recently subscribed to a new magazine. A representative of the magazine has asked you to give some feedback on their magazine. Write a letter to the representative of the magazine that includes the following information:
 - details of why you bought the magazine
@@ -222,5 +222,53 @@ I would like to suggest you to continue producing material which is useful and e
 I hope you find my comments and recommendations helpful.
 
 Yours sincerely,
+Mike Wattie
+```
+
+### 3.6: Making a complaint
+
+```
+例題
+
+Write a letter of complaint to a store where you purchased a faulty new refrigerator. In your letter explain the following:
+- where and when you purchased the refrigerator
+- what is wrong with it
+- what action you would like the store to take
+```
+
+- 使える表現
+  - To begin letters
+    - I am writing to express my dissatisfaction with ...
+    - I regret to inform you how disappointed I was with ...
+    - I am writing to draw your attention to the problem of ...
+  - Politely making a complaint
+    - I would like to draw your attention ...
+    - I would like to respectfully point out that ...
+    - In order to rectify the situation I will ...
+  - Politely asking for action to be taken ...
+    - Due to the discomfort and inconvenience we respectfully request compensation for ...
+    - I believe the best way to rectify the situation is ...
+    - Could you please put this right by ...
+  - To end letters
+    - I hope this matter will be resolved as soon as possible.
+    - I hope this matter will receive your immediate attention.
+    - I would like to request full compensation for ...
+
+```
+解答例
+
+Dear Sir/Madam,
+
+I am writing to express my dissatisfaction with a product I purchased recently from one of your stores.
+
+I recently bought a Samsung self-defrosting refrigerator from your store on Grote St. in Adelaide. I paid cash for it and it was delivered to my house on the 11th of June. The model number is G11412, and it is shown on page 27 of your spring catalogue.
+
+There is a problem with the defrosting system of the refrigerator. Every time, the refrigerator defrosts itself, a puddle of water forms on the floor in front of it. This is both a nuisance and a danger as someone may slip and fall.
+
+I hope this matter will receive your immediate attention. Please contact me during the day on my mobile 094-980-2675 to arrange a time for a repair man to fix the defrost system.
+
+Thank you in advance for your help in straightening out this matter.
+
+Yours faithfully,
 Mike Wattie
 ```
