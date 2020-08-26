@@ -448,3 +448,66 @@ Mike
   - He or she
     - 複数形を使えば、この he or she を避けられる
   - Prepositions(前置詞)
+
+## 4: Task2 Essay Writing
+
+### 4.1: Overview
+
+- 最低 250 語、だいたい 40 分で書く
+
+```
+例題
+
+Write about the following topic:
+Some people believe that the fast pace and stress of modern life is having a negative effect on families. Do you agree or disagree?
+```
+
+- 3 つのタイプがある
+  - opinion
+    - Requirements
+      - What is your opinion and why?
+    - 例
+      - Computers are being used more and more in education and some say there will soon be no role for the teacher in education. To what extent do you agree or disagree?
+  - both sides + opinion
+    - Requirements
+      - Discuss two aspects equally of this argument and then give your own opinion.
+    - 例
+      - Computers are being used more and more in education. Some people say that this is a positive trend, while others argue that it is leading to negative consequences. Discuss both of this argument and then give your own opinion.
+  - two question essay
+    - Requirements
+      - Discuss two questions equally.
+    - 例
+      - Computers are being used more and more in education. What are some of the problems it causes? What are some of the possible solutions?
+- Structuring the three types of essay(p120 に表あり)
+  - Opinion
+    - Introduction
+      - Rephrase question
+      - opinion = (how much) reasons
+      - "I totally agree because ..."
+    - Body
+      - reason 1
+      - reason 2
+      - reason 3 / concession
+    - Final paragraph
+      - Restating of your opinion + summary of reasons
+  - Both sides + opinion
+    - Introduction
+      - Rephrase question
+      - "This essay discusses ..." + [both sides] and [opinion]
+    - Body
+      - Side 1 advantages
+      - Side 2 advantages
+      - opinion は body の外に出す
+    - Final paragraph
+      - Your opinion
+      - State that both sides are important/have merits
+      - State which one is more important/better
+  - Two question Essay
+    - Introduction
+      - Rephrase question
+      - "This essay discusses ..." + [question 1] and [question 2]
+    - Body
+      - question 1
+      - question 2
+    - Final paragraph
+      - Summary of question 1 and 2
