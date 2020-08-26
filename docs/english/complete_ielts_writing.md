@@ -399,3 +399,52 @@ Mike
   - I am indeed indebted to you for ...
   - I very much appreciated your ...
   - I am extremely grateful to you for ...
+
+### 3.10: Common errors
+
+- Task achievement
+  - Poor time management
+    - フレーズをしっかり覚えておくと、時間が足りなくなりそうな時に素早くミスなく書ける
+  - Not responding to all parts of the task
+    - 3 つの bullet point にちゃんと答えること
+  - Not responding to all parts of the bullet point
+    - 各 bullet point でたまに 2 つ以上のことが要求される場合もある。こういう時に全てに対してちゃんと答えること
+    - 例: when you want to arrive and leave
+  - Not giving a balanced answer to all three questions
+    - 各ポイントを 1 つのパラグラフにし、それぞれの大体の大きさをそろえる
+  - Inappropriate tone
+    - 良くない例
+      - Too aggressive a tone in a letter of complaint
+        - NG: If you do not solve this immediately I will call my lawyer and sue you in court.
+        - OK: I would appreciate your immediate attention to this matter.
+  - Errors with the letter format
+    - 手紙なので、名前は body ではなく最後に書く
+- Cohesion and coherence
+  - Not clearly answering a question in one place
+    - ポイントごとにパラグラフを作ると良い
+  - Poor topic sentence
+    - ポイントの質問に対する答えから、パラグラフを始める
+- Vocabulary
+  - "S" endings of words
+    - 単数 / 複数形に注意
+  - Other errors with word endings and form
+    - "ed" のあるなし
+    - 名詞か動詞か
+  - Repeating words excessively
+    - 語彙の広さを見せるために、同じ言葉を繰り返すのではなく rephrase したほうがよい
+  - Colloquial expressions
+    - 文章で使わない口語は避ける
+  - Cliches
+    - 使われすぎている表現は ugly と捉えられる
+      - At this poit in time ...
+      - At the end of the day ...
+      - Just like every coin has two sides ...
+- Grammer
+  - Articles(冠詞)
+    - a / an / the に注意
+  - Avoid using repetitive sentence structure
+    - I am の連続など
+  - Avoid writing short simple sentences
+  - He or she
+    - 複数形を使えば、この he or she を避けられる
+  - Prepositions(前置詞)
