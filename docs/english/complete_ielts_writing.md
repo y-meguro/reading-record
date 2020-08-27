@@ -511,3 +511,133 @@ Some people believe that the fast pace and stress of modern life is having a neg
       - question 2
     - Final paragraph
       - Summary of question 1 and 2
+
+### 4.2: Opinion essay
+
+```
+例題
+
+Some people believe that the fast pace and stress of modern life is having a negative effect on families.
+To what extent do you agree or disagree?
+```
+
+- Task Analysis
+  - すべての task には topic と question が含まれている
+  - その両方について、ちゃんと答えることが必要
+  - 例題の topic
+    - fast pace **and** stress と書かれているので、両方に答えることが必要
+  - 例題の question
+    - まず agree なのか disagree なのか答える必要があり、さらに what **extent** do you 〜 なので、どの程度、賛成または反対なのか答える必要がある
+  - extent の記述がなくても、どの程度か記述するのはいいやり方
+  - 100% の場合
+    - totally / completely
+  - 全てではない場合
+    - somewhat / partly
+  - 50-50 は不明瞭になるので、やめたほうがいい
+- Planning your essay
+  - 1: Underline key vocabulary in the topic and write words with the same or related meaning
+  - 2: Decide what kind of response is needed.
+  - 3: Brainstorm key points for the answer
+  - 4: Decide on your position(totally agree / somewhat agree / somewhat disagree / totally disagree)
+    - 書きやすいのを選べば良い
+  - 5: Decide on the structure of the essay
+    - 強いものから順に書く
+- Steps in writing your essay
+  - Introduction
+    - 1: Paraphrase the question
+      - 例えば名詞を動詞にする
+    - 2: State your position [totally / strongly / somewhat + agree / disagree]
+      - 6 か 7 のスコアでいいならシンプルに主張を述べるだけでいいが、8 を狙うなら主張に加えて、理由も書いたほうがいい
+  - Body
+    - 2 つか 3 つのパラグラフを書いて、それぞれで 1 つの理由を主張する
+      - 2 つの場合はより詳細に書く場合、3 つの場合は 1 つ 1 つは薄くなるが、問題と自分の意見によって柔軟に変えてよい
+      - somewhat agree の場合に 2 つ賛成意見、1 つ反対意見を述べるなど
+    - 1: Write topic sentences for each body paragraph
+      - Sequencing word + topic + reason の形がいい
+      - 例: *The main reason why I believe* family life is being compromised *is because families have less time to be with each other.*
+    - 2: Write supporting sentences for the topic sentences
+      - key point を作る 3 つのやり方
+        - explanation / example / adding details
+  - Conclusion
+    - 1: Send a signal you are concluding your essay
+      - `in conclusion` はどんな場合でも使いやすい
+    - 2: Restate your position
+    - 3: Summarise the main points
+      - 理想的には body で使った言葉と違う言葉を使うほうがいい
+    - 4: Give your final opinion or recommendation / restate your position
+      - 時間があるなら final opinion か recommendation を書けると 8 や 9 のスコアが狙える
+
+```
+解答例 1: somewhat agree の場合
+
+Many people feel that family life is being harmed by the high-speed and pressure of contemporary lifestyles. *I somewhat agree with this opinion* because the fast pace leads to less time for families to be together, and stress leads to arguments among family members; however, due to the increased time pressure and stress families are forced to cooperate more, which brings them closer together.
+
+*The main reason why I believe* family life is being compromised is because families have less time to be with each other. As individual family members are busier at work and with their social lives, they have less time to spend with their family. As well as this, people have many things they have to do these days such as checking e-mail, updating their online social status and so less time is left for family life. To illustrate, I spend about two hours online every night attending to daily correspondence before chatting with my family members.
+
+*In addition,* the pressure of life these days means that even when families do get together arguments are more likely. This is because everyone feels tired and they are more likely to get irritated and to react to their heightened emotional levels.
+
+*However,* it does seem reasonable that this pressure may also lead to positive outcomes in some families. One such possibility is that family members will cooperate more in order to overcome time limitations. For instance, they may share household chores, so that everybody has time to relax afterwards.
+
+*In conclusion,* *I somewhat believe* that the rapid pace and stressful nature of contemporary lifestyles are having negative consequences on family relationships. This is because family members have less time, and when they are together they feel less relaxed. However, I admit that sometimes adversity can bring people closer together. Given this situation, it seems that family members should try to be more supportive to one another and also parents need to set aside regular times for families to relax together.
+
+[350 words]
+```
+
+- Template for opinion essay
+  - Introduction
+    - There is currently a contentious argument over whether XYZ
+    - I totally agree/disagree with this opinion because [reason 1 + reason 2]
+  - Paragraph 2
+    - The main reason why I believe / don't believe XYZ is because ... [reason 1]
+  - Paragraph 3
+    - Another reason why I support / don't support the notion that XYZ is due to the fact that ... [reason 2]
+  - Conclusion
+    - In conclusion, I completely agree/disagree that XYZ because [rephrase reason 1] and [rephrase reason 2].
+    - Given this situation, it seems that [give a final recommendation or opinion]
+
+```
+解答例 2: totally agree の場合
+
+*There is currently a contentious argument over whether* family life is being harmed by the high-speed and pressure of contemporary lifestyles. *I totally agree with this opinion because* the fast pace leads to less time for families to be together, and stress leads to arguments among family members.
+
+*The main reason why I believe* family life is being compromised is because families have less time to be with each other. This is due to family members being busier at work and with their social lives. As well as this, people have many things they have to do these days such as checking e-mail, updating their online social status and so less time is left for family life. To illustrate, I spend about two hours online every night attending to daily correspondence before chatting with my family members, whereas ten years ago I would spend time with my family as soon as I walked in the door.
+
+*Another reason why I supported the notion that* families are being impacted negatively is that the pressure of life these days mean that even when families do get together arguments are more likely. This is because everyone feels tired and they are more likely to get irritated and to react to their heightened emotional levels.
+
+*In conclusion, I completely agree that* the rapid pace and stressful nature of contemporary lifestyles are having negative consequences on family relationships. This is because family members have less time, and when they are together they feel less relaxed. *Given this situation, it seems that* family members should try to be more supportive to one another and also parents need to set aside regular times for families to relax together.
+
+[281 words]
+```
+
+- outweigh の場合
+  - both sides について述べたほうがよい
+  - 他の opinion essay と同様に、どちらが勝っているか introduction と conclusion で述べる
+  - conclusion の最後には recommendation を述べる
+
+```
+解答例 3: outweigh の場合
+
+例題
+
+Many people believe that the government should encourage industries and business to move from large cities to the countryside.
+Do you think that the advantages outweigh the disadvantages?
+
+解答
+
+Nowadays, there is a contentious issue regarding whether the authorities should provide incentives for factories and other companies to relocate from metropolitan areas to rural sites. In my opinion, the merits outweigh the drawbacks.
+
+There are *considerable benefits* to locating companies in regional areas. For businesses themselves, they can have a significant decline in costs, such as the leases on premises, which are usually dramatically higher in the big cities. It is also likely to benefit rural communities by boosting their economies and providing job opportunities in the neighbourhood and preventing the need for them to make a long commute to work in the city. Finally, by locating businesses in remote areas it can benefit cities by reducing overcrowding, traffic congestion, and pollution levels.
+
+However, there are *potential drawbacks* to companies and businesses moving their premises outside metropolises. The main issue is that companies located in regional areas may be further away from their employees. This can make it more difficult to find labour to work in the company. As well as this, the companies may be located further away from their customers, which might weaken their relationships with their customers.
+
+In conclusion, the merits to businesses relocating in more remote areas seem to outweigh the drawbacks as it can benefit the companies themselves, the local communities, and also the metropolitan areas. However, companies may face challenges to find labour and maintain close relationships with their customres. Given this situation, it seems that the government should offer incentives to encourage companies to relocate to the countryside.
+
+[256 words]
+```
+
+- Common Mistakes
+  - Unclear opinion
+    - extent を書いていない場合など
+  - Choosing the wrong side to argue
+    - 書きやすい方を選んで書けば良い
+  - Contradicting your opinion
