@@ -3,6 +3,7 @@
 ## 本
 
 - [世界で戦うプログラミング力を鍛える本](https://amzn.to/2FFq2Hf)
+  - 参考: [CRACKING the CODING INTERVIEW](http://www.crackingthecodinginterview.com/)
 
 ## かかった時間
 
@@ -280,3 +281,7 @@
   - 強力な関係性を構築する
   - 自分の望むものを求める
   - 面接対策を続ける
+
+## 9: 問題
+
+- 自分の解答は [y-meguro/competitive-programming/cracking-the-coding-interview](https://github.com/y-meguro/competitive-programming/tree/master/cracking-the-coding-interview) に記載
