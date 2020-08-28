@@ -641,3 +641,102 @@ In conclusion, the merits to businesses relocating in more remote areas seem to 
   - Choosing the wrong side to argue
     - 書きやすい方を選んで書けば良い
   - Contradicting your opinion
+
+### 4.3: Both sides and opinion essay
+
+```
+例題
+
+Some people think that the education system should only focus on preparing students for employment, while others believe it has other important functions.
+Discuss both sides and then give your own opinion.
+```
+
+- Task analysis
+  - このタイプの topic は 2 つの視点を説明しているので、それぞれが何か正確に把握する
+  - 両方の視点について議論した後、自分の意見も記載する
+- Planning your essay
+  - 1: Underline key vocabulary in the topic and write words with the same or related meaning
+  - 2: Decide what kind of response is needed
+  - 3: Brainstorm key points for the answer
+  - 4: Decide on the structure of the essay
+    - 例題の場合だと、Paragraph1: Introduction / Paragraph2: A についての議論 / Paragraph3: B についての議論 / Paragraph4: Conclusion
+- Steps in writing your essay
+  - Introduction
+    - 1: Paraphrase the question
+    - 2: Say what the essay is about
+      - 以下の両方の表現はこのタイプの質問ならいつでも使える
+      - This essay discusses both sides of this argument, and then I will give my own perspective.
+      - The purpose of this essay is to analyse both sides of this argument and then I will explain why I believe the view that schools should have other functions is stronger.
+  - Body
+    - introduction の後、2 つの body paragraph が必要
+    - 各サイドについて 1 つ paragraph を使う
+    - body の構造のイメージ
+      - 1: topic sentence
+      - 2: 1st main point
+      - 3: explain the main point
+      - 4: 例で main point を説明
+      - 5: 2nd main point
+      - 6: explain or give an example to illustrate the 2nd main point
+    - 1: Write topic sentences for each body paragraph
+    - 2: Write supporting sentences for the topic sentences
+      - explanation / adding details / example を使って説明する
+  - Conclusion
+    - 基本的な構造
+      - 1: Signal that this is the concluding paragraph with the phrase: *In conclusion,*
+      - 2: State that both sides of the argument have merits.
+      - 3: Say which side you support more strongly.
+      - 4: Give a justification for supporting this side more strongly.
+
+```
+解答例1
+
+Many people feel that getting pupils ready for their careers should be the main focus of schools, whereas others believe that schools should have additional purposes. The purpose of this essay is to analyse both sides of this argument and then I will explain why I believe the view that schools should have other functions is stronger.
+
+There are merits of schools only focusing on preparing young people for their working lives. If young people are better prepared for their careers, they will be more successful in their working lives. As well as this, they will also make more money and be able to support themselves better. To illustrate, some recent stories in the media highlighted that students who finish high school are less likely to be unemployed, and more likely to earn higher salaries. In addition, by schools preparing young people for jobs, there will be a better-prepared workforce. This benefits society by raising productivity and ensuring that employers have the necessary labour they need.
+
+However, there are also advantages of schools having other functions. First of all, they should teach students skills to make them well-rounded. By teaching communication skills and how to use technology, the students will be better-rounded individuals. Clearly, these are important skills in today's society and so they should be learnt at school. As well as this, schools should teach morals and ethics because this will make the society better. Many people feel that this aspect of schooling has become neglected, and has led to a deterioration of society.
+
+In conclusion, *I believe* both sides of the argument have their merits. On balance, however, it seems that schools should have other functions. This is because if the student are well rounded, they will be more successful in their lives and contribute more to society.
+```
+
+- Template for a both sides and opinion essay
+
+```
+A highly controversial issue today relates to whether to have ...[issue]... or not. In this essay, I am going to examine this question from both points of view and then give my own opinion on the matter.
+
+There are people who argue that the benifits of ... considerably outweigh its disadvantages. The main reason for believing this is that ... . It is also possible to say that ... . One good illustration of this is ... .
+
+On the other hand, it is also possible to make the opposing case. It is often argued that ... . People often have this opinion because ... . A second point is that ... . A particularly good example here is ... .
+
+In conclusion, I believe both arguments have their merits. On balance, however, I feel that ... . This is because ... .
+```
+
+```
+解答例 2: テンプレートを使った場合
+
+例題
+
+Some people believe that there should be the death penalty for extremely serious crimes. Other believe that it is not morally correct to kill criminals.
+Discuss both these views and give your own opinion.
+
+解答
+
+A highly controversial issue today relates to whether to have *capital punishment* or not. In this essay, I am going to examine this question from both points of view and then give my own opinion on the matter.
+
+There are people who argue that the benifits of *killing violent criminals* considerably outweigh its disadvantages. The main reason for believing this is that *the fear of execution acts as a deterrent to commit serious crimes such as rape and murder*. It is also possible to say that *the execution of a criminal may bring relief to the suffering victims*. One good illustration of this is *when Saddam Hussein was executed. Many of the victims who were persecuted under his rule expressed joy and relief when he was finally captured and killed*.
+
+On the other hand, it is also possible to make the opposing case. It is often argued that *sentencing criminals to death is just committing another murder*. People often have this opinion because *they think that it is immoral to take another person's life, no matter what the reason is*. A second point is that *many religions are opposed to any form of murder*. A particularly good example here is *from the bible, which lists killing another person as one of the Ten Commandments that should not be broken*.
+
+In conclusion, I believe both arguments have their merits. On balance, however, I feel that *capital punishment is justified*. This is because *in cases of extreme crime and that deterring crime is more important than taking the moral high ground*.
+```
+
+- More Sample Question
+  - Situation 1: discuss the advantages and disadvantages of one thing
+  - Situation 2: discuss the advantages of two different things
+- Common mistakes
+  - Putting your opinion in the introduction of the essay
+    - 最後の paragraph までは自分の意見を書かないほうがよい
+  - Putting your opinion in the body of the essay
+    - 上と同様、body にも書かない
+  - Not writing enough for your opinion
+    - 意見を 1 行で述べるだけでなく、理由も書く
