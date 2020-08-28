@@ -15,6 +15,10 @@
   * [アルゴリズムイントロダクション](/docs/algorithms/introduction_to_algorithms.md)
   * [珠玉のプログラミング](/docs/algorithms/programming_pearls.md)
   * [世界で戦うプログラミング力を鍛える本](/docs/algorithms/cracking_the_coding_interview.md)
+* Math
+  * [微分積分キャンパス・ゼミ](/docs/math/mathema_infinitesimal_calculus.md)
+  * [線形代数キャンパス・ゼミ](/docs/math/mathema_linear_algebra.md)
+  * [確率統計キャンパス・ゼミ](/docs/math/mathema_statistics.md)
 * English
   * [例解 和文英訳教本 (文法矯正編)](/docs/english/translation_from_japanese_into_english.md)
   * [英作文ハイパートレーニング 自由英作文編](/docs/english/hyper_training.md)
