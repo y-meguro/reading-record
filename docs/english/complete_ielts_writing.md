@@ -740,3 +740,114 @@ In conclusion, I believe both arguments have their merits. On balance, however, 
     - 上と同様、body にも書かない
   - Not writing enough for your opinion
     - 意見を 1 行で述べるだけでなく、理由も書く
+
+### 4.4: Two question essay
+
+```
+例題
+
+Some people think that in the future lots of changes will occur that will improve our society.
+Do you agree or disagree?
+What kind of changes will occur?
+```
+
+- Task analysis
+  - topic と 2 つの question を正しく理解する
+- Planning the essay
+  - 1: Underline key vocabulary in the topic and write words with the same or related meaning
+  - 2: Decide what kind of response is needed
+  - 3: Brainstorm key points for the answer
+  - 4: Decide on the structure of the essay
+    - introduction / question 1 / question 2 / conclusion
+- Steps in writing your essay
+  - Introduction
+    - 1: Paraphrase the question
+    - 2: Say what the essay is about
+      - `This essay discusses` は使える
+  - Body
+    - introduction の後、2 つの body paragraph が必要
+    - 各質問について 1 つ paragraph を使う
+    - body の構造のイメージ
+      - 1: topic sentence
+      - 2: main point の紹介
+      - 3: main point の説明
+      - 4: 例で main point を説明
+      - 5: minor point
+      - 6: explain or give an example to illustrate the minor point
+    - 1: Write topic sentences for each body paragraph
+    - 2: Write supporting sentences for the topic sentences
+      - explanation / adding details / example を使って説明する
+  - Conclusion
+    - 基本的な構造
+      - 1: Signal that this is the concluding paragraph with the phrase: *In conclusion,*
+      - 2: Summarise your main points for each question.
+      - 3: Give a final opinion or recommendation based on the summary.
+
+```
+解答例 1
+
+例題
+
+In the future many change will occur and many people that will improve our society.
+Do you agree or disagree?
+What kind of changes will occur?
+
+解答
+
+As a result of developments that are taking place, many people believe that life will become better. This essay discusses the reasons why the changes that are coming are positive, and also suggests what kind of changes will occur.
+
+The changes that are coming are positive for two main reasons. The main reason is that they will make our lives more convenient. We are likely to have more free time as a result of technology taking over many of our everyday tasks. For example, we may have robots capable of doing many household chores, and this will enable us to have more free time for enjoyment and relaxation. Another factor is that our recreational time will be enhanced by new technologies that make our entertainment even more fun. If we enjoy ourselves more we will be happier and more relaxed.
+
+There are two main types of developments that are likely to occur. The first of these is time-saving technologies. Future enhancements of robotics are likely to lead to even more household tasks being performed by machines. As well as this, the entertainment industry looks likely to soon make enhancements to our recrational experiences by making new technologies available. A good example of this is 3-D television, which will make watching movies more fun.
+
+In conclusion, the future looks promising because we will have technology takeover many of life's mundane tasks and we'll have better forms of entertainment. The most likely changes appear to be technologies to save us time and also enhance our leisure time. This means that we are likely to have more time for relaxation and better ways to spend it.
+```
+
+- Template for a two question essay
+  - このタイプはテンプレートを標準化するのが難しい
+  - Introduction
+    - Rephrase the topic
+    - this essay discusses ... [question 1] + [question 2]
+  - Body
+    - Question 1 [try to write 2 main points to respond to this question]
+    - Question 2 [try to write 2 main points to respond to this question]
+  - Conclusion
+    - In conclusion,
+    - [summarise the 2 main points about question 1]
+    - [summarise the 2 main points about question 2]
+
+```
+... is becoming increasingly serious in many nations. Although ... threaten[s] many societies, its/their effects can also be combated successfully. This essay looks at some of the problems caused by ... on society, and suggests some solutions to the problems.
+
+... causes multiple problems. The ... effects are very obvious. For example, ... . In some cases, such as ... even leads to (death). The second effect is ... . People who ... become ... .
+
+However, the menace of ... can be fought. Education is the main way to tackle this issue. People need to be aware of the effects so that they can avoid this problem. In addition, the government could also ... . This is a good approach because ... .
+
+In conclusion, ... is a serious issue because it causes harmful effects on people's health and people who are ... . The best approaches to deal with it are to educate people about its damaging effects, and also for the government to ... . Although the problem is unlikely to be entirely eliminated in the short term there are concrete steps to reduce the effects it is having on the current society.
+
+[175 words]
+```
+
+```
+解答例 2: テンプレートを使った場合
+
+例題
+
+The use of illegal drugs, such as heroin and cocaine, are becoming more and more common in many countries.
+What are some of the problems associated with drug abuse, and what are some of the possible solutions?
+
+解答
+
+*Drug abuse* is becoming increasingly serious in many nations. Although *drugs* threaten[s] many societies, its/their effects can also be combated successfully. This essay looks at some of the problems caused by *drug use* on society, and suggests some solutions to the problems.
+
+*Drug abuse* causes multiple problems for countries and communities. The *medical* effects are very obvious. For example, *addicts abuse their bodies and neglect their health, and so eventually require expensive treatment or hospitalization*. In some cases, such as *Marilyn Monroe*, a *drug overdose* even leads to *death*. The second effect is *crime*. People who *take drugs* become *crazy and irrational and often cause harm and danger to themselves and others*.
+
+However, the menace of *drugs* can be fought. Education is the main way to tackle this issue. People need to be aware of the effects so that they can avoid this problem. In addition, the government could also *use infomercials to educate their citizens*. This is a good approach because *they can alert all citizens about the negative aspects of using drugs*.
+
+In conclusion, *drug abuse* is a serious issue because it causes harmful effects on people's health and people who are *high often commit crimes*. The best approaches to deal with it are to educate people about its damaging effects, and also for the government *to ensure all people are aware of the consequences through public service advertising*. Although the problem is unlikely to be entirely eliminated in the short term there are concrete steps to reduce the effects it is having on the current society.
+```
+
+- Common mistakes
+  - Not responding fully to both questions
+  - Not introducing BOTH questions in the introduction
+    - introduction の中で両方の質問について触れること
