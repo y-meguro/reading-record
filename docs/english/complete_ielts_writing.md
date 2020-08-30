@@ -912,3 +912,19 @@ In conclusion, *drug abuse* is a serious issue because it causes harmful effects
   - Avoid writing short simple sentences
   - He or she
     - 複数形を使えば、この he or she を避けられる
+
+### 4.6: Improving grammar
+
+- Criteria for grammar
+  - uses a variety of complex structures
+  - produces frequent error-free sentences
+  - has good control of grammar and punctuation but may make a few errors
+- Develop ways of writing complex sentences
+  - 仮定法や関係詞節を使うと良い
+  - Conditional sentences(仮定法)
+    - 上手く使えると grammar score を上げられる
+  - Relative clauses(関係詞節)
+    - who / which / where / whose / that を使う
+- Reducing errors
+  - 冠詞(a / an / the)
+  - 前置詞
