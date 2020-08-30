@@ -439,7 +439,7 @@ Mike
       - At this poit in time ...
       - At the end of the day ...
       - Just like every coin has two sides ...
-- Grammer
+- Grammar
   - Articles(冠詞)
     - a / an / the に注意
   - Avoid using repetitive sentence structure
@@ -851,3 +851,64 @@ In conclusion, *drug abuse* is a serious issue because it causes harmful effects
   - Not responding fully to both questions
   - Not introducing BOTH questions in the introduction
     - introduction の中で両方の質問について触れること
+
+### 4.5: Improving your score
+
+- Common mistakes with task response
+  - Poor time management
+  - Not responding to all parts of the task
+  - Misstating the topic
+    - introduction の時点で一般化しすぎたり、具体化しすぎたり、違うポイントから話したりしないこと
+  - Not fully answering the question
+  - Misstating the question
+  - Over-generalisation
+- Improving task response
+  - Read the task carefully
+  - Planning
+    - 少なくとも 5 分はかける
+  - Developing strong main ideas
+    - サンプル問題をたくさん解いて練習する
+  - Developing your ideas well
+    - main idea をうまくサポートできるように練習する
+  - Use an appropriate structure
+- Common errors with cohesion and coherence
+  - Avoid basic sequencing words
+    - firstly / secondly などは避ける。代わりに The main benefit is that や As well as this, を使う
+  - Avoid unnecessary sentence elements
+  - Incorrect use of conjunctions
+    - for / and / nor / but / or / yet / so の FANBOYS を正しく使う
+  - Not using an appropriate structure for the question type
+  - Avoid irrelevant sentences
+  - Improving cohesion and coherence
+    - 書く前にプランを立てる
+    - Use sequencing words and connecting phrases
+    - Avoid errors with word choices
+    - Avoid unnecessarily complicated structures and grammar
+    - Learn how to develop your ideas in paragraphs
+      - explanation / adding details / example を使って説明する
+- Common errors with vocabulary
+  - "S" endings of words
+    - 単数 / 複数形に注意
+  - Other errors with word endings and form
+    - "ed" のあるなし
+    - 名詞か動詞か
+  - Repeating words excessively
+    - 語彙の広さを見せるために、同じ言葉を繰り返すのではなく rephrase したほうがよい
+  - Noun trains
+    - "application of pesticides" のほうが "pesticides application" よりわかりやすい
+  - Obvious memorised language that is inappropriately applied
+    - 覚えたフレーズを不適切に使わないよう注意
+  - Colloquial expressions
+    - 文章で使わない口語は避ける
+  - Cliches
+    - 使われすぎている表現は ugly と捉えられる
+- Improving vocabulary
+  - Rephrase the task
+    - rephrase の練習する
+  - Use high-level words where possible
+    - language test でもあることを意識する
+- Common errors with grammar
+  - 冠詞
+  - Avoid writing short simple sentences
+  - He or she
+    - 複数形を使えば、この he or she を避けられる
