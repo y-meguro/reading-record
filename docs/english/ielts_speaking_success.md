@@ -18,4 +18,21 @@
 
 # 読書メモ
 
-## 1
+## 1: Introduction
+
+- speaking のテストは 11-14 分、3 つのパートに分かれている
+- Part 1: Short question and answers about familiar topics
+  - 4-5 分で自分のことや自分の国のことについて聞かれる
+  - 最大で 3 つのトピックがあり、それぞれ最大で 4 問の質問がある
+  - The first topic will be about whether you work or study, the place you are living in, or the place you are from.
+  - 他の 2 つのトピックは、趣味、休日、スポーツ、娯楽について聞かれる
+- Part2: Long Turn
+  - トピックが書かれたカードが渡され、1 分で準備し、1-2 分で答える
+    - 可能であれば 2 分話すようにする
+  - トピックは person, place, object, activity, or experience について述べている
+  - サブトピックもあり、解答の計画を立てる上で助けになる
+  - 試験官はパートの終わりに 1 つか 2 つの質問をするので、簡潔に答える
+- Part3: Discussion
+  - part2 のトピックを使って 4-5 分質問される
+  - Question typically ask you to compare, analyze, speculate, or give your opinion on the given topic.
+  - 能力を測るために、試験官はつっこんで質問してくる
