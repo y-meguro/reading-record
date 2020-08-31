@@ -928,3 +928,15 @@ In conclusion, *drug abuse* is a serious issue because it causes harmful effects
 - Reducing errors
   - 冠詞(a / an / the)
   - 前置詞
+
+### 4.7: Vocabulary for common topics
+
+- Anki に追加した
+  - Education
+  - Health
+  - Media
+  - Technology
+  - Crime
+  - The environment
+- Useful linking words and phrases
+  - [ieltsanswers Writing Test Vocabulary - ieltsanswers](https://www.ieltsanswers.com/writing-vocabulary.html)
