@@ -127,7 +127,15 @@
   - lim(x -> 0) sinx / x = 1
   - lim(x -> 0) tanx / x = 1
   - lim(x -> 0) (1 - cosx) / x^2 = 1 / 2
+
+## 2: 微分法とその応用(1 変数関数)
+
+### 2.1: 微分係数と導関数
+
 - 指数・対数関数の極限公式
   - lim(x -> 0) (e^x - 1) / x = 1
   - lim(x -> 0) log(1 + x) / x = 1
   - lim(x -> 0) (1 + x)^1/x = e
+  - lim(x -> 0) (1 + 1/x)^x = e
+- 三角関数の和積の公式、積和の公式
+  - [積和の公式.和積の公式](https://www.geisya.or.jp/~mwm48961/kou3/trigonometric23.htm)
