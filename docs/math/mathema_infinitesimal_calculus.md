@@ -139,3 +139,9 @@
   - lim(x -> 0) (1 + 1/x)^x = e
 - 三角関数の和積の公式、積和の公式
   - [積和の公式.和積の公式](https://www.geisya.or.jp/~mwm48961/kou3/trigonometric23.htm)
+
+### 2.2: 微分計算
+
+- {f(x)・g(x)}' = f'(x)・g(x) + f(x)・g'(x)
+- {f(x)/g(x)}' = {f'(x)・g(x) - f(x)・g'(x)} / {g'(x)}^2
+- y' = dy/dx = dy/dt・dx/dt
