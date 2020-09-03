@@ -36,3 +36,43 @@
   - part2 のトピックを使って 4-5 分質問される
   - Question typically ask you to compare, analyze, speculate, or give your opinion on the given topic.
   - 能力を測るために、試験官はつっこんで質問してくる
+
+### 1.1: Grading
+
+- Fluency and coherence
+  - Speaking speed
+    - すべてを急いで話す必要はないが、部分的に早めに話して、良いスピードで話せることを示すと良い
+  - Hesitations
+    - 文の途中で止まることを避けたほうが良い
+    - 途中より、最初で止まって考えたほうが良い
+  - Transitions and Linking phrases
+    - どのような方向で話しているのか示すように接続語を使う(in addition / however / consequently など)
+    - 同じフレーズを過度に繰り返さず、幅広い言葉を使うと良い
+- Pronunciation
+  - Specific sounds
+    - th / w / v / r / l / 長母音に気をつける
+  - Chunking
+    - 意味が伝わりやすくなるようにグループを区切って話す
+    - ネイティブスピーカーのやり方を真似すると良い
+  - Stress of syllables and word and sentences
+    - 各単語に正しくアクセントを置く
+    - 文のレベルでも強調する
+  - Intonation
+    - 抑揚をつける
+- Vocabulary
+  - Errors with word choices
+    - 自信のない言葉は使わない
+    - ただ、できるだけレベルの高い表現を使って、試験官に能力を示すことも大切
+  - Errors with word forms
+    - 品詞のミスに気をつける
+  - Lack of talent
+    - いくつかの表現を集中して学ぶと、試験で効果的に使えるかも
+- Grammar
+  - Use complex sentences
+    - 評価を高めるために幅広い表現を使う
+    - 表現を絞って、深く学習すると良い
+  - Tenses(時制)
+    - どの時制を使うべきか考えながら話す
+  - Word order
+    - 語順に注意
+  - Prepositions and Articles(前置詞と冠詞)
