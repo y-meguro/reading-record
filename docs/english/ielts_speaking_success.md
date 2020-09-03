@@ -76,3 +76,13 @@
   - Word order
     - 語順に注意
   - Prepositions and Articles(前置詞と冠詞)
+
+### 1.2: Preparing for your test
+
+- 1: Understanding how the speaking test is graded
+- 2: Preparing for and practicing common question that are asked
+- 3: Learning ways of structuring your answers to extend your answers and to improve your coherence
+- 4: Learning to paraphrase, which is when you use a phrase to explain a word you can't think of
+- 5: Improving your pronunciation, and ensuring you can make all sounds correctly and also getting natural stress, intonation, and connected speech
+- 6: Improving spoken grammar by correcting any frequent errors, and learning to use a couple of complex sentence structures such as conditional phrases or relative pronouns
+- 7: Broadening your vocabulary especially by building common phrases that can be used for a variety of responses, such as connectives and linking words and idiomatic language
