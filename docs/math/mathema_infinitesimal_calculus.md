@@ -201,3 +201,12 @@
   - ∫(x^2 + α)^1/2 dx = 1/2・(x・(x^2 + α)^1/2 + α・log|x + (x^2 + α)^1/2|) (x^2 + α >= 0)
 - 置換積分の公式
   - ∫f(g(x))・g'(x) dx = ∫f(t) dt
+
+### 3.2: 定積分
+
+- 定積分の定義
+  - 閉区間 [a, b] において、関数 f(x) の原始関数 F(x) が存在するとき、定積分を次のように定義する
+    - ∫(a->b) f(x) dx = [F(x)](a b) = F(b) - F(a)
+- ウォリスの公式
+  - [ウォリス（ワリス）の公式：積分　(sinx)^n (cosx)^n](http://w3e.kanazawa-it.ac.jp/math/category/sekibun/example/henkan-tex.cgi?target=/math/category/sekibun/example/int-(sinx)%5En.html)
+- リーマン和(p132)
