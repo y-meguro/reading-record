@@ -86,3 +86,44 @@
 - 5: Improving your pronunciation, and ensuring you can make all sounds correctly and also getting natural stress, intonation, and connected speech
 - 6: Improving spoken grammar by correcting any frequent errors, and learning to use a couple of complex sentence structures such as conditional phrases or relative pronouns
 - 7: Broadening your vocabulary especially by building common phrases that can be used for a variety of responses, such as connectives and linking words and idiomatic language
+
+## 2: General Strategies
+
+- このセクションでは 3 パートのすべてで使える strategies について説明する
+- 短すぎる答えだと、試験官は英語力を評価できず、低いスコアになってしまう
+- Extend your answers
+  - 例題: What kind of food do you like? に答えるとする
+  - 1: Divide into 2 or 3 parts
+    - 例えば以下のように解答する
+    - **Well, there are three kinds of** food that I'm really keen on. **The one I like best** is Italian food because I am a big fan of pasta. **I also really like** to eat Korean food as it's very healthy and flavorsome. **I'm also kind of partial** to Mexican food because it is so hot and spicy.
+  - 2: General to specific
+    - general -> specific -> example の順に書いていく
+    - 例えば以下のように解答する
+    - **Well, I'd have to say that I'm a big fan of** seafood. **In particular**, I really like to eat Japanese seafood because it's always so fresh. **For instance**, sashimi is delicious because the raw fish is so flavorsome.
+  - 3: Depends - describing different situations
+    - 異なる状況に対して、異なる理由を説明する
+    - 例えば以下のように解答する
+    - I think it **depends** really. **If** I'm working **I prefer** to get something like fast food such as McDonalds because I only have a short break. **But, if** I'm out with friends **I would rather have** something more exotic such as Thai food or Indian food.
+- Speak at variable speed rate
+  - fluency を示すために、良いスピードで読む必要があるが、すべてそのスピードで読む必要はない
+  - Slow down when you ...
+    - 1: reach a difficult area or are unsure of what you will say
+    - 2: want to emphasize something
+    - 3: are using high level language to make the examiner notice it
+  - Speed-up when you ...
+    - 1: are comfortable with the topic and what you are saying
+    - 2: are giving less important information
+  - use redundant language
+    - oh / well / actually などの言葉はネイティブスピーカーのほうが、ノンネイティブの人より多く使っている。これらを多少使ったほうがよい
+  - Use punctuation
+    - 短い pause は新しい節に入ったことを示し、長い pause は新しいアイデアやトピックに入ったことを示す
+- Use lots of adjectives and adverbs
+  - 形容詞と福祉を使うことで、表現がより正確になり、スコアが上がる
+- Listen carefully for key words in the questions
+- Entering the test room
+  - あなたのパスポートを試験官がチェックするまでは試験は始まらない
+  - 緊張は隠し、自信と穏やかさを見せたほうがいい
+  - テストが始まる前に試験官は日付や時間などを記載するので、その間は静かにしている
+    - しかし、その間に試験官のアクセントや発音に慣れておく
+  - What is your full name? / Where are you from? / Can I see your identification please? といった質問をされるので、ここは短く答えれば良い
+  - その後 "Now, I would like to ask you a few questions about yourself" といったことを言われ、そこから質問が始まる
