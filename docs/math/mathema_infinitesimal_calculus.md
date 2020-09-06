@@ -209,4 +209,5 @@
     - ∫(a->b) f(x) dx = [F(x)](a b) = F(b) - F(a)
 - ウォリスの公式
   - [ウォリス（ワリス）の公式：積分　(sinx)^n (cosx)^n](http://w3e.kanazawa-it.ac.jp/math/category/sekibun/example/henkan-tex.cgi?target=/math/category/sekibun/example/int-(sinx)%5En.html)
-- リーマン和(p132)
+- リーマン和による定積分の定義(p133)
+  - 一般には [a, b] で有界かつ、連続な関数であればよい(不連続な点があっても有界な関数であればよい)
