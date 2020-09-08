@@ -127,3 +127,70 @@
     - しかし、その間に試験官のアクセントや発音に慣れておく
   - What is your full name? / Where are you from? / Can I see your identification please? といった質問をされるので、ここは短く答えれば良い
   - その後 "Now, I would like to ask you a few questions about yourself" といったことを言われ、そこから質問が始まる
+
+## 3: Part 1 - Questions on Familiar Topics
+
+- 4-5 分で行われる
+- Requirement
+  - 最大で 3 つのトピックがあり、それぞれ最大で 4 問の質問がある
+    - The first topic will be about whether you work or study, the place you are living in, or the place you are from.
+    - 他の 2 つのトピックは、趣味、休日、スポーツ、娯楽について聞かれる
+  - 試験官に 1 度だけ問題の反復を頼むことが可能
+  - 各単語について意味を質問することもできるが、文全体を rephrase してもらうことはできない
+- Suggestions
+  - yes / no だけでなく、full response を行う
+  - 2 - 4 sentences で各質問に答える
+  - アイデアや実際の意見ではなく、言語に focus する
+- Procedure
+  - 1: まず ID をチェックされ、そこから part1 のテストが始まる
+  - 2: 試験官が "Now, I am going to ask you a few general questions" と言う
+  - 3: 試験官は異なるトピックについて 3 つか 4 つの質問を行う。"Now, let's talk about where you live" のように、試験官はトピックの紹介を行う
+  - 4: トピックをベースに試験官は 3 つか 4 つの質問を行う。以下が例
+    - Do you live in a house or an apartment?
+    - Which room do you like the most in your home?
+    - In the future, what sort of home would you like to live in?
+  - 5: 3 つか 4 つの質問を行った後、試験官は "Now let's talk about your hobbies and interests" などと言って、次のトピックに進む
+  - 6: 3 つのトピックについて質疑が終わったら、試験官は part1 のテストを終え、part2 に進む
+    - もし、あなたの答えが長かった場合は、トピックが 2 つだけになることもある
+
+### 3.1: Strategies
+
+- 1: Expansion
+  - 質問に対して、展開した答えを述べたほうが良い
+  - そうすることで、あなたが質問をよく理解していることと、言語能力の高さを示せる
+  - 質問例: Do you like riding bicycles?
+    - 悪い答え: Yes
+    - より良い答え: Yes, because it's fun, good for health, and doesn't cost a lot.
+    - 優れた答え
+      - Well, I like to ride bikes for a few reasons. **The main reason** I like to cycle is that I think it is really fun and it is a good way to go sightseeing. **I'd also like to point-out** that riding a bike is very good for my health because it can help me to lose weight. **I would also like to add** that recently I haven't been riding my bike much, as I am quite busy at work.
+  - 答えを展開するために利用できるやり方
+    - 1: Dividing your response into 2 or 3 parts
+    - 2: Explaining something from general terms to specific and maybe giving and example
+    - 3: Depends - describing different situations
+    - 4: Concession - making a main argument and then giving a concession to it
+    - 5: Avoidance - not directly answering the question at first and then answering it
+- 2: Show language
+  - 質問例: What colors do you like?
+    - 悪い答え: I like and green and blue.
+    - より良い答え: My favorite colors are light green and navy blue.
+      - より正確に表現することで、語彙の評価を上げられる
+    - 優れた答え
+      - Well, My favorite color is **magenta**, I guess that's because I'm really into bright and bold colors. I also like **turquoise**, I find that a very relaxing peaceful color that reminds me of the ocean.
+      - あまり一般的でない色を答えることで、語彙を示せる
+      - "I'm really into" のような慣用的な表現も、表現力を示せる
+- 3: Buy time to think
+  - 特定のやり方を繰り返し使うべきではない
+  - Repeat the question
+    - "Oh, so you're asking about my favorite color." のように繰り返すことで考える時間を作る
+  - Ask the examiner to repeat the question
+    - 試験官は 1 度だけ、問題を復唱できる
+    - 復唱を 1 度行ってもらってもスコアは下がらないが、何度も行ってしまうとスコアを下げる
+    - "I'm sorry I didn't quite catch that ... could you please repeat the question."
+  - 答え始めに使える表現
+    - Well, that's a really interesting question
+    - Oh I'm not too sure about that ... Let me think for a minute ... Oh yes it is ...
+    - With regards to your question, I guess I would have to say that ...
+- 4: If you don't understand the question
+  - わからない単語については試験官に説明をお願いできる。しかし質問全体について rephrase をお願いすることはできない(part3 を除く)
+  - 質問がわからなかった場合、黙ってしまうのが一番良くない
+  - 聞き取れたキーワードから、質問に対する答えを返すようにする
