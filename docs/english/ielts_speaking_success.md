@@ -194,3 +194,165 @@
   - わからない単語については試験官に説明をお願いできる。しかし質問全体について rephrase をお願いすることはできない(part3 を除く)
   - 質問がわからなかった場合、黙ってしまうのが一番良くない
   - 聞き取れたキーワードから、質問に対する答えを返すようにする
+
+### 3.2: Types of Questions
+
+#### 1: Description Questions
+
+- Strategy: divide your response into 2 or 3 parts
+- Structure: point 1 + point 2 + point 3
+
+```
+例題
+Tell me something about your hometown?
+
+解答例
+**Well**, I come from Taipei and I have lived here all my life. **I'd like to begin by saying that** it's the capital of Taiwan and also the cultural center. **On top of that I can also add that** it's very crowded, maybe even one of most congested cities in Asia I guess. The roads are also so jammed that even the locals have problems finding their way around! **Finally, I'd also like to mention** that it offers splendid examples of contemporary architecture. Actually some of the most renowned landmarks are in the middle of Taipei, such as Taipei 101, the second tallest building in the world.
+```
+
+- Useful Language
+  - Starting-off(redundant language)
+    - ok / then / actually / alright / well / you know
+  - Point 1
+    - I'd like to begin by saying ...
+    - The first thing I'd like to mention is ...
+    - The main thing you need to know is ...
+  - Point 2
+    - On top of that I can also add that ...
+    - Another interesting point ...
+    - Not only that, but xxx is also exceedingly ...
+  - Point 3
+    - Finally, I'd also like to mention ...
+    - And, I shouldn't forget to mention that ...
+    - I guess I could also say that (it's) sort of ...
+- 他の質問例
+  - What sort of work do you do?
+  - What does your house look like?
+  - What does your neighborhood look like?
+  - What does your city/town look like?
+  - What sort of clothes do you like to wear?
+  - Describe a city you would like to visit?
+  - Describe a country you would like to visit?
+  - Describe a park you have visited?
+
+#### 2: "Types of" Questions
+
+- Strategy: divide your response into 2 or 3 parts
+- Structure: general statement + type 1 + type 2
+
+```
+例題
+Tell me about the different types of public transportation in your city.
+
+解答例
+**Well, you know there's quite a mixed variety of** public transportation in my city. **I think the most common one** is buses because they seem to go everywhere. **In addition**, the trains **are also extremely popular** for those people who are lucky enough to live near a train station.
+```
+
+- Useful Language
+  - Rephrasing types
+    - kinds / sorts / variety / range of / array
+  - Useful phrases to start [General statement]
+    - There's quite a mixed variety of ...
+    - There's a fairly wide range of ...
+    - There's quite a diverse mixture of ...
+  - Type 1
+    - I think the most common one is ...
+    - The main one is ...
+    - The first one that comes to mind is ...
+  - Type 2
+    - In addition, X ... is also extremely popular
+    - Another kind is ...
+    - Not only that, but X ... is also exceedingly ...
+  - Type 3 (if needed)
+    - And I shouldn't forget to mention that ...
+    - I guess I could also say that ...
+    - Finally, I'd also like to mention ...
+- 他の質問例
+  - What kinds of restaurants are popular in your country?
+  - What types of shops can be found in your local area?
+  - What types of things do people collect in your country?
+  - How do you spend your free time?
+  - How do people spend their free time in your country?
+  - What sorts of TV programs do you watch?
+  - What sorts of TV programs are popular in your country?
+  - What sort of things do people collect in your country?
+
+#### 3: Liking
+
+- Strategy: general to specific
+- Structure: general statement + more precise statement + reason
+
+```
+例題
+What kind of animals do you like?
+
+解答例
+**Well, in general I would say I'm pretty fond of** small animals. **In particular, I'm really keen on** cats and dogs; **and, I guess this is because** we often kept them when I was growing up, and they were good companions for me.
+```
+
+- Rephrasing "liking"
+  - I'm pretty fond of ...
+  - I'm really keen on ...
+  - I'm a big fan of ...
+  - I'm extremely passionate about ...
+- Genreral statement
+  - Well, in general I would say ...
+  - Generally speaking ...
+  - Overall, I think that ...
+- More precise statement
+  - In particular, ...
+  - Specifically, ...
+  - To be more precise ...
+- Reason
+  - And I guess this is probably because ...
+  - I think this is due to the fact that ...
+  - The reason for this is because ...
+- 他の質問例
+  - What do you like about your hometown?
+  - What do you like about your job/studies?
+  - What sort of music do you like?
+  - What sorts of books do you like reading?
+  - What type of movies do you like?
+  - Where do you like to shop?
+  - What types of food do you like?
+  - What types of free time activities do you like?
+
+#### 4: Disliking
+
+- Strategy: general to specific
+- Structure: general statement + more precise statement + reason
+
+```
+例題
+Is there anything you don't like about your hometown?
+
+解答例
+**Generally speaking ... I'd have to say** that I'm not really fond of the weather. **To be more specific,** I really can't stand the summer months. **I think this is due to the fact that** it is always humid, so it makes me feel quite hot and sweaty!
+```
+
+- Rephrasing "disliking"
+  - I really can't stand ...
+  - I'm not really fond of ...
+  - I'm not much of a fan of ...
+  - ... simply gets on my nerves.
+- Genreral statement
+  - Well, in general I would say ...
+  - Generally speaking ...
+  - Overall, I think that ...
+- More precise statement
+  - Specifically, ...
+  - To be more specific ...
+  - To be more precise ...
+- Reason
+  - And I guess this is probably because ...
+  - I think this is due to the fact that ...
+  - The reason for this is because ...
+- 他の質問例
+  - Is there anything you don't like about your hometown?
+  - Is there anything you don't like about job/studies?
+  - Is there any food you don't like?
+  - Are there any clothes that you don't like?
+  - Are there any colors that you don't like?
+  - What type of weather do you dislike?
+  - What type of noises do you dislike?
+  - What type of movies do you dislike?
