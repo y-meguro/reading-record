@@ -356,3 +356,75 @@ Is there anything you don't like about your hometown?
   - What type of weather do you dislike?
   - What type of noises do you dislike?
   - What type of movies do you dislike?
+
+#### 5: Habits
+
+- Strategy: depends
+- Structure: depends + if preference 1 + if preference 2
+
+```
+例題
+What do you usually do at the weekend?
+
+解答例
+**Well, it is contingent upon** how I feel.
+**If I'm** exhausted after working all week **I prefer to** do something relaxing like chilling out on the sofa with a good book.
+**But, if** I energetic **I would rather** do something more exciting like go hiking or camping.
+```
+
+- Depends
+  - Well, it is contingent upon ...
+  - I think it depends really.
+  - Well, to be honest, I would have to say that it really depends.
+- Preference 1
+  - If I'm ... I prefer to ...
+  - Usually, I prefer ...
+  - Sometimes, I prefer to ...
+- Preference 2
+  - But, if I ... I would rather ...
+  - Although, sometimes I would rather ...
+  - However, If I have ...
+- 他の質問例
+  - What do you usually do on the Internet?
+  - What do you usually study?
+  - What do you like to do for holidays?
+  - When do you go shopping?
+  - What do you do to relax?
+  - How much sleep do you usually get?
+  - How do you celebrate festivals in your country?
+  - How much TV do you watch?
+
+#### 6: Yes/No questions
+
+- Strategy: depends
+- Structure: depends + preference 1 + preference 2
+
+```
+例題
+Do you eat healthy food?
+
+解答例
+Well, to be honest, I would have to say that it really depends. Usually I prefer to eat something quick and convenient such as instant noodles because I am very busy with my studies. Although, sometimes I would rather spend a little more time and cook something healthier such as a rice and veggies.
+```
+
+- Depends
+  - Well, it is contingent upon ...
+  - I think it depends really.
+  - Well, to be honest, I would have to say that it really depends.
+- Preference 1
+  - If I'm ... I prefer to ...
+  - Usually, I prefer ...
+  - Sometimes, I prefer to ...
+- Preference 2
+  - But, if I ... I would rather ...
+  - Although, sometimes I would rather ...
+  - However, If I have ...
+- 他の質問例
+  - Do you like the weather in your country?
+  - Do you enjoy eating food from other countries?
+  - Do you enjoy your work/studies?
+  - Are there enough festivals in your country?
+  - Do you enjoy going shopping?
+  - Do you like to get up early?
+  - Do you play or watch any sports?
+  - Are you planning any vacations?
