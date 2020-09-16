@@ -428,3 +428,55 @@ Well, to be honest, I would have to say that it really depends. Usually I prefer
   - Do you like to get up early?
   - Do you play or watch any sports?
   - Are you planning any vacations?
+
+#### 7: "WH" Questions
+
+- Strategy: concession
+- Structure: main point + concession
+
+```
+例題
+What sort of restaurants do you usually eat at?
+
+解答例
+Well, recently I'd have to say that I have been enjoying eating steak and each time I feel like a steak I go to Outback Steak House, because the steaks there are huge. **Although, I suppose it could be argued that** it may not be all that healthy to eat so much red meat, as I've heard it can lead to high levels of cholesterol.
+```
+
+- Concession
+  - Although, I suppose it could be argued that ...
+  - However, I'm quite aware that ...
+  - Nevertheless, it is worth remembering that ...
+- 他の質問例
+  - What do you do at the weekend?
+  - When do you usually read?
+  - Where do you usually go for holidays?
+  - Which do you prefer, reading a book or watching TV?
+  - Who do you spend your evenings with?
+  - When do you usually sleep?
+  - Why do you work/study there?
+  - How often do you play or watch sports?
+
+#### 8: When you were a child
+
+- Strategy: concession
+- Structure: main point + concession
+
+```
+例題
+What games did you enjoy playing when you were a child?
+
+解答例
+Well, I was always very keen on playing video games. I spent almost all my free time playing them. **However, I'm quite aware that ...** . It wasn't the healthiest way to spend my childhood and perhaps it's contributed to my myopia.
+```
+
+- Concession
+  - Although, I suppose it could be argued that ...
+  - However, I'm quite aware that ...
+  - Nevertheless, it is worth remembering that ...
+- 他の質問例
+  - What colors did you like when you were a child?
+  - Did you like to wear bright clothing when you were a child?
+  - Did you like any sports when you were a child?
+  - What type of food did you like when you were a child?
+  - Did you have a lot of friends when you were a child?
+  - What type of indoor activities did you do when you were a child?
