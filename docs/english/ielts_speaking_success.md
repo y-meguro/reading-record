@@ -480,3 +480,66 @@ Well, I was always very keen on playing video games. I spent almost all my free 
   - What type of food did you like when you were a child?
   - Did you have a lot of friends when you were a child?
   - What type of indoor activities did you do when you were a child?
+
+#### 9: In the future
+
+- Strategy: avoidance
+- Structure: avoiding phrase + answer to the question
+
+```
+例題
+Where would you like to go for your next vacation?
+
+解答例
+**Well, to be honest, I don't really have** a clear plan **but I guess that I will probably** go overseas to some exotic location like Nepal because I'm really into hiking and exploring new areas.
+```
+
+- Avoiding phrase
+  - Well, to be honest, I don't really have ...
+  - Actually, I'm not really sure about that.
+  - Oh, I've never really thought about that.
+- answer to the question
+  - ... but I guess that I will probably ...
+  - ... but I guess that if I had to choose one, then I'd ...
+  - ... perhaps the end result will be that
+- 他の質問例
+  - Would you like to learn a new language in the future?
+  - In the future, what sort of home would you like to live in?
+  - In the future, do you think people will use mobile phones more than now?
+  - In the future, do you think people will be healthier or less healthy than now?
+  - Do you think your hometown will change much in the future?
+  - Do you think you will have more free time in the future?
+
+#### 10: Comparing
+
+- Strategy: avoidance
+- Structure: avoiding phrase + answer to the question
+
+```
+例題
+Do you prefer to read a book or watch TV?
+
+解答例
+**Oh, I like them both so it's hard to choose only one. But I guess that if I had to choose one, then I would rather** read a novel **and the main reason for this is because I slightly prefer** the storylines of novels to TV.
+```
+
+- Avoiding phrase
+  - Oh, I like them both, so it's hard to choose only one.
+  - Well, to be honest, I don't really have ...
+  - Actually, I'm not really sure about that.
+  - Oh, I've never really thought about that.
+- answer to the question
+  - ... but I guess that I will probably ...
+  - ... but I guess that if I had to choose one, then I'd ...
+  - ... perhaps the end result will be that
+- Comparatives
+  - I slightly prefer ...
+  - I'd much rather ...
+  - I enjoy X much more than Y
+- 他の質問例
+  - Do you prefer studying in the morning or in the evening?
+  - Do you prefer taking photos with your phone or with a camera?
+  - Would you rather live in a place with hot weather or cold weather?
+  - Do you like to take lots of short holidays or one long holiday?
+  - Do you prefer to write by hand or using a computer?
+  - Do you prefer to send text messages or to call someone?
