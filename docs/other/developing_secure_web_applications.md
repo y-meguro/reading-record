@@ -52,3 +52,8 @@
 - 積極的に安全性を強化する機能のことを本書では「セキュリティ機能」と呼ぶ
 
 ### 1.5: 本書の構成
+
+## 2: 実習環境のセットアップ
+
+- 古い版なので、Windows で VMware Player の環境になっているが、Mac の VirtualBox で構築する
+  - [徳丸本の環境をMacのVirtualBoxで構築する](http://tarhashi.hatenablog.com/entry/2013/06/01/155051)
