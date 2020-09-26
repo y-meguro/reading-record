@@ -31,6 +31,7 @@
   * [Docker](/docs/other/using_docker.md)
   * [マスタリングTCP/IP―入門編](/docs/other/mastering_tcp_ip_basic.md)
   * [暗号技術入門](/docs/other/cryptography_introduction.md)
+  * [体系的に学ぶ 安全なWebアプリケーションの作り方](/docs/other/developing_secure_web_applications.md)
   * [考える技術・書く技術](/docs/other/the_pyramid_principle.md)
 * Pending
   * [コンピュータの構成と設計](/docs/pending/computer_organization_and_design.md)
