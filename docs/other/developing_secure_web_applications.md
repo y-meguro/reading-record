@@ -60,5 +60,7 @@
 
 ## 2: 実習環境のセットアップ
 
-- 古い版なので、Windows で VMware Player の環境になっているが、Mac の VirtualBox で構築する
-  - [徳丸本の環境をMacのVirtualBoxで構築する](http://tarhashi.hatenablog.com/entry/2013/06/01/155051)
+- wasbook をインストールしたが、起動時に「VirtualBox VM quit unexpectedly.」のメッセージでエラーが出た
+  - Settings > Audio にいって "Enable Audio" のチェックを外したら起動できるようになった
+  - Ubuntu 20.04 ではないが同じ症状の記事
+    - [How to fix "VirtualBox VM quit unexpectedly" when running my Ubuntu 20.04 LTS VM on MacOS Catalina 10.15 in VirtualBox? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/609077/how-to-fix-virtualbox-vm-quit-unexpectedly-when-running-my-ubuntu-20-04-lts-vm)
