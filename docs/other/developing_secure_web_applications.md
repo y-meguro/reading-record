@@ -194,3 +194,36 @@
   - script 要素
   - CSS
   - form 要素の action 属性
+
+### 3.3: CORS(Cross-Origin-Resource Sharing)
+
+- CORS は従来の同一オリジンポリシーに依存するアプリケーションとの互換性を保ちながら、異なるオリジンとのデータ交換を可能にする
+- シンプルなリクエスト
+  - Access-Control-Allow-Origin
+    - Access-Control-Allow-Origin とは、クロスオリジンからの読み出しを許可するための仕掛けで、情報の提供元が HTTP レスポンスヘッダとして出力する
+  - シンプルなリクエストの要件
+    - HTML フォームから送られるリクエストを基準として、HTML フォームの場合に比べて過度にリスクが増加しない範囲で条件が選択されている
+    - 以下の条件をすべて満たすもの
+      - メソッドは下記のうちのいずれか
+        - GET
+        - HEAD
+          - HTTP の HEAD メソッドは、指定されたリソースを HTTP GET メソッドでリクエストした時に返されるヘッダーをリクエストする
+          - [HEAD - HTTP | MDN](https://developer.mozilla.org/ja/docs/Web/HTTP/Methods/HEAD)
+        - POST
+      - XMLHttpRequest オブジェクトの setRequestHeader メソッドで設定するリクエストヘッダは以下に限る
+        - Accept
+        - Accept-Language
+        - Content-Language
+        - Content-Type
+      - Content-Type ヘッダは以下のいずれかであること
+        - application/x-www-form-urlencoded
+        - multipart/form-data
+        - text/plain
+- プリフライトリクエスト
+  - クロスオリジンアクセスにおいて「シンプルなリクエスト」の条件を満たさない場合、ブラウザはプリフライトリクエスト(pre-flight request)という HTTP リクエストを送信する
+  - [OPTIONS - HTTP | MDN](https://developer.mozilla.org/ja/docs/Web/HTTP/Methods/OPTIONS)
+- 認証情報を含むリクエスト
+  - デフォルトでは、クロスオリジンに対するリクエストには HTTP 認証やクッキーなどの認証に用いられるリクエストヘッダは自動的に送信されない
+  - クッキーなど認証用のヘッダを伴うクロスオリジンリクエストは、下記の両方を満たす必要がある
+    - XMLHttpRequest オブジェクトの withCredentials プロパティを true にする
+    - レスポンスヘッダとして Access-Control-Allow-Credentials: true を返す
