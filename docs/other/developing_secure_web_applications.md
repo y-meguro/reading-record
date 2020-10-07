@@ -1167,3 +1167,13 @@
   - eval 関数ではなく、JSON.parse などの安全な API で JSON を解釈する
 - また、保険的対策として以下を強く推奨する
   - JSONP を避け、CORS を用いた Web API に移行する
+
+#### 4.16.3: JSON 直接閲覧による XSS
+
+- 概要
+  - JSON を返す Web API は、通常 XMLHttpRequest によるアクセスを想定したものだが、API が返すレスポンスデータをブラウザで直接閲覧させることにより攻撃が可能になる場合がある
+- 対策
+  - MIME タイプを正しく設定する(必須)
+  - レスポンスヘッダ X-Content-Type-Options: nosniff を出力する(強く推奨)
+  - 小なり記号などを Unicode エスケープする(推奨)
+  - XMLHttpRequest など CORS 対応の機能だけから呼び出せるようにする(推奨)
