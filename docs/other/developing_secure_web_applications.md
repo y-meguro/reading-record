@@ -1252,3 +1252,24 @@
   - 公開情報を提供するなどでオリジンの制限がない場合はこれでいいが、非公開情報を扱う場合はこれだと情報漏洩の危険性がある
 - オリジンのチェックをわざと緩和してしまう
   - 開発に際しては個々のヘッダの意味を理解した上で、本当に必要な許可だけ与えるべき
+
+#### 4.16.9: セキュリティを強化すべきレスポンスヘッダ
+
+- Web API に限らず、HTTP レスポンスヘッダとして常に出力しておくだけでブラウザのセキュリティ機能を強化する仕組みが用意されている
+- 代表的なもの
+  - X-Frame-Options
+    - これを指定すると frame や iframe の内部に表示できなくなる
+  - X-Content-Type-Options
+    - X-Content-Type-Options: nosniff という形で使用する
+    - これによりブラウザは、MIME タイプの解釈を厳密にすることで、MIME タイプをブラウザに誤認させるタイプの攻撃や JSON ハイジャック攻撃などを緩和する
+  - X-XSS-Protection
+    - 下記の 2 点の役割がある
+      - 利用者が XSS フィルタの有効化・無効化設定をしていても、当該ページについて XSS フィルタの設定を上書きする
+      - XSS フィルタの動作モードを指定する
+  - Content-Security-Policy(CSP)
+    - Content Security Policy は主にクロスサイト・スクリプティング攻撃を緩和するためのセキュリティ機能としてブラウザに実装されつつある
+    - 最も基本的かつ厳しい設定は `Content-Security-Policy: default-src 'self'`
+    - この指令により、スクリプト、画像、CSS などのすべてのメディアをサイト自身のオリジンからのみ読み込むようになる
+  - Script-Transport-Security(HTTP Strict Transport Security; HSTS)
+    - HTTP Script Transport Security は HTTPS で接続を強制するための指令
+    - ただし、HSTS をいったん指定すると、HTTPS をやめることが難しくなることや、自己署名証明書など信頼できない証明書が使えなくなるというデメリットもあるため、HSTS は計画的な導入を推奨する
