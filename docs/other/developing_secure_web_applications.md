@@ -1318,3 +1318,11 @@
   - Web ストレージに保存した情報が、XSS や postMessage により漏洩する
   - Web ストレージが XSS や postMessage 経由で改ざんされる
   - Web ストレージを経由した DOM Based XSS
+
+#### 4.17.3: postMessage 呼び出しの不備
+
+- postMessage とは
+  - iframe や window.open で開いたウィンドウなど、複数のウィンドウが異なるオリジンで協調して動作する環境で、メッセージやデータのやり取りを行う汎用的な仕組みが postMessage
+- メッセージ送信先の未確認
+  - これだと罠のサイトにも秘密情報を送信してしまう
+- メッセージ送信元の未確認
