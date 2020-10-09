@@ -1273,3 +1273,30 @@
   - Script-Transport-Security(HTTP Strict Transport Security; HSTS)
     - HTTP Script Transport Security は HTTPS で接続を強制するための指令
     - ただし、HSTS をいったん指定すると、HTTPS をやめることが難しくなることや、自己署名証明書など信頼できない証明書が使えなくなるというデメリットもあるため、HSTS は計画的な導入を推奨する
+
+### 4.17: JavaScript の問題
+
+#### 4.17.1: DOM Based XSS
+
+- 概要
+  - 4.3 でも XSS について説明したが、これはサーバー側のプログラムの不備が原因で発生するものだった
+  - 一方、JavaScript による処理の不備が原因で XSS となる場合もあり、DOM Based XSS と呼ばれている
+- 攻撃手法と影響
+  - innerHTML による DOM Based XSS
+  - document.write による DOM Based XSS
+  - XMLHttpRequest の URL 未検証の問題
+  - jQuery のセレクタの動的生成による XSS
+  - javascript スキームによる XSS
+- 脆弱性が生まれる原因
+  - DOM 操作の際に外部から指定された HTML タグなどが有効になってしまう機能を用いている
+  - 外部から指定された JavaScript が動く eval などの機能を用いている
+  - XMLHttpRequest の URL が未検証である
+  - location.href や src 属性、href 属性の URL が未検証である
+- 対策
+  - 以下のいずれかを行う
+    - 適切な DOM 操作あるいは記号のエスケープ
+    - eval、setTimeout、Function コンストラクタなどの引数に文字列形式で外部からの値を渡さない
+    - URL のスキームを http か https に限定する
+    - jQuery のセレクタは動的生成しない
+    - 最新のライブラリを用いる
+    - XMLHttpRequest の URL を検証する
