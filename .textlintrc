@@ -28,6 +28,7 @@
     // 技術文書向けのルールプリセット
     "preset-ja-technical-writing": {
       "arabic-kanji-numbers": false,
+      "ja-no-successive-word": false,
       "ja-no-weak-phrase": false,
       // 1文の長さ指定
       "sentence-length": {
